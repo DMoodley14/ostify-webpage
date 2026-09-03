@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ostify — Clinical AI infrastructure for regulated health services</title>
+<meta name="description" content="Ostify lets clinicians and services turn their own approved material into grounded conversational agents, with the clinical safety and assurance evidence needed to deploy. Currently in limited pilot.">
+<meta name="theme-color" content="#0B2E4F">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230B2E4F'/%3E%3Ccircle cx='32' cy='32' r='15' fill='none' stroke='%23FFFFFF' stroke-width='7'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --white: #FFFFFF;
+    --band: #F4F6F8;
+    --blue: #0B2E4F;
+    --blue-mid: #2C4B69;
+    --grey: #5A6B7C;
+    --rule: #DDE3E9;
+    --sans: 'Helvetica Neue', Helvetica, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body { height: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--white);
+    color: var(--blue);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
+
+  a { color: var(--blue); }
+  a:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .inner {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  /* ---------- Masthead ---------- */
+  .topbar {
+    height: 5px;
+    background: var(--blue);
+  }
+
+  .masthead {
+    border-bottom: 1px solid var(--rule);
+  }
+  .masthead .inner {
+    height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .wordmark {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1.22rem;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    color: var(--blue);
+  }
+
+  .masthead-meta {
+    font-size: 0.8rem;
+    color: var(--grey);
+  }
+
+  /* ---------- Main ---------- */
+  main {
+    flex: 1 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 88px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  main .inner {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: 72px;
+    align-items: start;
+    position: relative;
+  }
+
+  .motif {
+    position: absolute;
+    top: -170px;
+    right: -170px;
+    width: 300px;
+    height: 300px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .intro {
+    position: relative;
+    z-index: 1;
+  }
+
+  h1 {
+    margin: 0 0 26px;
+    font-size: 2.55rem;
+    line-height: 1.14;
+    font-weight: 600;
+    letter-spacing: -0.026em;
+    max-width: 16ch;
+  }
+
+  .lede {
+    margin: 0;
+    font-size: 1.09rem;
+    line-height: 1.6;
+    color: var(--blue-mid);
+    max-width: 54ch;
+  }
+
+  .components {
+    margin-top: 36px;
+    padding-left: 28px;
+    border-left: 1.5px solid var(--rule);
+  }
+  .component {
+    padding-bottom: 26px;
+    position: relative;
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 24px;
+    align-items: baseline;
+  }
+  .component:last-child { padding-bottom: 0; }
+  .component h2 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: -0.012em;
+    color: var(--blue);
+    position: relative;
+  }
+  .component h2::before {
+    content: '';
+    position: absolute;
+    left: -33px;
+    top: 6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--blue);
+    border: 2px solid var(--white);
+    box-shadow: 0 0 0 1px var(--rule);
+  }
+  .component p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--grey);
+    max-width: 52ch;
+  }
+
+  .contact {
+    margin-top: 40px;
+    font-size: 0.95rem;
+    color: var(--grey);
+  }
+  .contact a {
+    color: var(--blue);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1px;
+  }
+  .contact a:hover { border-bottom-color: var(--blue); }
+
+  /* ---------- Side panel ---------- */
+  .panel {
+    border-left: 1px solid var(--rule);
+    padding-left: 40px;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .panel-title {
+    margin: 0 0 22px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--blue);
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .panel dl {
+    margin: 0;
+    display: grid;
+    gap: 22px;
+  }
+  .panel dt {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--blue);
+    margin-bottom: 3px;
+  }
+  .panel dd {
+    margin: 0;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--grey);
+  }
+  .panel-note {
+    margin: 26px 0 0;
+    padding-top: 18px;
+    border-top: 1px solid var(--rule);
+    font-size: 0.85rem;
+    line-height: 1.55;
+    color: var(--grey);
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    flex-shrink: 0;
+    background: var(--band);
+    border-top: 1px solid var(--rule);
+    padding: 30px 0;
+  }
+  .footer-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 32px;
+    flex-wrap: wrap;
+    font-size: 0.79rem;
+    line-height: 1.65;
+    color: var(--grey);
+  }
+  .footer-grid p { margin: 0; }
+  .footer-grid a {
+    color: var(--grey);
+    text-decoration: none;
+  }
+  .footer-grid a:hover { color: var(--blue); }
+
+  @media (max-width: 900px) {
+    .inner { padding: 0 28px; }
+    main { padding: 56px 0; }
+    main .inner {
+      grid-template-columns: 1fr;
+      gap: 44px;
+    }
+    h1 { font-size: 2rem; max-width: none; }
+    .component {
+      grid-template-columns: 1fr;
+      gap: 6px;
+    }
+    .panel {
+      border-left: none;
+      border-top: 1px solid var(--rule);
+      padding-left: 0;
+      padding-top: 32px;
+      margin-top: 0;
+    }
+    .masthead-meta { display: none; }
+    .motif { display: none; }
+  }
+
+  @media print {
+    .topbar, .motif { display: none; }
+    footer { background: none; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="topbar"></div>
+
+  <header class="masthead">
+    <div class="inner">
+      <a class="wordmark" href="/">Ostify</a>
+      <span class="masthead-meta">Clinical AI infrastructure for regulated health services</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="inner">
+      <svg class="motif" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <g stroke="#0B2E4F" opacity="0.07">
+          <circle cx="150" cy="150" r="132" stroke-width="0.75" />
+          <circle cx="150" cy="150" r="106" stroke-width="0.75" />
+          <circle cx="150" cy="150" r="80" stroke-width="0.75" />
+          <circle cx="150" cy="150" r="54" stroke-width="0.75" />
+          <circle cx="150" cy="150" r="28" stroke-width="1" />
+        </g>
+      </svg>
+
+      <div class="intro">
+        <h1>A safer way to answer patients&rsquo; questions.</h1>
+        <p class="lede">Ostify lets clinicians and services turn the material they already hold, from patient information leaflets to protocols, pathways and service guidance, into conversational agents that answer only from that material and nothing beyond it.</p>
+
+        <div class="components">
+          <div class="component">
+            <h2>Osteoblast</h2>
+            <p>The builder. Ingests your own content and stands up a grounded agent, configured by the clinical team rather than a development team.</p>
+          </div>
+          <div class="component">
+            <h2>Osteoclast</h2>
+            <p>The evaluator. Stress-tests every agent across in-scope, out-of-scope, crisis-adjacent and adversarial questions, and holds release until it passes.</p>
+          </div>
+          <div class="component">
+            <h2>Osteocite</h2>
+            <p>The regulatory layer. Generates and maintains the governance documentation your organisation needs to deploy, and to keep deploying.</p>
+          </div>
+        </div>
+
+        <p class="contact">General and partnership enquiries: <a href="mailto:divyan@ostify.co.uk">divyan@ostify.co.uk</a></p>
+      </div>
+
+      <aside class="panel" aria-labelledby="panel-title">
+        <h2 class="panel-title" id="panel-title">What we supply</h2>
+        <dl>
+          <dt>Clinical safety documentation</dt>
+          <dd>Our DCB0129 hazard log and clinical safety case report, written to feed directly into your DCB0160 deployment work. Your organisation appoints its own clinical safety officer.</dd>
+
+          <dt>Completed DTAC response</dt>
+          <dd>A populated Digital Technology Assessment Criteria pack, ready for your assessment team.</dd>
+
+          <dt>Cyber assurance</dt>
+          <dd>Cyber Essentials certification and independent penetration testing reports, shared on request.</dd>
+
+          <dt>Data protection evidence</dt>
+          <dd>DPIA support, records of processing under UK GDPR, DSPT alignment and UK data residency.</dd>
+        </dl>
+        <p class="panel-note">Ostify is in limited pilot with a small number of services ahead of general availability.</p>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <div class="inner footer-grid">
+      <p>&copy; 2026 Ostify Health Ltd. Registered in England and Wales, company no. 17433177.<br>Registered office: 66 Paul Street, London EC2A 4NA, United Kingdom.</p>
+      <p><a href="mailto:divyan@ostify.co.uk">divyan@ostify.co.uk</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
