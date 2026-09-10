@@ -6,6 +6,7 @@
 <title>Request early access — Ostify</title>
 <meta name="description" content="Request early access to Ostify.">
 <meta name="theme-color" content="#FFFFFF">
+<script>document.documentElement.classList.add("js")</script>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,9 +40,9 @@
 
 <section class="hero">
   <div class="wrap">
-    <h1>Request early access.</h1>
-    <p class="lede">Ostify is in limited pilot ahead of general availability. Send a line about who you are and what your patients keep asking, and we’ll reply personally.</p>
-    <div class="cta">
+    <h1 data-reveal>Request early access.</h1>
+    <p class="lede" data-reveal style="--d:120ms">Ostify is in limited pilot ahead of general availability. Send a line about who you are and what your patients keep asking, and we’ll reply personally.</p>
+    <div class="cta" data-reveal style="--d:240ms">
       <a class="btn btn--lg" href="mailto:divyan@ostify.co.uk?subject=Early%20access%20request">Email divyan@ostify.co.uk</a>
     </div>
   </div>
@@ -49,7 +50,7 @@
 
 <section class="visual" style="padding-bottom:140px">
   <div class="wrap">
-    <figure><img src="images/contact.jpg" alt="" width="2400" height="1350" fetchpriority="high"></figure>
+    <figure><img data-parallax src="images/contact.jpg" alt="" width="2400" height="1350" fetchpriority="high"></figure>
   </div>
 </section>
 </main>
@@ -65,5 +66,6 @@
   </div>
 </footer>
 <script src="nav.js"></script>
+<script src="effects.js"></script>
 </body>
 </html>

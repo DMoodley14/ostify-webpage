@@ -6,6 +6,7 @@
 <title>Assurance — Ostify</title>
 <meta name="description" content="The clinical safety, data protection and cyber assurance evidence Ostify supplies with every agent.">
 <meta name="theme-color" content="#FFFFFF">
+<script>document.documentElement.classList.add("js")</script>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,21 +40,21 @@
 
 <section class="hero">
   <div class="wrap">
-    <h1>Built for the standards the NHS asks for.</h1>
-    <p class="lede">The compliance evidence isn’t a step at the end. It’s produced by the same pipeline that builds and tests the agent.</p>
+    <h1 data-reveal>Built for the standards the NHS asks for.</h1>
+    <p class="lede" data-reveal style="--d:120ms">The compliance evidence isn’t a step at the end. It’s produced by the same pipeline that builds and tests the agent.</p>
   </div>
 </section>
 
 <section class="visual">
   <div class="wrap">
-    <figure><img src="images/assurance.jpg" alt="" width="2400" height="1350" fetchpriority="high"></figure>
+    <figure><img data-parallax src="images/assurance.jpg" alt="" width="2400" height="1350" fetchpriority="high"></figure>
   </div>
 </section>
 
 <section class="section">
   <div class="wrap">
-    <h2>What we supply.</h2>
-    <ul class="points">
+    <h2 data-reveal>What we supply.</h2>
+    <ul class="points" data-reveal-stagger>
       <li><b>DCB0129</b><span>Hazard log and clinical safety case report for the Ostify platform, written to feed directly into your DCB0160 deployment work.</span></li>
       <li><b>DTAC</b><span>A populated Digital Technology Assessment Criteria response, ready for your assessment team.</span></li>
       <li><b>Data protection</b><span>ICO registered. DPIA support, records of processing under UK GDPR, DSPT alignment, and UK data residency.</span></li>
@@ -61,15 +62,63 @@
       <li><b>Grounding</b><span>Every agent answers only from the documents it was built from, cites its source, and declines anything beyond them.</span></li>
       <li><b>Escalation</b><span>Red-flag and crisis-adjacent messages are routed to a fixed escalation response, tested on every release.</span></li>
     </ul>
-    <div class="note"><b>Clinical safety officer.</b> We hold DCB0129 responsibility for the platform. Your organisation appoints its own clinical safety officer for deployment under DCB0160.</div>
+    <div class="note" data-reveal><b>Clinical safety officer.</b> We hold DCB0129 responsibility for the platform. Your organisation appoints its own clinical safety officer for deployment under DCB0160.</div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <h2 data-reveal>The documentation, in full.</h2>
+    <p class="sub" data-reveal style="--d:100ms">Twenty-four documents, produced at three levels: the platform, each agent, and the trust deploying it.</p>
+    <div class="doc-groups" data-reveal-stagger>
+      <div class="doc-group">
+        <h3>Hand-written by us<span>9</span></h3>
+        <ol>
+          <li>Clinical Risk Management Plan</li>
+          <li>Platform Hazard Log</li>
+          <li>Supplier Clinical Safety Case Report</li>
+          <li>Platform DPIA</li>
+          <li>Data Processing Agreement + Sub-processor Register</li>
+          <li>DCB0160 Addendum Template</li>
+          <li>Standards Conformance Statement</li>
+          <li>Technical Resources &amp; Release Process</li>
+          <li>Security Summary (DSPT, Cyber Essentials, pen test)</li>
+        </ol>
+      </div>
+      <div class="doc-group">
+        <h3>Generated per agent<span>9</span></h3>
+        <ol start="10">
+          <li>Intended Purpose Statement</li>
+          <li>Device Classification Record</li>
+          <li>Scope Boundary &amp; Crisis Response Specification</li>
+          <li>Source Document Register</li>
+          <li>Clinician Review Record</li>
+          <li>Evaluation Report</li>
+          <li>Agent Hazard Log</li>
+          <li>Transferred Controls Acceptance</li>
+          <li>Content Rights Warranty</li>
+          <li>Change &amp; Re-Review Record</li>
+        </ol>
+      </div>
+      <div class="doc-group">
+        <h3>Generated for the trust<span>5</span></h3>
+        <ol start="20">
+          <li>Pre-filled DCB0160 Addendum</li>
+          <li>DPIA Delta</li>
+          <li>Governance One-Pager</li>
+          <li>Post-Market Monitoring &amp; Incident Route</li>
+          <li>Accessibility Statement</li>
+        </ol>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="close">
   <div class="wrap">
-    <h2>Questions about any of this?</h2>
-    <p>Happy to walk your governance or information security team through the evidence.</p>
-    <div class="cta">
+    <h2 data-reveal>Questions about any of this?</h2>
+    <p data-reveal style="--d:120ms">Happy to walk your governance or information security team through the evidence.</p>
+    <div class="cta" data-reveal style="--d:240ms">
       <a class="btn btn--lg" href="contact.html">Request early access</a>
       <a href="mailto:divyan@ostify.co.uk">divyan@ostify.co.uk</a>
     </div>
@@ -88,5 +137,6 @@
   </div>
 </footer>
 <script src="nav.js"></script>
+<script src="effects.js"></script>
 </body>
 </html>

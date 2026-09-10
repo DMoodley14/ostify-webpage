@@ -4,8 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For organisations — Ostify</title>
-<meta name="description" content="Let your clinicians build patient-facing AI agents inside a template your governance team has already approved.">
+<meta name="description" content="Let your clinicians build patient-facing AI agents inside a safe sandbox, customised to your cohort. Currently in development.">
 <meta name="theme-color" content="#FFFFFF">
+<script>document.documentElement.classList.add("js")</script>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,38 +40,40 @@
 
 <section class="hero">
   <div class="wrap">
-    <h1>Let your clinicians build. Keep the governance.</h1>
-    <p class="lede">Your teams configure agents to their own service, inside a controlled template. Less freedom than open development, in exchange for a shape your governance has already signed off.</p>
-    <div class="cta">
-      <a class="btn btn--lg" href="contact.html">Request early access</a>
+    <div class="kicker" data-reveal>In development — not yet available</div>
+    <h1 data-reveal>Empowers your clinicians to build safely. In-house, customised for your cohort.</h1>
+    <p class="lede" data-reveal style="--d:120ms">Your teams configure agents to their own service, inside a controlled sandbox. This is still in build and not yet ready for deployment — please follow for updates.</p>
+    <div class="cta" data-reveal style="--d:240ms">
+      <a class="btn btn--lg" href="contact.html">Get notified</a>
     </div>
   </div>
 </section>
 
 <section class="visual">
   <div class="wrap">
-    <figure><img src="images/organisations.jpg" alt="" width="2400" height="1350" fetchpriority="high"></figure>
+    <figure><img data-parallax src="images/organisations.jpg" alt="" width="2400" height="1350" fetchpriority="high"></figure>
   </div>
 </section>
 
 <section class="section">
   <div class="wrap">
-    <h2>What you get.</h2>
-    <ul class="points">
-      <li><b>Templated builds</b><span>Clinicians customise scope, content and escalation for their own service, within guardrails set once for the organisation.</span></li>
-      <li><b>Evaluation on every agent</b><span>The same test sets run on every build and re-run when anything changes. Results are kept as evidence.</span></li>
-      <li><b>DCB0160 support</b><span>Pre-generated documentation for your deployment safety case, alongside our DCB0129 hazard log, DTAC response and intended use statement for each agent.</span></li>
+    <h2 data-reveal>What you get.</h2>
+    <ul class="points" data-reveal-stagger>
+      <li><b>Templated builds</b><span>Built in a safe sandbox, customised for your service and your patient cohort.</span></li>
+      <li><b>Enhanced evaluation</b><span>A full interactive dashboard for evaluating every build before it's piloted or released.</span></li>
+      <li><b>Compliance documentation</b><span>Our expert models generate drafts of your compliance documents, which our clinical safety officers review. Responsibilities are clearly outlined and maintained.</span></li>
     </ul>
-    <div class="note"><b>What stays with you.</b> Your organisation appoints its clinical safety officer and retains oversight. We supply the evidence they need to do that job.</div>
+    <div class="note" data-reveal><b>What stays with you.</b> Your organisation appoints its clinical safety officer and retains oversight. We supply the evidence they need to do that job.</div>
+    <div class="note" data-reveal><b>The result.</b> More than a 10x reduction in cost, and months of deployment time saved.</div>
   </div>
 </section>
 
 <section class="close">
   <div class="wrap">
-    <h2>Start with one service.</h2>
-    <p>We’re piloting with a small number of organisations. A single agent for a single question is a good first step.</p>
-    <div class="cta">
-      <a class="btn btn--lg" href="contact.html">Request early access</a>
+    <h2 data-reveal>We’re not available yet.</h2>
+    <p data-reveal style="--d:120ms">Organisation builds are still in development. Leave your details and we’ll let you know the moment it opens.</p>
+    <div class="cta" data-reveal style="--d:240ms">
+      <a class="btn btn--lg" href="contact.html">Get notified</a>
       <a href="mailto:divyan@ostify.co.uk">divyan@ostify.co.uk</a>
     </div>
   </div>
@@ -88,5 +91,6 @@
   </div>
 </footer>
 <script src="nav.js"></script>
+<script src="effects.js"></script>
 </body>
 </html>

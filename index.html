@@ -4,8 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ostify — Clinical AI agents, built by clinicians</title>
-<meta name="description" content="Ostify turns approved clinical content into grounded AI agents that are evaluated and documented before patients use them.">
+<meta name="description" content="Ostify turns your clinical content into your own AI agent — grounded, evaluated and documented before patients use it. Built by clinicians, not off-the-shelf.">
 <meta name="theme-color" content="#FFFFFF">
+<script>document.documentElement.classList.add("js")</script>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,9 +40,9 @@
 
 <section class="hero">
   <div class="wrap">
-    <h1>Your clinical content. Safe to put in front of patients.</h1>
-    <p class="lede">Ostify turns the material you already trust into AI agents that answer only from it, then evaluates and documents each one before it reaches anyone.</p>
-    <div class="cta">
+    <h1 data-reveal>Your clinical content, turned into AI and deployed safely.</h1>
+    <p class="lede" data-reveal style="--d:120ms">Ostify turns the material you already trust into AI agents that answer only from it, then evaluates and documents each one before it reaches anyone. Off-the-shelf models aren't built for your patient cohort — build your own.</p>
+    <div class="cta" data-reveal style="--d:240ms">
       <a class="btn btn--lg" href="contact.html">Request early access</a>
       <a href="#how">How it works</a>
     </div>
@@ -50,25 +51,32 @@
 
 <section class="visual">
   <div class="wrap">
-    <figure><img src="images/home.jpg" alt="" width="2400" height="1350" fetchpriority="high"></figure>
+    <figure><img data-parallax src="images/home.jpg" alt="" width="2400" height="1350" fetchpriority="high"></figure>
+  </div>
+</section>
+
+<section class="ticker" aria-label="Standards we build to">
+  <div class="ticker-track">
+    <span>DCB0129</span><span>DCB0160</span><span>DTAC</span><span>DSPT</span><span>UK GDPR</span><span>Cyber Essentials</span><span>ICO registered</span><span>UK data residency</span><span>Independent pen testing</span>
+    <span aria-hidden="true">DCB0129</span><span aria-hidden="true">DCB0160</span><span aria-hidden="true">DTAC</span><span aria-hidden="true">DSPT</span><span aria-hidden="true">UK GDPR</span><span aria-hidden="true">Cyber Essentials</span><span aria-hidden="true">ICO registered</span><span aria-hidden="true">UK data residency</span><span aria-hidden="true">Independent pen testing</span>
   </div>
 </section>
 
 <section class="section" id="how">
   <div class="wrap">
-    <h2>Three things, in order.</h2>
-    <div class="lines">
+    <h2 data-reveal>Three things, in order.</h2>
+    <div class="lines" data-reveal-stagger>
       <div class="line">
         <h3>Build<span>Osteoblast</span></h3>
-        <p>Upload the documents your service already uses. An agent is built that answers only from them.</p>
+        <p>A truly immersive build experience — transparent, customisable, done your way. No technical background needed.</p>
       </div>
       <div class="line">
         <h3>Evaluate<span>Osteoclast</span></h3>
-        <p>Hundreds of test questions, including the ones that should be refused or escalated. Nothing releases until it passes.</p>
+        <p>Run your own evaluations through an interactive dashboard — a combination of human and LLM review that's convenient, thorough and effective.</p>
       </div>
       <div class="line">
         <h3>Document<span>Osteocite</span></h3>
-        <p>The evidence becomes the paperwork governance asks for. DCB0129, DTAC, intended use.</p>
+        <p>Generates and assists with the heavy admin of the 20+ documents safe deployment needs — DCB0129, DTAC, evaluation records and much more.</p>
       </div>
     </div>
   </div>
@@ -76,29 +84,36 @@
 
 <section class="section" style="padding-top:0">
   <div class="wrap">
-    <h2>Who are you building for?</h2>
-    <div class="doors">
+    <h2 data-reveal>How would you like to build?</h2>
+    <div class="doors" data-reveal-stagger>
       <a class="door" href="clinicians.html">
-        <div class="kicker">For clinicians</div>
-        <h3>I want to build my own.</h3>
-        <p>You have the content and the clinical judgement. We give you the build, the evidence and the paperwork.</p>
+        <div class="kicker">For clinician-founders</div>
+        <h3>Bring those ideas to life.</h3>
+        <p>Your app, your way — without the need for an engineering team, an eval team or a compliance team. A 10–20x cost reduction.</p>
         <span class="go">Clinicians</span>
       </a>
       <a class="door" href="organisations.html">
         <div class="kicker">For organisations</div>
-        <h3>I want my clinicians to build, safely.</h3>
-        <p>Your teams configure agents inside a template your governance has already approved.</p>
+        <h3>Let your experts build.</h3>
+        <p>Let your teams build inside a safe sandbox. Evaluate, pilot and release — skip the bloated teams, and let the experts build. Your clinicians.</p>
         <span class="go">Organisations</span>
       </a>
     </div>
   </div>
 </section>
 
+<section class="section">
+  <div class="wrap">
+    <h2 data-reveal>The power is back in your hands.</h2>
+    <p class="sub" data-reveal style="--d:100ms">For years, a single health-tech deployment needed a small army — developers, compliance experts, UX designers. Healthtech was reserved for those with the budget to build one, and the benefits of safe AI stayed out of reach for the clinicians who understood patients best. Not anymore. You're the expert. It's your data, for your patients. No more settling for off-the-shelf.</p>
+  </div>
+</section>
+
 <section class="close">
   <div class="wrap">
-    <h2>We’re onboarding a small number of early users.</h2>
-    <p>Tell us what your patients keep asking. We’ll show you what a safe answer to it looks like.</p>
-    <div class="cta">
+    <h2 data-reveal>We’re onboarding a small number of early testers.</h2>
+    <p data-reveal style="--d:120ms">Get in touch. Tell us what you really need.</p>
+    <div class="cta" data-reveal style="--d:240ms">
       <a class="btn btn--lg" href="contact.html">Request early access</a>
       <a href="mailto:divyan@ostify.co.uk">divyan@ostify.co.uk</a>
     </div>
@@ -117,5 +132,6 @@
   </div>
 </footer>
 <script src="nav.js"></script>
+<script src="effects.js"></script>
 </body>
 </html>

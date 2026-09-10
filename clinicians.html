@@ -6,6 +6,7 @@
 <title>For clinicians — Ostify</title>
 <meta name="description" content="Build your own grounded, evaluated, documented AI agent from the clinical content you already trust.">
 <meta name="theme-color" content="#FFFFFF">
+<script>document.documentElement.classList.add("js")</script>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,9 +40,9 @@
 
 <section class="hero">
   <div class="wrap">
-    <h1>Build the agent you wish existed.</h1>
-    <p class="lede">For clinicians with content patients rely on, and a question they keep being asked. Condition guides, procedures, research participant information.</p>
-    <div class="cta">
+    <h1 data-reveal>Build the agent you wish existed.</h1>
+    <p class="lede" data-reveal style="--d:120ms">For clinicians with content patients rely on, and a question they keep being asked. Condition guides, procedures, research participant information.</p>
+    <div class="cta" data-reveal style="--d:240ms">
       <a class="btn btn--lg" href="contact.html">Request early access</a>
     </div>
   </div>
@@ -49,27 +50,27 @@
 
 <section class="visual">
   <div class="wrap">
-    <figure><img src="images/clinicians.jpg" alt="" width="2400" height="1350" fetchpriority="high"></figure>
+    <figure><img data-parallax src="images/clinicians.jpg" alt="" width="2400" height="1350" fetchpriority="high"></figure>
   </div>
 </section>
 
 <section class="section">
   <div class="wrap">
-    <h2>What you get.</h2>
-    <ul class="points">
+    <h2 data-reveal>What you get.</h2>
+    <ul class="points" data-reveal-stagger>
       <li><b>The build</b><span>Upload your approved documents. The agent answers only from them, cites the passage it used, and updates when your documents do.</span></li>
       <li><b>The evidence</b><span>Every release is tested against questions it should answer, questions it should refuse, and questions that signal a patient in trouble.</span></li>
       <li><b>The paperwork</b><span>A hazard log, clinical safety case, DTAC response and intended use statement, drafted from the evaluation rather than a blank template.</span></li>
     </ul>
-    <div class="note"><b>What stays with you.</b> Once your agent is live, you remain its clinical safety owner. We give you what you need to hold that responsibility; we don’t take it from you.</div>
+    <div class="note" data-reveal><b>What stays with you.</b> Once your agent is live, you remain its clinical safety owner. We give you what you need to hold that responsibility; we don’t take it from you.</div>
   </div>
 </section>
 
 <section class="close">
   <div class="wrap">
-    <h2>Bring the content. We’ll bring the rest.</h2>
-    <p>Early access is open to a small number of clinicians. Tell us what you’d build.</p>
-    <div class="cta">
+    <h2 data-reveal>Bring the content. We’ll bring the rest.</h2>
+    <p data-reveal style="--d:120ms">Early access is open to a small number of clinicians. Tell us what you’d build.</p>
+    <div class="cta" data-reveal style="--d:240ms">
       <a class="btn btn--lg" href="contact.html">Request early access</a>
       <a href="mailto:divyan@ostify.co.uk">divyan@ostify.co.uk</a>
     </div>
@@ -88,5 +89,6 @@
   </div>
 </footer>
 <script src="nav.js"></script>
+<script src="effects.js"></script>
 </body>
 </html>
