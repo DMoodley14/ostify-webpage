@@ -7,6 +7,44 @@
   navState();
   window.addEventListener('scroll', navState, {passive:true});
 
+  /* product showcase tabs — runs whatever the motion preference */
+  var tablist = document.querySelector('.tablist');
+  if(tablist){
+    var tabs = Array.prototype.slice.call(tablist.querySelectorAll('[role="tab"]'));
+    var panels = tabs.map(function(t){ return document.getElementById(t.getAttribute('aria-controls')); });
+
+    function select(i, moveFocus){
+      tabs.forEach(function(tab, j){
+        var on = i === j;
+        tab.setAttribute('aria-selected', on ? 'true' : 'false');
+        tab.setAttribute('tabindex', on ? '0' : '-1');
+        if(panels[j]) panels[j].hidden = !on;
+      });
+      if(moveFocus) tabs[i].focus();
+      /* keep the active pill in view when the strip scrolls horizontally */
+      if(tablist.scrollWidth > tablist.clientWidth){
+        var t = tabs[i];
+        tablist.scrollTo({
+          left: t.offsetLeft - (tablist.clientWidth - t.offsetWidth) / 2,
+          behavior: reduce ? 'auto' : 'smooth'
+        });
+      }
+    }
+    select(0, false);
+
+    tabs.forEach(function(tab, i){
+      tab.addEventListener('click', function(){ select(i, false); });
+      tab.addEventListener('keydown', function(e){
+        var last = tabs.length - 1, next = null;
+        if(e.key === 'ArrowDown' || e.key === 'ArrowRight') next = i === last ? 0 : i + 1;
+        else if(e.key === 'ArrowUp' || e.key === 'ArrowLeft') next = i === 0 ? last : i - 1;
+        else if(e.key === 'Home') next = 0;
+        else if(e.key === 'End') next = last;
+        if(next !== null){ e.preventDefault(); select(next, true); }
+      });
+    });
+  }
+
   var revealables = document.querySelectorAll('[data-reveal],[data-reveal-stagger]');
   if(reduce || !('IntersectionObserver' in window)){
     revealables.forEach(function(el){ el.classList.add('in'); });
