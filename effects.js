@@ -32,6 +32,21 @@
     }
     select(0, false);
 
+    /* Panels start lazy so they cost nothing on load, but a hidden panel's image
+       would otherwise only begin fetching on the click that reveals it — leaving
+       an empty frame. Once the section is near, promote them all to eager so
+       every switch paints instantly. */
+    var stage = document.querySelector('.stage');
+    if(stage && 'IntersectionObserver' in window){
+      var warm = new IntersectionObserver(function(entries){
+        if(entries.some(function(e){ return e.isIntersecting; })){
+          stage.querySelectorAll('img[loading="lazy"]').forEach(function(im){ im.loading = 'eager'; });
+          warm.disconnect();
+        }
+      }, {rootMargin: '300px'});
+      warm.observe(stage);
+    }
+
     tabs.forEach(function(tab, i){
       tab.addEventListener('click', function(){ select(i, false); });
       tab.addEventListener('keydown', function(e){
