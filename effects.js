@@ -1,4 +1,5 @@
 (function(){
+  document.documentElement.classList.add("js");
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var nav = document.querySelector('.nav');
 
@@ -111,4 +112,20 @@
       card.style.setProperty('--my', (ev.clientY - r.top) + 'px');
     });
   });
+})();
+
+(function () {
+  var replies={bring:['Bring your appointment letter and a list of your current medicines.','Source: Appointment guide · Preparing for your appointment'],change:['Contact the service using the details on your appointment letter.','Source: Appointment guide · Preparing for your appointment'],outside:['This appointment guide does not contain information to answer that question. Please speak with a healthcare professional.','Outside the example source’s scope']};
+  document.querySelectorAll('[data-example]').forEach(function(button){button.addEventListener('click',function(){
+    document.querySelectorAll('[data-example]').forEach(function(b){b.setAttribute('aria-pressed',String(b===button));});
+    var answer=document.getElementById('demo-answer');answer.replaceChildren();
+    replies[button.dataset.example].forEach(function(text,i){var p=document.createElement('p');p.textContent=text;if(i)p.className='source-label';answer.appendChild(p);});
+  });});
+  document.querySelectorAll('[data-expand-image]').forEach(function(link){link.addEventListener('click',function(e){
+    if(typeof HTMLDialogElement==='undefined')return;
+    e.preventDefault();var source=link.closest('.panel').querySelector('img');var dialog=document.createElement('dialog');dialog.className='image-dialog';dialog.setAttribute('aria-label','Enlarged product screenshot');
+    var close=document.createElement('button');close.type='button';close.textContent='Close screenshot';
+    var scroll=document.createElement('div');scroll.className='zoom-scroll';var img=document.createElement('img');img.src=source.src;img.alt=source.alt;scroll.appendChild(img);dialog.append(close,scroll);document.body.appendChild(dialog);
+    close.addEventListener('click',function(){dialog.close();});dialog.addEventListener('close',function(){dialog.remove();link.focus();});dialog.showModal();
+  });});
 })();

@@ -20,7 +20,7 @@
 <meta name="twitter:title" content="For clinicians — Ostify">
 <meta name="twitter:description" content="Build your own grounded, evaluated, documented AI agent from the clinical content you already trust.">
 <meta name="twitter:image" content="https://ostify.co.uk/images/og/clinicians.jpg">
-<script>document.documentElement.classList.add("js")</script>
+
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="alternate icon" href="/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,17 +29,18 @@
 <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 <nav class="nav">
   <div class="wrap">
-    <a class="wordmark" href="/">Ostify</a>
+    <a class="wordmark" href="/">Ostify<span class="brand-dot" aria-hidden="true">.</span></a>
     <div class="links">
       <a href="/clinicians/" aria-current="page">Clinicians</a>
       <a href="/organisations/">Organisations</a>
       <a href="/assurance/">Assurance</a>
-      <a href="/contact/">Contact</a>
+      <a href="/plans/">Plans</a>
     </div>
     <div class="nav-actions">
-      <a class="btn" href="/contact/">Request early access</a>
+      <a class="btn" href="/contact/">Talk to us <span aria-hidden="true">↗</span></a>
       <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -47,11 +48,11 @@
     <a href="/clinicians/" aria-current="page">Clinicians</a>
     <a href="/organisations/">Organisations</a>
     <a href="/assurance/">Assurance</a>
-    <a href="/contact/">Contact</a>
-    <a class="btn" href="/contact/">Request early access</a>
+    <a href="/plans/">Plans</a>
+    <a class="btn" href="/contact/">Talk to us <span aria-hidden="true">↗</span></a>
   </div>
 </nav>
-<main>
+<main id="main">
 
 <section class="hero">
   <div class="wrap">
@@ -65,7 +66,7 @@
       <li>Referral pathways explained</li>
     </ul>
     <div class="cta" data-reveal style="--d:240ms">
-      <a class="btn btn--lg" href="/contact/">Request early access</a>
+      <a class="btn btn--lg" href="/plans/">Explore plans</a>
     </div>
   </div>
 </section>
@@ -80,36 +81,29 @@
   <div class="wrap">
     <h2 data-reveal>What you get.</h2>
     <ul class="points" data-reveal-stagger>
-      <li><b>The build</b><span>Upload your approved documents. The agent answers only from them, cites the passage it used, and updates when your documents do.</span></li>
-      <li><b>The evidence</b><span>Every release is tested against questions it should answer, questions it should refuse, and questions that signal a patient in trouble.</span></li>
-      <li><b>The paperwork</b><span>A hazard log, clinical safety case, DTAC response and intended use statement, drafted from the evaluation rather than a blank template.</span></li>
+      <li><b>The build</b><span>Upload your approved documents. Review the source passages and inspect how responses use your content.</span></li>
+      <li><b>The evidence</b><span>Use the evaluation workflow to review questions the agent should answer, decline or escalate.</span></li>
+      <li><b>The paperwork</b><span>Planned for Founder: nine model-drafted documents through Osteocite Assist. See the assurance comparison for scope and responsibilities.</span></li>
     </ul>
-    <div class="note" data-reveal><b>What stays with you.</b> Once your agent is live, you remain its clinical safety owner. We give you what you need to hold that responsibility; we don’t take it from you.</div>
+    <div class="note" data-reveal><b>What stays with you.</b> On Founder, you sign off the documents, appoint your own CSO and complete DCB and DTAC work. Founder Plus will include a complete assurance solution with an Ostify CSO, DCB0129 and DTAC; it is not yet available.</div>
   </div>
 </section>
 
+<section class="section compact"><div class="wrap"><h2>From a leaflet to a useful answer.</h2><p class="sub">An illustrative interaction, not a live agent or a patient result. Select a question to see the intended experience.</p><div class="demo-grid"><div class="demo-source"><p class="eyebrow">Example source · Appointment guide</p><h3>Preparing for your appointment</h3><p>Please bring your appointment letter and a list of your current medicines. If you need to change your appointment, contact the service using the details on your letter.</p></div><div class="demo-chat"><div class="demo-questions" role="group" aria-label="Example questions"><button type="button" data-example="bring" aria-pressed="true">What should I bring?</button><button type="button" data-example="change" aria-pressed="false">How do I change my appointment?</button><button type="button" data-example="outside" aria-pressed="false">Can you diagnose my symptoms?</button></div><div id="demo-answer" aria-live="polite"><p>Bring your appointment letter and a list of your current medicines.</p><p class="source-label">Source: Appointment guide · Preparing for your appointment</p></div></div></div></div></section>
 <section class="close">
   <div class="wrap">
-    <h2 data-reveal>Bring the content. We’ll bring the rest.</h2>
-    <p data-reveal style="--d:120ms">Early access is open to a small number of clinicians. Tell us what you’d build.</p>
+    <h2 data-reveal>Start with your clinical content.</h2>
+    <p data-reveal style="--d:120ms">Explore the workflow and choose the support that fits your project.</p>
     <div class="cta" data-reveal style="--d:240ms">
-      <a class="btn btn--lg" href="/contact/">Request early access</a>
+      <a class="btn btn--lg" href="/plans/">Explore plans</a>
       <a href="mailto:info@ostify.co.uk">info@ostify.co.uk</a>
     </div>
   </div>
 </section>
 </main>
-<footer>
-  <div class="wrap foot">
-    <p>&copy; 2026 Ostify Health Ltd. Registered in England and Wales, no. 17433177. 66 Paul Street, London EC2A 4NA.</p>
-    <div class="flinks">
-      <a href="/clinicians/">Clinicians</a>
-      <a href="/organisations/">Organisations</a>
-      <a href="/assurance/">Assurance</a>
-      <a href="mailto:info@ostify.co.uk">info@ostify.co.uk</a>
-    </div>
-  </div>
-</footer>
+<footer><div class="wrap"><div class="footer-top"><a class="wordmark" href="/">Ostify<span class="brand-dot" aria-hidden="true">.</span></a><p>Clinical intelligence.<br>Human expertise.</p><div class="footer-column"><span>Explore</span><a href="/clinicians/">Clinicians</a><a href="/organisations/">Organisations</a><a href="/assurance/">Assurance</a><a href="/plans/">Plans</a></div><div class="footer-column"><span>Ostify</span><a href="/company/">Company</a><a href="/contact/">Contact</a><a href="mailto:info@ostify.co.uk">info@ostify.co.uk</a></div></div><div class="footer-bottom"><p>© 2026 Ostify Health Ltd. Registered in England and Wales, no. 17433177.<br>66 Paul Street, London EC2A 4NA.</p><div><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div></div></div></footer>
+<script src="/site-config.js"></script>
+<script src="/analytics.js"></script>
 <script src="/nav.js"></script>
 <script src="/effects.js"></script>
 </body>

@@ -6,11 +6,13 @@
   function closeMenu(){
     menu.classList.remove('open');
     btn.setAttribute('aria-expanded','false');
+    btn.setAttribute('aria-label','Open menu');
     document.body.classList.remove('menu-open');
   }
   function openMenu(){
     menu.classList.add('open');
     btn.setAttribute('aria-expanded','true');
+    btn.setAttribute('aria-label','Close menu');
     document.body.classList.add('menu-open');
   }
 
@@ -21,7 +23,7 @@
     a.addEventListener('click', closeMenu);
   });
   document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape') closeMenu();
+    if(e.key === 'Escape' && menu.classList.contains('open')) { closeMenu(); btn.focus(); }
   });
   window.addEventListener('resize', function(){
     if(window.innerWidth > 820) closeMenu();
