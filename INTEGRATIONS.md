@@ -22,19 +22,19 @@ No secrets belong in this public configuration. Analytics collection, email deli
 
 ## Imagery
 
-Two kinds only, and no stock photography — the abstract renders that used to sit on the home, clinicians and organisations pages were removed for being generic, off-palette and unrelated to each other.
+Two kinds only, and no stock photography — the abstract renders that used to sit on the home, clinicians and organisations pages were deleted for being generic, off-palette and unrelated to each other.
 
-**Product screenshots** are the real interface, held in the `.device` frame and always captioned with the point they make. They live in `images/product/` as `<step>-1300/-2600` (desktop) and `-m800/-m1600` (mobile), each as `.jpg` and `.webp`, wired through a `<picture>` block. In use: the home showcase (all five steps), clinicians (`passages`), assurance (`check`), plans (`evaluate`).
-
-**Trabecular artwork** fills the `.pattern` band on clinicians, organisations, company and contact. Ostify is named for bone and the three products are named for bone cells, so the artwork is the thing itself: a porous solid whose pores open and close across the frame according to a per-page density field. It is generated, not drawn — `tools/make-patterns.py` writes the four SVGs and is deterministic, so the same seed always produces the same artwork.
+**Trabecular artwork** is the brand moment, and there is exactly one: the `.pattern` band on the home page, placed immediately after Osteoblast, Osteoclast and Osteocite are named, with a caption explaining where those names come from. Ostify is named for bone and the products for bone cells, so the artwork is the thing itself — a porous solid whose pores open and close across the frame, running from open at the left to dense at the right. It is generated, not drawn: `tools/make-patterns.py` writes the SVG and is deterministic, so the same seed always produces the same artwork.
 
     python3 tools/make-patterns.py
 
-Each page has its own density field, which is what makes the four distinct while obviously one family: clinicians thickens left to right, organisations is densest through the middle, company is an even field, contact gathers to the left. To retune, change the `draw(...)` calls at the foot of the script and re-run; commit the regenerated SVGs.
+To retune, change the `draw(...)` call at the foot of the script and re-run; commit the regenerated SVG. Two constraints if you edit it. Pore radius must stay below half the spacing at the dense end, or the struts between pores vanish and the material breaks into disconnected specks. And the palette is deliberately light, because the band sits directly above body copy and must not compete with it. Coordinates are written at integer precision, which roughly halves the file for no visible difference; it lands around 74 KB gzipped.
 
-Two constraints if you edit it. Pore radius must stay below half the spacing at the dense end, or the struts between pores vanish and the material breaks into disconnected specks. And the palette is deliberately light — the band sits directly above body copy and must not compete with it.
+Keep it to the one placement. The artwork says what the company is, which is a thing worth saying once, on the page where you say it.
 
-Coordinates are written at integer precision, which roughly halves the file for no visible difference; the SVGs land around 56–84 KB gzipped.
+**Product screenshots** carry the interior pages, each held in the `.device` frame and captioned with the argument it supports rather than described: `passages` on clinicians, where the page claims you are in every step; `check` on assurance, which shows the sign-off gate the page is about; `evaluate` on plans, where the pipeline is what every tier shares; `content` on organisations, for the review step every team starts from. They live in `images/product/` as `<step>-1300/-2600` (desktop) and `-m800/-m1600` (mobile), each as `.jpg` and `.webp`, wired through a `<picture>` block. The home showcase uses all five steps.
+
+Company and contact carry no imagery by design — company has the founder portrait slot, and contact is a form.
 
 
 No pilot, testimonials, savings figures, certifications or launch dates have been invented. Hobbyist is the initial release, free at launch, and carries the Osteoblast builder and Osteoclast evaluator. Osteoblast is described as building agents “to DTAC expectations” rather than as DTAC-compliant, because Hobbyist includes no assurance service and the DTAC assessment stays with the customer. Founder, Founder Plus and Enterprise are presented as "contact us for pricing" rather than with published prices or dates — confirm that each assurance service described (Osteocite Assist drafting, an Ostify CSO, DCB0129, DTAC) can actually be delivered when enquired about, since the pages no longer label them as forthcoming.

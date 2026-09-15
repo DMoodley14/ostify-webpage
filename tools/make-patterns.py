@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate the trabecular artwork used across the site.
+"""Generate the trabecular artwork on the home page.
 
 Ostify is named for bone, and the three products are named for bone cells —
 osteoblast, osteoclast, osteocyte. Trabecular bone is not a network of lines;
@@ -9,7 +9,7 @@ organic pores cut out of it, the pores opening up or closing down across the
 frame according to a density field.
 
 Deterministic — the same seed always produces the same artwork. Re-run after
-changing anything here, and commit the resulting SVGs.
+changing anything here, and commit the resulting SVG.
 
     python3 tools/make-patterns.py
 """
@@ -124,18 +124,7 @@ def draw(name, w, h, seed, spacing, density, material=DEEP, wobble=0.30):
     print(f"{path.relative_to(OUT.parent.parent)}  {len(pores)} pores, {kb:.0f} KB")
 
 
-# One system, read differently per page through its density field.
-
-# Sparse at the left, consolidating to the right: content becoming structure.
-draw("clinicians", 2400, 1000, seed=17, spacing=54, density=lambda u: u ** 1.25)
-
-# Dense through the middle, opening at both edges: many teams, one controlled core.
-draw("organisations", 2400, 1000, seed=41, spacing=52,
-     density=lambda u: 1.0 - abs(u - 0.5) * 1.75)
-
-# An even, quiet field that lifts gently through the centre.
-draw("company", 2400, 1000, seed=73, spacing=58,
-     density=lambda u: 0.30 + 0.34 * math.sin(u * math.pi))
-
-# Gathering toward the left, where the form sits.
-draw("contact", 2400, 760, seed=5, spacing=56, density=lambda u: (1.0 - u) ** 1.15)
+# One piece, on the home page, immediately after the three products are named.
+# The field runs from open at the left to dense at the right: loose content
+# becoming something that carries load.
+draw("home", 2400, 940, seed=17, spacing=54, density=lambda u: u ** 1.25)
