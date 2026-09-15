@@ -10,8 +10,8 @@
     a.addEventListener('click',function () { window.ostifyTrack('plan_click'); });
   });
   if (config.freeProductUrl) {
-    document.querySelectorAll('a[href="/contact/?plan=Free"]').forEach(function (a) {
-      a.href = config.freeProductUrl; a.textContent = 'Start free';
+    document.querySelectorAll('a[data-free-product]').forEach(function (a) {
+      a.href = config.freeProductUrl; a.hidden = false;
       a.addEventListener('click',function () { window.ostifyTrack('free_product_click'); });
     });
   }
