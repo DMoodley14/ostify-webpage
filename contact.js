@@ -8,7 +8,7 @@
   form.addEventListener('input',function(){window.ostifyTrack('enquiry_started');},{once:true});
   form.addEventListener('submit',async function(e){
     e.preventDefault();if(!form.reportValidity()) return;
-    var data={name:form.elements.name.value.trim(),email:form.elements.email.value.trim(),plan:form.elements.plan.value,message:form.elements.message.value.trim()};
+    var data={name:form.elements.name.value.trim(),email:form.elements.email.value.trim(),plan:form.elements.plan.value,message:form.elements.message.value.trim(),company:form.elements.company.value};
     if(!data.name||!data.message){status.textContent='Please enter your name and a message.';return;}
     if(!config.enquiryEndpoint){
       var body='Name: '+data.name+'\nEmail: '+data.email+'\nPlan: '+data.plan+'\n\n'+data.message;
