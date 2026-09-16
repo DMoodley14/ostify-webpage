@@ -37,4 +37,6 @@ Keep it to the one placement. The artwork says what the company is, which is a t
 Assurance, plans, company and contact carry no imagery by design — company has the founder portrait slot, and contact is a form.
 
 
+**Certifications are in progress, not held.** The DSPT, Cyber Essentials and independent penetration testing are all underway and none is complete. The governance block on the home page says so explicitly, and the company page says there is no certification to point at yet — keep those two in agreement. When a certification completes, update both together, and only then state it as held.
+
 No pilot, testimonials, savings figures, certifications or launch dates have been invented. Hobbyist is the initial release, free at launch, and carries the Osteoblast builder and Osteoclast evaluator. Osteoblast is described as building agents “to DTAC expectations” rather than as DTAC-compliant, because Hobbyist includes no assurance service and the DTAC assessment stays with the customer. Founder, Founder Plus and Enterprise are presented as "contact us for pricing" rather than with published prices or dates — confirm that each assurance service described (Osteocite Assist drafting, an Ostify CSO, DCB0129, DTAC) can actually be delivered when enquired about, since the pages no longer label them as forthcoming.
