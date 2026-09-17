@@ -129,3 +129,26 @@
     close.addEventListener('click',function(){dialog.close();});dialog.addEventListener('close',function(){dialog.remove();link.focus();});dialog.showModal();
   });});
 })();
+
+/* Manual dashboard carousel: keyboard, buttons and touch; no auto-advance. */
+(function(){
+  document.querySelectorAll('[data-carousel]').forEach(function(root){
+    var tabs=Array.from(root.querySelectorAll('[role="tab"]'));
+    var slides=Array.from(root.querySelectorAll('[role="tabpanel"]'));
+    var current=0;
+    function select(index,focus){
+      current=(index+slides.length)%slides.length;
+      tabs.forEach(function(tab,i){tab.setAttribute('aria-selected',String(i===current));tab.tabIndex=i===current?0:-1;slides[i].hidden=i!==current;});
+      root.querySelector('.carousel-status').textContent=String(current+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0')+' · '+tabs[current].textContent;
+      if(focus) tabs[current].focus({preventScroll:true});
+      var strip=root.querySelector('.carousel-tabs');
+      strip.scrollLeft=Math.max(0,tabs[current].offsetLeft-strip.offsetLeft-(strip.clientWidth-tabs[current].offsetWidth)/2);
+    }
+    tabs.forEach(function(tab,i){tab.addEventListener('click',function(){select(i,false);});tab.addEventListener('keydown',function(e){var n=e.key==='ArrowRight'?current+1:e.key==='ArrowLeft'?current-1:e.key==='Home'?0:e.key==='End'?slides.length-1:null;if(n!==null){e.preventDefault();select(n,true);}});});
+    root.querySelector('[data-previous]').addEventListener('click',function(){select(current-1,false);});
+    root.querySelector('[data-next]').addEventListener('click',function(){select(current+1,false);});
+    var x=0,y=0;var stage=root.querySelector('.carousel-stage');
+    stage.addEventListener('touchstart',function(e){x=e.changedTouches[0].clientX;y=e.changedTouches[0].clientY;},{passive:true});
+    stage.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-x,dy=e.changedTouches[0].clientY-y;if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.5)select(current+(dx<0?1:-1),false);},{passive:true});
+  });
+})();
