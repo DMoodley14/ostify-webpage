@@ -2,7 +2,7 @@
   var form=document.getElementById('enquiry-form'); if(!form) return;
   var config=window.OSTIFY_CONFIG||{}, status=document.getElementById('enquiry-status'), button=document.getElementById('enquiry-submit');
   var plan=new URLSearchParams(location.search).get('plan');
-  if(plan==='Free') plan='Hobbyist'; // Preserve older enquiry links.
+  if(plan==='Free'||plan==='Hobbyist') plan='Always free'; // Preserve older enquiry links.
   if(Array.from(form.elements.plan.options).some(function(o){return o.value===plan;})) form.elements.plan.value=plan;
   if(config.enquiryEndpoint){button.textContent='Send enquiry';status.textContent='We’ll confirm here when your enquiry has been received.';}
   form.addEventListener('input',function(){window.ostifyTrack('enquiry_started');},{once:true});

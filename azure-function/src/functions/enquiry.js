@@ -6,7 +6,7 @@ const RECIPIENT = process.env.ENQUIRY_RECIPIENT || "info@ostify.co.uk";
 const CONNECTION_STRING = process.env.ACS_CONNECTION_STRING;
 const SENDER_ADDRESS = process.env.ACS_SENDER_ADDRESS;
 
-const PLAN_VALUES = new Set(["Hobbyist", "Founder", "Founder Plus", "Enterprise", "Not sure yet"]);
+const PLAN_VALUES = new Set(["Always free", "Founder", "Not sure yet"]);
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const emailClient = CONNECTION_STRING ? new EmailClient(CONNECTION_STRING) : null;
