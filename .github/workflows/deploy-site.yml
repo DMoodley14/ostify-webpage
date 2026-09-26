@@ -29,6 +29,7 @@ jobs:
       - name: Collect site files
         # The pages go in public/; server.js sits beside them and serves them.
         run: |
+          mkdir -p site/public
           rsync -a ./ site/public/ \
             --exclude site --exclude .git --exclude .github --exclude .gitignore \
             --exclude azure-function --exclude tools --exclude CNAME --exclude INTEGRATIONS.md \
