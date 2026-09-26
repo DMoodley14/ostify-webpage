@@ -1,0 +1,47 @@
+# Deploys ostify.co.uk to App Service in UK South, so the website is hosted
+# in the UK like the rest of Ostify (see privacy/index.html). The enquiry
+# function has its own workflow; its folder is left out of the site.
+
+name: Deploy website
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "azure-function/**"
+      - ".github/workflows/main_ostify-email.yml"
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  APP_SERVICE_NAME: app-ostify-site
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Collect site files
+        run: |
+          rsync -a ./ site/ \
+            --exclude site --exclude .git --exclude .github --exclude .gitignore \
+            --exclude azure-function --exclude CNAME --exclude INTEGRATIONS.md \
+            --exclude .DS_Store
+
+      - name: Log in to Azure
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_EDCA48F50A604664A62E128C72CC8DC0 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_4D6A381B4FD740B4A039EDAB890C43DB }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_8BA1BD3C0A734440977BAE0C6F87D267 }}
+
+      - name: Deploy static files to App Service
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: ${{ env.APP_SERVICE_NAME }}
+          package: ./site
