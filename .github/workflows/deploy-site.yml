@@ -32,7 +32,7 @@ jobs:
           mkdir -p site/public
           rsync -a ./ site/public/ \
             --exclude site --exclude .git --exclude .github --exclude .gitignore \
-            --exclude azure-function --exclude tools --exclude CNAME --exclude INTEGRATIONS.md \
+            --exclude azure-function --exclude tools --exclude INTEGRATIONS.md \
             --exclude server.js --exclude .DS_Store
           cp server.js site/
 
