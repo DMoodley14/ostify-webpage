@@ -30,7 +30,7 @@ jobs:
         run: |
           rsync -a ./ site/ \
             --exclude site --exclude .git --exclude .github --exclude .gitignore \
-            --exclude azure-function --exclude CNAME --exclude INTEGRATIONS.md \
+            --exclude azure-function --exclude tools --exclude CNAME --exclude INTEGRATIONS.md \
             --exclude .DS_Store
 
       - name: Log in to Azure
