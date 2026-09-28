@@ -189,3 +189,6 @@ html.js .msg{opacity:0;transform:translateY(10px) scale(.98);animation:msgIn .6s
 
 .guardrails-note{font-size:15px;color:#C9D8CF;margin-top:18px;max-width:30ch}
 .guardrails li b{color:#fff;font-weight:600}
+.nav-contact{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border:1px solid var(--hair);border-radius:999px;font-size:13px;text-decoration:none;color:var(--ink);transition:border-color .2s}
+.nav-contact:hover,.nav-contact[aria-current=page]{border-color:var(--ink)}
+@media(max-width:820px){.nav-contact{display:none}}
