@@ -22,7 +22,7 @@
 /* hero */
 .xh{background:radial-gradient(1200px 600px at 80% 20%,#1C3429 0%,var(--x-forest) 60%);color:#EEF3EF;padding:96px 0 0;overflow:hidden}
 .xh-grid{display:grid;grid-template-columns:5fr 7fr;gap:56px;align-items:center}
-.xh h1{font-size:clamp(42px,5.2vw,76px);line-height:1.0;letter-spacing:-.045em;margin:22px 0 0;max-width:13ch}
+.xh h1{font-size:clamp(42px,5.2vw,76px);line-height:1.0;letter-spacing:-.045em;margin:22px 0 0;max-width:16ch}
 .xh-copy{padding-bottom:24px}
 .xh-lede{font-size:19px;line-height:1.55;color:var(--x-mint);margin-top:28px;max-width:44ch}
 .xh-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:40px}
