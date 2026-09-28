@@ -9,6 +9,12 @@
   document.querySelectorAll('a[href="/plans/"]').forEach(function (a) {
     a.addEventListener('click',function () { window.ostifyTrack('plan_click'); });
   });
+  if (config.signupUrl) {
+    document.querySelectorAll('a[data-signup]').forEach(function (a) {
+      a.href = config.signupUrl;
+      a.addEventListener('click',function () { window.ostifyTrack('free_product_click'); });
+    });
+  }
   if (config.freeProductUrl) {
     document.querySelectorAll('a[data-free-product]').forEach(function (a) {
       a.href = config.freeProductUrl; a.hidden = false;

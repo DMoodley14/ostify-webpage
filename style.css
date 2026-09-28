@@ -186,3 +186,6 @@ html.js .msg{opacity:0;transform:translateY(10px) scale(.98);animation:msgIn .6s
 @media(max-width:820px){.guardrails{grid-template-columns:1fr;gap:28px;padding:40px 32px}}
 @media(max-width:600px){.why{grid-template-columns:1fr;margin-top:44px}.why-card{padding:28px 24px}.guardrails{padding:32px 24px}.guardrails ul{grid-template-columns:1fr}}
 .why-section{padding-bottom:40px}
+
+.guardrails-note{font-size:15px;color:#C9D8CF;margin-top:18px;max-width:30ch}
+.guardrails li b{color:#fff;font-weight:600}
