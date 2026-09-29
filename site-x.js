@@ -44,14 +44,23 @@ document.querySelectorAll('[data-gal]').forEach(function (gal) {
   window.addEventListener('scroll', reveal, { passive: true });
   window.addEventListener('load', reveal);
   reveal();
+  // A thin bar under the top edge that fills as you read.
+  var bar = document.createElement('div');
+  bar.className = 'xprogress';
+  bar.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(bar);
+
   function update() {
     var vh = window.innerHeight;
     items.forEach(function (el) {
-      var r = el.getBoundingClientRect();
-      if (r.bottom < -200 || r.top > vh + 200) return;
+      // Measure the parent, not the element, so its own movement doesn't feed back.
+      var r = el.parentElement.getBoundingClientRect();
+      if (r.bottom < -300 || r.top > vh + 300) return;
       var offset = (r.top + r.height / 2 - vh / 2) * parseFloat(el.dataset.parallax);
       el.style.transform = 'translate3d(0,' + offset.toFixed(1) + 'px,0)';
     });
+    var max = document.documentElement.scrollHeight - vh;
+    bar.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, window.scrollY / max) : 0) + ')';
     ticking = false;
   }
   window.addEventListener('scroll', function () {
@@ -59,4 +68,18 @@ document.querySelectorAll('[data-gal]').forEach(function (gal) {
   }, { passive: true });
   window.addEventListener('resize', update);
   update();
+
+  // The hero chat leans a few degrees toward the pointer.
+  var art = document.querySelector('.xh-art');
+  var card = art && art.querySelector('.chat-demo');
+  if (card && window.matchMedia('(hover: hover)').matches) {
+    var hero = art.closest('.xh');
+    hero.addEventListener('pointermove', function (e) {
+      var r = hero.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width - 0.5;
+      var y = (e.clientY - r.top) / r.height - 0.5;
+      card.style.transform = 'rotateY(' + (x * 8).toFixed(2) + 'deg) rotateX(' + (-y * 6).toFixed(2) + 'deg)';
+    });
+    hero.addEventListener('pointerleave', function () { card.style.transform = ''; });
+  }
 })();
