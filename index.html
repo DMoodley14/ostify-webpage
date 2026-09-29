@@ -43,7 +43,7 @@
 <link rel="icon" href="/favicon-512.png" type="image/png" sizes="512x512">
 <link rel="apple-touch-icon" href="/favicon-180.png">
 <link rel="stylesheet" href="/style.css?v=20260929-nav">
-<link rel="stylesheet" href="/site-x.css?v=20260929b">
+<link rel="stylesheet" href="/site-x.css?v=20260929c">
 </head>
 <body class="home">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -74,6 +74,7 @@
 <main id="main" class="xp">
 
 <section class="xh">
+  <div class="xh-orbs" aria-hidden="true"><i></i><i></i><i></i></div>
   <div class="xw xh-grid">
     <div class="xh-copy">
       <p class="xl xl--light">Ostify · for clinicians</p>
@@ -84,7 +85,7 @@
         <a class="xb xb--ghost" href="#how">How it works</a>
       </div>
     </div>
-    <div class="xh-art"><figure class="chat-demo" aria-label="Illustrative example of a patient conversation with an Ostify agent">
+    <div class="xh-art" data-parallax="-0.12"><figure class="chat-demo" aria-label="Illustrative example of a patient conversation with an Ostify agent">
       <div class="chat-head"><span class="chat-avatar" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><g transform="rotate(-45 12 12)" fill="#fff"><circle cx="5.2" cy="9.6" r="2.6"/><circle cx="5.2" cy="14.4" r="2.6"/><circle cx="18.8" cy="9.6" r="2.6"/><circle cx="18.8" cy="14.4" r="2.6"/><rect x="5.2" y="10" width="13.6" height="4" rx="1"/></g></svg></span><div><b>Bone Health Clinic Assistant</b><span>Answers only from approved clinic content</span></div></div>
       <div class="chat-body">
         <p class="msg msg--patient" style="--t:0">Is it safe for me to exercise after my DEXA scan?</p>
@@ -142,7 +143,7 @@
       <li><a href="#stage-build"><span class="xflow-n">1</span><b>Build</b><span class="xl">Osteoblast</span><p>Create your agent from your own content in a private sandbox.</p><span class="xtag">Free</span></a></li>
       <li><a href="#stage-evaluate"><span class="xflow-n">2</span><b>Evaluate</b><span class="xl">Osteoclast</span><p>Put it through a fixed question set and review every answer.</p><span class="xtag">Founder plan · beta</span></a></li>
       <li><a href="#stage-assure"><span class="xflow-n">3</span><b>Assure</b><span class="xl">Osteocite</span><p>Get your assurance documents drafted and keep them in one place.</p><span class="xtag">Founder plan · beta</span></a></li>
-      <li><a href="#stage-live"><span class="xflow-n">4</span><b>Go live</b><span class="xl">Live review</span><p>We review your agent individually, then give you a link for patients.</p><span class="xtag">One-off fee</span></a></li>
+      <li><a href="#stage-live"><span class="xflow-n">4</span><b>Go live</b><span class="xl">Live review</span><p>We review your agent individually, then give you a link for patients.</p><span class="xtag">Priced per app</span></a></li>
     </ol>
   </div>
 </section>
@@ -159,10 +160,10 @@
       <p class="xs-lede">Build is where the quality of your agent is decided. Upload as much as you can, take your time over the passages, and talk to it until it sounds like your service.</p>
       <div class="xgal" data-gal>
         <div class="xgal-tabs" role="tablist" aria-label="Build steps"><button type="button" role="tab" id="gt-build-describe" aria-controls="gp-build-describe" aria-selected="true" tabindex="0">Describe</button><button type="button" role="tab" id="gt-build-content" aria-controls="gp-build-content" aria-selected="false" tabindex="-1">Content</button><button type="button" role="tab" id="gt-build-behaviour" aria-controls="gp-build-behaviour" aria-selected="false" tabindex="-1">Behaviour</button><button type="button" role="tab" id="gt-build-appearance" aria-controls="gp-build-appearance" aria-selected="false" tabindex="-1">Appearance</button></div>
-        <div class="xgal-panel" role="tabpanel" id="gp-build-describe" aria-labelledby="gt-build-describe"><figure class="xplate"><img src="/images/app/build-describe-1200.webp" srcset="/images/app/build-describe-1200.webp 1200w, /images/app/build-describe-2000.webp 2000w" sizes="(max-width:820px) 100vw, 900px" alt="Osteoblast Describe step: the agent’s name, who it is for and what it helps with, beside a preview of how the agent is briefed." width="2000" height="1254" loading="lazy" decoding="async"></figure><p class="xcap">Brief it like a new member of staff, and see exactly how the agent is instructed.</p></div>
-        <div class="xgal-panel" role="tabpanel" id="gp-build-content" aria-labelledby="gt-build-content" hidden><figure class="xplate"><img src="/images/app/build-content-1200.webp" srcset="/images/app/build-content-1200.webp 1200w, /images/app/build-content-2000.webp 2000w" sizes="(max-width:820px) 100vw, 900px" alt="Osteoblast Content step: upload a file, write text or add a question and answer, with the uploaded DEXA leaflet listed." width="2000" height="1254" loading="lazy" decoding="async"></figure><p class="xcap">Upload leaflets, write your own text or add single questions and answers.</p></div>
-        <div class="xgal-panel" role="tabpanel" id="gp-build-behaviour" aria-labelledby="gt-build-behaviour" hidden><figure class="xplate"><img src="/images/app/build-behaviour-1200.webp" srcset="/images/app/build-behaviour-1200.webp 1200w, /images/app/build-behaviour-2000.webp 2000w" sizes="(max-width:820px) 100vw, 900px" alt="Osteoblast Behaviour step: reading level, warmth and answer length, and rules the agent must never break." width="2000" height="1254" loading="lazy" decoding="async"></figure><p class="xcap">Set reading level, warmth and length, and write the lines it must never cross.</p></div>
-        <div class="xgal-panel" role="tabpanel" id="gp-build-appearance" aria-labelledby="gt-build-appearance" hidden><figure class="xplate"><img src="/images/app/build-appearance-1200.webp" srcset="/images/app/build-appearance-1200.webp 1200w, /images/app/build-appearance-2000.webp 2000w" sizes="(max-width:820px) 100vw, 900px" alt="Osteoblast Appearance step: friendly name, logo and first message, with a live phone preview." width="2000" height="1254" loading="lazy" decoding="async"></figure><p class="xcap">Name, logo and welcome message, with a live phone preview.</p></div>
+        <div class="xgal-panel" role="tabpanel" id="gp-build-describe" aria-labelledby="gt-build-describe"><figure class="xplate"><div class="xwin" data-parallax="-0.06"><div class="xwin-bar" aria-hidden="true"><i></i><i></i><i></i><span>app.ostify.co.uk</span></div><img src="/images/app/build-describe-1200.webp" srcset="/images/app/build-describe-1200.webp 1200w, /images/app/build-describe-2000.webp 2000w" sizes="(max-width:820px) 100vw, 900px" alt="Osteoblast Describe step: the agent’s name, who it is for and what it helps with, beside a preview of how the agent is briefed." width="2000" height="1357" loading="lazy" decoding="async"></div></figure><p class="xcap">Brief it like a new member of staff, and see exactly how the agent is instructed.</p></div>
+        <div class="xgal-panel" role="tabpanel" id="gp-build-content" aria-labelledby="gt-build-content" hidden><figure class="xplate"><div class="xwin" data-parallax="-0.06"><div class="xwin-bar" aria-hidden="true"><i></i><i></i><i></i><span>app.ostify.co.uk</span></div><img src="/images/app/build-content-1200.webp" srcset="/images/app/build-content-1200.webp 1200w, /images/app/build-content-2000.webp 2000w" sizes="(max-width:820px) 100vw, 900px" alt="Osteoblast Content step: upload a file, write text or add a question and answer, with the uploaded DEXA leaflet listed." width="2000" height="1357" loading="lazy" decoding="async"></div></figure><p class="xcap">Upload leaflets, write your own text or add single questions and answers.</p></div>
+        <div class="xgal-panel" role="tabpanel" id="gp-build-behaviour" aria-labelledby="gt-build-behaviour" hidden><figure class="xplate"><div class="xwin" data-parallax="-0.06"><div class="xwin-bar" aria-hidden="true"><i></i><i></i><i></i><span>app.ostify.co.uk</span></div><img src="/images/app/build-behaviour-1200.webp" srcset="/images/app/build-behaviour-1200.webp 1200w, /images/app/build-behaviour-2000.webp 2000w" sizes="(max-width:820px) 100vw, 900px" alt="Osteoblast Behaviour step: reading level, warmth and answer length, and rules the agent must never break." width="2000" height="1357" loading="lazy" decoding="async"></div></figure><p class="xcap">Set reading level, warmth and length, and write the lines it must never cross.</p></div>
+        <div class="xgal-panel" role="tabpanel" id="gp-build-appearance" aria-labelledby="gt-build-appearance" hidden><figure class="xplate"><div class="xwin" data-parallax="-0.06"><div class="xwin-bar" aria-hidden="true"><i></i><i></i><i></i><span>app.ostify.co.uk</span></div><img src="/images/app/build-appearance-1200.webp" srcset="/images/app/build-appearance-1200.webp 1200w, /images/app/build-appearance-2000.webp 2000w" sizes="(max-width:820px) 100vw, 900px" alt="Osteoblast Appearance step: friendly name, logo and first message, with a live phone preview." width="2000" height="1357" loading="lazy" decoding="async"></div></figure><p class="xcap">Name, logo and welcome message, with a live phone preview.</p></div>
       </div>
       <dl class="xdl">
         <div><dt>Define it</dt><dd>Who it is for, what it helps with and where it stops.</dd></div>
@@ -194,9 +195,7 @@
         <li><b>Review</b><span>You accept or overrule every score, and can send a review link to other clinicians.</span></li>
         <li><b>Report</b><span>Share an evaluation report with your stakeholders.</span></li>
       </ol>
-      <figure class="xplate">
-        <img src="/images/app/test-prepare-1200.webp" srcset="/images/app/test-prepare-1200.webp 1200w, /images/app/test-prepare-2000.webp 2000w" sizes="(max-width:820px) 100vw, 900px" alt="Osteoclast Prepare step: choosing how many questions to generate, with a breakdown of emergencies, edge-of-scope, out-of-scope and trick questions plus the fixed safety core." width="2000" height="1254" loading="lazy" decoding="async">
-      </figure>
+      <figure class="xplate"><div class="xwin" data-parallax="-0.06"><div class="xwin-bar" aria-hidden="true"><i></i><i></i><i></i><span>app.ostify.co.uk</span></div><img src="/images/app/test-prepare-1200.webp" srcset="/images/app/test-prepare-1200.webp 1200w, /images/app/test-prepare-2000.webp 2000w" sizes="(max-width:820px) 100vw, 900px" alt="Osteoclast Prepare step: choosing how many questions to generate, with a breakdown of emergencies, edge-of-scope, out-of-scope and trick questions plus the fixed safety core." width="2000" height="1357" loading="lazy" decoding="async"></div></figure>
       <p class="xcap">Choose how many questions to generate. Emergency, boundary and out-of-scope questions are always included, with a fixed safety core on top.</p>
       <div class="xcols">
         <div>
@@ -227,7 +226,7 @@
     <div class="xstage-main">
       <h2>Nine documents drafted from your build and evaluation.</h2>
       <p class="xs-lede">Osteocite Assist writes the first drafts for you to review and sign off. The dashboard holds them alongside everything else your assurance process needs. Agents built on Ostify are aligned with DSPT and DTAC, and our own DCB0129 is published for you to reference.</p>
-      <figure class="xplate"><img src="/images/app/assure-1200.webp" srcset="/images/app/assure-1200.webp 1200w, /images/app/assure-2000.webp 2000w" sizes="(max-width:820px) 100vw, 900px" alt="Osteocite Assure screen: nine records to read and sign, listed from Intended Purpose Statement to Change and Re-Review Record, with your own compliance documents below." width="2000" height="1254" loading="lazy" decoding="async"></figure>
+      <figure class="xplate"><div class="xwin" data-parallax="-0.06"><div class="xwin-bar" aria-hidden="true"><i></i><i></i><i></i><span>app.ostify.co.uk</span></div><img src="/images/app/assure-1200.webp" srcset="/images/app/assure-1200.webp 1200w, /images/app/assure-2000.webp 2000w" sizes="(max-width:820px) 100vw, 900px" alt="Osteocite Assure screen: nine records to read and sign, listed from Intended Purpose Statement to Change and Re-Review Record, with your own compliance documents below." width="2000" height="1357" loading="lazy" decoding="async"></div></figure>
       <p class="xcap">Each record is drafted from your agent. Read it, edit anything that isn’t right, then sign it as yours.</p>
       <ol class="xindex">
         <li>Intended Purpose Statement</li>
@@ -250,15 +249,15 @@
     <aside class="xstage-side">
       <span class="xstage-n">4</span>
       <b>Go live</b>
-      <span class="xl">Live review · One-off fee</span>
+      <span class="xl">Live review · Priced per app</span>
     </aside>
     <div class="xstage-main">
       <h2>No agent reaches a patient until we have reviewed it.</h2>
       <p class="xs-lede">We check your content and guidelines, confirm the agent stays outside medical device territory, and try to make it misbehave, including with prompt injection. Approval is not a safety guarantee. That decision stays with your clinical safety officer.</p>
-      <figure class="xplate"><img src="/images/app/golive-1200.webp" srcset="/images/app/golive-1200.webp 1200w, /images/app/golive-2000.webp 2000w" sizes="(max-width:820px) 100vw, 900px" alt="Go live screen: an agent submitted to Ostify for review, with the readiness checklist a reviewer looks at." width="2000" height="1254" loading="lazy" decoding="async"></figure>
+      <figure class="xplate"><div class="xwin" data-parallax="-0.06"><div class="xwin-bar" aria-hidden="true"><i></i><i></i><i></i><span>app.ostify.co.uk</span></div><img src="/images/app/golive-1200.webp" srcset="/images/app/golive-1200.webp 1200w, /images/app/golive-2000.webp 2000w" sizes="(max-width:820px) 100vw, 900px" alt="Go live screen: an agent submitted to Ostify for review, with the readiness checklist a reviewer looks at." width="2000" height="1357" loading="lazy" decoding="async"></div></figure>
       <p class="xcap">Submit when you are ready. The readiness checklist shows what the reviewer will look at.</p>
       <dl class="xspec">
-        <div><dt>Review fee</dt><dd><b>£1,000 to £3,000+</b>One-off, depending on the size and scope of your agent.</dd></div>
+        <div><dt>Review fee</dt><dd><b>Priced app by app</b>A one-off fee, set for each agent according to its size and scope. We will quote before we start.</dd></div>
         <div><dt>On approval</dt><dd><b>A link for patients</b>Share it wherever your patients will find it.</dd></div>
         <div><dt>Your pilot</dt><dd><b>Tokens included</b>Enough to pilot with your membership. Buy more when you need them.</dd></div>
         <div><dt>After changes</dt><dd><b>Re-approval</b>Edit your content or key settings and the agent goes back to review before patients see the change.</dd></div>
@@ -343,7 +342,7 @@
       <div><h2>Common questions.</h2></div>
     </header>
     <div class="xfaq">
-      <details><summary>What does it cost?</summary><p>Building is free, and always will be. Evaluation and assurance drafting come with the Founder plan, currently in beta. Live review is a one-off fee, typically £1,000 to £3,000 or more, and your membership includes tokens to pilot. See <a href="/plans/">plans</a>.</p></details>
+      <details><summary>What does it cost?</summary><p>Building is free, and always will be. Evaluation and assurance drafting come with the Founder plan, currently in beta. Live review is a one-off fee, priced app by app according to your agent’s size and scope, and your membership includes tokens to pilot. See <a href="/plans/">plans</a>.</p></details>
       <details><summary>Can I put an agent live as soon as I have built it?</summary><p>No. Only agents that have passed an Ostify live review can be reached by patients, and changing content or key settings sends them back for review.</p></details>
       <details><summary>Who is responsible for clinical safety?</summary><p>You are. You own and manufacture the agent, and your clinical safety officer signs it off. Our guardrails, evaluation tools, drafted documents and published DCB0129 support your safety case.</p></details>
       <details><summary>Can Ostify see what I build?</summary><p>Not unless you give us permission or submit it for live review. Everything you build remains your intellectual property.</p></details>
@@ -371,7 +370,7 @@
 <script src="/analytics.js"></script>
 <script src="/consent.js"></script>
 <script src="/nav.js"></script>
-<script src="/site-x.js?v=1"></script>
+<script src="/site-x.js?v=4"></script>
 <script src="/effects.js?v=20260917-carousel"></script>
 </body>
 </html>
