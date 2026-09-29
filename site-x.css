@@ -383,3 +383,6 @@ footer p{font-family:ui-rounded,'SF Pro Rounded',var(--sans)}
 .xs--paper .xfloat,.xs:not(.xs--dark) .xfloat{color:#2F6F63}
 @media(max-width:820px){.xfloat .xosteon{opacity:.12}}
 @media(prefers-reduced-motion:reduce){.xosteon,.xosteon-spin{animation:none}}
+.xh-backed{display:flex;align-items:center;gap:14px;margin-top:44px;padding-top:22px;border-top:1px solid #ffffff1f;max-width:420px}
+.xh-backed span{font:500 11.5px var(--x-mono,ui-monospace,Menlo,monospace);color:#8FA597;white-space:nowrap}
+.xh-backed img{height:38px;width:auto;filter:brightness(0) invert(1);opacity:.9}
