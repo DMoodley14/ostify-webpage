@@ -357,3 +357,85 @@ document.querySelectorAll('[data-gal]').forEach(function (gal) {
     hero.addEventListener('pointerleave', function () { mouse.x = mouse.y = -9999; });
   });
 })();
+
+// Hero chat: cycle through example agents built on Ostify.
+(function () {
+  var demo = document.querySelector('.xh-art .chat-demo');
+  if (!demo) return;
+  var ICON = {
+    bone: demo.querySelector('.chat-avatar').innerHTML,
+    clipboard: '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4.5" width="12" height="16" rx="2"/><path d="M9.5 3h5v3h-5z"/><path d="m9.5 13 2 2 3.5-4"/></svg>',
+    lungs: '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5v8.5"/><path d="M12 12c-1.2 0-2 .9-2 2v3.6c0 1.6-1.3 2.7-2.9 2.3C5.3 19.6 4 17.8 4 15.8v-2.9c0-3 1.4-6 4-7 1-.4 2 .4 2 1.5V10"/><path d="M12 12c1.2 0 2 .9 2 2v3.6c0 1.6 1.3 2.7 2.9 2.3 1.8-.3 3.1-2.1 3.1-4.1v-2.9c0-3-1.4-6-4-7-1-.4-2 .4-2 1.5V10"/></svg>'
+  };
+  var AGENTS = [
+    { icon: 'bone', name: 'Bone Health Clinic Assistant', sub: 'Answers only from approved clinic content',
+      chat: [
+        ['q', 'Is it safe for me to exercise after my DEXA scan?'],
+        ['a', 'Staying active is usually encouraged. Your clinic’s leaflet suggests weight-bearing activity such as walking, plus strength exercises two to three times a week. If you have had a recent fracture, check with your clinic team first.', 'Exercise and your bones · passage 4 · approved'],
+        ['q', 'What should I bring to my appointment?'],
+        ['a', 'Please bring your appointment letter and any questions you would like to ask. Try to arrive ten minutes early so you have time to check in.', 'Your clinic appointment · passage 2 · approved']
+      ] },
+    { icon: 'clipboard', name: 'Endoscopy Unit Assistant', sub: 'Preparing for your colonoscopy',
+      chat: [
+        ['q', 'When do I need to stop eating before my colonoscopy?'],
+        ['a', 'Your preparation leaflet asks you to follow the low-fibre diet in your pack, then stop eating solid food the day before your test. You can keep drinking clear fluids until the time shown on your appointment letter.', 'Preparing for your colonoscopy · passage 3 · approved'],
+        ['q', 'Can I still take my usual tablets?'],
+        ['a', 'That depends on which medicines you take, so please call the endoscopy unit on the number on your letter. Your leaflet asks you to tell them if you take blood thinners or medicines for diabetes.', 'Your medicines before the test · passage 5 · approved']
+      ] },
+    { icon: 'lungs', name: 'Asthma Support Assistant', sub: 'From your respiratory clinic’s guides',
+      chat: [
+        ['q', 'How do I know my inhaler technique is right?'],
+        ['a', 'Your clinic’s guide suggests breathing out fully, sealing your lips around the mouthpiece and breathing in slowly as you press. It also recommends asking your nurse or pharmacist to check your technique at your next review.', 'Using your inhaler · passage 2 · approved'],
+        ['q', 'My reliever isn’t helping and I can’t catch my breath'],
+        ['u', 'This could be an emergency. Call 999 now, or ask someone to call for you. Sit upright and keep using your reliever inhaler while you wait.', 'Emergency signposting · set by your clinic']
+      ] }
+  ];
+
+  var head = demo.querySelector('.chat-head');
+  var body = demo.querySelector('.chat-body');
+  var i = 0, timer, paused = false;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var dots = document.createElement('div');
+  dots.className = 'chat-dots';
+  dots.setAttribute('role', 'tablist');
+  dots.setAttribute('aria-label', 'Example agents');
+  AGENTS.forEach(function (a, n) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('role', 'tab');
+    b.setAttribute('aria-label', a.name);
+    b.addEventListener('click', function () { show(n); restart(); });
+    dots.appendChild(b);
+  });
+  demo.parentElement.appendChild(dots);
+
+  function esc(t) { var d = document.createElement('div'); d.textContent = t; return d.innerHTML; }
+  function render(a) {
+    head.querySelector('.chat-avatar').innerHTML = ICON[a.icon];
+    head.querySelector('b').textContent = a.name;
+    head.querySelector(':scope > div > span').textContent = a.sub;
+    body.innerHTML = a.chat.map(function (m, t) {
+      if (m[0] === 'q') return '<p class="msg msg--patient" style="--t:' + t + '">' + esc(m[1]) + '</p>';
+      return '<div class="msg msg--agent' + (m[0] === 'u' ? ' msg--urgent' : '') + '" style="--t:' + t + '"><p>' + esc(m[1]) +
+             '</p><span class="cite">' + esc(m[2]) + '</span></div>';
+    }).join('');
+  }
+  function mark() {
+    [].forEach.call(dots.children, function (b, n) { b.setAttribute('aria-selected', n === i); });
+  }
+  function show(n) {
+    if (n === i) return;
+    i = n;
+    demo.classList.add('is-swapping');
+    setTimeout(function () { render(AGENTS[i]); demo.classList.remove('is-swapping'); mark(); }, 350);
+  }
+  function restart() {
+    clearInterval(timer);
+    if (!reduce) timer = setInterval(function () { if (!paused && !document.hidden) show((i + 1) % AGENTS.length); }, 9000);
+  }
+  demo.addEventListener('pointerenter', function () { paused = true; });
+  demo.addEventListener('pointerleave', function () { paused = false; });
+  mark();
+  restart();
+})();
