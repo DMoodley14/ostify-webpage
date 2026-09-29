@@ -372,24 +372,24 @@ document.querySelectorAll('[data-gal]').forEach(function (gal) {
   var AGENTS = [
     { icon: 'bone', theme: 'bone', name: 'Bone Health Clinic Assistant', sub: 'Answers only from approved clinic content',
       chat: [
-        ['q', 'What kind of exercise is good for my bones?'],
-        ['a', 'Weight-bearing exercise, where your feet and legs support your weight, such as brisk walking or dancing, and resistance exercise, such as press-ups or lifting weights, both help keep bones strong. If you have been diagnosed with osteoporosis, talk to your GP or specialist before starting a new exercise programme.', 'Exercise and your bones · passage 4 · approved'],
+        ['q', 'What exercise is good for my bones?'],
+        ['a', 'Brisk walking, dancing and strength exercises all help. If you have osteoporosis, check with your GP first.', 'Exercise and your bones · approved'],
         ['q', 'What should I wear for my DEXA scan?'],
-        ['a', 'You may be able to stay fully clothed, but you will need to take off anything with metal fasteners, such as zips, hooks or buckles. No special preparation is needed, and the scan usually takes 10 to 20 minutes.', 'Your DEXA scan · passage 2 · approved']
+        ['a', 'Clothes without zips or metal buckles are best. No special preparation is needed.', 'Your DEXA scan · approved']
       ] },
     { icon: 'clipboard', theme: 'endo', name: 'Endoscopy Unit Assistant', sub: 'Preparing for your colonoscopy',
       chat: [
         ['q', 'What can I eat before my colonoscopy?'],
-        ['a', 'For 2 days before your colonoscopy, eat only plain foods, such as plain chicken not in a sauce, white rice, pasta or bread, and clear soup. The day before, drink the laxative sachets exactly as your letter says, and stay at home near a toilet.', 'Preparing for your colonoscopy · passage 3 · approved'],
-        ['q', 'Can I still take my usual tablets?'],
-        ['a', 'If you take any medicines, or you are pregnant, let the hospital know as soon as you get your letter. They will tell you what to do before your test.', 'Your medicines before the test · passage 5 · approved']
+        ['a', 'For 2 days before, stick to plain foods like white rice, pasta or clear soup.', 'Preparing for your test · approved'],
+        ['q', 'Can I take my usual tablets?'],
+        ['a', 'Let the hospital know about any medicines as soon as you get your letter.', 'Your medicines · approved']
       ] },
     { icon: 'lungs', theme: 'asthma', name: 'Asthma Support Assistant', sub: 'From your respiratory clinic’s guides',
       chat: [
-        ['q', 'How do I know my inhaler technique is right?'],
-        ['a', 'Using your inhaler correctly helps your medicine work properly. A doctor, nurse or pharmacist can show you how to use yours, and your asthma review, at least once a year, should include checking your technique.', 'Using your inhaler · passage 2 · approved'],
-        ['q', 'My reliever isn’t helping and I can’t catch my breath'],
-        ['u', 'Sit up straight and try to stay calm, and use your reliever inhaler as your asthma action plan says. Call 999 if you feel worse at any time, or if you do not feel better after the maximum dose.', 'Asthma attacks · signposted by your clinic']
+        ['q', 'Can someone check my inhaler technique?'],
+        ['a', 'Yes. A doctor, nurse or pharmacist can show you, and it’s checked at your yearly review.', 'Using your inhaler · approved'],
+        ['q', 'My reliever isn’t helping'],
+        ['u', 'Sit up, stay calm and follow your asthma action plan. If you feel worse, call 999.', 'Asthma attacks · signposted']
       ] }
   ];
 
