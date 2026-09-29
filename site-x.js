@@ -387,9 +387,9 @@ document.querySelectorAll('[data-gal]').forEach(function (gal) {
     { icon: 'lungs', theme: 'asthma', name: 'Asthma Support Assistant', sub: 'From your respiratory clinic’s guides',
       chat: [
         ['q', 'Can someone check my inhaler technique?'],
-        ['a', 'Yes. A doctor, nurse or pharmacist can show you, and it’s checked at your yearly review.', 'Using your inhaler · approved'],
-        ['q', 'My reliever isn’t helping'],
-        ['u', 'Sit up, stay calm and follow your asthma action plan. If you feel worse, call 999.', 'Asthma attacks · signposted']
+        ['a', 'Yes. A doctor, nurse or pharmacist can show you how to use it.', 'Using your inhaler · approved'],
+        ['q', 'How often should I have an asthma review?'],
+        ['a', 'At least once a year, to check how well your treatment is working.', 'Asthma reviews · approved']
       ] }
   ];
 
