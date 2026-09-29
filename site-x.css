@@ -392,11 +392,18 @@ footer p{font-family:ui-rounded,'SF Pro Rounded',var(--sans)}
 .xh-art .chat-demo .chat-head,.xh-art .chat-demo .chat-body{transition:opacity .35s ease,filter .35s ease}
 .xh-art .chat-demo.is-swapping .chat-head,.xh-art .chat-demo.is-swapping .chat-body{opacity:0;filter:blur(4px)}
 .xh-art .chat-body{min-height:470px}
-.msg--urgent{background:#FBEDEA!important;border-color:#F0D2CB!important;color:#6E1E12}
-.msg--urgent .cite{background:#F7D9D2!important;color:#7A2414!important}
 .chat-dots{display:flex;gap:8px;margin-top:18px;width:100%;max-width:520px;justify-content:center}
 .chat-dots button{width:28px;height:4px;padding:0;border:0;border-radius:4px;background:rgba(255,255,255,.22);cursor:pointer;transition:background .3s,width .3s}
 .chat-dots button[aria-selected=true]{width:44px;background:#00D26A}
 .chat-dots button:focus-visible{outline:2px solid #00D26A;outline-offset:4px}
 @media(max-width:1100px){.xh-art{align-items:flex-start}.chat-dots{justify-content:flex-start}}
 @media(max-width:600px){.xh-art .chat-body{min-height:520px}}
+/* each example agent has its own colours */
+.xh-art .chat-demo{--c-head:#1C302A;--c-acc:#2F7355;--c-soft:#E6F2EA}
+.xh-art .chat-demo[data-theme=endo]{--c-head:#1D4B5C;--c-acc:#2E8FAA;--c-soft:#E3F1F5}
+.xh-art .chat-demo[data-theme=asthma]{--c-head:#3F376E;--c-acc:#7466C2;--c-soft:#ECE9F8}
+.xh-art .chat-head{background:var(--c-head);transition:background .6s ease,opacity .35s ease,filter .35s ease}
+.xh-art .chat-avatar{background:var(--c-acc)!important;transition:background .6s ease}
+.xh-art .msg--patient{background:var(--c-head)}
+.xh-art .cite{background:var(--c-soft)!important;color:var(--c-head)!important}
+.xh-art .msg--signpost{border-left:3px solid var(--c-acc)!important}
