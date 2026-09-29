@@ -169,6 +169,67 @@ document.querySelectorAll('[data-gal]').forEach(function (gal) {
     i.replaceWith(svg);
   });
 
+  // Keep osteons clear of anything readable. Each one tries its own spot, then
+  // a ring of alternatives, then the side margin; failing that it is hidden.
+  var CONTENT = 'h1,h2,h3,p,li,dt,dd,q,a,button,table,label,input,select,textarea,img,.xwin,.chat-demo,.xtag,.xflow-n,.xstage-n,.xl,.xgal-tabs,.xplate,.xh-art';
+  function overlaps(a, list) {
+    for (var i = 0; i < list.length; i++) {
+      var b = list[i];
+      if (a.l < b.r && a.r > b.l && a.t < b.b && a.b > b.t) return true;
+    }
+    return false;
+  }
+  function placeOsteons() {
+    document.querySelectorAll('.xfloat').forEach(function (field) {
+      var host = field.parentElement, hb = host.getBoundingClientRect();
+      var W = hb.width, H = hb.height, pad = 20;
+      var blocks = [].slice.call(host.querySelectorAll(CONTENT)).filter(function (el) {
+        return !field.contains(el) && el.offsetParent !== null;
+      }).map(function (el) {
+        var r = el.getBoundingClientRect();
+        return { l: r.left - hb.left - pad, r: r.right - hb.left + pad, t: r.top - hb.top - pad, b: r.bottom - hb.top + pad };
+      });
+      var inner = host.querySelector('.xw');
+      var ib = inner ? inner.getBoundingClientRect() : hb;
+      var edgeL = ib.left - hb.left + 56, edgeR = ib.right - hb.left - 56;
+      var taken = [];
+      field.querySelectorAll(':scope > span').forEach(function (span) {
+        var svg = span.querySelector('.xosteon');
+        if (!svg) return;
+        if (!span.dataset.x) { span.dataset.x = parseFloat(span.style.left); span.dataset.y = parseFloat(span.style.top); }
+        var size = svg.getBoundingClientRect().width || parseFloat(svg.style.width);
+        // parallax moves it up and down, so reserve that travel too
+        var travel = Math.abs(parseFloat(span.dataset.parallax || 0)) * window.innerHeight * 0.6;
+        function box(x, y) { return { l: x, r: x + size, t: y - travel, b: y + size + travel }; }
+        var ox = span.dataset.x / 100 * W, oy = span.dataset.y / 100 * H;
+        var tries = [[ox, oy]];
+        for (var k = 1; k <= 6; k++) {
+          var d = k * size * 0.35;
+          tries.push([ox + d, oy], [ox - d, oy], [ox, oy + d], [ox, oy - d]);
+        }
+        // side margins: mostly off the page, peeking in from the edge
+        tries.push([edgeL - size, oy], [edgeR, oy], [edgeL - size, H * 0.2], [edgeR, H * 0.6]);
+        var spot = null;
+        for (var i = 0; i < tries.length && !spot; i++) {
+          var x = Math.max(-size * 0.6, Math.min(W - size * 0.4, tries[i][0]));
+          var y = Math.max(-size * 0.3, Math.min(H - size * 0.7, tries[i][1]));
+          var bx = box(x, y);
+          if (!overlaps(bx, blocks) && !overlaps(bx, taken)) spot = [x, y, bx];
+        }
+        if (spot) {
+          span.style.left = spot[0] + 'px'; span.style.top = spot[1] + 'px';
+          span.style.display = ''; taken.push(spot[2]);
+        } else {
+          span.style.display = 'none';
+        }
+      });
+    });
+  }
+  placeOsteons();
+  window.addEventListener('load', placeOsteons);
+  var placeTimer;
+  window.addEventListener('resize', function () { clearTimeout(placeTimer); placeTimer = setTimeout(placeOsteons, 150); });
+
   // Draw each osteon in as it reaches the viewport.
   var drawn = [].slice.call(document.querySelectorAll('.xosteon'));
   drawn.forEach(function (svg) {
