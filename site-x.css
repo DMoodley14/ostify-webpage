@@ -590,3 +590,18 @@ footer p{font-family:ui-rounded,'SF Pro Rounded',var(--sans)}
 .xprice-n{display:inline-grid;place-items:center;min-width:30px;height:30px;padding:0 6px;margin-right:12px;border-radius:9px;background:var(--x-accent);color:#fff;font:500 14px/1 var(--x-display);vertical-align:middle}
 @media(max-width:600px){.xprice td:before,.xprice td::before{content:none!important;display:none!important}.xprice td:nth-child(2){margin-top:6px}.xprice thead{display:none}.xprice tr{display:block;padding:16px 0;border-bottom:1px solid var(--x-rule)}.xprice th,.xprice td{display:block;width:auto!important;border:0;padding:4px 0}}
 .xprice-alt{display:block;margin-top:4px;font-size:14px;color:var(--x-muted)}
+/* Plans on phones: more room inside cards and between items */
+@media(max-width:600px){
+  .xplans{gap:16px}
+  .xplan{padding:24px 22px 26px;border-radius:22px}
+  .xplan h3{font-size:30px}
+  .xplan .xtag{margin-bottom:18px}
+  .xplan-price{margin-bottom:4px}
+  .xplan .xlist li{padding:12px 0}
+  .xplan-cta{margin-top:22px}
+  .xplan-cta .xb{width:100%;justify-content:center}
+  .xprice tr{padding:18px 0}
+  .xprice tbody th{display:flex!important;align-items:center;font-size:17px}
+  .xprice td:nth-child(2){margin-top:10px;font-size:16px}
+  .xprice td:nth-child(3){color:var(--x-muted);font-size:15px;line-height:1.55}
+}
