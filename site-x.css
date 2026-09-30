@@ -54,14 +54,12 @@
 
 /* flow */
 .xflow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--x-ink)}
-.xflow--5{grid-template-columns:repeat(5,1fr)}
-.xflow--5 a{padding:28px 22px 32px}
 .xflow li+li{border-left:1px solid var(--x-rule)}
 .xflow a{display:flex;flex-direction:column;height:100%;padding:28px 28px 32px;text-decoration:none;color:inherit;transition:background .2s}
 .xflow li:first-child a{padding-left:0}
 .xflow a:hover{background:#ffffff99}
 .xflow-n{display:grid;place-items:center;width:56px;height:56px;border-radius:16px;font:500 26px/1 var(--x-display);color:#fff;background:var(--hue)}
-.xflow li:nth-child(1){--hue:var(--x-hue-build)}.xflow li:nth-child(2){--hue:var(--x-hue-test)}.xflow li:nth-child(3){--hue:var(--x-hue-assure)}.xflow li:nth-child(4){--hue:var(--x-hue-live)}.xflow li:nth-child(5){--hue:var(--x-hue-scale)}
+.xflow li:nth-child(1){--hue:var(--x-hue-build)}.xflow li:nth-child(2){--hue:var(--x-hue-test)}.xflow li:nth-child(3){--hue:var(--x-hue-assure)}.xflow li:nth-child(4){--hue:var(--x-hue-live)}
 .xflow b{font-family:var(--x-display);font-size:24px;font-weight:500;letter-spacing:-.03em;margin-top:28px}
 .xflow .xl{margin-top:4px}
 .xflow p{font-size:15.5px;line-height:1.55;color:var(--x-ink-2);margin:16px 0 24px}
@@ -71,7 +69,7 @@
 .xstage-grid{display:grid;grid-template-columns:3fr 9fr;gap:32px}
 .xstage-side{position:sticky;top:120px;align-self:start;display:flex;flex-direction:column;gap:6px}
 .xstage-n{font:400 120px/.85 var(--x-display);letter-spacing:-.06em;color:var(--hue,var(--x-accent))}
-#stage-build{--hue:var(--x-hue-build)}#stage-evaluate{--hue:var(--x-hue-test)}#stage-assure{--hue:var(--x-hue-assure)}#stage-live{--hue:var(--x-hue-live)}#stage-production{--hue:var(--x-hue-scale)}
+#stage-build{--hue:var(--x-hue-build)}#stage-evaluate{--hue:var(--x-hue-test)}#stage-assure{--hue:var(--x-hue-assure)}#stage-live{--hue:var(--x-hue-live)}#stage-pilot{--hue:var(--x-hue-live)}#stage-production{--hue:var(--x-hue-scale)}
 .xstage-side b{font-size:22px;font-weight:500;letter-spacing:-.02em;margin-top:18px}
 .xstage-main h2{max-width:18ch}
 .xplate{position:relative;margin:56px 0 0;padding:clamp(20px,4vw,56px);background:linear-gradient(140deg,var(--hue,#1C302A) 0%,#0A1712 100%);border-radius:24px;overflow:hidden;isolation:isolate}
@@ -560,3 +558,14 @@ footer p{font-family:ui-rounded,'SF Pro Rounded',var(--sans)}
 .xvault-facts b{font:500 14.5px var(--sans);color:#D6E1DA}
 .xvault-facts span{display:none}
 @media(max-width:900px){.xvault-grid{grid-template-columns:1fr;gap:20px}.xvault-art svg{width:110px}.xvault-facts{flex-direction:column}}
+
+/* Steps 5-6: after approval, clear but set apart from the core four */
+.xnext{margin-top:40px}
+.xnext>.xl{color:var(--x-accent)}
+.xnext-list{list-style:none;margin:14px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.xnext-list a{display:flex;gap:20px;align-items:flex-start;height:100%;box-sizing:border-box;padding:24px 28px;border-radius:20px;background:#fff;border:1px solid var(--x-rule);text-decoration:none;color:var(--x-ink-2);font-size:15.5px;line-height:1.55;transition:border-color .2s,transform .2s}
+.xnext-list a:hover{border-color:var(--x-accent);transform:translateY(-2px)}
+.xnext-list b{display:block;font-family:var(--x-display);font-size:24px;font-weight:500;letter-spacing:-.03em;color:var(--x-ink);margin-bottom:6px}
+.xnext-n{flex:none;display:grid;place-items:center;width:56px;height:56px;border-radius:16px;font:500 26px/1 var(--x-display);color:#fff;background:var(--x-hue-live)}
+.xnext-list li:nth-child(2) .xnext-n{background:var(--x-hue-scale)}
+@media(max-width:700px){.xnext-list{grid-template-columns:1fr}.xnext-list a{padding:20px}}
