@@ -443,3 +443,27 @@ document.querySelectorAll('[data-gal]').forEach(function (gal) {
   mark();
   restart();
 })();
+
+// Stage rail: shown while reading the pipeline, marks the current stage.
+(function () {
+  var rail = document.querySelector('.xrail');
+  if (!rail) return;
+  var links = [].slice.call(rail.querySelectorAll('a'));
+  var targets = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+  var start = document.getElementById('how');
+  function update() {
+    var vh = window.innerHeight;
+    var first = start.getBoundingClientRect();
+    var last = targets[targets.length - 1].getBoundingClientRect();
+    rail.classList.toggle('is-on', first.bottom < vh * 0.6 && last.bottom > vh * 0.4);
+    var here = -1;
+    targets.forEach(function (t, i) { if (t.getBoundingClientRect().top < vh * 0.45) here = i; });
+    links.forEach(function (a, i) {
+      a.classList.toggle('is-here', i === here);
+      if (i === here) a.setAttribute('aria-current', 'step'); else a.removeAttribute('aria-current');
+    });
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();

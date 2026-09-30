@@ -407,3 +407,15 @@ footer p{font-family:ui-rounded,'SF Pro Rounded',var(--sans)}
 .xh-art .msg--patient{background:var(--c-head)}
 .xh-art .cite{background:var(--c-soft)!important;color:var(--c-head)!important}
 .xh-art .msg--signpost{border-left:3px solid var(--c-acc)!important}
+/* stage rail: jump between the pipeline stages on the home page */
+.xrail{position:fixed;left:50%;bottom:24px;z-index:55;display:flex;gap:4px;padding:6px;border-radius:999px;background:rgba(10,23,18,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 20px 40px -20px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.08);transform:translate(-50%,140%);opacity:0;transition:transform .5s var(--ease),opacity .4s}
+.xrail.is-on{transform:translate(-50%,0);opacity:1}
+.xrail a{display:flex;align-items:center;gap:8px;padding:9px 16px 9px 10px;border-radius:999px;color:#D6E1DA;text-decoration:none;font:500 14px var(--sans);white-space:nowrap;transition:background .25s,color .25s}
+.xrail a i{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;font:600 11px/1 var(--sans);font-style:normal;background:rgba(255,255,255,.1)}
+.xrail a:hover{background:rgba(255,255,255,.08);color:#fff}
+.xrail a.is-here{background:#00D26A;color:#04210F}
+.xrail a.is-here i{background:#04210F;color:#00D26A}
+.xrail a:focus-visible{outline:2px solid #00D26A;outline-offset:2px}
+@media(max-width:700px){.xrail{bottom:14px;max-width:calc(100% - 24px);overflow-x:auto}.xrail a{padding:8px 12px 8px 8px;font-size:13px}.xrail a:not(.is-here) span{display:none}}
+@media(prefers-reduced-motion:reduce){.xrail{transition:none}}
+.xp section[id]{scroll-margin-top:96px}
