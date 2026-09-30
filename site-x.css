@@ -569,3 +569,16 @@ footer p{font-family:ui-rounded,'SF Pro Rounded',var(--sans)}
 .xnext-n{flex:none;display:grid;place-items:center;width:56px;height:56px;border-radius:16px;font:500 26px/1 var(--x-display);color:#fff;background:var(--x-hue-live)}
 .xnext-list li:nth-child(2) .xnext-n{background:var(--x-hue-scale)}
 @media(max-width:700px){.xnext-list{grid-template-columns:1fr}.xnext-list a{padding:20px}}
+/* Phone: steps as compact rows, number beside text, matching the 5-6 cards */
+@media(max-width:600px){
+  .xflow a{display:grid;grid-template-columns:44px 1fr;column-gap:16px;padding:20px 0}
+  .xflow a>*{grid-column:2}
+  .xflow a .xflow-n{grid-column:1;grid-row:1/span 4;width:44px;height:44px;border-radius:13px;font-size:20px}
+  .xflow a b{margin-top:0;font-size:20px}
+  .xflow a p{margin:8px 0 12px;font-size:15px}
+  .xflow a .xtag{justify-self:start}
+  .xnext{margin-top:28px}
+  .xnext-list a{gap:16px;padding:18px}
+  .xnext-n{width:44px;height:44px;border-radius:13px;font-size:20px}
+  .xnext-list b{font-size:20px}
+}
