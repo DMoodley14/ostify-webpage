@@ -467,3 +467,97 @@ document.querySelectorAll('[data-gal]').forEach(function (gal) {
   window.addEventListener('resize', update);
   update();
 })();
+
+/* Screenshot viewer: tap a screenshot to open it full screen; pinch, double-tap or scroll to zoom */
+(function () {
+  var imgs = document.querySelectorAll('.xplate img');
+  if (!imgs.length) return;
+  var box, pic, s = 1, x = 0, y = 0, pts = {}, start = null, lastTap = 0, opener;
+
+  function apply() {
+    pic.style.transform = 'translate(' + x + 'px,' + y + 'px) scale(' + s + ')';
+    box.classList.toggle('is-zoomed', s > 1.01);
+  }
+  function reset() {
+    var vw = window.innerWidth, vh = window.innerHeight, nw = pic.naturalWidth || 2000, nh = pic.naturalHeight || 1357;
+    var k = Math.min(vw / nw, vh / nh), w = nw * k, h = nh * k;
+    pic.style.width = w + 'px'; pic.style.height = h + 'px';
+    s = 1; x = (vw - w) / 2; y = (vh - h) / 2;
+    apply();
+  }
+  function zoomAt(cx, cy, ns) {
+    ns = Math.min(5, Math.max(1, ns));
+    x = cx - (cx - x) * ns / s; y = cy - (cy - y) * ns / s; s = ns;
+    if (s === 1) { reset(); return; }
+    apply();
+  }
+  function close() {
+    if (!box) return;
+    box.remove(); box = null; document.documentElement.style.overflow = '';
+    document.removeEventListener('keydown', onKey);
+    if (opener) opener.focus();
+  }
+  function onKey(e) { if (e.key === 'Escape') close(); }
+  function open(img) {
+    opener = img;
+    box = document.createElement('div');
+    box.className = 'xlb'; box.setAttribute('role', 'dialog'); box.setAttribute('aria-modal', 'true'); box.setAttribute('aria-label', img.alt || 'Screenshot');
+    box.innerHTML = '<button class="xlb-x" type="button" aria-label="Close">×</button><img alt=""><p class="xlb-hint">Pinch or double-tap to zoom</p>';
+    pic = box.querySelector('img');
+    var set = img.getAttribute('srcset');
+    pic.src = set ? set.split(',').pop().trim().split(' ')[0] : img.currentSrc || img.src;
+    pic.alt = img.alt;
+    document.body.appendChild(box);
+    document.documentElement.style.overflow = 'hidden';
+    requestAnimationFrame(function () { box.classList.add('is-on'); });
+    pic.onload = function () { if (box) reset(); };
+    if (pic.complete) reset();
+    box.querySelector('.xlb-x').onclick = close;
+    box.querySelector('.xlb-x').focus();
+    document.addEventListener('keydown', onKey);
+
+    box.addEventListener('wheel', function (e) { e.preventDefault(); zoomAt(e.clientX, e.clientY, s * (e.deltaY < 0 ? 1.15 : 1 / 1.15)); }, { passive: false });
+    box.addEventListener('pointerdown', function (e) {
+      if (e.target.closest('.xlb-x')) return;
+      box.setPointerCapture(e.pointerId);
+      pts[e.pointerId] = { x: e.clientX, y: e.clientY };
+      var ids = Object.keys(pts);
+      if (ids.length === 2) {
+        var a = pts[ids[0]], b = pts[ids[1]];
+        start = { d: Math.hypot(a.x - b.x, a.y - b.y), s: s };
+      } else {
+        start = null;
+        var now = Date.now();
+        if (now - lastTap < 300) { zoomAt(e.clientX, e.clientY, s > 1.01 ? 1 : 2.5); lastTap = 0; }
+        else lastTap = now;
+        box._moved = false;
+      }
+    });
+    box.addEventListener('pointermove', function (e) {
+      var p = pts[e.pointerId]; if (!p) return;
+      var ids = Object.keys(pts);
+      if (ids.length === 2 && start) {
+        p.x = e.clientX; p.y = e.clientY;
+        var a = pts[ids[0]], b = pts[ids[1]];
+        zoomAt((a.x + b.x) / 2, (a.y + b.y) / 2, start.s * Math.hypot(a.x - b.x, a.y - b.y) / start.d);
+      } else if (s > 1.01) {
+        x += e.clientX - p.x; y += e.clientY - p.y; p.x = e.clientX; p.y = e.clientY; box._moved = true; apply();
+      } else if (Math.abs(e.clientX - p.x) + Math.abs(e.clientY - p.y) > 8) box._moved = true;
+    });
+    function up(e) {
+      var wasSingle = Object.keys(pts).length === 1;
+      delete pts[e.pointerId];
+      if (Object.keys(pts).length < 2) start = null;
+      // a single tap on the dark backdrop closes the viewer when not zoomed
+      if (wasSingle && !box._moved && s <= 1.01 && e.target === box) setTimeout(function () { if (lastTap && Date.now() - lastTap >= 280) close(); }, 300);
+    }
+    box.addEventListener('pointerup', up);
+    box.addEventListener('pointercancel', up);
+  }
+  imgs.forEach(function (img) {
+    img.setAttribute('tabindex', '0');
+    img.setAttribute('role', 'button');
+    img.addEventListener('click', function () { open(img); });
+    img.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(img); } });
+  });
+})();
