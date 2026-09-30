@@ -482,3 +482,4 @@ footer p{font-family:ui-rounded,'SF Pro Rounded',var(--sans)}
 .xcost-col--us .xb{align-self:flex-start;margin-top:26px}
 .xcost-note{margin-top:18px;max-width:80ch}
 @media(max-width:820px){.xcost{grid-template-columns:1fr}.xcost-col{padding:28px 24px}.xcost-total b{font-size:24px}}
+.xcost-flag{margin:-8px 0 16px;font:500 12.5px/1.45 var(--x-mono);color:#8A5A12;background:#FFF4E2;border:1px solid #F1DDB8;border-radius:8px;padding:7px 10px;align-self:flex-start}
