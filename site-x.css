@@ -582,3 +582,11 @@ footer p{font-family:ui-rounded,'SF Pro Rounded',var(--sans)}
   .xnext-n{width:44px;height:44px;border-radius:13px;font-size:20px}
   .xnext-list b{font-size:20px}
 }
+
+/* Plans: price table */
+.xprice td{width:auto}
+.xprice td:nth-child(2){width:26%;color:var(--x-ink)}
+.xprice tbody th{width:34%}
+.xprice-n{display:inline-grid;place-items:center;min-width:30px;height:30px;padding:0 6px;margin-right:12px;border-radius:9px;background:var(--x-accent);color:#fff;font:500 14px/1 var(--x-display);vertical-align:middle}
+@media(max-width:600px){.xprice td:before,.xprice td::before{content:none!important;display:none!important}.xprice td:nth-child(2){margin-top:6px}.xprice thead{display:none}.xprice tr{display:block;padding:16px 0;border-bottom:1px solid var(--x-rule)}.xprice th,.xprice td{display:block;width:auto!important;border:0;padding:4px 0}}
+.xprice-alt{display:block;margin-top:4px;font-size:14px;color:var(--x-muted)}
