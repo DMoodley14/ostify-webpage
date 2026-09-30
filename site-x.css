@@ -523,3 +523,25 @@ footer p{font-family:ui-rounded,'SF Pro Rounded',var(--sans)}
 .xmore-t b{color:var(--x-ink)}
 .xmore-t .xb{flex:none}
 @media(max-width:700px){.xmore-t{flex-direction:column;align-items:flex-start}}
+
+/* ideas vault */
+.xvault{background:radial-gradient(900px 500px at 85% 40%,#1C3A2D 0%,#0A1712 65%)}
+.xvault-grid{display:grid;grid-template-columns:7fr 5fr;gap:56px;align-items:center}
+.xvault h2{font-size:clamp(44px,6vw,88px);letter-spacing:-.05em;line-height:.98;margin-top:16px;max-width:none}
+.xvault .xs-lede{font-size:19px;color:#D6E1DA;max-width:54ch}
+.xvault-facts{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.xvault-facts li{padding:18px 18px 20px;border-radius:16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12)}
+.xvault-facts b{display:block;color:#fff;font:500 17px/1.3 var(--x-display)}
+.xvault-facts span{display:block;color:#8FA597;font-size:14.5px;margin-top:4px}
+.xvault-art svg{width:100%;max-width:440px;height:auto;display:block;margin:0 auto;overflow:visible}
+.xvault-rings circle{fill:none;stroke:#B9E0C8;stroke-opacity:.18;stroke-width:1;stroke-dasharray:3 6}
+.xvault-rings circle:nth-child(2){stroke-opacity:.26;stroke-dasharray:none}
+.xvault-rings{transform-origin:0 0;animation:xspin 90s linear infinite}
+.xvault-orbit{transform-origin:0 0;animation:xspin 24s linear infinite}
+.xvault-orbit circle{fill:#00D26A;filter:drop-shadow(0 0 6px #00D26A)}
+.xvault-core{fill:#12241D;stroke:#00D26A;stroke-width:1.5;animation:xvpulse 4s ease-in-out infinite}
+.xvault-lock rect,.xvault-lock path{fill:none;stroke:#00D26A;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round}
+.xvault-lock circle{fill:#00D26A}
+@keyframes xvpulse{0%,100%{filter:drop-shadow(0 0 0 rgba(0,210,106,0))}50%{filter:drop-shadow(0 0 22px rgba(0,210,106,.55))}}
+@media(max-width:900px){.xvault-grid{grid-template-columns:1fr}.xvault-art{order:-1}.xvault-art svg{max-width:220px;margin:0}.xvault-facts{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.xvault-rings,.xvault-orbit,.xvault-core{animation:none}}
