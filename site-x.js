@@ -561,3 +561,28 @@ document.querySelectorAll('[data-gal]').forEach(function (gal) {
     img.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(img); } });
   });
 })();
+
+/* Phones: long sections open to their heading and intro, with the rest behind "Show details" */
+(function () {
+  var groups = [].slice.call(document.querySelectorAll('.xstage-main, #guardrails > .xw, #responsibilities > .xw'));
+  groups.forEach(function (g, i) {
+    var keep = g.matches('.xstage-main') ? function (el) { return el.matches('h2, .xs-lede'); } : function (el) { return el.matches('.xs-head'); };
+    var rest = [].slice.call(g.children).filter(function (el) { return !keep(el); });
+    if (!rest.length) return;
+    var more = document.createElement('div');
+    more.className = 'xmore'; more.id = 'xmore-' + i;
+    rest.forEach(function (el) { more.appendChild(el); });
+    var btn = document.createElement('button');
+    btn.type = 'button'; btn.className = 'xmore-btn';
+    btn.setAttribute('aria-expanded', 'false'); btn.setAttribute('aria-controls', more.id);
+    btn.innerHTML = '<span>Show details</span><i aria-hidden="true">+</i>';
+    g.classList.add('xfold');
+    g.appendChild(btn); g.appendChild(more);
+    btn.addEventListener('click', function () {
+      var open = g.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.querySelector('span').textContent = open ? 'Hide details' : 'Show details';
+      if (!open) g.scrollIntoView({ block: 'start' });
+    });
+  });
+})();

@@ -628,3 +628,14 @@ footer p{font-family:ui-rounded,'SF Pro Rounded',var(--sans)}
 .xlb-x{position:absolute;top:max(14px,env(safe-area-inset-top));right:14px;width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.14);color:#fff;font-size:24px;line-height:1;cursor:pointer;z-index:1}
 .xlb-hint{position:absolute;bottom:max(18px,env(safe-area-inset-bottom));left:0;right:0;text-align:center;color:#D6E1DA;font:500 12px var(--x-mono);pointer-events:none;transition:opacity .3s}
 .xlb.is-zoomed .xlb-hint{opacity:0}
+/* Show details (phones only; everything stays open on larger screens) */
+.xmore-btn{display:none}
+@media(max-width:600px){
+  .xfold:not(.is-open)>.xmore{display:none}
+  .xmore-btn{display:inline-flex;align-items:center;gap:10px;margin-top:22px;padding:11px 18px;border-radius:999px;border:1px solid var(--x-rule);background:#fff;color:var(--x-ink);font:500 15px var(--sans);cursor:pointer}
+  .xmore-btn i{font-style:normal;font-size:18px;line-height:1;transition:transform .2s}
+  .xfold.is-open>.xmore-btn i{transform:rotate(45deg)}
+  .xfold.is-open>.xmore{margin-top:8px}
+  .xs--dark .xmore-btn{background:transparent;color:#fff;border-color:#ffffff40}
+  .xstage{padding-top:48px;padding-bottom:48px}
+}
