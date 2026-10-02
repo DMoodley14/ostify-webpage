@@ -66,7 +66,7 @@
     render(
       '<div class="consent-text">' +
         '<p class="consent-title">Cookies on ostify.co.uk</p>' +
-        '<p>We use some cookies necessary to making this website work. We also use additional cookies, such as those to record website analytics, which you can deny the use of. If you do not accept additional cookies, some third-party content may not load. <a href="/privacy/#cookies">Read our cookie policy</a>.</p>' +
+        '<p>We use essential cookies to run this site, and optional analytics cookies only if you accept them. <a href="/privacy/#cookies">Read our cookie policy</a>.</p>' +
       '</div>' +
       '<div class="consent-actions">' +
         '<button type="button" class="btn" data-consent="grant">Accept analytics cookies</button>' +
