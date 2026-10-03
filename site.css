@@ -1132,3 +1132,10 @@ footer .wordmark{color:var(--x-ink,#0A1712)}
 .xcost-osti b{color:var(--x-ink,#0A1712)}
 .xcost-osti .xl{color:#00733A}
 .xcost-osti a{color:#00733A}
+
+/* About us: the story, as plain prose */
+.xstory{max-width:680px;margin-left:auto}
+.xstory p{font-size:18px;line-height:1.75;color:var(--x-ink-2,#3b4a42);margin:0 0 22px}
+.xstory-sign{font-weight:600;color:var(--x-ink,#0A1712)!important;margin-top:28px!important}
+.xstory-sign::before{content:"— "}
+.xfounder .xprose .xl{margin-bottom:10px}
