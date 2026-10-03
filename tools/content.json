@@ -1,0 +1,109 @@
+{
+  "guides": [
+    {
+      "slug": "first-agent",
+      "cat": "Getting started",
+      "title": "Building your first agent",
+      "lede": "From sign-up to an agent you can talk to, step by step.",
+      "body": "<h2>Before you start</h2>\n    <p>Pick one narrow job for your first agent: one clinic, one procedure or one study. A focused agent is easier to build, easier to test and easier to get through review. You can always build a second.</p>\n    <h2>Describe it</h2>\n    <p>Give the agent a name, say who it is for and what it should help with. This is what the agent reads first, so write it the way you would brief a new colleague: who the patients are, what they usually ask, and where your service ends.</p>\n    <h2>Add your content</h2>\n    <p>Upload the leaflets and guidance you already give people, or write text and question-and-answer pairs directly. Add as much relevant material as you can. The agent can only answer from what is here. See <a href=\"/guides/preparing-content/\">preparing your content</a> for what works best.</p>\n    <h2>Review the passages</h2>\n    <p>Ostify splits your content into passages. Read through them, fix any wording, and approve the ones the agent may use. Anything you do not approve stays out of its answers.</p>\n    <h2>Shape how it talks</h2>\n    <p>Choose a reading level, how warm it sounds and how long its answers are, and watch the sample answer change. Then write the lines it must never cross. See <a href=\"/guides/never-rules/\">writing rules it must never break</a>.</p>\n    <h2>Talk to it</h2>\n    <p>Ask it the questions your patients actually ask, including the awkward ones. When something sounds off, fix the content or the passages rather than the wording of the answer. When it sounds like your service, move on to <a href=\"/how-it-works/#stage-evaluate\">evaluation</a>.</p>"
+    },
+    {
+      "slug": "preparing-content",
+      "cat": "Building",
+      "title": "Preparing your content",
+      "lede": "The quality of your agent is decided here.",
+      "body": "<h2>Use what you already trust</h2>\n    <p>Start with material that has already been through your service’s approval process: patient leaflets, procedure instructions, participant information sheets or local policies. If you would not hand it to a patient or a new starter, do not upload it.</p>\n    <h2>Only add what you may use</h2>\n    <p>Only add content that is yours or that you have permission to use. Content from national bodies or other organisations may have its own terms.</p>\n    <h2>Keep patient information out</h2>\n    <p>Your content should never contain information about individual patients. Remove names, dates of birth, NHS numbers and anything else that could identify someone before you upload.</p>\n    <h2>One topic per document</h2>\n    <p>Documents that cover one topic split into cleaner passages. If you have a long handbook, consider uploading its chapters separately.</p>\n    <h2>Fill the gaps you know about</h2>\n    <p>If patients often ask something your leaflets do not cover, write a short question-and-answer pair for it. Approved, specific answers beat the agent saying it does not know.</p>\n    <h2>Keep it current</h2>\n    <p>When a leaflet or policy changes, update it in Ostify too. Changing content sends a live agent back for review, which keeps what patients see in step with what you have approved.</p>"
+    },
+    {
+      "slug": "qa-pairs",
+      "cat": "Building",
+      "title": "Writing good question-and-answer pairs",
+      "lede": "Short, approved answers for the questions your leaflets miss.",
+      "body": "<h2>When to write one</h2>\n    <p>Question-and-answer pairs fill the gaps between your documents. Write one when patients regularly ask something your leaflets do not answer clearly, or when the answer is buried in a long document.</p>\n    <h2>Write the question the way people ask it</h2>\n    <p>Use the words patients actually use, not clinical terms. “Can I drive home after my scan?” works better than “Post-procedure driving restrictions”. If people ask the same thing in different ways, the agent can still match them, but start with the most common phrasing.</p>\n    <h2>Keep the answer short and complete</h2>\n    <p>One to three sentences is usually enough. Answer the question first, then add only what someone needs to act on it.</p>\n    <ul><li>Good: “No. You will have had sedation, so you cannot drive for 24 hours. Please arrange for someone to take you home.”</li><li>Too long: a paragraph that repeats the whole leaflet.</li></ul>\n    <h2>Stay within your service</h2>\n    <p>Answer as your service would, using your own arrangements. If the honest answer is “it depends on you”, say who to contact instead of guessing.</p>\n    <h2>Review them like any other content</h2>\n    <p>Pairs become passages, and they need your approval before the agent can use them. Read them back once more before you approve.</p>"
+    },
+    {
+      "slug": "voice",
+      "cat": "Building",
+      "title": "Choosing a reading level and tone",
+      "lede": "Match how your agent sounds to the people it serves.",
+      "body": "<h2>Reading level</h2>\n    <p>Choose how the agent writes:</p>\n    <ul><li><b>Simple:</b> one idea per sentence and no medical words. Suits people with a learning disability or a new diagnosis.</li><li><b>Plain English:</b> everyday words, with anything technical explained. The right choice for most services.</li><li><b>Adult:</b> uses medical terms where your content uses them. Suits specialist clinics and staff-facing agents.</li></ul>\n    <h2>Warmth</h2>\n    <p>Choose warm, neutral or matter-of-fact. Warm suits services where people are anxious. Matter-of-fact suits staff agents, where people want the answer quickly.</p>\n    <h2>Answer length</h2>\n    <p>Choose brief, a short paragraph or detailed. Shorter answers are easier to read on a phone, which is where most people will use your agent.</p>\n    <h2>Check it, then leave it</h2>\n    <p>The sample answer changes as you adjust each setting. Pick what sounds like your service, then test with real questions. Changing these settings later clears sign-off, so it is worth getting right before evaluation.</p>"
+    },
+    {
+      "slug": "never-rules",
+      "cat": "Building",
+      "title": "Writing rules it must never break",
+      "lede": "Clear limits make a safer agent, and a cleaner evaluation.",
+      "body": "<h2>What these rules are</h2>\n    <p>Every agent already has built-in guardrails, including no diagnosis and no personalised treatment advice. Your own rules sit on top. They describe the lines your service would never want crossed, and evaluation tests every one of them directly.</p>\n    <h2>Make each rule testable</h2>\n    <p>Write one behaviour per rule, starting with “Never”. A good rule is one where a reviewer can look at an answer and say clearly whether it was broken.</p><ul><li>Good: “Never tell someone they can stop a medicine.”</li><li>Too vague: “Be careful with medicines.”</li></ul>\n    <h2>Think about your service</h2>\n    <p>Ask what goes wrong in your setting. For a procedure agent, it might be giving timings that differ from the appointment letter. For a staff agent, it might be quoting a policy that has been replaced. Turn each of those into a rule.</p>\n    <h2>Do not rely on rules alone</h2>\n    <p>Rules are a safety net, not a substitute for good content. If the agent keeps approaching a line, the better fix is usually clearer content or an approved answer for that question.</p>"
+    },
+    {
+      "slug": "testing",
+      "cat": "Testing",
+      "title": "Testing your agent with Osteoclast",
+      "lede": "How to run an evaluation you can stand behind.",
+      "body": "<h2>Generate the question set</h2>\n    <p>Osteoclast writes realistic questions from your content and your agent’s boundaries, and adds a fixed core of safety questions that every agent is asked. Choose how many: a quicker set to start, or a larger one to test more corners.</p>\n    <h2>Read the set before you lock it</h2>\n    <p>Remove anything a patient would never ask, and add your own questions where something is missing. Then lock the set, so every later run uses the same questions and the results are comparable.</p>\n    <h2>Look beyond the easy questions</h2>\n    <p>A good set includes emergencies, questions at the edge of your scope, questions outside it, and attempts to trick the agent. These are where problems show up, so make sure they are there.</p>\n    <h2>Review every answer with a colleague</h2>\n    <p>Osti-judge gives each answer a first opinion. You and at least one other clinician then accept or overrule every score, using a shared review link. Disagreements are useful: they usually point to content that needs work.</p>\n    <h2>Fix the cause, then run again</h2>\n    <p>When an answer is wrong, change the content, the passages or your rules rather than hoping a rerun goes better. Run the locked set again and compare.</p>"
+    },
+    {
+      "slug": "ready-for-review",
+      "cat": "Going live",
+      "title": "Getting ready for review",
+      "lede": "What to have in place before you submit.",
+      "body": "<h2>Why there is a review</h2>\n    <p>No agent built on Ostify reaches patients, staff or the public until it has passed an individual Ostify review. The review is quicker when everything below is ready.</p>\n    <h2>A checklist</h2>\n    <ul><li>Your content is current, and every passage the agent uses is approved.</li><li>Your own never-rules are written and tested.</li><li>An evaluation run is complete, and you and at least one other clinician have reviewed every answer.</li><li>Your assurance documents are drafted, read and signed.</li><li>Your clinical safety officer has signed off the agent.</li><li>You know who will be responsible for keeping the content up to date.</li></ul>\n    <h2>After you submit</h2>\n    <p>We review your agent and come back to you. Once approved, you receive a link to share with the people it is for. If you later change content or key settings, the agent comes back for review before the change goes live.</p>\n    <h2>Costs</h2>\n    <p>The review is a one-off fee. See <a href=\"/plans/\">pricing</a> for what it covers.</p>"
+    },
+    {
+      "slug": "sharing",
+      "cat": "Going live",
+      "title": "Sharing your agent with the people it serves",
+      "lede": "Your agent only helps if people know it is there.",
+      "body": "<h2>Your link</h2>\n    <p>Once your agent passes review, you receive a dedicated link. That link is how patients, staff or the public reach your agent, so put it wherever they already look.</p>\n    <h2>Places that work</h2>\n    <ul><li>Appointment and pre-procedure letters</li><li>The leaflets your agent is built from</li><li>Text messages and emails your service already sends</li><li>Your service’s web page</li><li>For staff agents: your induction pack and team channels</li></ul>\n    <h2>Make it easy on paper</h2>\n    <p>For printed letters and leaflets, add a QR code that opens the link, with a short line explaining what it is for, such as “Questions about your colonoscopy? Ask our assistant any time.”</p>\n    <h2>Say what it is, and what it is not</h2>\n    <p>Tell people it answers from your service’s approved information, and who to contact for anything personal or urgent. Clear expectations make the agent more useful and safer.</p>\n    <h2>Learn from the pilot</h2>\n    <p>During your pilot, notice what people ask that your content does not cover. Those questions are the best guide to what to add next.</p>"
+    },
+    {
+      "slug": "keeping-current",
+      "cat": "Going live",
+      "title": "Keeping your agent up to date",
+      "lede": "An agent is only as good as the content behind it.",
+      "body": "<h2>Name an owner</h2>\n    <p>Decide who is responsible for the agent’s content before it goes live. When a leaflet or policy changes, that person updates the agent.</p>\n    <h2>Update at the source</h2>\n    <p>When your service changes a document, upload the new version and retire the old one. Review the new passages and approve them as you did the first time.</p>\n    <h2>Changes go back for review</h2>\n    <p>Changing content or key settings sends a live agent back for review before the change reaches anyone. This keeps what people see in step with what has been approved.</p>\n    <h2>Set a review date</h2>\n    <p>Even when nothing obvious has changed, look over your content at regular intervals, as you would any patient information. A date in the diary is easier to keep than a good intention.</p>"
+    }
+  ],
+  "news": [
+    {
+      "slug": "commercial-co-founder",
+      "date": "2026-10-03",
+      "tag": "Company",
+      "title": "We are looking for a commercial co-founder",
+      "lede": "Ostify is built. Now we need someone to bring it to the services that need it.",
+      "body": "<p>Ostify is looking for a commercial co-founder: someone with experience of the NHS or health and care, who wants to bring clinician-built healthcare agents to the services that need them.</p>\n    <p>The role is early-stage and equity-based, with a meaningful co-founder stake and standard vesting. You would lead how Ostify reaches clinicians and organisations, and shape the company from the start.</p>\n    <p class=\"xpost-cta\"><a class=\"xb xb--line\" href=\"/careers/commercial-co-founder/\">See the role</a></p>"
+    },
+    {
+      "slug": "guides",
+      "date": "2026-10-03",
+      "tag": "Product",
+      "title": "New guides for building well",
+      "lede": "Short, practical guides for every stage, from your first agent to keeping it current.",
+      "body": "<p>We have published a set of guides for clinicians building on Ostify. Each one is short and practical, and covers a single job: building your first agent, preparing content, writing rules, testing with Osteoclast, getting ready for review, sharing your agent and keeping it up to date.</p>\n    <p>They sit alongside <a href=\"/how-it-works/\">how it works</a>, which explains the stages themselves. The guides focus on how to do each stage well.</p>\n    <p>We will add more as people ask questions. If there is something you would like a guide on, <a href=\"/contact/\">tell us</a>.</p>\n    <p class=\"xpost-cta\"><a class=\"xb xb--line\" href=\"/guides/\">Read the guides</a></p>"
+    },
+    {
+      "slug": "trust-and-security",
+      "date": "2026-10-03",
+      "tag": "Trust",
+      "title": "Introducing our trust and security page",
+      "lede": "Where data goes, how agents are kept safe, and the standards we work to, in one place.",
+      "body": "<p>Teams building on Ostify often need the same answers for their DPIA, DTAC submission or clinical safety case. We have brought them together on a single <a href=\"/trust/\">trust and security page</a>.</p>\n    <p>It covers where data is processed, how every agent is kept clinically safe, and the standards and certifications that are in place or under way. It also makes clear that Ostify is not a medical device, and is not designed for building medical devices.</p>\n    <p>We will keep the page up to date as certifications complete. If you need something for your own assurance process that is not there, <a href=\"/contact/\">ask us</a>.</p>"
+    },
+    {
+      "slug": "microsoft-for-startups",
+      "date": "2026-10-03",
+      "tag": "Company",
+      "title": "Ostify is part of Microsoft for Startups",
+      "lede": "Access to AI tools, Azure credits and a global network as we build.",
+      "body": "<p>Ostify is part of Microsoft for Startups. The programme gives early-stage companies building on Azure access to AI tools, Azure credits and a global network of customers and partners.</p>\n    <p>It helps us keep building Ostify on Microsoft Azure, where this website and our contact services already run in the UK.</p>\n    <p>You can read more about why Ostify exists in <a href=\"/company/\">our story</a>.</p>"
+    },
+    {
+      "slug": "staff-induction-template",
+      "date": "2026-10-03",
+      "tag": "Product",
+      "title": "New template: staff induction and local policies",
+      "lede": "Ostify agents are no longer only for patients. Upload your local policies and guidelines, and staff can find what they need through a simple chat.",
+      "keep": true
+    }
+  ]
+}

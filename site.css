@@ -1274,3 +1274,80 @@ footer .wordmark{color:var(--x-ink,#0A1712)}
 }
 @media(max-width:700px){.xh .xh-backed span{font-size:11.5px}}
 @media(max-width:700px){.xfooter-tag p br{display:none}.xfooter-tag p{font-size:17px;line-height:1.4}}
+
+/* ---------- Guides and News indexes ---------- */
+.xchips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px}
+.xchip{padding:9px 16px;border-radius:999px;border:1px solid #0A171226;background:#fff;font:inherit;font-size:14px;font-weight:500;color:var(--x-ink,#0A1712);cursor:pointer;min-height:40px}
+.xchip:hover{border-color:#00733A}
+.xchip[aria-pressed=true]{background:#0A1712;color:#fff;border-color:#0A1712}
+.xguide-group{margin-bottom:48px}
+.xguide-group[hidden],.xguide-grid li[hidden],.xnews-list li[hidden],.xnews-feature[hidden]{display:none}
+.xguide-group h2{font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#00733A;margin:0 0 16px}
+.xguide-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.xguide-grid a{display:flex;flex-direction:column;gap:8px;height:100%;padding:24px;border-radius:20px;border:1px solid #0A171214;background:#fff;text-decoration:none;color:inherit;transition:border-color .2s,transform .2s,box-shadow .2s}
+.xguide-grid a:hover{border-color:#00733A;transform:translateY(-3px);box-shadow:0 24px 40px -30px #0A171255}
+.xguide-n{font:500 13px var(--x-mono,ui-monospace,monospace);color:#00733A}
+.xguide-grid b{font-size:20px;letter-spacing:-.02em;line-height:1.25}
+.xguide-grid p{margin:0;font-size:15px;line-height:1.55;color:#3B4A42}
+.xguide-meta{margin-top:auto;padding-top:8px;font-size:13px;color:#5B6B62}
+.xguide-ask{margin-top:8px;font-size:16px;color:#3B4A42}
+.xguide-ask a{color:#00733A}
+@media(max-width:1000px){.xguide-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.xguide-grid{grid-template-columns:1fr}}
+/* Guide pages: previous / next */
+.xpager{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:48px;padding-top:28px;border-top:1px solid #0A17121a}
+.xpager a{display:block;padding:16px 18px;border-radius:14px;border:1px solid #0A171214;text-decoration:none;color:var(--x-ink,#0A1712);font-weight:600;font-size:15px}
+.xpager a:hover{border-color:#00733A}
+.xpager span{display:block;font-size:12px;font-weight:500;color:#5B6B62;margin-bottom:4px}
+.xpager-next{text-align:right}
+@media(max-width:640px){.xpager{grid-template-columns:1fr}.xpager-next{text-align:left}}
+/* News */
+.xnews-feature{display:block;padding:36px;border-radius:24px;background:linear-gradient(150deg,#E3F3E8,#F4FAF5);border:1px solid #00733A33;text-decoration:none;color:inherit;margin-bottom:20px;transition:border-color .2s,transform .2s}
+.xnews-feature:hover{border-color:#00733A;transform:translateY(-2px)}
+.xnews-feature b{display:block;font-size:clamp(26px,3.4vw,38px);letter-spacing:-.03em;line-height:1.15;margin:14px 0 10px;max-width:24ch}
+.xnews-feature p{margin:0 0 16px;font-size:17px;line-height:1.6;color:#3B4A42;max-width:60ch}
+.xnews-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.xnews-row time{font-size:13px;color:#5B6B62}
+.xnews-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.xnews-list a{display:flex;flex-direction:column;gap:10px;height:100%;padding:24px;border-radius:20px;border:1px solid #0A171214;background:#fff;text-decoration:none;color:inherit;transition:border-color .2s,transform .2s}
+.xnews-list a:hover{border-color:#00733A;transform:translateY(-2px)}
+.xnews-list b{font-size:19px;letter-spacing:-.02em;line-height:1.25}
+.xnews-list p{margin:0;font-size:15px;line-height:1.55;color:#3B4A42}
+.xnews-follow{margin-top:36px;font-size:16px;color:#3B4A42}
+.xnews-follow a,.xpost-back a{color:#00733A}
+.xpost-back{margin-top:40px}
+@media(max-width:1000px){.xnews-list{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.xnews-list{grid-template-columns:1fr}.xnews-feature{padding:24px}}
+.xh-copy .xl a{text-decoration:underline;text-underline-offset:3px}
+
+/* Work with us */
+.xrole-list{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:10px}
+.xrole-list li{position:relative;padding-left:22px;font-size:16.5px;line-height:1.55;color:#3B4A42}
+.xrole-list li::before{content:"";position:absolute;left:2px;top:9px;width:8px;height:8px;border-radius:50%;background:#00A653}
+.xsteps-plain{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;counter-reset:sp}
+.xsteps-plain li{counter-increment:sp;padding:24px;border-radius:20px;border:1px solid #0A171214;background:#fff}
+.xsteps-plain li::before{content:counter(sp);display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#E6F2EA;color:#00733A;font-weight:700;margin-bottom:14px}
+.xsteps-plain b{display:block;font-size:18px}
+.xsteps-plain p{margin:6px 0 0;font-size:15.5px;line-height:1.55;color:#3B4A42}
+@media(max-width:820px){.xsteps-plain{grid-template-columns:1fr}}
+.xteam-hiring{margin-top:32px;font-size:17px;color:#3B4A42}
+.xteam-hiring a{color:#00733A}
+
+/* Work with us: role listing and role pages */
+.xroles-list{list-style:none;margin:0;padding:0;display:grid;gap:16px;max-width:900px}
+.xroles-list a{display:flex;flex-direction:column;gap:10px;padding:28px;border-radius:22px;border:1px solid #00733A33;background:linear-gradient(150deg,#EEF7F1,#fff);text-decoration:none;color:inherit;transition:border-color .2s,transform .2s}
+.xroles-list a:hover{border-color:#00733A;transform:translateY(-2px)}
+.xroles-list b{font-size:clamp(22px,2.6vw,28px);letter-spacing:-.025em}
+.xroles-list p{margin:0;font-size:16.5px;line-height:1.6;color:#3B4A42;max-width:62ch}
+.xrole-meta{font-size:13.5px;color:#5B6B62}
+.xroles-none{font-size:17px;color:#3B4A42}
+.xroles-none a{color:#00733A}
+.xrole{display:grid;grid-template-columns:240px minmax(0,1fr);gap:56px;align-items:start}
+.xrole-facts{margin:0;position:sticky;top:110px;padding:22px;border-radius:18px;background:#F4F7F3;border:1px solid #0A171214}
+.xrole-facts div+div{margin-top:14px;padding-top:14px;border-top:1px solid #0A17121a}
+.xrole-facts dt{font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#00733A}
+.xrole-facts dd{margin:4px 0 0;font-size:15.5px;color:var(--x-ink,#0A1712)}
+.xrole .xpost{max-width:680px}
+.xpost ol{margin:0 0 20px;padding-left:22px}
+.xpost ol li{font-size:17px;line-height:1.7;color:#3B4A42;margin-bottom:6px}
+@media(max-width:860px){.xrole{grid-template-columns:1fr;gap:28px}.xrole-facts{position:static}}

@@ -657,3 +657,19 @@ document.querySelectorAll('[data-gal]').forEach(function (gal) {
     });
   });
 })();
+
+// Filter chips on the Guides and News pages.
+(function () {
+  var chips = [].slice.call(document.querySelectorAll('.xchip'));
+  if (!chips.length) return;
+  chips.forEach(function (c) {
+    c.addEventListener('click', function () {
+      var f = c.getAttribute('data-filter');
+      chips.forEach(function (x) { x.setAttribute('aria-pressed', x === c); });
+      document.querySelectorAll('.xguide-group, .xguide-grid li, .xnews-feature, .xnews-list li').forEach(function (el) {
+        var cat = el.getAttribute('data-cat');
+        el.hidden = f !== 'all' && cat && cat !== f;
+      });
+    });
+  });
+})();
