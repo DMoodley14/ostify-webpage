@@ -249,7 +249,7 @@ document.querySelectorAll('[data-gal]').forEach(function (gal) {
   window.addEventListener('scroll', drawIn, { passive: true });
   drawIn();
 
-  /* ---------- trabecular lattice behind dark heroes ---------- */
+  /* ---------- trabecular lattice behind the light heroes ---------- */
   document.querySelectorAll('.xh').forEach(function (hero) {
     var canvas = document.createElement('canvas');
     canvas.className = 'xlattice';
@@ -311,7 +311,7 @@ document.querySelectorAll('[data-gal]').forEach(function (gal) {
         var a = nodes[e.a], b = nodes[e.b];
         var mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2;
         var near = Math.max(0, 1 - Math.hypot(mx - mouse.x, my - mouse.y) / 220);
-        ctx.strokeStyle = 'rgba(185,224,200,' + (0.17 + near * 0.4).toFixed(3) + ')';
+        ctx.strokeStyle = 'rgba(0,115,58,' + (0.13 + near * 0.32).toFixed(3) + ')';
         ctx.lineWidth = e.t + near * 1.2;
         ctx.beginPath(); ctx.moveTo(a.x, a.y);
         // a slight curve reads as bone, not wire
@@ -320,7 +320,7 @@ document.querySelectorAll('[data-gal]').forEach(function (gal) {
       });
       // junctions
       nodes.forEach(function (n) {
-        ctx.fillStyle = 'rgba(214,225,218,0.22)';
+        ctx.fillStyle = 'rgba(0,96,47,0.28)';
         ctx.beginPath(); ctx.arc(n.x, n.y, n.w, 0, 6.283); ctx.fill();
       });
       // questions travelling through the network
@@ -334,10 +334,10 @@ document.querySelectorAll('[data-gal]').forEach(function (gal) {
         }
         var s = nodes[p.from], d = nodes[p.from === p.e.a ? p.e.b : p.e.a];
         var x = s.x + (d.x - s.x) * p.k, y = s.y + (d.y - s.y) * p.k;
-        var g = ctx.createRadialGradient(x, y, 0, x, y, 14);
-        g.addColorStop(0, 'rgba(0,210,106,0.9)'); g.addColorStop(1, 'rgba(0,210,106,0)');
-        ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, 14, 0, 6.283); ctx.fill();
-        ctx.fillStyle = '#B9F5D2'; ctx.beginPath(); ctx.arc(x, y, 1.8, 0, 6.283); ctx.fill();
+        // a crisp green dot with a soft halo
+        ctx.fillStyle = 'rgba(0,210,106,0.22)'; ctx.beginPath(); ctx.arc(x, y, 8, 0, 6.283); ctx.fill();
+        ctx.fillStyle = '#00B85C'; ctx.beginPath(); ctx.arc(x, y, 3.4, 0, 6.283); ctx.fill();
+        ctx.strokeStyle = 'rgba(255,255,255,0.95)'; ctx.lineWidth = 1.4; ctx.stroke();
       });
     }
 
@@ -365,34 +365,46 @@ document.querySelectorAll('[data-gal]').forEach(function (gal) {
   var ICON = {
     bone: demo.querySelector('.chat-avatar').innerHTML,
     clipboard: '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4.5" width="12" height="16" rx="2"/><path d="M9.5 3h5v3h-5z"/><path d="m9.5 13 2 2 3.5-4"/></svg>',
-    lungs: '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5v8.5"/><path d="M12 12c-1.2 0-2 .9-2 2v3.6c0 1.6-1.3 2.7-2.9 2.3C5.3 19.6 4 17.8 4 15.8v-2.9c0-3 1.4-6 4-7 1-.4 2 .4 2 1.5V10"/><path d="M12 12c1.2 0 2 .9 2 2v3.6c0 1.6 1.3 2.7 2.9 2.3 1.8-.3 3.1-2.1 3.1-4.1v-2.9c0-3-1.4-6-4-7-1-.4-2 .4-2 1.5V10"/></svg>'
+    lungs: '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5v8.5"/><path d="M12 12c-1.2 0-2 .9-2 2v3.6c0 1.6-1.3 2.7-2.9 2.3C5.3 19.6 4 17.8 4 15.8v-2.9c0-3 1.4-6 4-7 1-.4 2 .4 2 1.5V10"/><path d="M12 12c1.2 0 2 .9 2 2v3.6c0 1.6 1.3 2.7 2.9 2.3 1.8-.3 3.1-2.1 3.1-4.1v-2.9c0-3-1.4-6-4-7-1-.4-2 .4-2 1.5V10"/></svg>',
+    flask: '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 3h5"/><path d="M10 3v6L5 18.5A1.7 1.7 0 0 0 6.5 21h11a1.7 1.7 0 0 0 1.5-2.5L14 9V3"/><path d="M7.5 15h9"/></svg>',
+    badge: '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3.5" width="14" height="17" rx="2.5"/><circle cx="12" cy="10" r="2.5"/><path d="M8.5 16.5c.8-1.6 2-2.4 3.5-2.4s2.7.8 3.5 2.4"/></svg>'
   };
   // Wording follows NHS.uk: osteoporosis prevention and DEXA scan pages,
   // colonoscopy "Getting ready", and the asthma and asthma attack pages.
   var AGENTS = [
-    { icon: 'bone', theme: 'bone', name: 'Bone Health Clinic Assistant', sub: 'Answers only from approved clinic content',
+    { icon: 'bone', theme: 'patient', aud: 'Patient-facing', name: 'Bone Health Clinic Assistant', sub: 'Answers only from approved clinic content',
       chat: [
         ['q', 'What exercise is good for my bones?'],
         ['a', 'Brisk walking, dancing and strength exercises all help. If you have osteoporosis, check with your GP first.', 'Exercise and your bones · approved'],
         ['q', 'What should I wear for my DEXA scan?'],
         ['a', 'Clothes without zips or metal buckles are best. No special preparation is needed.', 'Your DEXA scan · approved']
       ] },
-    { icon: 'clipboard', theme: 'endo', name: 'Endoscopy Unit Assistant', sub: 'Preparing for your colonoscopy',
+    { icon: 'clipboard', theme: 'patient', aud: 'Patient-facing', name: 'Endoscopy Unit Assistant', sub: 'Preparing for your colonoscopy',
       chat: [
         ['q', 'What can I eat before my colonoscopy?'],
         ['a', 'For 2 days before, stick to plain foods like white rice, pasta or clear soup.', 'Preparing for your test · approved'],
         ['q', 'Can I take my usual tablets?'],
         ['a', 'Let the hospital know about any medicines as soon as you get your letter.', 'Your medicines · approved']
       ] },
-    { icon: 'lungs', theme: 'asthma', name: 'Asthma Support Assistant', sub: 'From your respiratory clinic’s guides',
+    { icon: 'flask', theme: 'public', aud: 'Public-facing', name: 'Study Information Assistant', sub: 'From the approved participant information sheet',
       chat: [
-        ['q', 'Can someone check my inhaler technique?'],
-        ['a', 'Yes. A doctor, nurse or pharmacist can show you how to use it.', 'Using your inhaler · approved'],
-        ['q', 'How often should I have an asthma review?'],
-        ['a', 'At least once a year, to check how well your treatment is working.', 'Asthma reviews · approved']
+        ['q', 'Can I leave the study if I change my mind?'],
+        ['a', 'Yes. You can withdraw at any time, without giving a reason.', 'Participant information sheet · approved'],
+        ['q', 'Will taking part affect my usual care?'],
+        ['a', 'No. Your usual care carries on as normal, whether or not you take part.', 'Participant information sheet · approved']
+      ] },
+    { icon: 'badge', theme: 'staff', aud: 'Staff-facing', name: 'Ward Induction Assistant', sub: 'From your local policies and guidelines',
+      chat: [
+        ['q', 'Who do I escalate to if a patient deteriorates overnight?'],
+        ['a', 'Bleep the on-call registrar through switchboard, then follow the deteriorating patient policy.', 'Deteriorating patient policy · approved'],
+        ['q', 'Where do I find the chaperone policy?'],
+        ['a', 'It is in the trust policy library under Patient safety. Offer a chaperone for every intimate examination.', 'Chaperone policy · approved']
       ] }
   ];
 
+  var aud = document.createElement('span');
+  aud.className = 'chat-aud';
+  demo.appendChild(aud);
   var head = demo.querySelector('.chat-head');
   var body = demo.querySelector('.chat-body');
   var i = 0, timer, paused = false;
@@ -406,23 +418,49 @@ document.querySelectorAll('[data-gal]').forEach(function (gal) {
     var b = document.createElement('button');
     b.type = 'button';
     b.setAttribute('role', 'tab');
-    b.setAttribute('aria-label', a.name);
+    b.setAttribute('aria-label', a.name + ', ' + a.aud);
     b.addEventListener('click', function () { show(n); restart(); });
     dots.appendChild(b);
   });
   demo.parentElement.appendChild(dots);
 
   function esc(t) { var d = document.createElement('div'); d.textContent = t; return d.innerHTML; }
+  var steps = [];
+  function later(fn, ms) { steps.push(setTimeout(fn, ms)); }
+  function bubble(m) {
+    var el = document.createElement(m[0] === 'q' ? 'p' : 'div');
+    if (m[0] === 'q') { el.className = 'msg msg--patient'; el.textContent = m[1]; return el; }
+    el.className = 'msg msg--agent';
+    el.innerHTML = '<p>' + esc(m[1]) + '</p><span class="cite">' + esc(m[2]) + '</span>';
+    return el;
+  }
   function render(a) {
+    steps.forEach(clearTimeout); steps = [];
     demo.setAttribute('data-theme', a.theme);
+    aud.textContent = a.aud;
     head.querySelector('.chat-avatar').innerHTML = ICON[a.icon];
     head.querySelector('b').textContent = a.name;
     head.querySelector(':scope > div > span').textContent = a.sub;
-    body.innerHTML = a.chat.map(function (m, t) {
-      if (m[0] === 'q') return '<p class="msg msg--patient" style="--t:' + t + '">' + esc(m[1]) + '</p>';
-      return '<div class="msg msg--agent' + (m[0] === 'u' ? ' msg--signpost' : '') + '" style="--t:' + t + '"><p>' + esc(m[1]) +
-             '</p><span class="cite">' + esc(m[2]) + '</span></div>';
-    }).join('');
+    body.innerHTML = '';
+    if (reduce) { a.chat.forEach(function (m) { body.appendChild(bubble(m)); }); return; }
+    // Open with the first exchange already in place, then play the rest.
+    body.appendChild(bubble(a.chat[0]));
+    body.appendChild(bubble(a.chat[1]));
+    var t = 700;
+    a.chat.slice(2).forEach(function (m) {
+      if (m[0] === 'q') { later(function () { body.appendChild(bubble(m)); }, t); t += 900; return; }
+      var dots;
+      later(function () {
+        dots = document.createElement('div');
+        dots.className = 'msg msg--agent msg--typing';
+        dots.setAttribute('aria-hidden', 'true');
+        dots.innerHTML = '<i></i><i></i><i></i>';
+        body.appendChild(dots);
+      }, t);
+      t += 1100;
+      later(function () { body.replaceChild(bubble(m), dots); }, t);
+      t += 1300;
+    });
   }
   function mark() {
     [].forEach.call(dots.children, function (b, n) { b.setAttribute('aria-selected', n === i); });
@@ -435,11 +473,11 @@ document.querySelectorAll('[data-gal]').forEach(function (gal) {
   }
   function restart() {
     clearInterval(timer);
-    if (!reduce) timer = setInterval(function () { if (!paused && !document.hidden) show((i + 1) % AGENTS.length); }, 9000);
+    if (!reduce) timer = setInterval(function () { if (!paused && !document.hidden) show((i + 1) % AGENTS.length); }, 11000);
   }
   demo.addEventListener('pointerenter', function () { paused = true; });
   demo.addEventListener('pointerleave', function () { paused = false; });
-  demo.setAttribute('data-theme', AGENTS[0].theme);
+  render(AGENTS[0]);
   mark();
   restart();
 })();
@@ -448,8 +486,11 @@ document.querySelectorAll('[data-gal]').forEach(function (gal) {
 (function () {
   var rail = document.querySelector('.xrail');
   if (!rail) return;
-  var links = [].slice.call(rail.querySelectorAll('a'));
+  var links = [].slice.call(rail.querySelectorAll('a')).filter(function (a) {
+    return document.querySelector(a.getAttribute('href'));
+  });
   var targets = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+  if (!targets.length) return;
   var start = document.getElementById('how');
   function update() {
     var vh = window.innerHeight;
@@ -583,6 +624,36 @@ document.querySelectorAll('[data-gal]').forEach(function (gal) {
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
       btn.querySelector('span').textContent = open ? 'Hide details' : 'Show details';
       if (!open) g.scrollIntoView({ block: 'start' });
+    });
+  });
+})();
+
+// Product showcase: tabs between annotated screens.
+(function () {
+  var tabs = [].slice.call(document.querySelectorAll('.xsh-tabs [role=tab]'));
+  if (!tabs.length) return;
+  function select(n, focus) {
+    tabs.forEach(function (t, i) {
+      var on = i === n;
+      t.setAttribute('aria-selected', on);
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+    });
+    if (focus) tabs[n].focus();
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { select(i); });
+    t.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') select((i + 1) % tabs.length, true);
+      if (e.key === 'ArrowLeft') select((i + tabs.length - 1) % tabs.length, true);
+    });
+  });
+  // Highlight the matching marker when a note is hovered.
+  document.querySelectorAll('.xsh-panel').forEach(function (p) {
+    var dots = p.querySelectorAll('.xsh-dot');
+    p.querySelectorAll('.xsh-notes li').forEach(function (li, i) {
+      li.addEventListener('pointerenter', function () { dots[i] && dots[i].classList.add('is-on'); });
+      li.addEventListener('pointerleave', function () { dots[i] && dots[i].classList.remove('is-on'); });
     });
   });
 })();
