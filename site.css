@@ -1440,3 +1440,8 @@ html.xbar-off .xbar{display:none}
 .xpost .xqs-chat .xqs-a{align-self:flex-start;background:#fff;color:var(--x-ink);border:1px solid var(--x-rule);border-bottom-left-radius:6px}
 @media(prefers-reduced-motion:no-preference){.xpost .xqs-steps li{transition:transform .25s var(--ease),box-shadow .25s var(--ease)}.xpost .xqs-steps li:hover{transform:translateY(-3px);box-shadow:0 14px 28px -18px rgba(10,23,18,.35)}}
 @media(max-width:640px){.xpost .xqs-steps,.xqs-vs{grid-template-columns:1fr}.xpost .xqs-chat p{max-width:92%}.xpost .xqs-grow li{grid-template-columns:1fr}}
+
+/* Mobile menu: an overlay under the sticky header, wherever the page is scrolled */
+body.menu-open{overflow:visible}
+html.menu-open{overflow:hidden}
+.mobile-menu{max-height:calc(100dvh - 73px);overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;box-shadow:0 30px 40px -30px rgba(10,23,18,.35)}

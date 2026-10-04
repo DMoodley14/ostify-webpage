@@ -8,12 +8,17 @@
     btn.setAttribute('aria-expanded','false');
     btn.setAttribute('aria-label','Open menu');
     document.body.classList.remove('menu-open');
+    document.documentElement.classList.remove('menu-open');
+    menu.style.maxHeight = '';
   }
   function openMenu(){
     menu.classList.add('open');
     btn.setAttribute('aria-expanded','true');
     btn.setAttribute('aria-label','Close menu');
     document.body.classList.add('menu-open');
+    // Lock scrolling on the root, not the body, so the sticky header stays in view.
+    document.documentElement.classList.add('menu-open');
+    menu.style.maxHeight = (window.innerHeight - menu.getBoundingClientRect().top) + 'px';
   }
 
   btn.addEventListener('click', function(){
