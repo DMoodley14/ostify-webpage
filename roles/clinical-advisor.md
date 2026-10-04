@@ -1,6 +1,6 @@
 ---
 title: Clinical Advisor
-summary: Help shape what Ostify builds and how it works, with clinicians at the centre from the start.
+summary: We are looking for four practising clinicians to help shape what Ostify builds and how it works.
 type: Advisor
 commitment: A few hours a month, flexible around clinical work
 location: Remote, UK
