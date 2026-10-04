@@ -36,6 +36,11 @@ const HEADERS = {
   'X-Frame-Options': 'DENY',
 };
 
+// Short addresses that send people elsewhere, e.g. ostify.co.uk/apply to the application form.
+const REDIRECTS = {
+  '/apply': 'https://app.notion.com/p/6804cea55fc941edba519a6fc0897e23?pvs=106',
+};
+
 function send(res, status, body, type) {
   res.writeHead(status, { ...HEADERS, 'Content-Type': type || 'text/html; charset=utf-8' });
   res.end(body);
@@ -55,6 +60,12 @@ http.createServer((req, res) => {
     urlPath = decodeURIComponent(new URL(req.url, 'http://x').pathname);
   } catch (e) {
     return send(res, 400, 'Bad request', 'text/plain');
+  }
+
+  const target = REDIRECTS[urlPath.replace(/\/$/, '')];
+  if (target) {
+    res.writeHead(302, { ...HEADERS, Location: target, 'Cache-Control': 'no-cache' });
+    return res.end();
   }
 
   const file = path.join(ROOT, urlPath);

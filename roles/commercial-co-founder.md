@@ -5,7 +5,7 @@ type: Co-founder
 commitment: Part-time initially, full-time once we raise pre-seed
 location: UK-based, mostly remote, one day a week in London
 pay: Co-founder equity with vesting, salary from pre-seed raise
-apply: https://app.notion.com/p/6804cea55fc941edba519a6fc0897e23?pvs=106
+apply: /apply/
 status: open
 order: 1
 ---
