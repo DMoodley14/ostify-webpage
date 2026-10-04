@@ -332,6 +332,7 @@ html.js .msg{opacity:0;transform:translateY(10px) scale(.98);animation:msgIn .6s
 .xdoors b{font-size:28px;font-weight:500;letter-spacing:-.03em;line-height:1.15;max-width:20ch}
 .xarrow{margin-top:auto;font-size:22px;color:var(--x-accent);transition:transform .3s var(--ease)}
 .xdoors a:hover .xarrow{transform:translateX(6px)}
+@media(min-width:1001px){.xdoors--3{grid-template-columns:repeat(3,1fr)}.xdoors--3 b{font-size:24px}}
 
 /* faq */
 .xfaq{margin-left:25%;border-top:1px solid var(--x-ink)}
@@ -1372,3 +1373,11 @@ footer .wordmark{color:var(--x-ink,#0A1712)}
 .xbar-x{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:32px;height:32px;border:0;border-radius:50%;background:none;color:#8FA597;font-size:20px;line-height:1;cursor:pointer}
 .xbar-x:hover{color:#fff;background:#ffffff14}
 html.xbar-off .xbar{display:none}
+
+/* Footer: brand block beside four link columns */
+.footer-top--cols{grid-template-columns:minmax(0,1fr) minmax(0,2.2fr);gap:64px}
+.footer-brand .xfooter-tag{margin-top:20px}
+.footer-cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px}
+.footer-bottom p a{color:inherit}
+@media(max-width:900px){.footer-top--cols{grid-template-columns:1fr;gap:44px}}
+@media(max-width:600px){.footer-cols{grid-template-columns:1fr 1fr;gap:32px 20px}}
