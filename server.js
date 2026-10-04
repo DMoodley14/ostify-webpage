@@ -56,6 +56,12 @@ function notFound(res) {
 http.createServer((req, res) => {
   if (req.method !== 'GET' && req.method !== 'HEAD') return send(res, 405, 'Method not allowed', 'text/plain');
 
+  // One address for the site: www goes to ostify.co.uk, keeping the path.
+  if ((req.headers.host || '').toLowerCase().startsWith('www.ostify.co.uk')) {
+    res.writeHead(301, { ...HEADERS, Location: 'https://ostify.co.uk' + req.url });
+    return res.end();
+  }
+
   let urlPath;
   try {
     urlPath = decodeURIComponent(new URL(req.url, 'http://x').pathname);
