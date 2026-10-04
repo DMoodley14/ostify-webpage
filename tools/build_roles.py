@@ -5,6 +5,7 @@ Each roles/<slug>.md becomes /careers/<slug>/. Files starting with "_" are skipp
 and roles with "status: closed" are left off the site.
 """
 import glob, html, json, os, re, shutil, sys, datetime
+from urllib.parse import quote
 import markdown
 
 sys.path.insert(0, os.path.dirname(__file__))
@@ -18,7 +19,7 @@ def read(path):
     m = re.match(r'^---\s*\n(.*?)\n---\s*\n(.*)$', text, re.S)
     if m:
         for line in m.group(1).splitlines():
-            line = line.split('#', 1)[0].rstrip()
+            line = re.split(r'\s+#', line, 1)[0].rstrip()
             if ':' in line:
                 k, v = line.split(':', 1)
                 meta[k.strip()] = v.strip()
@@ -45,7 +46,13 @@ HERO = '''<section class="xh xh--page xp">
 '''
 
 def mailto(title):
-    return f'mailto:{EMAIL}?subject=' + re.sub(r'\s', '%20', html.escape(title))
+    return f'mailto:{EMAIL}?subject=' + quote(title)
+
+def cta(r, label):
+    # Roles with an "apply" link (e.g. an application form) send people there; others open an email
+    if r.get('apply'):
+        return f'<a class="xb xb--light" href="{html.escape(r["apply"])}">Apply now</a>'
+    return f'<a class="xb xb--light" href="{mailto(r["title"])}">{label}</a>'
 
 def facts(r):
     rows = [(k.title(), r[k]) for k in ('type', 'commitment', 'location', 'pay') if r.get(k)]
@@ -61,13 +68,13 @@ for r in open_roles:
     t = html.escape(r['title'])
     main = '<main id="main" class="xp">\n<article>\n' + HERO.format(
         eyebrow='<a href="/careers/">Work with us</a>', title=t + '.', lede=html.escape(r.get('summary', '')),
-        cta=f'<a class="xb xb--light" href="{mailto(r["title"])}">Apply or ask a question</a>') + f'''
+        cta=cta(r, 'Apply or ask a question')) + f'''
 <section class="xs">
   <div class="xw xrole">
     <dl class="xrole-facts">{facts(r)}</dl>
     <div class="xpost">
       {r["html"]}
-      <p class="xpost-cta"><a class="xb xb--light" href="{mailto(r["title"])}">Get in touch</a></p>
+      <p class="xpost-cta">{cta(r, 'Get in touch')}</p>
       <p class="xpost-back"><a href="/careers/">All roles</a></p>
     </div>
   </div>

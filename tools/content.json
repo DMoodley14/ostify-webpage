@@ -67,15 +67,15 @@
   "news": [
     {
       "slug": "commercial-co-founder",
-      "date": "2026-10-03",
+      "date": "2026-10-04",
       "tag": "Company",
-      "title": "We are looking for a commercial co-founder",
-      "lede": "Ostify is built. Now we need someone to bring it to the services that need it.",
-      "body": "<p>Ostify is looking for a commercial co-founder: someone with experience of the NHS or health and care, who wants to bring clinician-built healthcare agents to the services that need them.</p>\n    <p>The role is early-stage and equity-based, with a meaningful co-founder stake and standard vesting. You would lead how Ostify reaches clinicians and organisations, and shape the company from the start.</p>\n    <p class=\"xpost-cta\"><a class=\"xb xb--line\" href=\"/careers/commercial-co-founder/\">See the role</a></p>"
+      "title": "We are looking for a Co-founder & CCO",
+      "lede": "The platform is built and clinically led. Now we need someone to bring it to the clinicians and services ready to build.",
+      "body": "<p>Ostify is looking for a Co-founder &amp; Chief Commercial Officer: someone with a track record of selling into the NHS or UK health and care, who wants to lead our commercial side from day one.</p>\n    <p>You would turn interest from clinicians and NHS services into signed pilots and paid deployments, and work closely with our CEO on strategy and fundraising. It is an early-stage role with co-founder equity, starting part-time and moving to full-time and salaried once we raise pre-seed.</p>\n    <p class=\"xpost-cta\"><a class=\"xb xb--line\" href=\"/careers/commercial-co-founder/\">See the role</a></p>"
     },
     {
       "slug": "guides",
-      "date": "2026-10-03",
+      "date": "2026-09-28",
       "tag": "Product",
       "title": "New guides for building well",
       "lede": "Short, practical guides for every stage, from your first agent to keeping it current.",
@@ -83,7 +83,7 @@
     },
     {
       "slug": "trust-and-security",
-      "date": "2026-10-03",
+      "date": "2026-09-24",
       "tag": "Trust",
       "title": "Introducing our trust and security page",
       "lede": "Where data goes, how agents are kept safe, and the standards we work to, in one place.",
@@ -91,7 +91,7 @@
     },
     {
       "slug": "microsoft-for-startups",
-      "date": "2026-10-03",
+      "date": "2026-09-21",
       "tag": "Company",
       "title": "Ostify is part of Microsoft for Startups",
       "lede": "Access to AI tools, Azure credits and a global network as we build.",
@@ -99,7 +99,7 @@
     },
     {
       "slug": "staff-induction-template",
-      "date": "2026-10-03",
+      "date": "2026-09-17",
       "tag": "Product",
       "title": "New template: staff induction and local policies",
       "lede": "Ostify agents are no longer only for patients. Upload your local policies and guidelines, and staff can find what they need through a simple chat.",
