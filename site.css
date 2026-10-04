@@ -510,6 +510,8 @@ html.js .msg{opacity:0;transform:translateY(10px) scale(.98);animation:msgIn .6s
 .xcontact label:first-of-type{margin-top:0}
 .xcontact input,.xcontact select,.xcontact textarea{width:100%;padding:13px 14px;border:1px solid var(--x-rule);border-radius:12px;background:var(--x-paper);font:inherit;color:var(--x-ink)}
 .xcontact input:focus,.xcontact select:focus,.xcontact textarea:focus{outline:2px solid var(--x-volt);outline-offset:1px;background:#fff}
+.xcontact .form-part{font-weight:600;font-size:17px;margin-top:34px;padding-top:26px;border-top:1px solid var(--x-rule)}
+.xcontact .form-part span{display:block;font-weight:400;font-size:13.5px;color:var(--x-muted);margin-top:4px}
 .xcontact .field-help{font-size:13.5px;color:var(--x-muted);margin-top:8px}
 .xcontact button{margin-top:24px;border:0;cursor:pointer}
 .xcontact aside h3{font:500 24px/1.2 var(--x-display);letter-spacing:-.02em;margin-bottom:14px}
