@@ -1401,3 +1401,42 @@ html.xbar-off .xbar{display:none}
 @media(max-width:1000px){.footer-cols{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:600px){.footer-cols{grid-template-columns:1fr 1fr;gap:32px 20px}.footer-brand{flex-direction:column;align-items:flex-start;padding:32px 0}}
 @media(min-width:821px) and (max-width:960px){.links{margin-right:8px}.nav .wrap{gap:16px}.nav .btn,.nav-contact{white-space:nowrap}}
+
+/* Quickstart guide */
+.xpost .xqs-note{padding:16px 20px;background:var(--x-paper);border-radius:14px;font-size:16.5px}
+.xpost .xqs-steps{list-style:none;padding:0;margin:20px 0 28px;display:grid;grid-template-columns:1fr 1fr;gap:12px;counter-reset:qs}
+.xpost .xqs-steps li{counter-increment:qs;position:relative;margin:0;padding:18px 18px 18px 62px;background:#fff;border:1px solid var(--x-rule);border-radius:16px;font-size:15.5px;line-height:1.5}
+.xpost .xqs-steps li:before{content:counter(qs);position:absolute;left:16px;top:16px;width:34px;height:34px;border-radius:50%;background:var(--x-volt);color:var(--x-on-volt);font:700 16px/34px var(--x-display);text-align:center}
+.xpost .xqs-steps b{display:block;font-size:17px;color:var(--x-ink);margin-bottom:2px}
+.xpost .xqs-steps span{display:block}
+.xpost .xqs-shot{margin:28px 0 0;padding:clamp(16px,3vw,32px)}
+.xpost .xqs-shot+.xcap{margin:12px 0 28px;font-size:14px}
+.xqs-vs{display:grid;grid-template-columns:1fr 1.6fr;gap:12px;margin:20px 0 8px;align-items:start}
+.xqs-card{padding:20px;border:1px dashed rgba(18,36,29,.3);border-radius:16px;background:#fff}
+.xqs-card--rich{border:1px solid #00733A55;background:#F1F8F3}
+.xqs-card .xl{display:block;margin-bottom:10px}
+.xpost .xqs-card p{font-size:16px;line-height:1.55;margin:0 0 12px}
+.xpost .xqs-card .xqs-foot{font-size:14px;color:var(--x-muted);margin:0}
+.xqs-card dl{margin:0 0 12px}
+.xqs-card dt{font-weight:700;font-size:14px;color:var(--x-ink);margin-top:10px}
+.xqs-card dt:first-child{margin-top:0}
+.xqs-card dd{margin:2px 0 0;font-size:15.5px;line-height:1.5;color:var(--x-ink-2)}
+.xpost .xqs-grow{list-style:none;padding:20px;margin:20px 0 24px;background:var(--x-paper);border-radius:16px}
+.xpost .xqs-grow li{display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;align-items:center;margin:0 0 14px;font-size:15px;line-height:1.4}
+.xpost .xqs-grow li:last-child{margin-bottom:0}
+.xqs-grow b{color:var(--x-ink)}
+.xqs-grow span{grid-column:1/-1;color:var(--x-muted);font-size:14px}
+.xqs-grow i{display:block;height:10px;border-radius:5px;background:linear-gradient(90deg,var(--x-volt) var(--w),rgba(18,36,29,.1) var(--w))}
+.xqs-grow li:nth-child(1) i{--w:30%}
+.xqs-grow li:nth-child(2) i{--w:70%}
+.xqs-grow li:nth-child(3) i{--w:100%}
+.xpost .xqs-check{list-style:none;padding:0}
+.xpost .xqs-check li{position:relative;padding-left:32px;margin-bottom:10px}
+.xpost .xqs-check li:before{content:"";position:absolute;left:0;top:5px;width:20px;height:20px;border-radius:50%;background:var(--x-volt) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 10.5l3 3 6-7' fill='none' stroke='%2304210F' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/20px no-repeat}
+.xqs-chat{display:flex;flex-direction:column;gap:8px;margin:20px 0 24px;padding:20px;background:var(--x-paper);border-radius:22px}
+.xpost .xqs-chat p{margin:0;max-width:82%;padding:10px 15px;font-size:15.5px;line-height:1.5;border-radius:18px}
+.xpost .xqs-chat .xqs-q{align-self:flex-end;margin-top:10px;background:var(--x-forest);color:#fff;border-bottom-right-radius:6px}
+.xpost .xqs-chat .xqs-q:first-child{margin-top:0}
+.xpost .xqs-chat .xqs-a{align-self:flex-start;background:#fff;color:var(--x-ink);border:1px solid var(--x-rule);border-bottom-left-radius:6px}
+@media(prefers-reduced-motion:no-preference){.xpost .xqs-steps li{transition:transform .25s var(--ease),box-shadow .25s var(--ease)}.xpost .xqs-steps li:hover{transform:translateY(-3px);box-shadow:0 14px 28px -18px rgba(10,23,18,.35)}}
+@media(max-width:640px){.xpost .xqs-steps,.xqs-vs{grid-template-columns:1fr}.xpost .xqs-chat p{max-width:92%}.xpost .xqs-grow li{grid-template-columns:1fr}}
