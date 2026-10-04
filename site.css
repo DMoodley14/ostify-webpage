@@ -1314,7 +1314,7 @@ footer .wordmark{color:var(--x-ink,#0A1712)}
 .xnews-list b{font-size:19px;letter-spacing:-.02em;line-height:1.25}
 .xnews-list p{margin:0;font-size:15px;line-height:1.55;color:#3B4A42}
 .xnews-follow{margin-top:36px;font-size:16px;color:#3B4A42}
-.xnews-follow a,.xpost-back a{color:#00733A}
+.xnews-follow a,.xpost-back a,.xstory a{color:#00733A}
 .xpost-back{margin-top:40px}
 @media(max-width:1000px){.xnews-list{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.xnews-list{grid-template-columns:1fr}.xnews-feature{padding:24px}}

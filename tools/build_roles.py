@@ -108,6 +108,21 @@ idx = '<main id="main" class="xp">\n' + HERO.format(
     <p class="xnews-follow">Do not see the right role? <a href="mailto:{EMAIL}?subject=Working%20with%20Ostify">Tell us what you would bring</a>.</p>
   </div>
 </section>
+
+<section class="xs xs--paper" aria-labelledby="background-title">
+  <div class="xw">
+    <header class="xs-head">
+      <p class="xl">Background</p>
+      <div><h2 id="background-title">Where Ostify is today.</h2></div>
+    </header>
+    <div class="xstory">
+      <p>Ostify lets clinicians build safe, tested AI agents from their own approved content, without writing code. The platform is built and working, and it is led by a doctor who is also a software engineer.</p>
+      <p>We are part of Microsoft for Startups, and we are now bringing Ostify to the first clinicians and services ready to build. It is a good moment to join: the product is in place, and the people who join now will shape how the company grows.</p>
+      <p>We are based in the UK and work mostly remotely, with regular time together in London.</p>
+      <p>To find out more, read <a href="/company/">why we built Ostify</a> and <a href="/how-it-works/">how it works</a>.</p>
+    </div>
+  </div>
+</section>
 '''
 build('careers/index.html', 'careers/', 'Work with us — Ostify',
       'Work with Ostify: open roles at an early-stage company helping clinicians build safe, tested healthcare agents.',
