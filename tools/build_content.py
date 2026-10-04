@@ -103,6 +103,7 @@ for p in N:
 </article>
 '''
     path = f'news/{p["slug"]}/index.html'
+    os.makedirs(os.path.dirname(path), exist_ok=True)
     build(path, f'news/{p["slug"]}/', f'{p["title"]} — Ostify', p['lede'], 'news',
           [('News', 'news/'), (p['title'], f'news/{p["slug"]}/')], main, 'company', None)
     s = open(path).read()

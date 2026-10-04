@@ -66,6 +66,14 @@
   ],
   "news": [
     {
+      "slug": "clinical-advisor",
+      "date": "2026-10-04",
+      "tag": "Company",
+      "title": "We are looking for four clinical advisors",
+      "lede": "Ostify is built with clinicians at the centre. We would like four more of them shaping it.",
+      "body": "<p>Ostify is looking for four clinical advisors: practising NHS clinicians, whether doctors, nurses, allied health professionals or pharmacists, with an interest in digital health, AI or service innovation.</p>\n    <p>Too often, clinicians are brought in after a product is built, to sign off someone else\u2019s design. Our advisors help shape what we build and how it works, from early design through to release. It is an honorary role of a few hours a month, flexible around clinical work.</p>\n    <p class=\"xpost-cta\"><a class=\"xb xb--line\" href=\"/careers/clinical-advisor/\">See the role</a></p>"
+    },
+    {
       "slug": "commercial-co-founder",
       "date": "2026-10-04",
       "tag": "Company",
