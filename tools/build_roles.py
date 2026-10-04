@@ -93,7 +93,8 @@ if open_roles:
 else:
     listing = '<p class="xroles-none">There are no open roles right now. If you would like to work with us, <a href="mailto:' + EMAIL + '">tell us about yourself</a>.</p>'
 
-n = len(open_roles)
+# A listing can cover several positions ("positions: 3" in its front matter)
+n = sum(int(r.get('positions', 1)) for r in open_roles)
 idx = '<main id="main" class="xp">\n' + HERO.format(
     eyebrow='Work with us', title='Help clinicians build what their patients need.',
     lede='Ostify is early-stage and growing. ' + (f'We have {n} open role{"s" if n != 1 else ""}.' if n else 'There are no open roles right now, but we are always glad to hear from people.'),

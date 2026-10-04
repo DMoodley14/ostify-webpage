@@ -6,6 +6,7 @@ commitment: Flexible        # e.g. Flexible, 2 days a week, Full-time
 location: Remote, UK
 pay: Equity                 # e.g. Equity, £40,000 + options
 status: open                # open or closed (closed roles are hidden)
+positions: 1                # how many people you are hiring for this listing
 order: 10                   # lower numbers are listed first
 ---
 
