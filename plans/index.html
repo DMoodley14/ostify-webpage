@@ -77,7 +77,7 @@
     <div class="links">
       <div class="nav-group">
         <button class="nav-top" type="button" aria-expanded="false" aria-controls="nav-product">Product<svg viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
-        <ul class="nav-drop" id="nav-product"><li><a href="/#product"><b>Product tour</b><span>See the screens you will use</span></a></li><li><a href="/how-it-works/"><b>How it works</b><span>From idea to production</span></a></li><li><a href="/#build-types"><b>Templates</b><span>Patient, public and staff agents</span></a></li><li><a href="/#guardrails"><b>Guardrails</b><span>Six safety checks on every question</span></a></li><li><a href="/assurance/"><b>Assurance</b><span>What each plan includes</span></a></li><li><a href="/guides/"><b>Guides</b><span>Practical help for building well</span></a></li><li><a href="/trust/"><b>Trust and security</b><span>Data, safety and certifications</span></a></li></ul>
+        <div class="nav-drop nav-mega" id="nav-product"><div class="nav-col"><p class="nav-h">Explore</p><ul><li><a href="/#product"><b>Product tour</b><span>See the screens you will use</span></a></li><li><a href="/how-it-works/"><b>How it works</b><span>From idea to production</span></a></li><li><a href="/architecture/"><b>Under the hood</b><span>How answers are made, in plain terms</span></a></li><li><a href="/#build-types"><b>Templates</b><span>Patient, public and staff agents</span></a></li></ul></div><div class="nav-col"><p class="nav-h">Safety</p><ul><li><a href="/#guardrails"><b>Guardrails</b><span>Six safety checks on every question</span></a></li><li><a href="/assurance/"><b>Assurance</b><span>What each plan includes</span></a></li><li><a href="/trust/"><b>Trust and security</b><span>Data, safety and certifications</span></a></li></ul></div><div class="nav-foot"><a href="/guides/"><b>Guides</b><span>Practical help for building well</span></a></div></div>
       </div>
       <div class="nav-group">
         <button class="nav-top" type="button" aria-expanded="false" aria-controls="nav-solutions">Solutions<svg viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
@@ -96,7 +96,8 @@
     </div>
   </div>
   <div class="mobile-menu" id="mobile-menu">
-    <div class="mm-group"><p class="mm-h">Product</p><a href="/#product">Product tour</a><a href="/how-it-works/">How it works</a><a href="/#build-types">Templates</a><a href="/#guardrails">Guardrails</a><a href="/assurance/">Assurance</a><a href="/guides/">Guides</a><a href="/trust/">Trust and security</a></div>
+    <div class="mm-group"><p class="mm-h">Product</p><a href="/#product">Product tour</a><a href="/how-it-works/">How it works</a><a href="/architecture/">Under the hood</a><a href="/#build-types">Templates</a><a href="/guides/">Guides</a></div>
+    <div class="mm-group"><p class="mm-h">Safety</p><a href="/#guardrails">Guardrails</a><a href="/assurance/">Assurance</a><a href="/trust/">Trust and security</a></div>
     <div class="mm-group"><p class="mm-h">Solutions</p><a href="/clinicians/">For clinicians</a><a href="/organisations/">For organisations</a></div>
     <a href="/plans/" aria-current="page">Pricing</a>
     <div class="mm-group"><p class="mm-h">Company</p><a href="/company/">About us</a><a href="/careers/">Work with us</a><a href="/news/">News</a><a href="/contact/">Contact</a><a href="https://www.linkedin.com/company/ostify/" target="_blank" rel="noopener">LinkedIn</a></div>
@@ -112,7 +113,7 @@
     <div class="xh-copy">
       <p class="xl xl--light">Plans</p>
       <h1>Free to build. Pay only as you get closer to patients.</h1>
-      <p class="xh-lede">The builder is free, and always will be. Founder, now in beta, adds evaluation and assurance. And with Osticellerate, strong use cases pay nothing upfront before their first patient.</p>
+      <p class="xh-lede">Before your pilot, the builder is free and Founder adds evaluation and assurance. From your pilot onwards, you pay for a review and for the messages your agent answers.</p>
       <div class="xh-cta"><a class="xb xb--light" data-signup href="https://api.ostify.co.uk/.auth/login/ostifycustomerauth?prompt=create&amp;post_login_redirect_uri=https://app.ostify.co.uk/">Build your own</a><a class="xb xb--ghost" href="#osticellerate">Apply for Osticellerate</a></div>
     </div>
   </div>
@@ -121,9 +122,10 @@
 <section class="xs" id="plans">
   <div class="xw">
     <header class="xs-head">
-      <p class="xl">01 · Plans</p>
+      <p class="xl">01 · Before your pilot</p>
       <div>
-        <h2>Start free. Upgrade when you are ready to evaluate.</h2>
+        <h2>Build for free. Add evaluation and assurance when you are ready.</h2>
+        <p class="xs-lede">Everything up to the point you submit your agent for review. No patients are involved yet, and you can stay here as long as you like.</p>
       </div>
     </header>
     <div class="xplans">
@@ -152,23 +154,22 @@
   </div>
 </section>
 
-<section class="xs xs--paper" id="pricing">
+<section class="xs xs--paper" id="pilot">
   <div class="xw">
     <header class="xs-head">
-      <p class="xl">02 · Pricing</p>
+      <p class="xl">02 · Pilot and beyond</p>
       <div>
-        <h2>What you pay, step by step.</h2>
-        <p class="xs-lede">You only pay as your agent moves closer to patients.</p>
+        <h2>From submission to your own link, and on from there.</h2>
+        <p class="xs-lede">The pilot starts when you submit your agent for review. It ends with a link of your own to share with patients, staff or the public.</p>
       </div>
     </header>
     <table class="xtable xprice">
       <thead><tr><th scope="col">Step</th><th scope="col">Price</th><th scope="col">What it covers</th></tr></thead>
       <tbody>
-        <tr><th scope="row"><span class="xprice-n">1</span>Build</th><td><b>Free, always</b></td><td>The Osteoblast builder, for up to 2 MB of clinical content, with no time limit.</td></tr>
-        <tr><th scope="row"><span class="xprice-n">2–3</span>Evaluate, assure and comply</th><td><b>Founder plan</b></td><td>In beta. <a href="/contact/?plan=Founder">Contact us to join</a>.</td></tr>
-        <tr><th scope="row"><span class="xprice-n">4</span>Submit for review</th><td><b>Free with <a href="#osticellerate">Osticellerate</a></b><span class="xprice-alt">Otherwise typically £1,000–£3,000</span></td><td>Free if your agent is accepted for Osticellerate. If not, a one-off fee, quoted before we start, that varies with your agent’s size and scope.</td></tr>
-        <tr><th scope="row"><span class="xprice-n">5</span>Pilot</th><td><b>Included</b></td><td>A dedicated patient link and a generous token allowance, included with approval.</td></tr>
-        <tr><th scope="row"><span class="xprice-n">6</span>Production</th><td><b>Package or pay-as-you-go</b></td><td>A set number of patient conversations each month, or top up as you go. Always prepaid.</td></tr>
+        <tr><th scope="row"><span class="xprice-n">1</span>Submit for review</th><td><b>Free with <a href="#osticellerate">Osticellerate</a></b><span class="xprice-alt">Otherwise typically £800–£1,000</span></td><td>We review your agent individually. Free if it is accepted for Osticellerate. If not, a one-off fee, quoted before we start, that varies with your agent’s size and scope.</td></tr>
+        <tr><th scope="row"><span class="xprice-n">2</span>Your link</th><td><b>Included</b></td><td>Once your agent passes review, we set up a custom link for it. Share it wherever your patients or other users will find it.</td></tr>
+        <tr><th scope="row"><span class="xprice-n">3</span>Pilot messages</th><td><b>Included</b></td><td>A generous allowance of messages, enough to run a pilot and learn what works.</td></tr>
+        <tr><th scope="row"><span class="xprice-n">4</span>After your pilot</th><td><b><a href="#messages">About 10 conversations for £1</a></b><span class="xprice-alt">Always prepaid</span></td><td>When your pilot allowance runs out, top up to keep your agent running. You pay before you use it, so there are no surprise bills. Running a larger service? <a href="/contact/?plan=Production%20package">Ask about a monthly package</a>.</td></tr>
       </tbody>
     </table>
   </div>
@@ -191,31 +192,41 @@
   </div>
 </section>
 
-<section class="xs xs--paper" id="production">
+<section class="xs" id="messages">
   <div class="xw">
     <header class="xs-head">
-      <p class="xl">03 · Production</p>
+      <p class="xl">03 · What a conversation costs</p>
       <div>
-        <h2>After your pilot, two ways to pay.</h2>
-        <p class="xs-lede">Both are prepaid, so there are no surprise bills and you stay in control.</p>
+        <h2>About 10 conversations for £1.</h2>
+        <p class="xs-lede">After your pilot allowance, you pay for the messages your agent answers. A message is one question and its answer.</p>
       </div>
     </header>
-    <div class="xplans">
-      <article class="xplan">
-        <h3>Packages</h3>
-        <p class="xplan-price">A set number of patient conversations each month</p>
-        <div class="xplan-cta"><a class="xb xb--ink" href="/contact/?plan=Production%20package">Ask about packages</a></div>
-      </article>
-      <article class="xplan">
-        <h3>Pay-as-you-go</h3>
-        <p class="xplan-price">Buy credit in advance and top up as you need it</p>
-        <div class="xplan-cta"><a class="xb xb--ink" href="/contact/?plan=Pay-as-you-go">Ask about pay-as-you-go</a></div>
-      </article>
-    </div>
+    <dl class="xdata">
+      <div><dt>Price</dt><dd><b>About 10 conversations of 12 messages for £1</b>That is around 10p per patient for a full conversation, or a little under 1p a message. Shorter conversations cost less.</dd></div>
+      <div><dt>What you are paying for</dt><dd><b>The AI’s reading and writing</b>For every message, the agent rereads its instructions and the passages from your content that fit, then writes a reply. Longer passages and longer answers cost a little more, shorter ones a little less.</dd></div>
+      <div><dt>How you pay</dt><dd><b>In advance, never automatically</b>You top up before you use it, so there are no surprise bills.</dd></div>
+      <div><dt>Where the price is going</dt><dd><b>About 65 conversations for £1, within a month</b>That would bring a full conversation down from around 10p per patient to under 2p. We are rapidly improving the efficiency of our models. Our aim is to use smaller, smarter models that give the same quality of answer for less, and to pass the saving on.</dd></div>
+    </dl>
+    <header class="xs-head xs-head--sub">
+      <p class="xl">An example</p>
+      <div>
+        <h2>A short conversation, costed.</h2>
+      </div>
+    </header>
+    <table class="xtable xcredits">
+      <thead><tr><th scope="col">The patient asks</th><th scope="col">The agent answers</th><th scope="col">Cost</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">What should I wear for my DEXA scan?</th><td>Clothes without zips or metal buckles are best. No special preparation is needed.</td><td><b>Under 1p</b></td></tr>
+        <tr><th scope="row">How long will it take?</th><td>Most scans take 10 to 20 minutes.</td><td><b>Under 1p</b></td></tr>
+        <tr><th scope="row">Thank you</th><td>You’re welcome.</td><td><b>A fraction of 1p</b></td></tr>
+      </tbody>
+      <tfoot><tr><th scope="row">The whole conversation</th><td></td><td><b>About 2p</b></td></tr></tfoot>
+    </table>
+    <p class="xcredits-note">Illustrative. The exact cost depends on how long your passages and answers are.</p>
   </div>
 </section>
 
-<section class="xs" id="faq">
+<section class="xs xs--paper" id="faq">
   <div class="xw">
     <header class="xs-head">
       <p class="xl">04 · Questions</p>
@@ -223,7 +234,7 @@
         <h2>Common questions.</h2>
       </div>
     </header>
-    <div class="xfaq"><details><summary>Is the builder really free?</summary><p>Yes, up to 2 MB of clinical content in total, with no time limit.</p></details><details><summary>How is the review priced?</summary><p>It is free if your agent is accepted for Osticellerate. If not, it is a one-off fee, typically £1,000–£3,000, depending on the size and scope of your agent. We will quote before we start. If you change your content or key settings, the agent is reviewed again before patients see the change.</p></details><details><summary>What does the pilot cost?</summary><p>Nothing extra. Approval comes with a dedicated patient link and a generous token allowance for your pilot.</p></details><details><summary>How does production pricing work?</summary><p>Choose a package with a set number of patient conversations each month, or pay-as-you-go. Both are prepaid, so you pay before you use it.</p></details><details><summary>What is Osticellerate?</summary><p>A programme for agents with a strong use case. Apply, and if we accept, we move your costs to the live phase: nothing to pay before your first patient, then you pay as you scale.</p></details></div>
+    <div class="xfaq"><details><summary>Is the builder really free?</summary><p>Yes, up to 2 MB of clinical content in total, with no time limit.</p></details><details><summary>How is the review priced?</summary><p>It is free if your agent is accepted for Osticellerate. If not, it is a one-off fee, typically £800–£1,000, depending on the size and scope of your agent. We will quote before we start. If you change your content or key settings, the agent is reviewed again before patients see the change.</p></details><details><summary>What does the pilot cost?</summary><p>Nothing beyond the review. Approval comes with your own link and a generous allowance of messages.</p></details><details><summary>What happens when my pilot allowance runs out?</summary><p>You top up in advance, at <a href="#messages">about 10 conversations of 12 messages for £1</a>. Nothing is charged automatically.</p></details><details><summary>What is Osticellerate?</summary><p>A programme for agents with a strong use case. Apply, and if we accept, we move your costs to the live phase: nothing to pay before your first patient, then you pay as you scale.</p></details></div>
   </div>
 </section>
 

@@ -56,7 +56,7 @@
     <div class="links">
       <div class="nav-group is-here">
         <button class="nav-top" type="button" aria-expanded="false" aria-controls="nav-product">Product<svg viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
-        <ul class="nav-drop" id="nav-product"><li><a href="/#product"><b>Product tour</b><span>See the screens you will use</span></a></li><li><a href="/how-it-works/" aria-current="page"><b>How it works</b><span>From idea to production</span></a></li><li><a href="/#build-types"><b>Templates</b><span>Patient, public and staff agents</span></a></li><li><a href="/#guardrails"><b>Guardrails</b><span>Six safety checks on every question</span></a></li><li><a href="/assurance/"><b>Assurance</b><span>What each plan includes</span></a></li><li><a href="/guides/"><b>Guides</b><span>Practical help for building well</span></a></li><li><a href="/trust/"><b>Trust and security</b><span>Data, safety and certifications</span></a></li></ul>
+        <div class="nav-drop nav-mega" id="nav-product"><div class="nav-col"><p class="nav-h">Explore</p><ul><li><a href="/#product"><b>Product tour</b><span>See the screens you will use</span></a></li><li><a href="/how-it-works/" aria-current="page"><b>How it works</b><span>From idea to production</span></a></li><li><a href="/architecture/"><b>Under the hood</b><span>How answers are made, in plain terms</span></a></li><li><a href="/#build-types"><b>Templates</b><span>Patient, public and staff agents</span></a></li></ul></div><div class="nav-col"><p class="nav-h">Safety</p><ul><li><a href="/#guardrails"><b>Guardrails</b><span>Six safety checks on every question</span></a></li><li><a href="/assurance/"><b>Assurance</b><span>What each plan includes</span></a></li><li><a href="/trust/"><b>Trust and security</b><span>Data, safety and certifications</span></a></li></ul></div><div class="nav-foot"><a href="/guides/"><b>Guides</b><span>Practical help for building well</span></a></div></div>
       </div>
       <div class="nav-group">
         <button class="nav-top" type="button" aria-expanded="false" aria-controls="nav-solutions">Solutions<svg viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
@@ -75,7 +75,8 @@
     </div>
   </div>
   <div class="mobile-menu" id="mobile-menu">
-    <div class="mm-group"><p class="mm-h">Product</p><a href="/#product">Product tour</a><a href="/how-it-works/" aria-current="page">How it works</a><a href="/#build-types">Templates</a><a href="/#guardrails">Guardrails</a><a href="/assurance/">Assurance</a><a href="/guides/">Guides</a><a href="/trust/">Trust and security</a></div>
+    <div class="mm-group"><p class="mm-h">Product</p><a href="/#product">Product tour</a><a href="/how-it-works/" aria-current="page">How it works</a><a href="/architecture/">Under the hood</a><a href="/#build-types">Templates</a><a href="/guides/">Guides</a></div>
+    <div class="mm-group"><p class="mm-h">Safety</p><a href="/#guardrails">Guardrails</a><a href="/assurance/">Assurance</a><a href="/trust/">Trust and security</a></div>
     <div class="mm-group"><p class="mm-h">Solutions</p><a href="/clinicians/">For clinicians</a><a href="/organisations/">For organisations</a></div>
     <a href="/plans/">Pricing</a>
     <div class="mm-group"><p class="mm-h">Company</p><a href="/company/">About us</a><a href="/careers/">Work with us</a><a href="/news/">News</a><a href="/contact/">Contact</a><a href="https://www.linkedin.com/company/ostify/" target="_blank" rel="noopener">LinkedIn</a></div>
@@ -115,7 +116,7 @@
     <div class="xnext">
       <p class="xl">Then, once approved</p>
       <ol class="xnext-list">
-        <li><a href="#stage-pilot"><span class="xnext-n">5</span><span><b>Pilot</b>A dedicated patient link and a generous token allowance to pilot with real patients.</span></a></li>
+        <li><a href="#stage-pilot"><span class="xnext-n">5</span><span><b>Pilot</b>A dedicated patient link and a generous message allowance to pilot with real patients.</span></a></li>
         <li><a href="#stage-production"><span class="xnext-n">6</span><span><b>Production</b>Scale on a monthly package or pay-as-you-go, always prepaid.</span></a></li>
       </ol>
     </div>
@@ -231,7 +232,7 @@
       <figure class="xplate"><div class="xwin xdev xdev--mac" data-parallax="-0.06"><div class="xwin-bar" aria-hidden="true"><i></i><i></i><i></i><span>app.ostify.co.uk</span></div><img src="/images/app/golive-1200.webp" srcset="/images/app/golive-1200.webp 1200w, /images/app/golive-2000.webp 2000w" sizes="(max-width:820px) 100vw, 900px" alt="Go live screen: an agent submitted to Ostify for review, with the readiness checklist a reviewer looks at." width="2000" height="1357" loading="lazy" decoding="async"></div></figure>
       <p class="xcap">Submit when you are ready. The readiness checklist shows what the reviewer will look at.</p>
       <dl class="xspec">
-        <div><dt>Review fee</dt><dd><b>Typically £1,000–£3,000</b>A one-off fee that varies with your agent’s size and scope. We will quote before we start, or <a href="/plans/#osticellerate">apply for Osticellerate</a> to pay nothing upfront.</dd></div>
+        <div><dt>Review fee</dt><dd><b>Typically £800–£1,000</b>A one-off fee that varies with your agent’s size and scope. We will quote before we start, or <a href="/plans/#osticellerate">apply for Osticellerate</a> to pay nothing upfront.</dd></div>
         <div><dt>After changes</dt><dd><b>Re-approval</b>Edit your content or key settings and the agent goes back to review before patients see the change.</dd></div>
       </dl>
     </div>
@@ -240,13 +241,13 @@
 
 <section class="xs xstage" id="stage-pilot">
   <div class="xw xstage-grid">
-    <aside class="xstage-side"><span class="xstage-n" data-parallax="0.12">5</span><b>Pilot</b><span class="xl">Once approved · Tokens included</span></aside>
+    <aside class="xstage-side"><span class="xstage-n" data-parallax="0.12">5</span><b>Pilot</b><span class="xl">Once approved · Messages included</span></aside>
     <div class="xstage-main">
       <h2>Pilot with real patients.</h2>
-      <p class="xs-lede">Once your agent passes review, you get a dedicated link and a generous token allowance, so you can pilot it with real patients and learn what works before you scale.</p>
+      <p class="xs-lede">Once your agent passes review, you get a dedicated link and a generous message allowance, so you can pilot it with real patients and learn what works before you scale.</p>
       <dl class="xspec">
         <div><dt>Your link</dt><dd><b>A dedicated patient link</b>Share it wherever your patients will find it.</dd></div>
-        <div><dt>Your tokens</dt><dd><b>A generous token allowance</b>Plenty of tokens to run your pilot, included with approval.</dd></div>
+        <div><dt>Your messages</dt><dd><b>A generous message allowance</b>Plenty of messages to run your pilot, included with approval.</dd></div>
         <div><dt>After the pilot</dt><dd><b>Move to production</b>When you are ready to scale, move onto <a href="#stage-production">Ostify production</a>.</dd></div>
       </dl>
     </div>
