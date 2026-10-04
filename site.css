@@ -1345,8 +1345,8 @@ footer .wordmark{color:var(--x-ink,#0A1712)}
 .xsteps-plain p{margin:6px 0 0;font-size:15.5px;line-height:1.55;color:#3B4A42}
 @media(max-width:820px){.xsteps-plain{grid-template-columns:1fr}}
 .xadvisors{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-.xadvisors li{display:grid;grid-template-columns:64px minmax(0,1fr);gap:16px;align-items:start;padding:20px;border:1px solid #0A171214;border-radius:18px;background:#fff}
-.xadvisors img{width:64px;height:64px;border-radius:50%;object-fit:cover}
+.xadvisors li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px;align-items:start;padding:20px;border:1px solid #0A171214;border-radius:18px;background:#fff}
+.xadvisors img{width:44px;height:44px;border-radius:50%;object-fit:cover}
 .xadvisors h3{font-size:17px;letter-spacing:-.01em;margin:0}
 .xadvisors p{margin:6px 0 0;font-size:14px;line-height:1.55;color:var(--x-ink-2,#3b4a42)}
 .xadvisors .xadvisor-role{margin-top:2px;font-size:13px;color:#00733A;font-weight:600}
