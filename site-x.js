@@ -475,8 +475,24 @@ document.querySelectorAll('[data-gal]').forEach(function (gal) {
     clearInterval(timer);
     if (!reduce) timer = setInterval(function () { if (!paused && !document.hidden) show((i + 1) % AGENTS.length); }, 11000);
   }
-  demo.addEventListener('pointerenter', function () { paused = true; });
-  demo.addEventListener('pointerleave', function () { paused = false; });
+  // Hover or keyboard focus holds the current example; the Pause button stops the rotation until pressed again.
+  var hold = false, stopped = false;
+  function sync() { paused = hold || stopped; }
+  demo.addEventListener('pointerenter', function () { hold = true; sync(); });
+  demo.addEventListener('pointerleave', function () { hold = false; sync(); });
+  dots.addEventListener('focusin', function () { hold = true; sync(); });
+  dots.addEventListener('focusout', function () { hold = false; sync(); });
+  if (!reduce) {
+    var pause = document.createElement('button');
+    pause.type = 'button';
+    pause.className = 'chat-pause';
+    pause.textContent = 'Pause examples';
+    pause.addEventListener('click', function () {
+      stopped = !stopped; sync();
+      pause.textContent = stopped ? 'Play examples' : 'Pause examples';
+    });
+    demo.parentElement.appendChild(pause);
+  }
   render(AGENTS[0]);
   mark();
   restart();

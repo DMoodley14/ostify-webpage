@@ -58,7 +58,8 @@
     banner.setAttribute('role', 'region');
     banner.setAttribute('aria-label', 'Cookies on ostify.co.uk');
     banner.innerHTML = '<div class="wrap consent-inner">' + inner + '</div>';
-    document.body.appendChild(banner);
+    // First in the page, so keyboard and screen reader users reach it before the content it covers.
+    document.body.insertBefore(banner, document.body.firstChild);
     banner.addEventListener('click', onClick);
   }
 
@@ -108,6 +109,7 @@
       showMessage('Your browser is sending a Global Privacy Control or Do Not Track signal, so we don’t set analytics cookies.');
     } else {
       showQuestion();
+      banner.querySelector('button').focus();
     }
   });
 
