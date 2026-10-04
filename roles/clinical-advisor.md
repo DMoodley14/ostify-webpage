@@ -1,7 +1,7 @@
 ---
 title: Clinical Advisor
 summary: We are looking for three practising clinicians to help shape what Ostify builds and how it works.
-type: Honorary advisor
+type: Advisor
 commitment: A few hours a month, flexible around clinical work
 location: Remote, UK
 pay: Honorary
