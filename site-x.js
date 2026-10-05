@@ -30,7 +30,7 @@ document.querySelectorAll('[data-video]').forEach(function (fig) {
     e.preventDefault();
     var frame = document.createElement('iframe');
     frame.src = 'https://www.youtube-nocookie.com/embed/' + fig.dataset.video + '?autoplay=1&rel=0&vq=hd1080';
-    frame.title = 'Osteoblast by Ostify';
+    frame.title = 'Build your own healthcare AI agent | Ostify';
     frame.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
     frame.allowFullscreen = true;
     frame.referrerPolicy = 'strict-origin-when-cross-origin';
