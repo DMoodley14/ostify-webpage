@@ -29,11 +29,13 @@
         config: { connectionString: config.appInsightsConnectionString }
       }).loadAppInsights();
       instance.trackPageView();
+      window.ostifyInsights = instance;
     };
     document.head.appendChild(script);
   }
 
   function stopAppInsights() {
+    window.ostifyInsights = null;
     if (instance) {
       try { instance.config.disableTelemetry = true; } catch (e) { }
       try { instance.getCookieMgr().setEnabled(false); } catch (e) { }
