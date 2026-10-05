@@ -22,14 +22,15 @@ document.querySelectorAll('[data-gal]').forEach(function (gal) {
 });
 
 // Promo video: nothing is loaded from YouTube until the visitor presses play.
-// Without scripts the link simply opens the video on YouTube.
+// Without scripts the link simply opens the video on YouTube. vq asks for 1080p,
+// but YouTube decides the quality from the player size and the viewer's connection.
 document.querySelectorAll('[data-video]').forEach(function (fig) {
   var link = fig.querySelector('.xvid-play');
   link.addEventListener('click', function (e) {
     e.preventDefault();
     var frame = document.createElement('iframe');
-    frame.src = 'https://www.youtube-nocookie.com/embed/' + fig.dataset.video + '?autoplay=1&rel=0';
-    frame.title = 'Ostify introduction video';
+    frame.src = 'https://www.youtube-nocookie.com/embed/' + fig.dataset.video + '?autoplay=1&rel=0&vq=hd1080';
+    frame.title = 'Osteoblast by Ostify';
     frame.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
     frame.allowFullscreen = true;
     frame.referrerPolicy = 'strict-origin-when-cross-origin';
