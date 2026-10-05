@@ -17,6 +17,8 @@ Clinicians know what their patients need. Most never get to build it. Digital to
 
 Ostify changes that. Clinicians use it to build safe, tested AI agents from their own approved content, with no coding and with safety and assurance built in. Along the way, they see exactly how their agent works: what it draws on, how it's tested and where its limits are. That understanding builds confidence, cuts the cost of bringing new ideas to life, and opens the door to innovation from the people closest to patients.
 
+The platform is built and clinically led. Osteoblast (build) and Osteoclast (evaluate) are live on a free plan, and Osteocite, our assurance layer, is next.
+
 Too often, clinicians are brought in after a product is built, as a clinical product manager or a safety officer signing off someone else's design. Ostify is built the other way round, with clinicians at the centre from the start. Our clinical advisors help shape what we build and how it works, not just check it at the end.
 
 ## What you'd do
