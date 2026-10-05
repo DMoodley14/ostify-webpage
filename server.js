@@ -36,10 +36,9 @@ const HEADERS = {
   'X-Frame-Options': 'DENY',
 };
 
-// Short addresses that send people elsewhere, e.g. ostify.co.uk/apply to the application form.
+// Short addresses that send people elsewhere. The application form is one page with the role preselected.
 const REDIRECTS = {
-  '/apply': 'https://app.notion.com/p/6804cea55fc941edba519a6fc0897e23?pvs=106',
-  '/apply/advisor': 'https://ostify.notion.site/75618596adc248129a6890aef5f00419?pvs=105',
+  '/apply/advisor': '/apply/?role=advisor',
 };
 
 function send(res, status, body, type) {
