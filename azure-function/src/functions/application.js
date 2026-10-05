@@ -9,7 +9,13 @@ const SENDER_ADDRESS = process.env.ACS_SENDER_ADDRESS;
 const ROLE_VALUES = new Set(["Co-founder & CCO", "Clinical Advisor"]);
 const MESSAGE_MAX_WORDS = 100;
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const LINK_RE = /^https:\/\/[^\s]+$/;
+const LINK_RE = /^https:\/\/([a-z]+\.)?linkedin\.com\/[^\s]+$/i;
+const CV_MAX_BYTES = 3 * 1024 * 1024;
+// Accepted CV types, checked against the file's first bytes as well as its name.
+const CV_TYPES = {
+  pdf: { contentType: "application/pdf", magic: Buffer.from("%PDF") },
+  docx: { contentType: "application/vnd.openxmlformats-officedocument.wordprocessingml.document", magic: Buffer.from([0x50, 0x4b, 0x03, 0x04]) }
+};
 
 const emailClient = CONNECTION_STRING ? new EmailClient(CONNECTION_STRING) : null;
 
@@ -55,6 +61,8 @@ app.http("application", {
     const current = typeof body.current === "string" ? body.current.trim() : "";
     const link = typeof body.link === "string" ? body.link.trim() : "";
     const message = typeof body.message === "string" ? body.message.trim() : "";
+    const cvName = typeof body.cvName === "string" ? body.cvName.trim() : "";
+    const cvBase64 = typeof body.cv === "string" ? body.cv : "";
     const honeypot = typeof body.company === "string" ? body.company.trim() : "";
 
     // Bots that fill the hidden "company" field get a fake success, not an error to learn from.
@@ -74,7 +82,6 @@ app.http("application", {
     if (current.length > 200) {
       return json(400, { error: "Invalid current" });
     }
-    // No attachments are accepted, so a profile or CV arrives as a link.
     if (!link || link.length > 300 || !LINK_RE.test(link)) {
       return json(400, { error: "Invalid link" });
     }
@@ -82,13 +89,25 @@ app.http("application", {
       return json(400, { error: "Invalid message" });
     }
 
+    const cvExt = (cvName.match(/\.([a-z]+)$/i) || [])[1];
+    const cvType = cvExt ? CV_TYPES[cvExt.toLowerCase()] : undefined;
+    if (!cvType || !cvBase64 || cvBase64.length > Math.ceil(CV_MAX_BYTES / 3) * 4 || !/^[A-Za-z0-9+/]+={0,2}$/.test(cvBase64)) {
+      return json(400, { error: "Invalid cv" });
+    }
+    const cvBytes = Buffer.from(cvBase64, "base64");
+    if (cvBytes.length > CV_MAX_BYTES || !cvBytes.subarray(0, cvType.magic.length).equals(cvType.magic)) {
+      return json(400, { error: "Invalid cv" });
+    }
+    // The attachment is named by us, not by the uploaded file name.
+    const attachmentName = `CV ${name.replace(/[^A-Za-z0-9 .'-]/g, "").trim() || "applicant"}.${cvExt.toLowerCase()}`;
+
     if (!emailClient || !SENDER_ADDRESS) {
       context.error("ACS_CONNECTION_STRING or ACS_SENDER_ADDRESS is not configured");
       return json(500, { error: "Not configured" });
     }
 
     const fields = [["Name", name], ["Email", email], ["Role", role],
-      ["Current role", current || "Not given"], ["Profile or CV link", link]];
+      ["Current role", current || "Not given"], ["LinkedIn", link]];
     const plainBody = fields.map(([k, v]) => `${k}: ${v}`).join("\n") + `\n\n${message}`;
     const htmlBody = fields.map(([k, v]) => `<p><strong>${k}:</strong> ${escapeHtml(v)}</p>`).join("") + `<p>${escapeHtml(message).replace(/\n/g, "<br>")}</p>`;
 
@@ -96,12 +115,13 @@ app.http("application", {
       const poller = await emailClient.beginSend({
         senderAddress: SENDER_ADDRESS,
         content: {
-          subject: `Ostify application: ${role} (${name})`,
+          subject: `Application: ${role} - ${name}`,
           plainText: plainBody,
           html: htmlBody
         },
         recipients: { to: [{ address: RECIPIENT }] },
-        replyTo: [{ address: email, displayName: name }]
+        replyTo: [{ address: email, displayName: name }],
+        attachments: [{ name: attachmentName, contentType: cvType.contentType, contentInBase64: cvBytes.toString("base64") }]
       });
       await poller.pollUntilDone();
     } catch (err) {
