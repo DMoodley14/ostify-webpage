@@ -16,7 +16,7 @@ Clinicians know what their patients need. Most never get to build it. Digital to
 
 Ostify changes that. Clinicians use it to build safe, tested AI agents from their own approved content, with no coding and with safety and assurance built in. Along the way, they see exactly how their agent works: what it draws on, how it's tested and where its limits are. That understanding builds confidence, cuts the cost of bringing new ideas to life, and opens the door to innovation from the people closest to patients.
 
-The platform is built and clinically led. What it needs now is someone to bring it to the clinicians and services ready to build. As our co-founder, you'd help turn first pilots into a company that puts building power in clinicians' hands across the NHS.
+The platform is built and clinically led. Osteoblast (build) and Osteoclast (evaluate) are live on a free plan, and Osteocite, our assurance layer, is next. What Ostify needs now is someone to bring it to the clinicians and services ready to build. As our co-founder, you'd help turn first pilots into a company that puts building power in clinicians' hands across the NHS.
 
 ## Is this right for you?
 
@@ -41,8 +41,10 @@ You will:
 - Turn interest from clinicians and NHS services into signed pilots and paid deployments
 - Navigate procurement, information governance sign-off and NHS buying routes
 - Develop pricing and the commercial model, and lead negotiations and contracts
+- Shape our positioning, messaging and how we show up at events and in the market
 - Lead fundraising and grant applications (Innovate UK, NIHR, SBRI Healthcare), including investor relationships and due diligence materials
 - Build partnerships with NHS trusts, ICBs, digital health suppliers and charities
+- Set commercial targets and report progress to investors
 - Recruit and lead the commercial team as we grow
 
 ## Must-have experience
@@ -50,6 +52,7 @@ You will:
 - A track record of selling into the NHS or UK health and care, with deals you personally closed
 - Working knowledge of NHS procurement and how buying decisions get made
 - Credibility with clinicians, NHS managers and investors
+- A degree in business, health, science or a related field, or equivalent experience
 - The right to work in the UK
 
 ## Valuable nice-to-haves
