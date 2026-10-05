@@ -4,21 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Under the hood — Ostify</title>
-<meta name="description" content="How an Ostify agent works, in plain terms: where answers come from, the gates every question passes, where the AI runs and what protects it.">
+<meta name="description" content="How an Ostify agent works, in plain terms: where answers come from, the gates every question passes and where the AI runs.">
 <meta name="theme-color" content="#FFFFFF">
 <link rel="canonical" href="https://ostify.co.uk/architecture/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ostify">
 <meta property="og:url" content="https://ostify.co.uk/architecture/">
 <meta property="og:title" content="Under the hood — Ostify">
-<meta property="og:description" content="How an Ostify agent works, in plain terms: where answers come from, the gates every question passes, where the AI runs and what protects it.">
+<meta property="og:description" content="How an Ostify agent works, in plain terms: where answers come from, the gates every question passes and where the AI runs.">
 <meta property="og:image" content="https://ostify.co.uk/images/og/trust.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Under the hood — Ostify">
-<meta name="twitter:description" content="How an Ostify agent works, in plain terms: where answers come from, the gates every question passes, where the AI runs and what protects it.">
+<meta name="twitter:description" content="How an Ostify agent works, in plain terms: where answers come from, the gates every question passes and where the AI runs.">
 <meta name="twitter:image" content="https://ostify.co.uk/images/og/trust.jpg">
 
 <script type="application/ld+json">
@@ -56,7 +56,7 @@
     <div class="links">
       <div class="nav-group is-here">
         <button class="nav-top" type="button" aria-expanded="false" aria-controls="nav-product">Product<svg viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
-        <div class="nav-drop nav-mega" id="nav-product"><div class="nav-col"><p class="nav-h">Platform</p><ul><li><a href="/#product"><b>Product tour</b><span>See the screens you will use</span></a></li><li><a href="/how-it-works/"><b>How it works</b><span>From idea to production</span></a></li><li><a href="/#build-types"><b>Templates</b><span>Patient, public and staff agents</span></a></li></ul></div><div class="nav-col"><p class="nav-h">Safety</p><ul><li><a href="/#guardrails"><b>Guardrails</b><span>Six safety checks on every question</span></a></li><li><a href="/assurance/"><b>Assurance</b><span>What each plan includes</span></a></li><li><a href="/architecture/" aria-current="page"><b>Under the hood</b><span>How answers are made, in plain terms</span></a></li></ul></div><div class="nav-col"><p class="nav-h">Compliance</p><ul><li><a href="/trust/"><b>Trust and security</b><span>Data, safety and certifications</span></a></li><li><a href="/gdpr/"><b>GDPR</b><span>How we protect personal data</span></a></li></ul></div><div class="nav-foot"><a href="/guides/"><b>Guides</b><span>Practical help for building well</span></a></div></div>
+        <div class="nav-drop nav-mega" id="nav-product"><div class="nav-col"><p class="nav-h">Platform</p><ul><li><a href="/#product"><b>Product tour</b><span>See the screens you will use</span></a></li><li><a href="/how-it-works/"><b>How it works</b><span>From idea to production</span></a></li><li><a href="/#build-types"><b>Templates</b><span>Patient, public and staff agents</span></a></li></ul></div><div class="nav-col"><p class="nav-h">Safety</p><ul><li><a href="/#guardrails"><b>Guardrails</b><span>Six safety checks on every question</span></a></li><li><a href="/assurance/"><b>Assurance</b><span>What each plan includes</span></a></li><li><a href="/architecture/" aria-current="page"><b>Under the hood</b><span>How answers are made, in plain terms</span></a></li></ul></div><div class="nav-col"><p class="nav-h">Compliance</p><ul><li><a href="/trust/"><b>Trust and security</b><span>Data, safety and certifications</span></a></li><li><a href="/gdpr/"><b>GDPR</b><span>How we protect personal data</span></a></li><li><a href="/security/"><b>Cybersecurity</b><span>How the platform is protected</span></a></li></ul></div><div class="nav-foot"><a href="/guides/"><b>Guides</b><span>Practical help for building well</span></a></div></div>
       </div>
       <div class="nav-group">
         <button class="nav-top" type="button" aria-expanded="false" aria-controls="nav-solutions">Solutions<svg viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
@@ -80,7 +80,7 @@
   <div class="mobile-menu" id="mobile-menu">
     <div class="mm-group"><p class="mm-h">Product</p><a href="/#product">Product tour</a><a href="/how-it-works/">How it works</a><a href="/#build-types">Templates</a><a href="/guides/">Guides</a></div>
     <div class="mm-group"><p class="mm-h">Safety</p><a href="/#guardrails">Guardrails</a><a href="/assurance/">Assurance</a><a href="/architecture/" aria-current="page">Under the hood</a></div>
-    <div class="mm-group"><p class="mm-h">Compliance</p><a href="/trust/">Trust and security</a><a href="/gdpr/">GDPR</a></div>
+    <div class="mm-group"><p class="mm-h">Compliance</p><a href="/trust/">Trust and security</a><a href="/gdpr/">GDPR</a><a href="/security/">Cybersecurity</a></div>
     <div class="mm-group"><p class="mm-h">Solutions</p><a href="/clinicians/">For clinicians</a><a href="/founders/">For founders</a><a href="/organisations/">For organisations</a></div>
     <div class="mm-group"><p class="mm-h">Pricing</p><a href="/plans/">Before your pilot</a><a href="/plans/pilot/">Pilot and beyond</a></div>
     <div class="mm-group"><p class="mm-h">Company</p><a href="/company/">About us</a><a href="/careers/">Work with us</a><a href="/news/">News</a><a href="/contact/">Contact</a><a href="https://www.linkedin.com/company/ostify/" target="_blank" rel="noopener">LinkedIn</a></div>
@@ -142,7 +142,7 @@
       <p class="xl">The AI models</p>
       <div>
         <h2>Where the AI runs. It never learns from your content.</h2>
-        <p class="xs-lede">The model is the part that reads a question and writes a reply. Ours run in Ostify’s own environment on Microsoft Azure, not on a public chatbot service. What happens to the data itself is on the <a href="/trust/#data">trust page</a>.</p>
+        <p class="xs-lede">The model is the part that reads a question and writes a reply. Ours run in Ostify’s own environment on Microsoft Azure, not on a public chatbot service. What happens to the data itself is on the <a href="/trust/#data">trust page</a>. How the platform is protected is on the <a href="/security/">cybersecurity page</a>.</p>
       </div>
     </header>
     <dl class="xdata">
@@ -152,28 +152,8 @@
     </dl>
   </div>
 </section>
-
-<section class="xs xs--paper" id="infrastructure">
-  <div class="xw">
-    <header class="xs-head">
-      <p class="xl">Security</p>
-      <div>
-        <h2>What protects your agent.</h2>
-        <p class="xs-lede">The questions an IT or information governance team usually asks, with the technical term beside each answer.</p>
-      </div>
-    </header>
-    <ul class="xtrust-grid">
-      <li><b>A firewall in front</b><p>All patient traffic passes through a web application firewall (WAF), which filters out known attacks and automated bots and limits how fast anyone can send questions.</p></li>
-      <li><b>One way in</b><p>The firewall is the only route to your agent. There is no side door around it.</p></li>
-      <li><b>Patients cannot reach your build</b><p>Patients use a separate service from the one you build in. It can read your agent’s settings but cannot change them.</p></li>
-      <li><b>Agents kept apart</b><p>Each patient link is signed, so a question can only go to the agent it was meant for, and each agent can only search its own content.</p></li>
-      <li><b>No patient accounts</b><p>Patients do not sign in, and your agent does not ask who they are.</p></li>
-      <li><b>No passwords left lying around</b><p>Our services prove who they are to each other without shared passwords (managed identities). The few keys that remain are locked in a key vault.</p></li>
-    </ul>
-  </div>
-</section>
 </main>
-<footer><div class="wrap"><nav class="footer-cols" aria-label="Footer"><div class="footer-column"><span>Product</span><a href="/#product">Product tour</a><a href="/how-it-works/">How it works</a><a href="/architecture/">Under the hood</a><a href="/#build-types">Templates</a></div><div class="footer-column"><span>Solutions</span><a href="/clinicians/">For clinicians</a><a href="/founders/">For founders</a><a href="/organisations/">For organisations</a></div><div class="footer-column"><span>Pricing</span><a href="/plans/">Before your pilot</a><a href="/plans/pilot/">Pilot and beyond</a><a href="/plans/pilot/#osticellerate">Osticellerate</a></div><div class="footer-column"><span>Compliance</span><a href="/trust/">Trust and security</a><a href="/gdpr/">GDPR</a><a href="/assurance/">Assurance</a><a href="/#guardrails">Guardrails</a></div><div class="footer-column"><span>Resources</span><a href="/guides/">Guides</a><a href="/news/">News</a><a href="/contact/">Contact</a></div><div class="footer-column"><span>Company</span><a href="/company/">About us</a><a href="/careers/">Work with us</a><a href="https://www.linkedin.com/company/ostify/" rel="me noopener" target="_blank">LinkedIn</a></div></nav><div class="footer-brand"><div><a class="wordmark" href="/">Ostify<span class="brand-dot" aria-hidden="true">.</span></a><p class="footer-tagline">Agents built from your own clinical content.</p></div><img class="ms-badge" src="/images/brand/ms-startups-badge.webp" alt="Proud to collaborate with Microsoft for Startups" width="400" height="171" loading="lazy"></div><div class="footer-bottom"><p>© 2026 Ostify Health Ltd. Registered in England and Wales, no. 17433177.<br>66 Paul Street, London EC2A 4NA. <a href="mailto:info@ostify.co.uk">info@ostify.co.uk</a></p><div><a href="/privacy/">Privacy policy</a><a href="/terms/">Terms of use</a><a href="/gdpr/">GDPR</a><a href="/privacy/#cookies" data-cookie-settings>Cookie settings</a></div></div></div></footer>
+<footer><div class="wrap"><nav class="footer-cols" aria-label="Footer"><div class="footer-column"><span>Product</span><a href="/#product">Product tour</a><a href="/how-it-works/">How it works</a><a href="/architecture/">Under the hood</a><a href="/#build-types">Templates</a></div><div class="footer-column"><span>Solutions</span><a href="/clinicians/">For clinicians</a><a href="/founders/">For founders</a><a href="/organisations/">For organisations</a></div><div class="footer-column"><span>Pricing</span><a href="/plans/">Before your pilot</a><a href="/plans/pilot/">Pilot and beyond</a><a href="/plans/pilot/#osticellerate">Osticellerate</a></div><div class="footer-column"><span>Compliance</span><a href="/trust/">Trust and security</a><a href="/gdpr/">GDPR</a><a href="/security/">Cybersecurity</a><a href="/assurance/">Assurance</a><a href="/#guardrails">Guardrails</a></div><div class="footer-column"><span>Resources</span><a href="/guides/">Guides</a><a href="/news/">News</a><a href="/contact/">Contact</a></div><div class="footer-column"><span>Company</span><a href="/company/">About us</a><a href="/careers/">Work with us</a><a href="https://www.linkedin.com/company/ostify/" rel="me noopener" target="_blank">LinkedIn</a></div></nav><div class="footer-brand"><div><a class="wordmark" href="/">Ostify<span class="brand-dot" aria-hidden="true">.</span></a><p class="footer-tagline">Agents built from your own clinical content.</p></div><img class="ms-badge" src="/images/brand/ms-startups-badge.webp" alt="Proud to collaborate with Microsoft for Startups" width="400" height="171" loading="lazy"></div><div class="footer-bottom"><p>© 2026 Ostify Health Ltd. Registered in England and Wales, no. 17433177.<br>66 Paul Street, London EC2A 4NA. <a href="mailto:info@ostify.co.uk">info@ostify.co.uk</a></p><div><a href="/privacy/">Privacy policy</a><a href="/terms/">Terms of use</a><a href="/gdpr/">GDPR</a><a href="/privacy/#cookies" data-cookie-settings>Cookie settings</a></div></div></div></footer>
 <script src="/site-config.js?v=20261005a"></script>
 <script src="/analytics.js?v=20261005a"></script>
 <script src="/consent.js?v=20261005a"></script>
