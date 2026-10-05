@@ -21,6 +21,23 @@ document.querySelectorAll('[data-gal]').forEach(function (gal) {
   });
 });
 
+// Promo video: nothing is loaded from YouTube until the visitor presses play.
+// Without scripts the link simply opens the video on YouTube.
+document.querySelectorAll('[data-video]').forEach(function (fig) {
+  var link = fig.querySelector('.xvid-play');
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    var frame = document.createElement('iframe');
+    frame.src = 'https://www.youtube-nocookie.com/embed/' + fig.dataset.video + '?autoplay=1&rel=0';
+    frame.title = 'Ostify introduction video';
+    frame.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+    frame.allowFullscreen = true;
+    frame.referrerPolicy = 'strict-origin-when-cross-origin';
+    link.replaceWith(frame);
+    frame.focus();
+  });
+});
+
 // Motion: screenshots rise in, and marked elements drift at their own speed.
 (function () {
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

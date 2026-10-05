@@ -923,6 +923,17 @@ html.js .xh-art .msg{animation-delay:0s}
 @keyframes xtype{0%,60%,100%{opacity:.35;transform:none}30%{opacity:1;transform:translateY(-3px)}}
 
 /* Product showcase */
+.xvid{margin:0 0 88px;max-width:960px}
+.xvid-play,.xvid iframe{display:block;width:100%;aspect-ratio:16/9;border:0;border-radius:16px;background:#0A1712;box-shadow:0 40px 80px -40px #0A171280}
+.xvid-play{position:relative;overflow:hidden;display:grid;place-items:center;align-content:center;gap:18px;color:#EEF3EF;text-decoration:none}
+.xvid-play img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.22;filter:blur(2px)}
+.xvid-btn{position:relative;display:grid;place-items:center;width:76px;height:76px;border-radius:50%;background:#00D26A;color:#04210F;padding-left:4px;transition:transform .25s var(--ease,ease)}
+.xvid-play:hover .xvid-btn{transform:scale(1.06)}
+.xvid-play:focus-visible{outline:3px solid #00D26A;outline-offset:4px}
+.xvid-label{position:relative;font-size:18px;font-weight:600;letter-spacing:-.01em}
+.xvid figcaption{margin-top:16px;font-size:14px;line-height:1.5;color:var(--x-muted,#55655B)}
+@media(max-width:700px){.xvid{margin-bottom:56px}.xvid-play,.xvid iframe{border-radius:12px}.xvid-btn{width:56px;height:56px}.xvid-label{font-size:15px}}
+@media(prefers-reduced-motion:reduce){.xvid-btn{transition:none}}
 .xsh-tabs{display:inline-flex;gap:6px;padding:6px;border-radius:999px;background:#0A17120a;border:1px solid #0A171214;margin-bottom:28px}
 .xsh-tabs button{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border:0;border-radius:999px;background:none;font:inherit;font-size:14px;font-weight:600;color:var(--x-ink-2,#3b4a42);cursor:pointer}
 .xsh-tabs button span{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:#0A171214;font-size:11px}
