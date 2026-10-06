@@ -513,6 +513,9 @@ html.js .msg{opacity:0;transform:translateY(10px) scale(.98);animation:msgIn .6s
 .xcontact .form-part{font-weight:600;font-size:17px;margin-top:34px;padding-top:26px;border-top:1px solid var(--x-rule)}
 .xcontact .form-part span{display:block;font-weight:400;font-size:13.5px;color:var(--x-muted);margin-top:4px}
 .xcontact .field-help{font-size:13.5px;color:var(--x-muted);margin-top:8px}
+.xcontact #equity-field label{margin-top:18px}
+.xcontact .field-range{display:flex;align-items:center;gap:12px}
+.xcontact .field-range span{font-size:14.5px;color:var(--x-muted)}
 .xcontact button{margin-top:24px;border:0;cursor:pointer}
 .xcontact aside h3{font:500 24px/1.2 var(--x-display);letter-spacing:-.02em;margin-bottom:14px}
 
@@ -1382,6 +1385,8 @@ footer .wordmark{color:var(--x-ink,#0A1712)}
 .xroles-list b{font-size:clamp(22px,2.6vw,28px);letter-spacing:-.025em}
 .xroles-list p{margin:0;font-size:16.5px;line-height:1.6;color:#3B4A42;max-width:62ch}
 .xrole-meta{font-size:13.5px;color:#5B6B62}
+.xrole-open{display:inline-flex;align-items:center;gap:6px;padding:2px 9px;border-radius:999px;border:1px solid #00733A40;background:#fff;color:#00602F;font-size:12px;font-weight:600;white-space:nowrap}
+.xrole-open::before{content:"";width:6px;height:6px;border-radius:50%;background:#00A651}
 .xroles-none{font-size:17px;color:#3B4A42}
 .xroles-none a{color:#00733A}
 .xrole{display:grid;grid-template-columns:240px minmax(0,1fr);gap:56px;align-items:start}

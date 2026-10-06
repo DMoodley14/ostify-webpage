@@ -7,6 +7,7 @@ location: Remote, UK
 pay: Honorary
 apply: /apply/advisor/
 status: open
+posted: 2026-10-04
 positions: 3
 order: 2
 ---

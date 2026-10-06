@@ -6,7 +6,8 @@ const RECIPIENT = process.env.APPLICATION_RECIPIENT || process.env.ENQUIRY_RECIP
 const CONNECTION_STRING = process.env.ACS_CONNECTION_STRING;
 const SENDER_ADDRESS = process.env.ACS_SENDER_ADDRESS;
 
-const ROLE_VALUES = new Set(["Co-founder & CCO", "Clinical Advisor"]);
+const FOUNDER_ROLE = "Co-founder & CCO";
+const ROLE_VALUES = new Set([FOUNDER_ROLE, "Clinical Advisor"]);
 const MESSAGE_MAX_WORDS = 100;
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const LINK_RE = /^https:\/\/([a-z]+\.)?linkedin\.com\/[^\s]+$/i;
@@ -63,6 +64,9 @@ app.http("application", {
     const message = typeof body.message === "string" ? body.message.trim() : "";
     const cvName = typeof body.cvName === "string" ? body.cvName.trim() : "";
     const cvBase64 = typeof body.cv === "string" ? body.cv : "";
+    const hasEquity = body.equityMin !== undefined || body.equityMax !== undefined;
+    const equityMin = Number(body.equityMin);
+    const equityMax = Number(body.equityMax);
     const honeypot = typeof body.company === "string" ? body.company.trim() : "";
 
     // Bots that fill the hidden "company" field get a fake success, not an error to learn from.
@@ -78,6 +82,11 @@ app.http("application", {
     }
     if (!ROLE_VALUES.has(role)) {
       return json(400, { error: "Invalid role" });
+    }
+    // The equity range is only asked for the co-founder role.
+    const isPercent = (n, v) => typeof v === "number" && Number.isFinite(n) && n >= 0 && n <= 100;
+    if (hasEquity && (role !== FOUNDER_ROLE || !isPercent(equityMin, body.equityMin) || !isPercent(equityMax, body.equityMax) || equityMax < equityMin)) {
+      return json(400, { error: "Invalid equity" });
     }
     if (current.length > 200) {
       return json(400, { error: "Invalid current" });
@@ -107,7 +116,9 @@ app.http("application", {
     }
 
     const fields = [["Name", name], ["Email", email], ["Role", role],
-      ["Current role", current || "Not given"], ["LinkedIn", link]];
+      ["Current role", current || "Not given"],
+      ...(hasEquity ? [["Equity expected", `${equityMin}% to ${equityMax}%`]] : []),
+      ["LinkedIn", link]];
     const plainBody = fields.map(([k, v]) => `${k}: ${v}`).join("\n") + `\n\n${message}`;
     const htmlBody = fields.map(([k, v]) => `<p><strong>${k}:</strong> ${escapeHtml(v)}</p>`).join("") + `<p>${escapeHtml(message).replace(/\n/g, "<br>")}</p>`;
 

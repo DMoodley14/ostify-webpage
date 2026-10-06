@@ -12,6 +12,8 @@ sys.path.insert(0, os.path.dirname(__file__))
 from mkpage import build
 
 EMAIL = 'info@ostify.co.uk'
+CSS_V = '20261006a'  # stylesheet version for the careers pages; change it when their styles change
+OPEN_BADGE = '<span class="xrole-open">Accepting applications</span>'
 
 def read(path):
     text = open(path, encoding='utf-8').read()
@@ -54,9 +56,23 @@ def cta(r, label):
         return f'<a class="xb xb--light" href="{html.escape(r["apply"])}">Apply now</a>'
     return f'<a class="xb xb--light" href="{mailto(r["title"])}">{label}</a>'
 
+def posted(r):
+    # "posted: 2026-10-03" in the front matter becomes "Posted 3 October 2026"
+    if not r.get('posted'):
+        return ''
+    d = datetime.date.fromisoformat(r['posted'])
+    return f'<time datetime="{d.isoformat()}">Posted {d.day} {d:%B %Y}</time>'
+
 def facts(r):
-    rows = [(k.title(), r[k]) for k in ('type', 'commitment', 'location', 'pay') if r.get(k)]
-    return ''.join(f'<div><dt>{html.escape(k)}</dt><dd>{html.escape(v)}</dd></div>' for k, v in rows)
+    rows = [('Status', OPEN_BADGE)]
+    rows += [(k.title(), html.escape(r[k])) for k in ('type', 'commitment', 'location', 'pay') if r.get(k)]
+    if posted(r):
+        rows.append(('Posted', posted(r).replace('>Posted ', '>')))
+    return ''.join(f'<div><dt>{k}</dt><dd>{v}</dd></div>' for k, v in rows)
+
+def restyle(path):
+    s = open(path).read()
+    open(path, 'w').write(re.sub(r'site\.css\?v=\w+', 'site.css?v=' + CSS_V, s))
 
 # Remove pages for roles that no longer exist or are closed
 for d in glob.glob('careers/*/'):
@@ -85,10 +101,11 @@ for r in open_roles:
     build(f'careers/{r["slug"]}/index.html', f'careers/{r["slug"]}/', f'{r["title"]} — Work with us — Ostify',
           r.get('summary', ''), 'careers', [('Work with us', 'careers/'), (r['title'], f'careers/{r["slug"]}/')],
           main, 'company', None)
+    restyle(f'careers/{r["slug"]}/index.html')
 
 if open_roles:
     cards = ''.join(f'''
-      <li><a href="/careers/{r["slug"]}/"><span class="xnews-row">{"".join(f'<span class="xnews-tag">{html.escape(r[k])}</span>' for k in ("type",) if r.get(k))}<span class="xrole-meta">{" · ".join(html.escape(r[k]) for k in ("commitment", "location") if r.get(k))}</span></span><b>{html.escape(r["title"])}</b><p>{html.escape(r.get("summary", ""))}</p><span class="xnews-more">See the role <span aria-hidden="true">→</span></span></a></li>''' for r in open_roles)
+      <li><a href="/careers/{r["slug"]}/"><span class="xnews-row">{"".join(f'<span class="xnews-tag">{html.escape(r[k])}</span>' for k in ("type",) if r.get(k))}{OPEN_BADGE}<span class="xrole-meta">{" · ".join(html.escape(r[k]) for k in ("commitment", "location") if r.get(k))}</span>{posted(r)}</span><b>{html.escape(r["title"])}</b><p>{html.escape(r.get("summary", ""))}</p><span class="xnews-more">See the role <span aria-hidden="true">→</span></span></a></li>''' for r in open_roles)
     listing = f'<ol class="xroles-list">{cards}\n    </ol>'
 else:
     listing = '<p class="xroles-none">There are no open roles right now. If you would like to work with us, <a href="mailto:' + EMAIL + '">tell us about yourself</a>.</p>'
@@ -128,6 +145,7 @@ idx = '<main id="main" class="xp">\n' + HERO.format(
 build('careers/index.html', 'careers/', 'Work with us — Ostify',
       'Work with Ostify: open roles at an early-stage company helping clinicians build safe, tested healthcare agents.',
       'careers', [('Work with us', 'careers/')], idx, 'company', '/careers/')
+restyle('careers/index.html')
 
 # Sitemap: replace all careers entries with the current set
 sm = open('sitemap.xml').read()
