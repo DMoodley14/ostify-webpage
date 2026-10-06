@@ -73,6 +73,14 @@
   ],
   "news": [
     {
+      "slug": "free-plan-10mb",
+      "date": "2026-10-06",
+      "tag": "Product",
+      "title": "The free plan now includes 10 MB of clinical content",
+      "lede": "Up from 2 MB, following your feedback.",
+      "body": "<p>The Always free plan now includes 10 MB of clinical content, up from 2 MB. The new limit is live today.</p>\n    <p>The change comes from your feedback. Clinicians building on Ostify told us they wanted more room for their own leaflets, guidelines and local policies, so we have made it.</p>\n    <p>We are working on raising the free limit further, and will share news here when we do.</p>\n    <p>You can see everything the free plan includes on <a href=\"/plans/\">our plans page</a>. If there is something else you would like us to change, <a href=\"/feedback/\">tell us</a>.</p>"
+    },
+    {
       "slug": "clinical-advisor",
       "date": "2026-10-04",
       "tag": "Company",
