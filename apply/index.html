@@ -76,15 +76,6 @@
       <form id="apply-form" hidden>
         <label for="role">Role you are applying for</label>
         <select id="role" name="role"><option>Co-founder &amp; CCO</option><option>Clinical Advisor</option></select>
-        <div id="equity-field">
-          <label for="equity-min">Equity you would expect (%)</label>
-          <div class="field-range">
-            <input id="equity-min" name="equityMin" type="number" inputmode="decimal" min="0" max="100" step="0.5" required aria-label="Equity you would expect, lowest percentage" aria-describedby="equity-help">
-            <span>to</span>
-            <input id="equity-max" name="equityMax" type="number" inputmode="decimal" min="0" max="100" step="0.5" required aria-label="Equity you would expect, highest percentage" aria-describedby="equity-help">
-          </div>
-          <p id="equity-help" class="field-help">Give a range as percentages, for example 10 to 20. It is a starting point for our conversation, not a commitment.</p>
-        </div>
         <label for="name">Your name</label>
         <input id="name" name="name" autocomplete="name" required maxlength="120">
         <label for="email">Email address</label>
@@ -98,6 +89,15 @@
         <label for="cv">Your CV</label>
         <input id="cv" name="cv" type="file" accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required aria-describedby="cv-help">
         <p id="cv-help" class="field-help">A PDF or Word (.docx) file, 3 MB at most.</p>
+        <div id="equity-field">
+          <label for="equity-min">Equity you would expect (%)</label>
+          <div class="field-range">
+            <input id="equity-min" name="equityMin" type="number" inputmode="decimal" min="0" max="100" step="0.5" required aria-label="Equity you would expect, lowest percentage" aria-describedby="equity-help">
+            <span>to</span>
+            <input id="equity-max" name="equityMax" type="number" inputmode="decimal" min="0" max="100" step="0.5" required aria-label="Equity you would expect, highest percentage" aria-describedby="equity-help">
+          </div>
+          <p id="equity-help" class="field-help">Give a range as percentages. Please keep in mind that Ostify is relatively de-risked at this point: the platform is built and live.</p>
+        </div>
         <label for="message">Why this role, and what you would bring (100 words at most)</label>
         <textarea id="message" name="message" rows="7" required maxlength="1500" aria-describedby="message-help"></textarea>
         <p id="message-help" class="field-help"><span id="message-count">0 of 100 words.</span> Please do not include patient details or confidential clinical information.</p>
