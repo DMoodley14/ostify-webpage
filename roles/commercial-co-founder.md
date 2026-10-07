@@ -6,7 +6,7 @@ commitment: Part-time initially, full-time once we raise pre-seed
 location: UK-based, mostly remote, one day a week in London
 pay: Co-founder equity with vesting, salary from pre-seed raise
 apply: /apply/
-status: open
+status: closed
 posted: 2026-10-03
 order: 1
 ---
