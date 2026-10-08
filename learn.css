@@ -6,6 +6,12 @@
  */
 @keyframes paneIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 .lrn-sec{padding:44px 0 104px}
+/* /learn/: the module list. Uses the site's guide cards. */
+.lrn-mods{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:700px){.lrn-mods{grid-template-columns:1fr}}
+.lrn-soon{display:flex;flex-direction:column;gap:8px;height:100%;padding:24px;border-radius:20px;border:1px dashed #0A171233;color:#5B6B62}
+.lrn-soon .xguide-n,.lrn-soon p{color:inherit}
+.lrn-mods .lrn-progress{color:#00733A;font-weight:600}
 .lrn{
 
   
@@ -322,7 +328,56 @@
   .work{margin-top:22px}
   .lbtn{text-decoration:none}
   .lesson{scroll-margin-top:100px}
-  .modprog{margin-top:0}
   .half--dark b,.prompt mark{color:#8FCFA6}
   @media (max-width:1100px){.rail{top:auto;max-height:none}}
+}
+
+/* One step at a time: a slim lesson strip, then one card showing the idea,
+   the try-it or the check. These come last so they win over the side-rail
+   layout above, which they replace. */
+.lrn{
+  .work{display:block;max-width:940px;margin:22px auto 0}
+  .rail{position:static;flex-direction:row;align-items:center;flex-wrap:wrap;gap:4px;padding:0 4px;margin-bottom:14px;scroll-margin-top:104px;
+    background:none;border:0;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none;max-height:none;overflow:visible}
+  .rail-now{margin-right:auto;font-size:14px;font-weight:600;color:var(--ink-2)}
+  .rail-group,.rail .stepdone{display:none}
+  .rail button{width:auto;min-width:0;min-height:0;padding:4px;flex:none;border-radius:50%;background:none;box-shadow:none}
+  .rail button:hover{background:var(--wash-2)}
+  .rail button[aria-current="true"]{background:none;box-shadow:none}
+  .rail .rlabel{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .rail .stepno{width:26px;height:26px;font-size:12px}
+  .rail button[data-done="true"] .stepno{background:var(--volt-deep);color:#fff}
+  .rail button[aria-current="true"] .stepno{background:var(--forest);color:#fff;box-shadow:0 0 0 3px var(--volt-soft)}
+
+  .lpanel{padding:34px 38px 30px}
+  .lpanel-head h2{font-size:28px;letter-spacing:-.02em}
+  .lpanel-intro{font-size:17px;line-height:1.6;color:var(--ink-2);max-width:62ch;margin-bottom:22px}
+  .lsteps{display:flex;gap:6px;flex-wrap:wrap;margin:16px 0 26px;padding-bottom:20px;border-bottom:1px solid var(--hair)}
+  .lsteps button{display:inline-flex;align-items:center;gap:8px;height:32px;padding:0 14px 0 6px;border:0;border-radius:var(--r-pill);
+    font-family:inherit;font-size:13.5px;font-weight:600;color:var(--muted);background:var(--wash-2);cursor:pointer}
+  .lsteps i{font-style:normal;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font-size:11px;background:#fff;color:var(--muted)}
+  .lsteps button:hover{color:var(--ink)}
+  .lsteps button[aria-current="step"]{background:var(--forest);color:#fff}
+  .lsteps button[aria-current="step"] i{color:var(--forest)}
+
+  .idea-b{max-width:62ch}
+  .idea-b + .idea-b{margin-top:24px}
+  .idea-b h3{font-size:12px;font-weight:650;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin-bottom:8px}
+  .idea-b p{font-size:17px;line-height:1.65;color:var(--ink)}
+  .lstep .deeper{margin-top:26px}
+  .lstep .try{margin-top:0;padding:0;border:0;box-shadow:none;background:none}
+  .lstep .try-h h3{font-size:21px}
+  .lstep .try-sub{font-size:15.5px}
+  .lstep .quiz{margin-top:0;padding:0;border:0;background:none}
+  .lstep .quiz h3{font-size:20px;line-height:1.35;font-weight:650;max-width:44ch;margin-bottom:18px}
+  .lstep .quiz-o{max-width:640px}
+  .recap{margin-top:24px;padding:18px 20px;border-radius:var(--r-3);background:var(--wash);border:1px solid var(--hair);max-width:640px}
+  .recap h3{font-size:12px;font-weight:650;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin-bottom:10px}
+  .recap ol{margin:0;padding-left:20px;display:grid;gap:8px;font-size:14.5px;line-height:1.5}
+  .lesson > .footbar{margin-top:30px;padding-top:20px;border-top:1px solid var(--hair)}
+  @media (max-width:760px){
+    .lpanel{padding:24px 18px 22px}
+    .lpanel-head h2{font-size:23px}
+    .rail-now{flex-basis:100%;margin-bottom:6px}
+  }
 }

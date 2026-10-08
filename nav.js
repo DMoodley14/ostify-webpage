@@ -69,14 +69,3 @@
   });
 })();
 
-// Announcement bar: remember a dismissal on this device.
-(function(){
-  var bar = document.getElementById('xbar');
-  if(!bar) return;
-  var key = 'ostify-bar-hiring';
-  try { if(localStorage.getItem(key)) { bar.remove(); return; } } catch(e) {}
-  bar.querySelector('.xbar-x').addEventListener('click', function(){
-    bar.remove();
-    try { localStorage.setItem(key, '1'); } catch(e) {}
-  });
-})();

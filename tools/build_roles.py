@@ -12,7 +12,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from mkpage import build
 
 EMAIL = 'info@ostify.co.uk'
-CSS_V = '20261006a'  # stylesheet version for the careers pages; change it when their styles change
+CSS_V = '20261008b'  # stylesheet version for the careers pages; change it when their styles change
 OPEN_BADGE = '<span class="xrole-open">Accepting applications</span>'
 
 def read(path):
@@ -108,14 +108,14 @@ if open_roles:
       <li><a href="/careers/{r["slug"]}/"><span class="xnews-row">{"".join(f'<span class="xnews-tag">{html.escape(r[k])}</span>' for k in ("type",) if r.get(k))}{OPEN_BADGE}<span class="xrole-meta">{" · ".join(html.escape(r[k]) for k in ("commitment", "location") if r.get(k))}</span>{posted(r)}</span><b>{html.escape(r["title"])}</b><p>{html.escape(r.get("summary", ""))}</p><span class="xnews-more">See the role <span aria-hidden="true">→</span></span></a></li>''' for r in open_roles)
     listing = f'<ol class="xroles-list">{cards}\n    </ol>'
 else:
-    listing = '<p class="xroles-none">There are no open roles right now. If you would like to work with us, <a href="mailto:' + EMAIL + '">tell us about yourself</a>.</p>'
+    listing = '<p class="xroles-none"><span class="xrole-closed">We unfortunately do not have any openings at present</span></p>'
 
 # A listing can cover several positions ("positions: 3" in its front matter)
 n = sum(int(r.get('positions', 1)) for r in open_roles)
 idx = '<main id="main" class="xp">\n' + HERO.format(
     eyebrow='Work with us', title='Help clinicians build what their patients need.',
-    lede='Ostify is early-stage and growing. ' + (f'We have {n} open role{"s" if n != 1 else ""}.' if n else 'There are no open roles right now, but we are always glad to hear from people.'),
-    cta='<a class="xb xb--light" href="#roles">See open roles</a><a class="xb xb--ghost" href="/company/">Read the story</a>') + f'''
+    lede='Ostify is early-stage and growing.' + (f' We have {n} open role{"s" if n != 1 else ""}.' if n else ''),
+    cta=('<a class="xb xb--light" href="#roles">See open roles</a>' if n else '') + '<a class="xb xb--ghost" href="/company/">Read the story</a>') + f'''
 <section class="xs" id="roles" aria-labelledby="roles-title">
   <div class="xw">
     <header class="xs-head">
@@ -123,7 +123,7 @@ idx = '<main id="main" class="xp">\n' + HERO.format(
       <div><h2 id="roles-title">Where you could fit.</h2></div>
     </header>
     {listing}
-    <p class="xnews-follow">Do not see the right role? <a href="mailto:{EMAIL}?subject=Working%20with%20Ostify">Tell us what you would bring</a>.</p>
+    <p class="xnews-follow">{"Do not see the right role?" if n else "Would you like to work with us?"} <a href="mailto:{EMAIL}?subject=Working%20with%20Ostify">Tell us what you would bring</a>.</p>
   </div>
 </section>
 

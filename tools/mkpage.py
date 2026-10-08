@@ -16,7 +16,4 @@ def build(path,slug,title,desc,og,crumbs,main,group,link):
         head=head.replace(f'<div class="nav-group">\n        <button class="nav-top" type="button" aria-expanded="false" aria-controls="nav-{group}">',f'<div class="nav-group is-here">\n        <button class="nav-top" type="button" aria-expanded="false" aria-controls="nav-{group}">')
     if link:
         head=head.replace(f'<a href="{link}"><b>',f'<a href="{link}" aria-current="page"><b>').replace(f'<a href="{link}">',f'<a href="{link}" aria-current="page">')
-    if slug.startswith('careers'):
-        # No hiring announcement on the hiring pages themselves
-        head=re.sub(r'<div class="xbar".*?</div>\n','',head,flags=re.S)
     open(path,'w').write(head+main+foot)

@@ -36,9 +36,10 @@ const HEADERS = {
   'X-Frame-Options': 'DENY',
 };
 
-// Short addresses that send people elsewhere. The application form is one page with the role preselected.
+// Short addresses that send people elsewhere. The application form has been taken down; its old links go to careers.
 const REDIRECTS = {
-  '/apply/advisor': '/apply/?role=advisor',
+  '/apply': '/careers/',
+  '/apply/advisor': '/careers/',
 };
 
 function send(res, status, body, type) {

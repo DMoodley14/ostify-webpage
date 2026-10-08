@@ -5,8 +5,7 @@ type: Advisor
 commitment: A few hours a month, flexible around clinical work
 location: Remote, UK
 pay: Honorary
-apply: /apply/advisor/
-status: open
+status: closed
 posted: 2026-10-04
 positions: 3
 order: 2

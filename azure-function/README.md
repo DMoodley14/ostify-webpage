@@ -7,9 +7,8 @@ It validates and re-checks every field server-side (the client-side `maxlength`s
 trusted), silently no-ops on the hidden honeypot field, and only returns 2xx once ACS confirms
 the send.
 
-The same function app also serves `feedback` (tester feedback from `/feedback/`) and
-`application` (job applications from `/apply/`), each validated the same way and sent to the
-same inbox unless `FEEDBACK_RECIPIENT` or `APPLICATION_RECIPIENT` is set.
+The same function app also serves `feedback` (tester feedback from `/feedback/`), validated
+the same way and sent to the same inbox unless `FEEDBACK_RECIPIENT` is set.
 
 ## One-time Azure setup
 

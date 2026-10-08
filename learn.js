@@ -1,4 +1,4 @@
-// learn.js — Learn, module 1: Build your first agent.
+// learn.js — the Learn modules (tools/learn/*.html). Module 1 is Build.
 //
 // Public page: no sign-in, no API calls, no model. Everything here is a
 // worked example running in the browser. The figures are illustrative and
@@ -17,10 +17,25 @@
   const TICK = '<svg viewBox="0 0 9 8" aria-hidden="true"><path d="m1 4.2 2.3 2.3L8 1.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // ─── lessons, progress ─────────────────────────────────────────────────
-  const KEY = "ostify.learn.build.done";
-  const railButtons = Array.from(document.querySelectorAll("#rail button"));
+  // ─── lessons, steps, progress ──────────────────────────────────────────
+  // A lesson is three screens: the idea, something to try, one check
+  // question. One primary button per screen.
+  const KEY = "ostify.learn." + (document.querySelector(".lrn").dataset.module || "build") + ".done";
+  const STEPS = [["idea", "Idea"], ["try", "Try it"], ["check", "Check"]];
+  const stepIds = STEPS.map((s) => s[0]);
+  const rail = $("rail");
+  const railButtons = Array.from(rail.querySelectorAll("button"));
   const order = railButtons.map((b) => b.dataset.lesson);
+  const titles = {};
+  railButtons.forEach((b, i) => {
+    titles[b.dataset.lesson] = b.querySelector(".rlabel").textContent;
+    b.querySelector(".stepno").textContent = i + 1;   // matches "Lesson n of 8"
+  });
+  const paneOf = (id) => document.querySelector('.lesson[data-pane="' + id + '"]');
+  const now = document.createElement("span");
+  now.className = "rail-now";
+  rail.prepend(now);
+  let cur = { lesson: order[0], step: "idea" };
 
   function loadDone() {
     try { return JSON.parse(localStorage.getItem(KEY) || "[]"); } catch (e) { return []; }
@@ -31,51 +46,94 @@
   let done = loadDone().filter((id) => order.includes(id));
 
   function paintRail() {
-    railButtons.forEach((b) => {
+    railButtons.forEach((b, i) => {
       const isDone = done.includes(b.dataset.lesson);
       b.dataset.done = String(isDone);
-      let tick = b.querySelector(".stepdone");
-      if (isDone && !tick) {
-        tick = document.createElement("span");
-        tick.className = "stepdone";
-        tick.innerHTML = TICK + '<span class="visually-hidden">Done</span>';
-        b.appendChild(tick);
-      }
+      b.title = titles[b.dataset.lesson];
+      b.setAttribute("aria-label", "Lesson " + (i + 1) + ": " + titles[b.dataset.lesson] + (isDone ? " (done)" : ""));
+      // The builder steps are the lesson's pay-off: shown once its check is answered.
+      const recap = paneOf(b.dataset.lesson).querySelector(".recap");
+      if (recap) recap.hidden = !isDone;
     });
     const left = order.length - done.length;
-    $("modprog-bar").style.width = (done.length / order.length * 100) + "%";
-    $("modprog-n").textContent = left ? done.length + " of " + order.length + " lessons complete" : "Module complete";
-    $("modprog").dataset.done = String(!left);
     $("finish-h").textContent = left ? "That's the whole pipeline." : "Module complete.";
     $("finish-p").textContent = left
       ? "You know what each Build step does and why it's there. " + left + (left === 1 ? " check" : " checks") + " still unanswered, if you want the full set."
       : "Every check answered. You know what each Build step does and why it's there.";
   }
 
-  function show(id, focus) {
-    if (!order.includes(id)) id = order[0];
-    document.querySelectorAll(".lesson").forEach((p) => { p.hidden = p.dataset.pane !== id; });
-    railButtons.forEach((b) => {
-      if (b.dataset.lesson === id) b.setAttribute("aria-current", "true"); else b.removeAttribute("aria-current");
+  // Each lesson gets its step tabs and its one row of buttons.
+  document.querySelectorAll(".lesson").forEach((pane) => {
+    const tabs = document.createElement("div");
+    tabs.className = "lsteps";
+    tabs.setAttribute("role", "group");
+    tabs.setAttribute("aria-label", "Steps in this lesson");
+    tabs.innerHTML = STEPS.map(([id, label], i) =>
+      '<button type="button" data-goto="' + id + '"><i>' + (i + 1) + "</i>" + label + "</button>").join("");
+    pane.querySelector(".lpanel-head").after(tabs);
+    tabs.addEventListener("click", (e) => {
+      const b = e.target.closest("[data-goto]");
+      if (b) show(pane.dataset.pane, b.dataset.goto, true);
     });
-    if (window.location.hash.slice(1) !== id) history.replaceState(null, "", "#" + id);
+    const foot = document.createElement("div");
+    foot.className = "footbar";
+    foot.innerHTML = '<button type="button" class="lbtn lbtn--quiet" data-back>Back</button><span class="sp"></span>' +
+      '<button type="button" class="lbtn lbtn--primary lbtn--lg" data-next></button>';
+    pane.appendChild(foot);
+    foot.querySelector("[data-back]").addEventListener("click", back);
+    foot.querySelector("[data-next]").addEventListener("click", forward);
+  });
+
+  function forward() {
+    const s = stepIds.indexOf(cur.step);
+    if (s < stepIds.length - 1) return show(cur.lesson, stepIds[s + 1], true);
+    const next = order[order.indexOf(cur.lesson) + 1];
+    if (next) show(next, "idea", true);
+  }
+  function back() {
+    const s = stepIds.indexOf(cur.step);
+    if (s > 0) return show(cur.lesson, stepIds[s - 1], true);
+    const prev = order[order.indexOf(cur.lesson) - 1];
+    if (prev) show(prev, "check", true);
+  }
+
+  function show(lesson, step, focus) {
+    if (!order.includes(lesson)) lesson = order[0];
+    if (!stepIds.includes(step)) step = "idea";
+    cur = { lesson, step };
+    const li = order.indexOf(lesson);
+    document.querySelectorAll(".lesson").forEach((p) => { p.hidden = p.dataset.pane !== lesson; });
+    const pane = paneOf(lesson);
+    pane.querySelectorAll(".lstep").forEach((s) => { s.hidden = s.dataset.step !== step; });
+    pane.querySelectorAll(".lsteps button").forEach((b) => {
+      if (b.dataset.goto === step) b.setAttribute("aria-current", "step"); else b.removeAttribute("aria-current");
+    });
+    const nextLesson = order[li + 1];
+    const nextBtn = pane.querySelector("[data-next]");
+    nextBtn.textContent = step === "idea" ? "Continue: try it"
+      : step === "try" ? "Continue: check yourself"
+      : nextLesson ? "Next lesson: " + titles[nextLesson] : "";
+    nextBtn.hidden = step === "check" && !nextLesson;
+    pane.querySelector("[data-back]").hidden = li === 0 && step === "idea";
+    railButtons.forEach((b) => {
+      if (b.dataset.lesson === lesson) b.setAttribute("aria-current", "true"); else b.removeAttribute("aria-current");
+    });
+    now.textContent = "Lesson " + (li + 1) + " of " + order.length + " · " + titles[lesson];
+    const hash = "#" + lesson + (step === "idea" ? "" : "/" + step);
+    if (window.location.hash !== hash) history.replaceState(null, "", hash);
     if (focus) {
-      const pane = document.querySelector('.lesson[data-pane="' + id + '"]');
-      pane.scrollIntoView({ block: "start", behavior: reducedMotion ? "auto" : "smooth" });
+      rail.scrollIntoView({ block: "start", behavior: reducedMotion ? "auto" : "smooth" });
       const h = pane.querySelector("h2");
       h.tabIndex = -1;
       h.focus({ preventScroll: true });
     }
   }
+  function showFromHash(focus) {
+    const parts = window.location.hash.slice(1).split("/");
+    show(parts[0], parts[1], focus);
+  }
 
-  railButtons.forEach((b) => b.addEventListener("click", () => show(b.dataset.lesson, true)));
-  document.querySelectorAll(".lesson").forEach((pane) => {
-    const i = order.indexOf(pane.dataset.pane);
-    const next = pane.querySelector("[data-next]");
-    const back = pane.querySelector("[data-back]");
-    if (next) next.addEventListener("click", () => show(order[i + 1], true));
-    if (back) back.addEventListener("click", () => show(order[i - 1], true));
-  });
+  railButtons.forEach((b) => b.addEventListener("click", () => show(b.dataset.lesson, "idea", true)));
 
   // ─── check yourself ────────────────────────────────────────────────────
   document.querySelectorAll(".quiz").forEach((quiz) => {
@@ -298,7 +356,7 @@
   paintRag();
 
   // ─── 4. the checks, in order ───────────────────────────────────────────
-  const STEPS = [
+  const PIPE_STEPS = [
     ["tenant", "Which agent is this for?", "The link carries a token for one agent."],
     ["phrases", "Urgent phrases", "Your list, matched exactly."],
     ["classifier", "Urgency and scope", "Might need urgent help, or asks for a clinical decision?"],
@@ -336,7 +394,7 @@
   let pipeRun = 0;
 
   function paintPipe() {
-    $("pipe").innerHTML = STEPS.map(([id, title, sub]) =>
+    $("pipe").innerHTML = PIPE_STEPS.map(([id, title, sub]) =>
       '<li data-step="' + id + '"><span class="dot">' + TICK + "</span><span><b>" + esc(title) + "</b><small>" + esc(sub) + "</small></span></li>").join("");
   }
   function runPipe(mi) {
@@ -354,7 +412,7 @@
     function finish(stoppedAt) {
       out.dataset.kind = m.kind;
       const where = stoppedAt
-        ? "Stopped at: " + STEPS.find((s) => s[0] === stoppedAt)[1] + ". The model was not called."
+        ? "Stopped at: " + PIPE_STEPS.find((s) => s[0] === stoppedAt)[1] + ". The model was not called."
         : "Passed every check.";
       out.innerHTML = esc(m.out).replace(/\n/g, "<br>") + "<small>" + esc(where) + "</small>";
       $("pipe-note").textContent = m.note;
@@ -450,6 +508,6 @@
 
   // ─── start ─────────────────────────────────────────────────────────────
   paintRail();
-  show(window.location.hash.slice(1) || order[0], false);
-  window.addEventListener("hashchange", () => show(window.location.hash.slice(1), false));
+  showFromHash(false);
+  window.addEventListener("hashchange", () => showFromHash(false));
 })();
