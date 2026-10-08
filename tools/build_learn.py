@@ -34,4 +34,4 @@ main = f'''<main id="main" class="xp">
 os.makedirs('learn', exist_ok=True)
 build('learn/index.html', 'learn/', 'Learn: build your first agent — Ostify',
       'An interactive module for clinicians: build an agent on Ostify step by step, and learn how language models, retrieval, guardrails and data flows work. No account needed.',
-      'guides', [('Learn', 'learn/')], main, 'product', None)
+      'guides', [('Learn', 'learn/')], main, 'product', '/learn/')
