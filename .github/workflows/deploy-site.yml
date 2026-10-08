@@ -27,11 +27,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build roles and content pages
-        # roles/*.md become /careers/ pages; tools/content.json becomes guides and news.
+        # roles/*.md become /careers/ pages; tools/content.json becomes guides and news; tools/learn.html becomes /learn/.
         run: |
           pip install --quiet markdown
           python3 tools/build_content.py
           python3 tools/build_roles.py
+          python3 tools/build_learn.py
 
       - name: Collect site files
         # The pages go in public/; server.js sits beside them and serves them.

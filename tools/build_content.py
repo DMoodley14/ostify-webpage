@@ -74,7 +74,7 @@ for c in CATS:
     </section>'''
 idx = '<main id="main" class="xp">\n' + HERO.format(
     eyebrow='Guides', title='Build well, from the start.',
-    lede='Short, practical guides for clinicians building on Ostify. For the stages themselves, see <a href="/how-it-works/">how it works</a>.') + f'''
+    lede='Short, practical guides for clinicians building on Ostify. For the stages themselves, see <a href="/how-it-works/">how it works</a>. New to all this? Start with the interactive <a href="/learn/">Learn module</a>.') + f'''
 <section class="xs">
   <div class="xw">
     <div class="xchips" role="group" aria-label="Filter guides">{chips}</div>{groups}
