@@ -984,7 +984,6 @@ html,body{overflow-x:clip}
 .xtrust-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .xtrust-grid li{padding:24px;border:1px solid #0A171214;border-radius:18px;background:#fff}
 .xtrust-grid b{display:block;font-size:18px;letter-spacing:-.01em;margin-top:14px}
-.xcert{margin-top:24px;max-width:320px}.xcert iframe{display:block;border:0;width:100%;aspect-ratio:1}
 .xtrust-grid p{margin:6px 0 0;font-size:15px;line-height:1.55;color:var(--x-ink-2,#3b4a42)}
 .xtrust-grid li>b:first-child{margin-top:0}
 .xstat{display:inline-flex;align-items:center;gap:7px;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:600}
@@ -1453,3 +1452,17 @@ footer .wordmark{color:var(--x-ink,#0A1712)}
 body.menu-open{overflow:visible}
 html.menu-open{overflow:hidden}
 .mobile-menu{max-height:calc(100dvh - 73px);overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;box-shadow:0 30px 40px -30px rgba(10,23,18,.35)}
+
+/* Cyber Essentials: footer badge, trust card and certificate popup */
+.footer-badges{display:flex;align-items:center;gap:20px}
+.ce-badge img{display:block;width:60px;height:auto;border-radius:50% 50% 10px 10px / 34% 34% 6px 6px}
+.xcert{margin-top:24px;display:flex;align-items:center;gap:16px;padding:14px 18px;border:1px solid #0A171214;border-radius:18px;background:#fff;font:inherit;color:inherit;text-align:left;cursor:pointer;max-width:420px}
+.xcert:hover{border-color:#0A171240}
+.xcert img{width:52px;height:auto;flex:none;border-radius:50% 50% 8px 8px / 34% 34% 5px 5px}
+.xcert b{display:block;font-size:16px}
+.xcert span{font-size:14px;opacity:.75}
+.xcert-dialog{padding:0;border:0;border-radius:12px;max-width:min(960px,calc(100vw - 32px));background:#fff;overflow:visible}
+.xcert-dialog::backdrop{background:#0A1712b3}
+.xcert-dialog img{display:block;width:100%;height:auto;border-radius:12px;user-select:none;-webkit-user-drag:none}
+.xcert-close{position:absolute;top:-14px;right:-14px;width:36px;height:36px;border-radius:50%;border:0;background:#fff;font-size:22px;line-height:1;cursor:pointer;box-shadow:0 2px 8px #0003}
+@media(max-width:600px){.footer-badges{gap:16px}.xcert-close{top:8px;right:8px}}

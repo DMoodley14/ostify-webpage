@@ -45,7 +45,7 @@
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon-512.png" type="image/png" sizes="512x512">
 <link rel="apple-touch-icon" href="/favicon-180.png">
-<link rel="stylesheet" href="/site.css?v=20261008b">
+<link rel="stylesheet" href="/site.css?v=20261019a">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -115,10 +115,14 @@
       <li><span class="xstat xstat--done">In place</span><b>DSPT and DTAC alignment</b><p>Agents built on Ostify are aligned with the Data Security and Protection Toolkit and the Digital Technology Assessment Criteria. We are finalising completion of both, pending penetration testing.</p></li>
       <li><span class="xstat xstat--done">In place</span><b>ICO registered</b><p>Registered with the Information Commissioner’s Office, number ZC243397. <a href="https://ico.org.uk/ESDWebPages/Entry/ZC243397" target="_blank" rel="noopener">Check the register</a>.</p></li>
       <li><span class="xstat xstat--done">In place</span><b>Encryption and access control</b><p>Data is encrypted in transit, and access is limited to the people who need it. <a href="/security/">How the platform is protected</a>.</p></li>
-      <li><span class="xstat xstat--done">In place</span><b>Cyber Essentials</b><p>Certified under the UK government-backed scheme for basic cyber protection. <a href="https://registry.blockmarktech.com/certificates/899c026a-2b81-49a2-ab3f-ecffb5c9c9f1/" target="_blank" rel="noopener">Check the certificate</a>.</p></li>
+      <li><span class="xstat xstat--done">In place</span><b>Cyber Essentials</b><p>Certified under the UK government-backed scheme for basic cyber protection. <a href="#certificate" data-cert-open>View the certificate</a> or <a href="https://registry.blockmarktech.com/certificates/899c026a-2b81-49a2-ab3f-ecffb5c9c9f1/" target="_blank" rel="noopener">check it on the public register</a>.</p></li>
       <li><span class="xstat xstat--prog">In progress</span><b>Independent penetration testing</b><p>An external test of the platform is under way.</p></li>
     </ul>
-    <div class="xcert"><iframe src="https://registry.blockmarktech.com/certificates/899c026a-2b81-49a2-ab3f-ecffb5c9c9f1/widget/?tooltip_position=bottom&amp;theme=transparent" title="Ostify Cyber Essentials certificate" loading="lazy"></iframe></div>
+    <button type="button" class="xcert" data-cert-open aria-haspopup="dialog"><img src="/images/certs/cyber-essentials-badge.png" alt="" width="282" height="342"><span><b>Cyber Essentials certificate</b>Certified 19 October 2026, whole organisation. Select to view.</span></button>
+    <dialog class="xcert-dialog" id="certificate" aria-label="Ostify Cyber Essentials certificate">
+      <form method="dialog"><button class="xcert-close" aria-label="Close">×</button></form>
+      <img src="/images/certs/cyber-essentials-certificate.jpg" alt="Cyber Essentials certificate of assurance for Ostify Health Ltd, 66 Paul Street, London. Certificate number 899c026a-2b81-49a2-ab3f-ecffb5c9c9f1. Scope: whole organisation. Certified 19 October 2026, recertification due 19 October 2027. Certification body: FIG Group. Cyber Essentials partner: IASME." width="1600" height="1133" draggable="false">
+    </dialog>
   </div>
 </section>
 
@@ -172,6 +176,7 @@
       <li><a href="/privacy/"><b>Privacy policy</b><span>How we handle personal information</span></a></li>
       <li><a href="/terms/"><b>Terms of use</b><span>The terms for using this website</span></a></li>
       <li><a href="/assurance/"><b>Assurance by plan</b><span>The nine documents Osteocite Assist drafts</span></a></li>
+      <li><a href="#certificate" data-cert-open><b>Cyber Essentials certificate</b><span>View it here</span></a></li>
       <li><a href="/contact/"><b>DCB0129 clinical safety case</b><span>Ask us for a copy</span></a></li>
       <li><a href="/contact/"><b>Sub-processor list</b><span>Available on request</span></a></li>
       <li><a href="mailto:info@ostify.co.uk"><b>Report a security concern</b><span>info@ostify.co.uk</span></a></li>
@@ -179,12 +184,20 @@
   </div>
 </section>
 </main>
-<footer><div class="wrap"><nav class="footer-cols" aria-label="Footer"><div class="footer-column"><span>Product</span><a href="/#product">Product tour</a><a href="/how-it-works/">How it works</a><a href="/architecture/">Under the hood</a><a href="/#build-types">Templates</a></div><div class="footer-column"><span>Solutions</span><a href="/clinicians/">For clinicians</a><a href="/founders/">For founders</a><a href="/organisations/">For organisations</a></div><div class="footer-column"><span>Pricing</span><a href="/plans/">Before your pilot</a><a href="/plans/pilot/">Pilot and beyond</a><a href="/plans/pilot/#osticellerate">Osticellerate</a></div><div class="footer-column"><span>Compliance</span><a href="/trust/">Trust and security</a><a href="/gdpr/">GDPR</a><a href="/security/">Cybersecurity</a><a href="/assurance/">Assurance</a><a href="/#guardrails">Guardrails</a></div><div class="footer-column"><span>Resources</span><a href="/learn/">Learn</a><a href="/guides/">Guides</a><a href="/news/">News</a><a href="/contact/">Contact</a></div><div class="footer-column"><span>Company</span><a href="/company/">About us</a><a href="/careers/">Work with us</a><a href="https://www.linkedin.com/company/ostify/" rel="me noopener" target="_blank">LinkedIn</a></div></nav><div class="footer-brand"><div><a class="wordmark" href="/">Ostify<span class="brand-dot" aria-hidden="true">.</span></a><p class="footer-tagline">Agents built from your own clinical content.</p></div><img class="ms-badge" src="/images/brand/ms-startups-badge.webp" alt="Proud to collaborate with Microsoft for Startups" width="400" height="171" loading="lazy"></div><div class="footer-bottom"><p>© 2026 Ostify Health Ltd. Registered in England and Wales, no. 17433177.<br>66 Paul Street, London EC2A 4NA. <a href="mailto:info@ostify.co.uk">info@ostify.co.uk</a></p><div><a href="/privacy/">Privacy policy</a><a href="/terms/">Terms of use</a><a href="/gdpr/">GDPR</a><a href="/privacy/#cookies" data-cookie-settings>Cookie settings</a></div></div></div></footer>
+<footer><div class="wrap"><nav class="footer-cols" aria-label="Footer"><div class="footer-column"><span>Product</span><a href="/#product">Product tour</a><a href="/how-it-works/">How it works</a><a href="/architecture/">Under the hood</a><a href="/#build-types">Templates</a></div><div class="footer-column"><span>Solutions</span><a href="/clinicians/">For clinicians</a><a href="/founders/">For founders</a><a href="/organisations/">For organisations</a></div><div class="footer-column"><span>Pricing</span><a href="/plans/">Before your pilot</a><a href="/plans/pilot/">Pilot and beyond</a><a href="/plans/pilot/#osticellerate">Osticellerate</a></div><div class="footer-column"><span>Compliance</span><a href="/trust/">Trust and security</a><a href="/gdpr/">GDPR</a><a href="/security/">Cybersecurity</a><a href="/assurance/">Assurance</a><a href="/#guardrails">Guardrails</a></div><div class="footer-column"><span>Resources</span><a href="/learn/">Learn</a><a href="/guides/">Guides</a><a href="/news/">News</a><a href="/contact/">Contact</a></div><div class="footer-column"><span>Company</span><a href="/company/">About us</a><a href="/careers/">Work with us</a><a href="https://www.linkedin.com/company/ostify/" rel="me noopener" target="_blank">LinkedIn</a></div></nav><div class="footer-brand"><div><a class="wordmark" href="/">Ostify<span class="brand-dot" aria-hidden="true">.</span></a><p class="footer-tagline">Agents built from your own clinical content.</p></div><div class="footer-badges"><img class="ms-badge" src="/images/brand/ms-startups-badge.webp" alt="Proud to collaborate with Microsoft for Startups" width="400" height="171" loading="lazy"><a class="ce-badge" href="/trust/#certificate" title="Cyber Essentials certified"><img src="/images/certs/cyber-essentials-badge.png" alt="Cyber Essentials certified" width="282" height="342" loading="lazy"></a></div></div><div class="footer-bottom"><p>© 2026 Ostify Health Ltd. Registered in England and Wales, no. 17433177.<br>66 Paul Street, London EC2A 4NA. <a href="mailto:info@ostify.co.uk">info@ostify.co.uk</a></p><div><a href="/privacy/">Privacy policy</a><a href="/terms/">Terms of use</a><a href="/gdpr/">GDPR</a><a href="/privacy/#cookies" data-cookie-settings>Cookie settings</a></div></div></div></footer>
 <script src="/site-config.js?v=20261005a"></script>
 <script src="/analytics.js?v=20261005a"></script>
 <script src="/consent.js?v=20261005a"></script>
 <script src="/nav.js?v=20261004v"></script>
 <script src="/site-x.js?v=20261004v"></script>
 <script src="/effects.js?v=20261004v"></script>
+<script>
+(function(){var d=document.getElementById('certificate');if(!d||!d.showModal)return;
+function open(e){if(e)e.preventDefault();if(!d.open)d.showModal();}
+document.querySelectorAll('[data-cert-open]').forEach(function(a){a.addEventListener('click',open);});
+d.addEventListener('click',function(e){if(e.target===d)d.close();});
+d.addEventListener('contextmenu',function(e){e.preventDefault();});
+if(location.hash==='#certificate')open();})();
+</script>
 </body>
 </html>
