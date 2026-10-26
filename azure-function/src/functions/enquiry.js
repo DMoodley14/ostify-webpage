@@ -6,7 +6,8 @@ const RECIPIENT = process.env.ENQUIRY_RECIPIENT || "info@ostify.co.uk";
 const CONNECTION_STRING = process.env.ACS_CONNECTION_STRING;
 const SENDER_ADDRESS = process.env.ACS_SENDER_ADDRESS;
 
-const PLAN_VALUES = new Set(["Always free", "Founder", "Not sure yet"]);
+// Keep in step with the plan options on /contact/. "Founder" stays so older links still send.
+const PLAN_VALUES = new Set(["Always free", "Clinician", "Small organisation", "Large organisation", "Charity", "Founder", "Not sure yet"]);
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const emailClient = CONNECTION_STRING ? new EmailClient(CONNECTION_STRING) : null;
@@ -51,6 +52,7 @@ app.http("enquiry", {
     const email = typeof body.email === "string" ? body.email.trim() : "";
     const plan = typeof body.plan === "string" ? body.plan.trim() : "";
     const message = typeof body.message === "string" ? body.message.trim() : "";
+    const organisation = typeof body.organisation === "string" ? body.organisation.trim() : "";
     const honeypot = typeof body.company === "string" ? body.company.trim() : "";
 
     // Bots that fill the hidden "company" field get a fake success, not an error to learn from.
@@ -67,6 +69,9 @@ app.http("enquiry", {
     if (!message || message.length > 3000) {
       return json(400, { error: "Invalid message" });
     }
+    if (organisation.length > 160) {
+      return json(400, { error: "Invalid organisation" });
+    }
     if (!PLAN_VALUES.has(plan)) {
       return json(400, { error: "Invalid plan" });
     }
@@ -76,8 +81,8 @@ app.http("enquiry", {
       return json(500, { error: "Not configured" });
     }
 
-    const plainBody = `Name: ${name}\nEmail: ${email}\nPlan: ${plan}\n\n${message}`;
-    const htmlBody = `<p><strong>Name:</strong> ${escapeHtml(name)}</p><p><strong>Email:</strong> ${escapeHtml(email)}</p><p><strong>Plan:</strong> ${escapeHtml(plan)}</p><p>${escapeHtml(message).replace(/\n/g, "<br>")}</p>`;
+    const plainBody = `Name: ${name}\nEmail: ${email}\nOrganisation: ${organisation || "Not given"}\nPlan: ${plan}\n\n${message}`;
+    const htmlBody = `<p><strong>Name:</strong> ${escapeHtml(name)}</p><p><strong>Email:</strong> ${escapeHtml(email)}</p><p><strong>Organisation:</strong> ${escapeHtml(organisation || "Not given")}</p><p><strong>Plan:</strong> ${escapeHtml(plan)}</p><p>${escapeHtml(message).replace(/\n/g, "<br>")}</p>`;
 
     try {
       const poller = await emailClient.beginSend({
