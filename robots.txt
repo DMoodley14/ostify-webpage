@@ -1,4 +1,20 @@
 User-agent: *
 Allow: /
+Disallow: /feedback/
+
+# AI assistants and answer engines are welcome to read and cite this site.
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: CCBot
+Allow: /
+Disallow: /feedback/
 
 Sitemap: https://ostify.co.uk/sitemap.xml

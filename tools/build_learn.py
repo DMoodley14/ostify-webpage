@@ -14,7 +14,7 @@ import os, sys
 sys.path.insert(0, os.path.dirname(__file__))
 from mkpage import build
 
-V = '20261008c'
+V = '20261026b'
 HERE = os.path.dirname(__file__)
 
 MODULES = [
@@ -83,6 +83,6 @@ index = '<main id="main" class="xp">\n' + CSS + HERO.format(
 <script src="/learn-index.js?v={V}" defer></script>
 '''
 os.makedirs('learn', exist_ok=True)
-build('learn/index.html', 'learn/', 'Learn — Ostify',
+build('learn/index.html', 'learn/', 'Learn how healthcare AI assistants work | Ostify',
       'Interactive modules for clinicians building healthcare agents on Ostify. Learn how language models, retrieval and guardrails work as you go. No account needed.',
       'guides', [('Learn', 'learn/')], index, 'product', '/learn/')

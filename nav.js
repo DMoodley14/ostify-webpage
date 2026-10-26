@@ -69,3 +69,21 @@
   });
 })();
 
+
+// Announcement bar: the charity offer, shown on every page except pricing, until dismissed on this device.
+(function(){
+  var key = 'ostify-bar-charities';
+  if(location.pathname.indexOf('/plans/') === 0) return;
+  try { if(localStorage.getItem(key)) return; } catch(e) {}
+  var bar = document.createElement('div');
+  bar.className = 'xbar';
+  bar.setAttribute('role', 'region');
+  bar.setAttribute('aria-label', 'Announcement');
+  bar.innerHTML = '<p>Our offer for independent UK health charities. <a href="/plans/#charities">Find out more <span aria-hidden="true">→</span></a></p><button type="button" class="xbar-x" aria-label="Dismiss announcement">×</button>';
+  var skip = document.querySelector('.skip-link');
+  if(skip) skip.after(bar); else document.body.prepend(bar);
+  bar.querySelector('.xbar-x').addEventListener('click', function(){
+    bar.remove();
+    try { localStorage.setItem(key, '1'); } catch(e) {}
+  });
+})();

@@ -1,0 +1,43 @@
+# Ostify
+
+> Ostify builds, tests and runs AI virtual assistants for healthcare organisations and independent UK health charities. Each assistant answers people's questions using only content the organisation has approved, goes live on the organisation's own website under its name, and is documented to NHS standards (DCB0129 clinical safety and DTAC). Ostify Health Ltd is a UK company (no. 17433177), Cyber Essentials certified and registered with the ICO (ZC243397).
+
+Key facts:
+
+- Answers come only from the organisation's approved content (leaflets, web pages, guidance), never the wider internet. Each answer shows its source.
+- Urgent questions never reach the AI. Six checks run on every question; anything that sounds urgent shows the organisation's own urgent-help message (999, 111, GP or helpline).
+- The assistant does not diagnose, assess symptoms or advise on an individual's treatment, and is designed to fall outside medical device regulation.
+- Before launch, every answer is assessed by Ostify's model, Ostify's clinical team (led by a GMC-registered doctor who is a trained Clinical Safety Officer) and two of the organisation's own clinicians. A 2 to 4 week supervised pilot follows, and the evaluation is repeated every quarter.
+- People do not sign in and Ostify does not store what they type. Public messages are processed in the UK. The organisation is the data controller; Ostify is its data processor.
+- Charities and other services not commissioned by the NHS or a local authority do not need to appoint a Clinical Safety Officer. NHS or local-authority commissioned services do.
+- Pricing: Always free (build and preview), Clinician £100 a month, Small organisation £500 a month (about 1,000 conversations a month, a named account manager), Large organisation custom. Top-ups are bought in bundles of about 1,000 or 10,000 conversations. Eligible independent UK health charities may have the monthly fee waived for the first year.
+
+## For organisations and charities
+
+- [For organisations](https://ostify.co.uk/organisations/): what Ostify builds, the five-meeting process, who does what, and whether you need a Clinical Safety Officer
+- [Pricing](https://ostify.co.uk/plans/): plans, top-ups and the offer for independent UK health charities
+- [Trust and security](https://ostify.co.uk/trust/): where data goes, standards and certifications, clinical safety
+- [Contact](https://ostify.co.uk/contact/): book a discovery call
+
+## How it works
+
+- [Guardrails](https://ostify.co.uk/#guardrails): the six checks every question passes
+- [How it works](https://ostify.co.uk/how-it-works/): build, evaluate, assure, review, pilot and production
+- [Assurance](https://ostify.co.uk/assurance/): the nine safety documents and who signs them
+- [Under the hood](https://ostify.co.uk/architecture/): retrieval, gating and where the AI runs, in plain terms
+- [GDPR](https://ostify.co.uk/gdpr/): data protection roles, data location and people's rights
+- [Cybersecurity](https://ostify.co.uk/security/): how the platform is protected
+
+## For clinicians
+
+- [For clinicians](https://ostify.co.uk/clinicians/): build an assistant for your own service
+- [For founders](https://ostify.co.uk/founders/): build a product of your own
+- [Guides](https://ostify.co.uk/guides/): practical guides to building well
+- [Learn](https://ostify.co.uk/learn/): interactive modules on how healthcare AI assistants work
+
+## Company
+
+- [About us](https://ostify.co.uk/company/): who we are and why we built Ostify
+- [News](https://ostify.co.uk/news/): product updates and announcements
+- [Privacy policy](https://ostify.co.uk/privacy/)
+- [Terms of use](https://ostify.co.uk/terms/)

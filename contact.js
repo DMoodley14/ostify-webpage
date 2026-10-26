@@ -3,15 +3,16 @@
   var config=window.OSTIFY_CONFIG||{}, status=document.getElementById('enquiry-status'), button=document.getElementById('enquiry-submit');
   var plan=new URLSearchParams(location.search).get('plan');
   if(plan==='Free'||plan==='Hobbyist') plan='Always free'; // Preserve older enquiry links.
+  if(plan==='Founder') plan='Clinician';
   if(Array.from(form.elements.plan.options).some(function(o){return o.value===plan;})) form.elements.plan.value=plan;
   if(config.enquiryEndpoint){button.textContent='Send enquiry';status.textContent='We’ll confirm here when your enquiry has been received.';}
   form.addEventListener('input',function(){window.ostifyTrack('enquiry_started');},{once:true});
   form.addEventListener('submit',async function(e){
     e.preventDefault();if(!form.reportValidity()) return;
-    var data={name:form.elements.name.value.trim(),email:form.elements.email.value.trim(),plan:form.elements.plan.value,message:form.elements.message.value.trim(),company:form.elements.company.value};
+    var data={name:form.elements.name.value.trim(),email:form.elements.email.value.trim(),plan:form.elements.plan.value,message:form.elements.message.value.trim(),organisation:form.elements.organisation.value.trim(),company:form.elements.company.value};
     if(!data.name||!data.message){status.textContent='Please enter your name and a message.';return;}
     if(!config.enquiryEndpoint){
-      var body='Name: '+data.name+'\nEmail: '+data.email+'\nPlan: '+data.plan+'\n\n'+data.message;
+      var body='Name: '+data.name+'\nEmail: '+data.email+(data.organisation?'\nOrganisation: '+data.organisation:'')+'\nPlan: '+data.plan+'\n\n'+data.message;
       document.getElementById('email-copy').value=body;document.getElementById('email-fallback').hidden=false;
       status.textContent='Your email is prepared, not sent. Send it in your email app, or copy the text below.';
       window.ostifyTrack('email_prepared');

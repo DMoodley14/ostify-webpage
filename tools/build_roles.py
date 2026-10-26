@@ -142,8 +142,8 @@ idx = '<main id="main" class="xp">\n' + HERO.format(
   </div>
 </section>
 '''
-build('careers/index.html', 'careers/', 'Work with us — Ostify',
-      'Work with Ostify: open roles at an early-stage company helping clinicians build safe, tested healthcare agents.',
+build('careers/index.html', 'careers/', 'Careers at Ostify',
+      'Work with Ostify: roles at a UK health technology company building safe, tested AI assistants for clinicians, charities and health organisations.',
       'careers', [('Work with us', 'careers/')], idx, 'company', '/careers/')
 restyle('careers/index.html')
 

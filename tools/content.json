@@ -54,7 +54,7 @@
       "cat": "Going live",
       "title": "Getting ready for review",
       "lede": "What to have in place before you submit.",
-      "body": "<h2>Why there is a review</h2>\n    <p>No agent built on Ostify reaches patients, staff or the public until it has passed an individual Ostify review. The review is quicker when everything below is ready.</p>\n    <h2>A checklist</h2>\n    <ul><li>Your content is current, and every passage the agent uses is approved.</li><li>Your own never-rules are written and tested.</li><li>An evaluation run is complete, and you and at least one other clinician have reviewed every answer.</li><li>Your assurance documents are drafted, read and signed.</li><li>Your clinical safety officer has signed off the agent.</li><li>You know who will be responsible for keeping the content up to date.</li></ul>\n    <h2>After you submit</h2>\n    <p>We review your agent and come back to you. Once approved, you receive a link to share with the people it is for. If you later change content or key settings, the agent comes back for review before the change goes live.</p>\n    <h2>Costs</h2>\n    <p>The review is a one-off fee. See <a href=\"/plans/\">pricing</a> for what it covers.</p>"
+      "body": "<h2>Why there is a review</h2>\n    <p>No agent built on Ostify reaches patients, staff or the public until it has passed an individual Ostify review. The review is quicker when everything below is ready.</p>\n    <h2>A checklist</h2>\n    <ul><li>Your content is current, and every passage the agent uses is approved.</li><li>Your own never-rules are written and tested.</li><li>An evaluation run is complete, and you and at least one other clinician have reviewed every answer.</li><li>Your assurance documents are drafted, read and signed.</li><li>If your service is commissioned by the NHS or a local authority, your clinical safety officer has signed off the agent.</li><li>You know who will be responsible for keeping the content up to date.</li></ul>\n    <h2>After you submit</h2>\n    <p>We review your agent and come back to you. Once approved, you receive a link to share with the people it is for. If you later change content or key settings, the agent comes back for review before the change goes live.</p>\n    <h2>Costs</h2>\n    <p>Deployment reviews are included in your plan. See <a href=\"/plans/\">pricing</a> for what it covers.</p>"
     },
     {
       "slug": "sharing",
@@ -72,6 +72,14 @@
     }
   ],
   "news": [
+    {
+      "slug": "organisations-and-charities",
+      "date": "2026-10-26",
+      "tag": "Product",
+      "title": "Virtual assistants for health organisations and charities",
+      "lede": "We now build, test and run assistants for organisations, with an offer for independent UK health charities.",
+      "body": "<p>Ostify started as a platform for clinicians to build their own agents. We are now also building them for organisations: a virtual assistant that answers people’s questions using only information you have approved, and goes live on your website under your name.</p>\n    <p>You send us your content and make the decisions; we do the building and the running. Two clinicians from your team review the answers, a small group uses the assistant in a supervised pilot, and we re-test it every quarter after launch. <a href=\"/organisations/\">See how it works</a>.</p>\n    <p>The Small organisation plan comes with a named account manager and a monthly allowance of conversations, and larger organisations can agree a custom plan. <a href=\"/plans/\">See pricing</a>.</p>\n    <p>For independent UK health charities, we have an offer that waives the monthly fee for the first year. <a href=\"/plans/#charities\">Read about the offer and how to apply</a>.</p>\n    <p>The builder stays free for clinicians who want to build for their own service.</p>"
+    },
     {
       "slug": "cyber-essentials",
       "date": "2026-10-19",

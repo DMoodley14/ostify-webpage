@@ -3,23 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pricing before your pilot — Ostify</title>
-<meta name="description" content="Building clinical agents on Ostify is free, always. Founder, now in beta testing, adds evaluation and assurance documentation support.">
+<title>Pricing for clinicians, charities and organisations | Ostify</title>
+<meta name="description" content="Build free, then choose a monthly plan: Clinician £100, Small organisation £500, or a custom Large organisation plan, each with a monthly allowance of conversations included.">
 <meta name="theme-color" content="#FFFFFF">
 <link rel="canonical" href="https://ostify.co.uk/plans/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ostify">
 <meta property="og:url" content="https://ostify.co.uk/plans/">
-<meta property="og:title" content="Pricing before your pilot — Ostify">
-<meta property="og:description" content="Building clinical agents on Ostify is free, always. Founder, now in beta testing, adds evaluation and assurance documentation support.">
-<meta property="og:image" content="https://ostify.co.uk/images/og/plans.jpg">
+<meta property="og:title" content="Pricing for clinicians, charities and organisations | Ostify">
+<meta property="og:description" content="Build free, then choose a monthly plan: Clinician £100, Small organisation £500, or a custom Large organisation plan, each with a monthly allowance of conversations included.">
+<meta property="og:image" content="https://ostify.co.uk/images/og/plans.jpg?v=3">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Pricing before your pilot — Ostify">
-<meta name="twitter:description" content="Building clinical agents on Ostify is free, always. Founder, now in beta testing, adds evaluation and assurance documentation support.">
-<meta name="twitter:image" content="https://ostify.co.uk/images/og/plans.jpg">
+<meta name="twitter:title" content="Pricing for clinicians, charities and organisations | Ostify">
+<meta name="twitter:description" content="Build free, then choose a monthly plan: Clinician £100, Small organisation £500, or a custom Large organisation plan, each with a monthly allowance of conversations included.">
+<meta name="twitter:image" content="https://ostify.co.uk/images/og/plans.jpg?v=3">
 
 <script type="application/ld+json">
 {
@@ -44,29 +44,112 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Ostify",
-  "applicationCategory": "HealthApplication",
-  "operatingSystem": "Web",
-  "url": "https://ostify.co.uk/plans/",
-  "offers": {
-    "@type": "Offer",
-    "name": "Always free",
-    "price": "0",
-    "priceCurrency": "GBP"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Ostify",
-    "url": "https://ostify.co.uk/"
-  }
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://ostify.co.uk/plans/#service",
+      "name": "Ostify",
+      "serviceType": "AI virtual assistants for healthcare",
+      "provider": {
+        "@id": "https://ostify.co.uk/#org",
+        "@type": "Organization",
+        "name": "Ostify"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Ostify plans",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "Always free",
+            "description": "Build and preview an assistant, with 10 MB of clinical content and no time limit.",
+            "priceCurrency": "GBP",
+            "url": "https://ostify.co.uk/plans/#plans",
+            "price": "0"
+          },
+          {
+            "@type": "Offer",
+            "name": "Clinician",
+            "description": "About 200 conversations a month and one deployment review a year.",
+            "priceCurrency": "GBP",
+            "url": "https://ostify.co.uk/plans/#plans",
+            "price": "100",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "100",
+              "priceCurrency": "GBP",
+              "unitText": "month"
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Small organisation",
+            "description": "Built, tested and run with you, a named account manager, about 1,000 conversations a month and two deployment reviews a year.",
+            "priceCurrency": "GBP",
+            "url": "https://ostify.co.uk/plans/#plans",
+            "price": "500",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "500",
+              "priceCurrency": "GBP",
+              "unitText": "month"
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Large organisation",
+            "description": "Several assistants under one agreement, a named account manager, conversations and reviews agreed with you.",
+            "priceCurrency": "GBP",
+            "url": "https://ostify.co.uk/plans/#plans"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is the builder really free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, up to 10 MB of clinical content in total, with no time limit. You can preview your assistant on your own phone, through the same safety checks a patient’s question goes through. Sharing it with patients needs a paid plan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What counts as a conversation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "About ten message turns with the assistant. The allowance is really measured by usage: shorter questions and answers use less, so you get more conversations; longer ones use more, so you get fewer. All conversation numbers are approximate."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if our allowance runs out?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Buy a bundle to keep the assistant running. If the allowance is used up and no bundle has been bought, the assistant pauses until you top up. Nothing is charged automatically."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a deployment review?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A full review of your assistant before it goes live, or after a change such as new content. The Clinician plan includes one a year and the Small organisation plan two; further reviews can be added."
+          }
+        }
+      ]
+    }
+  ]
 }
 </script>
 
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon-512.png" type="image/png" sizes="512x512">
 <link rel="apple-touch-icon" href="/favicon-180.png">
-<link rel="stylesheet" href="/site.css?v=20261019a">
+<link rel="stylesheet" href="/site.css?v=20261026x">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -80,11 +163,11 @@
       </div>
       <div class="nav-group">
         <button class="nav-top" type="button" aria-expanded="false" aria-controls="nav-solutions">Solutions<svg viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
-        <ul class="nav-drop" id="nav-solutions"><li><a href="/clinicians/"><b>For clinicians</b><span>Build an agent for your service</span></a></li><li><a href="/founders/"><b>For founders</b><span>For clinicians building a business</span></a></li><li><a href="/organisations/"><b>For organisations</b><span>Let your teams build, safely</span></a></li></ul>
+        <ul class="nav-drop" id="nav-solutions"><li><a href="/clinicians/"><b>For clinicians</b><span>Build an agent for your service</span></a></li><li><a href="/founders/"><b>For founders</b><span>For clinicians building a business</span></a></li><li><a href="/organisations/"><b>For organisations</b><span>We build it with you, under your name</span></a></li></ul>
       </div>
       <div class="nav-group is-here">
         <button class="nav-top" type="button" aria-expanded="false" aria-controls="nav-pricing">Pricing<svg viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
-        <ul class="nav-drop" id="nav-pricing"><li><a href="/plans/" aria-current="page"><b>Before your pilot</b><span>Always free and Founder plans</span></a></li><li><a href="/plans/pilot/"><b>Pilot and beyond</b><span>Review, your link and running costs</span></a></li></ul>
+        <ul class="nav-drop" id="nav-pricing"><li><a href="/plans/" aria-current="page"><b>Plans</b><span>Free builder, clinician and organisation plans</span></a></li><li><a href="/plans/#top-ups"><b>Top-ups</b><span>Conversation bundles and reviews</span></a></li><li><a href="/plans/#charities"><b>For charities</b><span>Our offer for independent UK health charities</span></a></li></ul>
       </div>
       <div class="nav-group">
         <button class="nav-top" type="button" aria-expanded="false" aria-controls="nav-company">Company<svg viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
@@ -102,7 +185,7 @@
     <div class="mm-group"><p class="mm-h">Safety</p><a href="/#guardrails">Guardrails</a><a href="/assurance/">Assurance</a><a href="/architecture/">Under the hood</a></div>
     <div class="mm-group"><p class="mm-h">Compliance</p><a href="/trust/">Trust and security</a><a href="/gdpr/">GDPR</a><a href="/security/">Cybersecurity</a></div>
     <div class="mm-group"><p class="mm-h">Solutions</p><a href="/clinicians/">For clinicians</a><a href="/founders/">For founders</a><a href="/organisations/">For organisations</a></div>
-    <div class="mm-group"><p class="mm-h">Pricing</p><a href="/plans/" aria-current="page">Before your pilot</a><a href="/plans/pilot/">Pilot and beyond</a></div>
+    <div class="mm-group"><p class="mm-h">Pricing</p><a href="/plans/" aria-current="page">Plans</a><a href="/plans/#top-ups">Top-ups</a><a href="/plans/#charities">For charities</a></div>
     <div class="mm-group"><p class="mm-h">Company</p><a href="/company/">About us</a><a href="/careers/">Work with us</a><a href="/news/">News</a><a href="/contact/">Contact</a><a href="https://www.linkedin.com/company/ostify/" target="_blank" rel="noopener">LinkedIn</a></div>
     <a class="mm-login" href="https://app.ostify.co.uk">Log in</a>
     <a class="btn" href="https://api.ostify.co.uk/.auth/login/ostifycustomerauth?prompt=create&amp;post_login_redirect_uri=https://app.ostify.co.uk/">Start building free <svg class="ico-arrow" viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="M3 9 9 3M4 3h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -114,10 +197,10 @@
   <div class="xfloat" aria-hidden="true"><span style="left:78%;top:18%" data-parallax="0.25"><i class="xcell" style="--s:160px;animation-delay:-0s"></i></span><span style="left:64%;top:58%" data-parallax="0.12"><i class="xdots" style="--s:180px;animation-delay:-3s"></i></span><span style="left:90%;top:70%" data-parallax="0.35"><i class="xcell" style="--s:90px;animation-delay:-6s"></i></span></div>
   <div class="xw">
     <div class="xh-copy">
-      <p class="xl xl--light">Pricing · Before your pilot</p>
-      <h1>Build and preview your very own app, free.</h1>
-      <p class="xh-lede">Build your agent, then scan a code and try it on your own phone, just as a patient would see it. No cost and no time limit. Add evaluation and assurance with Founder when you are ready.</p>
-      <div class="xh-cta"><a class="xb xb--light" data-signup href="https://api.ostify.co.uk/.auth/login/ostifycustomerauth?prompt=create&amp;post_login_redirect_uri=https://app.ostify.co.uk/">Build your own</a><a class="xb xb--ghost" href="/plans/pilot/">Pilot and beyond</a></div>
+      <p class="xl xl--light">Pricing</p>
+      <h1>One monthly plan, with conversations included.</h1>
+      <p class="xh-lede">Build free for as long as you like. When you are ready for patients, choose a plan. Every plan includes a monthly allowance of conversations and deployment reviews.</p>
+      <div class="xh-cta"><a class="xb xb--light" href="/contact/">Book a discovery call</a><a class="xb xb--ghost" data-signup href="https://api.ostify.co.uk/.auth/login/ostifycustomerauth?prompt=create&amp;post_login_redirect_uri=https://app.ostify.co.uk/">Start building free</a></div>
     </div>
   </div>
 </section>
@@ -127,43 +210,98 @@
     <header class="xs-head">
       <p class="xl">Plans</p>
       <div>
-        <h2>Build for free. Add evaluation and assurance when you are ready.</h2>
-        <p class="xs-lede">Everything up to the point you submit your agent for review. No patients are involved yet, and you can stay here as long as you like.</p>
+        <h2>Choose the plan that fits your service.</h2>
+        <p class="xs-lede">A conversation is about ten message turns. Shorter conversations use less of your allowance, so you get more of them; longer questions and answers use more.</p>
       </div>
     </header>
     <div class="xplans">
       <article class="xplan">
-        <span class="xtag">Available now</span>
+        <span class="xtag">Before patients</span>
         <h3>Always free</h3>
         <p class="xplan-price">£0, with no time limit</p>
         <ul class="xlist">
-          <li><b>Build</b> your agent with the Osteoblast builder.</li>
-          <li><b>Preview</b> your very own app on your phone, as a patient would see it.</li>
+          <li><b>Build</b> your assistant with the Osteoblast builder.</li>
+          <li><b>Preview</b> it on your phone, as a patient would see it.</li>
           <li><b>10 MB</b> of clinical content in total.</li>
         </ul>
         <div class="xplan-cta"><a class="xb xb--ink" data-signup href="https://api.ostify.co.uk/.auth/login/ostifycustomerauth?prompt=create&amp;post_login_redirect_uri=https://app.ostify.co.uk/">Start building</a></div>
       </article>
-      <article class="xplan xplan--dark">
-        <span class="xtag">In beta · contact us to join</span>
-        <h3>Founder</h3>
-        <p class="xplan-price">Everything in Always free, plus</p>
+      <article class="xplan">
+        <span class="xtag">For clinicians and founders</span>
+        <h3>Clinician</h3>
+        <p class="xplan-price">£100 a month</p>
         <ul class="xlist">
-          <li><b>Evaluate</b> with Osteoclast.</li>
-          <li><b>Assure and comply</b> with Osteocite.</li>
-          <li><b>A larger content allowance.</b></li>
+          <li><b>One clinician</b> building for their own service or a new product.</li>
+          <li><b>About 200 conversations</b> a month.</li>
+          <li><b>1 deployment review</b> a year.</li>
+          <li><b>Build, Evaluate, Assure and Deploy.</b></li>
         </ul>
-        <div class="xplan-cta"><a class="xb xb--light" href="/contact/?plan=Founder">Join the beta</a></div>
+        <div class="xplan-cta"><a class="xb xb--ink" href="/contact/?plan=Clinician">Get started</a></div>
+      </article>
+      <article class="xplan xplan--dark">
+        <span class="xtag">For charities and small organisations</span>
+        <h3>Small organisation</h3>
+        <p class="xplan-price">£500 a month</p>
+        <ul class="xlist">
+          <li><b>We build, test and run it with you,</b> <a href="/organisations/">from discovery to launch</a>.</li>
+          <li><b>A named account manager</b> as your main contact.</li>
+          <li><b>About 1,000 conversations</b> a month.</li>
+          <li><b>2 deployment reviews</b> a year.</li>
+          <li><b>Build, Evaluate, Assure and Deploy.</b></li>
+        </ul>
+        <div class="xplan-cta"><a class="xb xb--light" href="/contact/?plan=Small%20organisation">Book a discovery call</a></div>
+      </article>
+      <article class="xplan">
+        <span class="xtag">For larger organisations</span>
+        <h3>Large organisation</h3>
+        <p class="xplan-price">Custom</p>
+        <ul class="xlist">
+          <li><b>Several assistants</b> across your services, under one agreement.</li>
+          <li><b>A named account manager</b> as your main contact.</li>
+          <li><b>Conversations and reviews</b> agreed with you.</li>
+          <li><b>Build, Evaluate, Assure and Deploy.</b></li>
+        </ul>
+        <div class="xplan-cta"><a class="xb xb--ink" href="/contact/?plan=Large%20organisation">Talk to us</a></div>
       </article>
     </div>
   </div>
 </section>
 
-<section class="xs xs--paper" id="next">
+<section class="xs xs--paper" id="top-ups" aria-labelledby="topups-title">
   <div class="xw">
-    <div class="xdoors">
-      <a href="/plans/pilot/"><span class="xl">Next · Pilot and beyond</span><b>Ready for patients? See what a review and a pilot cost.</b><span class="xarrow" aria-hidden="true">→</span></a>
-      <a href="/plans/pilot/#osticellerate"><span class="xl">Osticellerate</span><b>Nothing upfront before your first patient.</b><span class="xarrow" aria-hidden="true">→</span></a>
+    <header class="xs-head">
+      <p class="xl">Top-ups</p>
+      <div>
+        <h2 id="topups-title">More conversations, bought in bundles.</h2>
+        <p class="xs-lede">If your monthly allowance runs out, top up with a bundle. You pay in advance, and we report your usage to you every month.</p>
+      </div>
+    </header>
+    <div class="xcompare-wrap" role="region" aria-labelledby="topups-title" tabindex="0">
+      <table class="xcompare">
+        <thead><tr><th scope="col">Option</th><th scope="col">Price</th><th scope="col" class="is-us">Per message turn</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">About 1,000 conversations</th><td>£200</td><td class="is-us">About 2p</td></tr>
+          <tr><th scope="row">About 10,000 conversations</th><td>£1,500</td><td class="is-us">About 1.5p</td></tr>
+          <tr><th scope="row">Additional deployment review</th><td>£2,000 to £3,000</td><td class="is-us">–</td></tr>
+        </tbody>
+      </table>
     </div>
+  </div>
+</section>
+
+<section class="xs xs--dark xclose" id="charities" aria-labelledby="charities-title">
+  <div class="xfloat" aria-hidden="true"><span style="left:84%;top:16%" data-parallax="0.2"><i class="xcell" style="--s:180px;animation-delay:-1s"></i></span><span style="left:6%;top:62%" data-parallax="0.1"><i class="xdots" style="--s:160px;animation-delay:-4s"></i></span></div>
+  <div class="xw xcharity">
+    <div class="xcharity-copy">
+      <p class="xl xl--light">For independent UK health charities</p>
+      <h2 id="charities-title">Helping independent UK health charities get started.</h2>
+      <p>You support people through some of the hardest moments of their lives, often on stretched resources. If your charity is eligible, we will waive the monthly fee for your first year. Where we can, we will extend that for a second year, subject to ongoing funding. Conversation bundles are still needed if usage goes over the monthly allowance.</p>
+      <p class="xcharity-small">The offer is for independent charities registered in the UK. Unfortunately, NHS charities are not currently eligible. We look at each application individually, and the final decision rests with us.</p>
+      <div class="xh-cta"><a class="xb xb--light" href="/contact/?plan=Charity">Speak to us</a></div>
+    </div>
+    <figure class="xphoto">
+      <img src="/images/photos/support-conversation-1600.webp" srcset="/images/photos/support-conversation-800.webp 800w, /images/photos/support-conversation-1600.webp 1600w" sizes="(max-width:820px) 100vw, 600px" alt="Two people talking warmly on a sofa" width="1600" height="1067" loading="lazy" decoding="async">
+    </figure>
   </div>
 </section>
 
@@ -175,7 +313,7 @@
         <h2>Common questions.</h2>
       </div>
     </header>
-    <div class="xfaq"><details><summary>Is the builder really free?</summary><p>Yes, up to 10 MB of clinical content in total, with no time limit.</p></details><details><summary>Can I try my agent before I pay anything?</summary><p>Yes. On the free plan you can scan a code and use your own app on your phone, through the same safety checks a patient’s question goes through. The preview is for you and your colleagues; sharing it with patients comes after review.</p></details><details><summary>What does Founder add?</summary><p>Evaluation with Osteoclast, assurance documents drafted by Osteocite, and a larger content allowance. It is in beta, so <a href="/contact/?plan=Founder">contact us to join</a>.</p></details><details><summary>When do I start paying?</summary><p>Only when you take your agent towards patients. The review, your link and running costs are on <a href="/plans/pilot/">Pilot and beyond</a>.</p></details></div>
+    <div class="xfaq"><details><summary>Is the builder really free?</summary><p>Yes, up to 10 MB of clinical content in total, with no time limit. You can preview your assistant on your own phone, through the same safety checks a patient’s question goes through. Sharing it with patients needs a paid plan.</p></details><details><summary>What counts as a conversation?</summary><p>About ten message turns with the assistant. The allowance is really measured by usage: shorter questions and answers use less, so you get more conversations; longer ones use more, so you get fewer. All conversation numbers are approximate.</p></details><details><summary>What happens if our allowance runs out?</summary><p>Buy a bundle to keep the assistant running. If the allowance is used up and no bundle has been bought, the assistant pauses until you top up. Nothing is charged automatically.</p></details><details><summary>What is a deployment review?</summary><p>A full review of your assistant before it goes live, or after a change such as new content. The Clinician plan includes one a year and the Small organisation plan two; further reviews can be added.</p></details></div>
   </div>
 </section>
 
@@ -184,18 +322,18 @@
   <div class="xw">
     <h2>Find the right starting point.</h2>
     <div class="xclose-row">
-      <p>Start building for free, or talk to us about where your project is and what it needs.</p>
-      <div class="xh-cta"><a class="xb xb--light" data-signup href="https://api.ostify.co.uk/.auth/login/ostifycustomerauth?prompt=create&amp;post_login_redirect_uri=https://app.ostify.co.uk/">Build your own</a><a class="xb xb--ghost" href="/contact/">Contact us</a></div>
+      <p>Tell us about your service and we will help you choose a plan, or start building for free.</p>
+      <div class="xh-cta"><a class="xb xb--light" href="/contact/">Book a discovery call</a><a class="xb xb--ghost" data-signup href="https://api.ostify.co.uk/.auth/login/ostifycustomerauth?prompt=create&amp;post_login_redirect_uri=https://app.ostify.co.uk/">Start building free</a></div>
     </div>
   </div>
 </section>
 </main>
-<footer><div class="wrap"><nav class="footer-cols" aria-label="Footer"><div class="footer-column"><span>Product</span><a href="/#product">Product tour</a><a href="/how-it-works/">How it works</a><a href="/architecture/">Under the hood</a><a href="/#build-types">Templates</a></div><div class="footer-column"><span>Solutions</span><a href="/clinicians/">For clinicians</a><a href="/founders/">For founders</a><a href="/organisations/">For organisations</a></div><div class="footer-column"><span>Pricing</span><a href="/plans/">Before your pilot</a><a href="/plans/pilot/">Pilot and beyond</a><a href="/plans/pilot/#osticellerate">Osticellerate</a></div><div class="footer-column"><span>Compliance</span><a href="/trust/">Trust and security</a><a href="/gdpr/">GDPR</a><a href="/security/">Cybersecurity</a><a href="/assurance/">Assurance</a><a href="/#guardrails">Guardrails</a></div><div class="footer-column"><span>Resources</span><a href="/learn/">Learn</a><a href="/guides/">Guides</a><a href="/news/">News</a><a href="/contact/">Contact</a></div><div class="footer-column"><span>Company</span><a href="/company/">About us</a><a href="/careers/">Work with us</a><a href="https://www.linkedin.com/company/ostify/" rel="me noopener" target="_blank">LinkedIn</a></div></nav><div class="footer-brand"><div><a class="wordmark" href="/">Ostify<span class="brand-dot" aria-hidden="true">.</span></a><p class="footer-tagline">Agents built from your own clinical content.</p></div><div class="footer-badges"><img class="ms-badge" src="/images/brand/ms-startups-badge.webp" alt="Proud to collaborate with Microsoft for Startups" width="400" height="171" loading="lazy"><a class="ce-badge" href="/trust/#certificate" title="Cyber Essentials certified"><img src="/images/certs/cyber-essentials-badge.png" alt="Cyber Essentials certified" width="282" height="342" loading="lazy"></a></div></div><div class="footer-bottom"><p>© 2026 Ostify Health Ltd. Registered in England and Wales, no. 17433177.<br>66 Paul Street, London EC2A 4NA. <a href="mailto:info@ostify.co.uk">info@ostify.co.uk</a></p><div><a href="/privacy/">Privacy policy</a><a href="/terms/">Terms of use</a><a href="/gdpr/">GDPR</a><a href="/privacy/#cookies" data-cookie-settings>Cookie settings</a></div></div></div></footer>
+<footer><div class="wrap"><nav class="footer-cols" aria-label="Footer"><div class="footer-column"><span>Product</span><a href="/#product">Product tour</a><a href="/how-it-works/">How it works</a><a href="/architecture/">Under the hood</a><a href="/#build-types">Templates</a></div><div class="footer-column"><span>Solutions</span><a href="/clinicians/">For clinicians</a><a href="/founders/">For founders</a><a href="/organisations/">For organisations</a></div><div class="footer-column"><span>Pricing</span><a href="/plans/">Plans</a><a href="/plans/#top-ups">Top-ups</a><a href="/plans/#charities">For charities</a></div><div class="footer-column"><span>Compliance</span><a href="/trust/">Trust and security</a><a href="/gdpr/">GDPR</a><a href="/security/">Cybersecurity</a><a href="/assurance/">Assurance</a><a href="/#guardrails">Guardrails</a></div><div class="footer-column"><span>Resources</span><a href="/learn/">Learn</a><a href="/guides/">Guides</a><a href="/news/">News</a><a href="/contact/">Contact</a></div><div class="footer-column"><span>Company</span><a href="/company/">About us</a><a href="/careers/">Work with us</a><a href="https://www.linkedin.com/company/ostify/" rel="me noopener" target="_blank">LinkedIn</a></div></nav><div class="footer-brand"><div><a class="wordmark" href="/">Ostify<span class="brand-dot" aria-hidden="true">.</span></a><p class="footer-tagline">Agents built from your own clinical content.</p></div><div class="footer-badges"><img class="ms-badge" src="/images/brand/ms-startups-badge.webp" alt="Proud to collaborate with Microsoft for Startups" width="400" height="171" loading="lazy"><a class="ce-badge" href="/trust/#certificate" title="Cyber Essentials certified"><img src="/images/certs/cyber-essentials-badge.png" alt="Cyber Essentials certified" width="282" height="342" loading="lazy"></a></div></div><div class="footer-bottom"><p>© 2026 Ostify Health Ltd. Registered in England and Wales, no. 17433177.<br>66 Paul Street, London EC2A 4NA. <a href="mailto:info@ostify.co.uk">info@ostify.co.uk</a></p><div><a href="/privacy/">Privacy policy</a><a href="/terms/">Terms of use</a><a href="/gdpr/">GDPR</a><a href="/privacy/#cookies" data-cookie-settings>Cookie settings</a></div></div></div></footer>
 <script src="/site-config.js?v=20261005a"></script>
 <script src="/analytics.js?v=20261005a"></script>
 <script src="/consent.js?v=20261005a"></script>
-<script src="/nav.js?v=20261004v"></script>
-<script src="/site-x.js?v=20261004v"></script>
+<script src="/nav.js?v=20261026b"></script>
+<script src="/site-x.js?v=20261026b"></script>
 <script src="/effects.js?v=20261004v"></script>
 </body>
 </html>

@@ -640,8 +640,12 @@ document.querySelectorAll('[data-video]').forEach(function (fig) {
 /* Phones: long sections open to their heading and intro, with the rest behind "Show details" */
 (function () {
   var groups = [].slice.call(document.querySelectorAll('.xstage-main, #guardrails > .xw, #responsibilities > .xw'));
+  var phone = window.matchMedia('(max-width: 600px)').matches;
   groups.forEach(function (g, i) {
-    var keep = g.matches('.xstage-main') ? function (el) { return el.matches('h2, .xs-lede'); } : function (el) { return el.matches('.xs-head'); };
+    // Guardrails on phones: lift the glass-layer graphic out of the fold so it shows under the heading.
+    var glass = phone && g.querySelector(':scope .xglass');
+    if (glass) g.insertBefore(glass, g.querySelector(':scope > .xs-head').nextSibling);
+    var keep = g.matches('.xstage-main') ? function (el) { return el.matches('h2, .xs-lede'); } : function (el) { return el.matches('.xs-head, .xglass'); };
     var rest = [].slice.call(g.children).filter(function (el) { return !keep(el); });
     if (!rest.length) return;
     var more = document.createElement('div');
@@ -705,5 +709,40 @@ document.querySelectorAll('[data-video]').forEach(function (fig) {
         el.hidden = f !== 'all' && cat && cat !== f;
       });
     });
+  });
+})();
+
+// Guardrails glass layers: open the stack on view, and lift the layer for the check in focus.
+(function () {
+  var svg = document.querySelector('.xglass .gx');
+  if (!svg) return;
+  var layers = svg.querySelectorAll('.gx-layer');
+  var items = document.querySelectorAll('#guardrails .xgates > li');
+  function focus(i) { layers.forEach(function (l) { l.classList.toggle('is-on', +l.dataset.i === i); }); }
+  if (!('IntersectionObserver' in window)) { svg.classList.add('is-open'); return; }
+  new IntersectionObserver(function (es, o) {
+    es.forEach(function (e) { if (e.isIntersecting) { svg.classList.add('is-open'); o.disconnect(); } });
+  }, { threshold: 0.25 }).observe(svg);
+  // Pause the float while the graphic is off screen; on small screens, where the list is not beside it, cycle through the layers.
+  var small = window.matchMedia('(max-width: 700px)').matches;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var timer = null, step = 0;
+  new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      svg.classList.toggle('is-paused', !e.isIntersecting);
+      if (!small || reduce) return;
+      if (e.isIntersecting && !timer) timer = setInterval(function () { step = step % 6 + 1; focus(step); }, 1600);
+      if (!e.isIntersecting && timer) { clearInterval(timer); timer = null; focus(0); }
+    });
+  }, { threshold: 0.4 }).observe(svg);
+  var active = 0;
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { active = +e.target.dataset.gx; focus(active); } });
+  }, { rootMargin: '-45% 0px -45% 0px' });
+  items.forEach(function (li, n) {
+    li.dataset.gx = n + 1;
+    io.observe(li);
+    li.addEventListener('pointerenter', function () { focus(n + 1); });
+    li.addEventListener('pointerleave', function () { focus(active); });
   });
 })();

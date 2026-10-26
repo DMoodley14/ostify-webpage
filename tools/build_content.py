@@ -82,7 +82,7 @@ idx = '<main id="main" class="xp">\n' + HERO.format(
   </div>
 </section>
 '''
-build('guides/index.html', 'guides/', 'Guides — Ostify',
+build('guides/index.html', 'guides/', 'Guides to building safe healthcare AI assistants | Ostify',
       'Practical guides for clinicians building healthcare agents on Ostify, from your first agent to keeping it up to date.',
       'guides', [('Guides', 'guides/')], idx, 'product', '/guides/')
 
@@ -136,8 +136,8 @@ nidx = '<main id="main" class="xp">\n' + HERO.format(
   </div>
 </section>
 '''
-build('news/index.html', 'news/', 'News — Ostify',
-      'Product updates, announcements and news from Ostify, the platform for building your own healthcare agents.',
+build('news/index.html', 'news/', 'News and updates | Ostify',
+      'Product updates, announcements and news from Ostify, which builds safe, tested AI assistants for health charities, organisations and clinicians.',
       'news', [('News', 'news/')], nidx, 'company', '/news/')
 
 # ---------- sitemap ----------
