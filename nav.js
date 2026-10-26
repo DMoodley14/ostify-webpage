@@ -87,3 +87,41 @@
     try { localStorage.setItem(key, '1'); } catch(e) {}
   });
 })();
+
+// Phones and tablets: the app is built for desktop, so sign-up buttons become "Contact us".
+// Links are swapped for fresh copies so the sign-up click tracking does not follow them.
+(function(){
+  var mq = window.matchMedia('(max-width: 820px)');
+  var swapped = [];
+  function toContact(){
+    document.querySelectorAll('a[data-signup], a[href*="ostifycustomerauth"]').forEach(function(a){
+      var c = a.cloneNode(true);
+      var icon = c.querySelector('svg');
+      c.removeAttribute('data-signup');
+      c.href = '/contact/';
+      c.textContent = 'Contact us';
+      if (icon) { c.appendChild(document.createTextNode(' ')); c.appendChild(icon); }
+      a.replaceWith(c);
+      swapped.push([c, a]);
+      // If a contact button already sits beside it, keep that one (its wording is more specific)
+      // and give it the main button style if the sign-up button had it.
+      var twin = [].slice.call(c.parentElement.children).filter(function(s){
+        return s !== c && s.tagName === 'A' && /^\/contact\/(\?|#|$)/.test(s.getAttribute('href') || '');
+      })[0];
+      if (twin) {
+        c.hidden = true;
+        if (c.classList.contains('xb--light') && twin.classList.contains('xb--ghost')) { twin.classList.replace('xb--ghost', 'xb--light'); promoted.push(twin); }
+      }
+    });
+  }
+  var promoted = [];
+  function restore(){
+    swapped.forEach(function(p){ p[0].replaceWith(p[1]); });
+    promoted.forEach(function(t){ t.classList.replace('xb--light', 'xb--ghost'); });
+    swapped = []; promoted = [];
+  }
+  function apply(){ if (mq.matches && !swapped.length) toContact(); else if (!mq.matches && swapped.length) restore(); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function(){ setTimeout(apply, 0); });
+  else setTimeout(apply, 0);
+  if (mq.addEventListener) mq.addEventListener('change', apply);
+})();

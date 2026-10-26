@@ -1739,3 +1739,21 @@ body{background:var(--cp-white);color:var(--cp-ink)}
 .xcred{column-gap:24px;row-gap:6px}
 .xcred li+li::before{display:none}
 @media(max-width:820px){.xh .xcred{margin-bottom:72px}}
+
+/* Homepage on phones: lead with what it is, show it, why trust it, how to start */
+@media(max-width:600px){
+  .home .xh-free,
+  .home .xquote,
+  .home #product .xsh-tabs,
+  .home #product .xsh-panel,
+  .home #product .xvid figcaption,
+  .home .xvault-facts,
+  .home .xtypes--cards li>p{display:none}
+  .home #product .xs-lede{margin-bottom:0}
+  .home .xh-art .chat-demo{width:240px}
+  .home .xh .xcred{margin-bottom:56px}
+  .home .xfaq details:nth-child(n+5){display:none}
+  .home .xtypes--cards li{gap:10px}
+}
+@media(max-width:600px){.home .xtypes--cards .xt-chat{margin-top:4px}}
+@media(max-width:820px){.mm-login{display:none}}
