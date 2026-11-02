@@ -46,6 +46,36 @@
 <link rel="icon" href="/favicon-512.png" type="image/png" sizes="512x512">
 <link rel="apple-touch-icon" href="/favicon-180.png">
 <link rel="stylesheet" href="/site.css?v=20261027a">
+<style>
+.sx{margin-top:32px}
+.sx button{font:inherit;cursor:pointer;color:#0A1712;background:#fff;border:1px solid #0A171226}
+.sx button[aria-pressed=true]{background:#0B4A3A;border-color:#0B4A3A;color:#fff}
+.sx button:focus-visible,.sx input:focus-visible{outline:2px solid #0B4A3A;outline-offset:2px}
+.sx-phone-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;align-items:start}
+.sx-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.sx-tab{padding:12px;border-radius:8px;text-align:left;font-size:14px;line-height:1.35}
+.sx-detail{background:#fff;border:1px solid #0A17121a;border-radius:10px;padding:18px;margin-top:16px}
+.sx-detail b{display:block;font-weight:500;margin-bottom:4px}
+.sx-detail p{margin:0;font-size:15px;line-height:1.55}
+.sx-phone{background:#0A1712;border-radius:34px;padding:10px}
+.sx-screen{background:#fff;border-radius:26px;padding:28px 16px 18px;min-height:380px;display:flex;flex-direction:column;gap:10px;font-size:14px;line-height:1.4}
+.sx-me{align-self:flex-end;max-width:85%;margin:0;padding:10px 12px;border-radius:14px;background:#E8EFE9}
+.sx-reply{align-self:flex-start;max-width:85%;margin:0;padding:10px 12px;border-radius:14px;background:#F7F4EC}
+.sx-reply--urgent{background:#0B4A3A;color:#fff}
+.sx-note{margin:auto 0 0;font-size:12px;color:#46564D;text-align:center}
+.sx-range{background:#fff;border:1px solid #0A17121a;border-radius:10px;padding:22px}
+.sx-range input{display:block;width:100%;margin:12px 0;accent-color:#0B4A3A}
+.sx-range p{margin:8px 0 0;font-size:15px}
+.sx-count{font-weight:500}
+.sx-bar{position:relative;height:14px;border-radius:7px;background:#E8EFE9;overflow:hidden}
+.sx-bar i{position:absolute;top:0;bottom:0;right:0;background:#0B4A3A}
+.sx-steps{display:flex;gap:6px}
+.sx-step{flex:1;height:44px;border-radius:8px}
+.sx-pills{display:flex;flex-wrap:wrap;gap:8px}
+.sx-pill{padding:10px 14px;border-radius:999px;font-size:14px}
+#evidence .xdata{margin-top:32px}
+@media(max-width:760px){.sx-phone-grid{grid-template-columns:minmax(0,1fr);gap:24px}.sx-phone{max-width:300px;margin:0 auto;width:100%}.sx-screen{min-height:300px}}
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -226,5 +256,6 @@
 <script src="/nav.js?v=20261027c"></script>
 <script src="/site-x.js?v=20261026b"></script>
 <script src="/effects.js?v=20261004v"></script>
+<script src="/safety/safety.js?v=20261102a"></script>
 </body>
 </html>
