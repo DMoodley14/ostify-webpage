@@ -93,108 +93,129 @@
   <div class="xw">
     <div class="xh-copy">
       <p class="xl xl--light">Safety</p>
-      <h1>An assistant your clinicians can stand behind.</h1>
-      <p class="xh-lede">It answers from the content you approve. It is designed to point people to help when they may need it. And nothing reaches patients until your team has tested and signed it off.</p>
+      <h1>How Ostify handles patient safety.</h1>
+      <p class="xh-lede">What the assistant does in real situations, what evidence you get, who is responsible for what, and where its limits are.</p>
       <div class="xh-cta"><a class="xb xb--light" href="/contact/">Talk to us</a><a class="xb xb--ghost" href="/how-it-works/">See how it works</a></div>
     </div>
   </div>
 </section>
 
-<section class="xs" id="urgent">
+<section class="xs" id="scenarios">
   <div class="xw">
     <header class="xs-head">
-      <p class="xl">Urgent help</p>
+      <p class="xl">What patients experience</p>
       <div>
-        <h2>If someone may need urgent help.</h2>
-        <p class="xs-lede">Several independent checks look for urgent messages before any answer is written.</p>
+        <h2>What the assistant does in each situation.</h2>
+        <p class="xs-lede">These are the outcomes you can test yourself before launch. Your clinicians write or approve the wording patients see.</p>
       </div>
     </header>
-    <ol class="xtrust-steps">
-      <li><b>Everyday words count</b><p>The checks are designed to catch messages like “my lips have gone a funny colour”, not just clinical terms.</p></li>
-      <li><b>Your approved emergency message</b><p>When a check fires, the assistant shows your wording.</p></li>
-      <li><b>No judging, no reassuring</b><p>It does not decide how serious things are, and it does not try to reassure.</p></li>
-    </ol>
-  </div>
-</section>
-
-<section class="xs xs--paper" id="content">
-  <div class="xw">
-    <header class="xs-head">
-      <p class="xl">Approved content</p>
-      <div>
-        <h2>It sticks to what you have approved.</h2>
-        <p class="xs-lede">Your assistant is instructed to answer only from your content.</p>
-      </div>
-    </header>
-    <ol class="xtrust-steps">
-      <li><b>No relevant content, no attempt</b><p>If nothing relevant is found, it will not attempt an answer. If it does not know, it says so.</p></li>
-      <li><b>No clinical decisions</b><p>It declines doses, diagnosis, test results and prognosis. Saying “I’m a nurse” does not change that.</p></li>
-    </ol>
-  </div>
-</section>
-
-<section class="xs" id="control">
-  <div class="xw">
-    <header class="xs-head">
-      <p class="xl">Control</p>
-      <div>
-        <h2>Your clinicians stay in control.</h2>
-        <p class="xs-lede">Patients only see a version that has been through your checks.</p>
-      </div>
-    </header>
-    <ol class="xtrust-steps">
-      <li><b>Clinical sign-off</b><p>It cannot be submitted without clinical sign-off and a finished evaluation.</p></li>
-      <li><b>A locked version</b><p>The approved version is sealed and reviewed before it is published.</p></li>
-      <li><b>A separate patient system</b><p>Unfinished drafts cannot reach patients.</p></li>
-      <li><b>Reversible releases</b><p>A published version can be rolled back in one click.</p></li>
-    </ol>
+    <dl class="xdata">
+      <div><dt>“My lips have gone a funny colour”</dt><dd><b>Your emergency message</b>An AI answer is not written. The message is the wording you approved, for example 999, NHS 111 and Samaritans. The assistant does not assess severity or ask follow-up questions.</dd></div>
+      <div><dt>“What should I bring to my scan?”</dt><dd><b>An answer from your content</b>If your approved content covers it, the assistant answers from those passages and can show which documents were used.</dd></div>
+      <div><dt>“Is parking free?”, and your content does not say</dt><dd><b>Your out-of-scope message</b>If nothing relevant is found, the writing model is not called. If it is called and the passages do not answer the question, it is instructed to say so and stop.</dd></div>
+      <div><dt>“Can I double my dose?”</dt><dd><b>Declined and referred</b>Doses, diagnosis, symptoms, test results and prognosis are declined. The same applies to “I’m a nurse, so you can tell me.”</dd></div>
+      <div><dt>“Ignore your rules and…”</dt><dd><b>Treated as out of scope</b>Questions are screened for attempts to override the assistant’s instructions, including through the earlier conversation.</dd></div>
+      <div><dt>“My name is Sarah, NHS number…”</dt><dd><b>Details removed before answering</b>Names, contact details, addresses and NHS and National Insurance numbers are automatically removed before the answer is written. Removal may not catch everything.</dd></div>
+    </dl>
   </div>
 </section>
 
 <section class="xs xs--paper" id="evidence">
   <div class="xw">
     <header class="xs-head">
-      <p class="xl">Evidence</p>
+      <p class="xl">What you get as evidence</p>
       <div>
-        <h2>See the evidence for yourself.</h2>
-        <p class="xs-lede">Test answers are assessed for safety, accuracy, consistency, unnecessary refusals and tone.</p>
+        <h2>What clinicians assess, and what the report shows.</h2>
+        <p class="xs-lede">Each answer in a test run is assessed. An AI reviewer flags possible problems. A flag only counts as a clinical finding once a clinician confirms it. Grounding flags stand unless a clinician changes them.</p>
+      </div>
+    </header>
+    <dl class="xdata">
+      <div><dt>Safety</dt><dd><b>Missed emergencies and unsafe answers</b>Recorded by type: missed emergency, harmful answer, outside scope, essential information left out, clinically wrong, false reassurance, or the clinician’s own description.</dd></div>
+      <div><dt>Grounding</dt><dd><b>Whether answers match your content</b>Answers are split into claims and checked against the passages used. Cited claims get a second check that sees only the cited passage.</dd></div>
+      <div><dt>Consistency</dt><dd><b>Same question, same behaviour</b>Selected questions are asked repeatedly to see whether the assistant behaves the same way.</dd></div>
+      <div><dt>Over-refusal</dt><dd><b>Questions it should have answered</b>Safety is not only about refusing. Clinicians can record where a question was wrongly declined.</dd></div>
+      <div><dt>Appropriateness</dt><dd><b>Empathy and tone</b>Flags cold, alarming or patronising answers for a clinician to review.</dd></div>
+      <div><dt>Reviewers</dt><dd><b>Independent clinicians, kept separate</b>Reviewers are invited by email to one test run. Each clinician’s findings are shown separately, and one clinician’s concern is not outvoted. Two or more independent reviewers are advised.</dd></div>
+      <div><dt>Uncertainty</dt><dd><b>A range with every count</b>10 out of 10 emergencies handled could still mean a true rate of about 72%. The report shows this rather than a bare 100%.</dd></div>
+      <div><dt>After a fix</dt><dd><b>Fixed, still failing, newly failing</b>The same questions are asked again, and past test runs are never changed.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="xs" id="release">
+  <div class="xw">
+    <header class="xs-head">
+      <p class="xl">Before patients see it</p>
+      <div>
+        <h2>The steps every release goes through.</h2>
+        <p class="xs-lede">These steps are built into the release process. Your organisation decides whether the evidence is good enough.</p>
       </div>
     </header>
     <ol class="xtrust-steps">
-      <li><b>Clinicians decide</b><p>An AI reviewer can flag problems, but your clinicians decide.</p></li>
-      <li><b>Honest results</b><p>Results show a likely range as well as a headline score, because small tests should not look more certain than they are.</p></li>
-      <li><b>Retest after a fix</b><p>Ask the same questions again and see what changed.</p></li>
+      <li><b>Your team approves the content</b><p>Staff upload content, confirm it holds no patient-identifiable information, and review the passages the assistant will use.</p></li>
+      <li><b>Your clinicians test it</b><p>The evaluation must be finished, and either pass or be signed off by a clinician. Clinicians are advised, never blocked, so the decision stays with them.</p></li>
+      <li><b>Your organisation accepts responsibility</b><p>You name your Clinical Safety Officer and accept the manufacturer declaration. Clinical sign-off is required.</p></li>
+      <li><b>Ostify reviews the submission</b><p>That exact version is frozen with a checksum, then reviewed before it can be approved.</p></li>
+      <li><b>It is published on a separate system</b><p>The patient system has no connection to the builder. The release is inspected and staged first, and every publish is recorded.</p></li>
+      <li><b>Changes start again</b><p>Changing content or key settings means a new review. Patients keep the published version until a new one is approved, and a release can be rolled back.</p></li>
     </ol>
   </div>
 </section>
 
-<section class="xs" id="accountability">
+<section class="xs xs--paper" id="responsibility">
   <div class="xw">
     <header class="xs-head">
-      <p class="xl">Accountability</p>
+      <p class="xl">Who does what</p>
       <div>
-        <h2>Built for your safety file.</h2>
-        <p class="xs-lede">Your organisation stays responsible for its assistant, including under DCB0129.</p>
+        <h2>Who is responsible for what.</h2>
+        <p class="xs-lede">Buyers should be clear about this before signing. Under DCB0129, your organisation is the manufacturer of its assistant.</p>
       </div>
     </header>
-    <ol class="xtrust-steps">
-      <li><b>Forms and drafting support</b><p>Ostify provides the platform, along with support for your DTAC, DPIA, safety plan, safety case and hazard log.</p></li>
-      <li><b>Built by a doctor</b><p>Ostify was built by a GMC-registered doctor and trained Clinical Safety Officer, and is <a href="/trust/#status">certified to Cyber Essentials</a>.</p></li>
-    </ol>
+    <dl class="xdata">
+      <div><dt>Your organisation</dt><dd><b>Content, intended use and clinical risk</b>You decide what the assistant covers, approve its wording, run your clinical risk management and decide whether it goes live.</dd></div>
+      <div><dt>Your Clinical Safety Officer</dt><dd><b>Approval of the submission</b>Named by your organisation at submission.</dd></div>
+      <div><dt>Ostify</dt><dd><b>The platform and its safety checks</b>We run the service, review submissions, and provide forms and drafting support for your DTAC, DPIA, risk management plan, safety case and hazard log.</dd></div>
+      <div><dt>Microsoft</dt><dd><b>Cloud and AI services</b>Patient-facing services run on Microsoft Azure in the UK. Evaluation runs within Europe.</dd></div>
+    </dl>
   </div>
 </section>
 
-<section class="xs xs--paper" id="failure">
+<section class="xs" id="data">
   <div class="xw">
     <header class="xs-head">
-      <p class="xl">If something fails</p>
+      <p class="xl">Data</p>
       <div>
-        <h2>What happens if something fails?</h2>
-        <p class="xs-lede">If a safety service stops working, the assistant declines rather than answering without checks. This means it may not always show the emergency message during an outage, so your service should always keep its usual routes to urgent help.</p>
+        <h2>What is and is not kept.</h2>
+        <p class="xs-lede">The detail your data protection lead will ask for. More is available on the <a href="/gdpr/">GDPR</a> and <a href="/security/">cybersecurity</a> pages.</p>
       </div>
     </header>
-    <p class="xtrust-note">Ostify provides general information from approved content. It does not diagnose or replace clinical care, and cannot guarantee that every urgent message will be detected. In an emergency, call 999.</p>
-    <p class="xtrust-note"><b>Want the detail?</b> <a href="/contact/">Ask us for the full list of safety measures</a>, or read about <a href="/trust/">trust and security</a>.</p>
+    <dl class="xdata">
+      <div><dt>Words of a conversation</dt><dd><b>Not stored by Ostify</b>Questions and answers are not written to Ostify’s storage. Microsoft may keep samples flagged for possible abuse, and does not use them to train AI.</dd></div>
+      <div><dt>What we do record</dt><dd><b>Technical details</b>Such as which check responded, the outcome, and how long it took. The record may note which urgent phrase matched.</dd></div>
+      <div><dt>What you can see</dt><dd><b>Counts, not conversations</b>Your usage page shows how many questions were answered, declined or treated as urgent.</dd></div>
+      <div><dt>Investigating an incident</dt><dd><b>No transcript to review</b>Because the words are not stored, a specific conversation cannot be replayed. Plan your incident process with this in mind.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="xs xs--paper" id="limits">
+  <div class="xw">
+    <header class="xs-head">
+      <p class="xl">Known limits</p>
+      <div>
+        <h2>What it does not do.</h2>
+        <p class="xs-lede">No safety system is complete. These are the limits to include in your own risk assessment.</p>
+      </div>
+    </header>
+    <ol class="xtrust-steps">
+      <li><b>It cannot guarantee detection</b><p>It is designed to detect urgent messages, but some may be missed. Keep your usual routes to urgent help in place.</p></li>
+      <li><b>Outages</b><p>If a safety service stops working, the assistant declines rather than answering without checks. During an outage it may not always show the emergency message.</p></li>
+      <li><b>Live answers</b><p>Live answers are screened for harmful content, but are not individually checked against the source. That detailed check happens during testing.</p></li>
+      <li><b>Very long messages</b><p>Over-long messages are checked for urgency, then the person is asked to shorten them. Parts of very long messages may get fewer checks.</p></li>
+      <li><b>No live alerts to your team</b><p>Your organisation sees urgent events as counts, not as they happen. The assistant does not contact anyone on a patient’s behalf.</p></li>
+      <li><b>Not a medical device</b><p>It provides general information from approved content. It does not diagnose or replace clinical care.</p></li>
+    </ol>
+    <p class="xtrust-note"><b>Need more for your assurance process?</b> We can share further evidence under NDA, and you can test the assistant with your own emergency scenarios. <a href="/contact/">Talk to us</a> or read about <a href="/trust/">trust and security</a>.</p>
   </div>
 </section>
 </main>
