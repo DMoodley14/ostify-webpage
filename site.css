@@ -1765,3 +1765,11 @@ body{background:var(--cp-white);color:var(--cp-ink)}
 .xh .xh-copy a:not(.xb),.xh .xh-free,.xh .xh-free *{color:#F7F4EC!important}
 .xh .xcred-ms{filter:brightness(0) invert(1);opacity:.8}
 .xh .xh-art>p,.xh .xh-art small{color:#C9D6CC}
+
+/* One palette: forest, ivory and white */
+.xs--dark:not(.xclose){background:#F7F4EC!important}
+.xclose{background:#072A21!important}
+footer{background:#F7F4EC}
+.xgates-wrap{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)!important}
+.xgates p{font-size:15px;line-height:1.5}
+@media(max-width:900px){.xgates-wrap{grid-template-columns:minmax(0,1fr)!important}}
