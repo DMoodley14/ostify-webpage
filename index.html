@@ -152,7 +152,7 @@
     <div class="links">
       <div class="nav-group">
         <button class="nav-top" type="button" aria-expanded="false" aria-controls="nav-product">Product<svg viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
-        <div class="nav-drop nav-mega" id="nav-product"><div class="nav-col"><p class="nav-h">Platform</p><ul><li><a href="/#product"><b>Product tour</b><span>See the screens you will use</span></a></li><li><a href="/how-it-works/"><b>How it works</b><span>From idea to production</span></a></li><li><a href="/#build-types"><b>Templates</b><span>Patient, public and staff agents</span></a></li></ul></div><div class="nav-col"><p class="nav-h">Safety</p><ul><li><a href="/safety/"><b>Safety overview</b><span>How patients are kept safe</span></a></li><li><a href="/#guardrails"><b>Guardrails</b><span>Six safety checks on every question</span></a></li><li><a href="/assurance/"><b>Assurance</b><span>What each plan includes</span></a></li><li><a href="/architecture/"><b>Under the hood</b><span>How answers are made, in plain terms</span></a></li></ul></div><div class="nav-col"><p class="nav-h">Compliance</p><ul><li><a href="/trust/"><b>Trust and security</b><span>Data, safety and certifications</span></a></li><li><a href="/gdpr/"><b>GDPR</b><span>How we protect personal data</span></a></li><li><a href="/security/"><b>Cybersecurity</b><span>How the platform is protected</span></a></li></ul></div><div class="nav-col"><p class="nav-h">Resources</p><ul><li><a href="/learn/"><b>Learn</b><span>Interactive modules, no account needed</span></a></li><li><a href="/guides/"><b>Guides</b><span>Practical help for building well</span></a></li></ul></div></div>
+        <div class="nav-drop nav-mega" id="nav-product"><div class="nav-col"><p class="nav-h">Platform</p><ul><li><a href="/#product"><b>Product tour</b><span>See the screens you will use</span></a></li><li><a href="/how-it-works/"><b>How it works</b><span>From idea to production</span></a></li><li><a href="/#build-types"><b>Templates</b><span>Patient, public and staff agents</span></a></li></ul></div><div class="nav-col"><p class="nav-h">Safety</p><ul><li><a href="/safety/"><b>Safety overview</b><span>How patients are kept safe</span></a></li><li><a href="/guardrails/"><b>Guardrails</b><span>Six safety checks on every question</span></a></li><li><a href="/assurance/"><b>Assurance</b><span>What each plan includes</span></a></li><li><a href="/architecture/"><b>Under the hood</b><span>How answers are made, in plain terms</span></a></li></ul></div><div class="nav-col"><p class="nav-h">Compliance</p><ul><li><a href="/trust/"><b>Trust and security</b><span>Data, safety and certifications</span></a></li><li><a href="/gdpr/"><b>GDPR</b><span>How we protect personal data</span></a></li><li><a href="/security/"><b>Cybersecurity</b><span>How the platform is protected</span></a></li></ul></div><div class="nav-col"><p class="nav-h">Resources</p><ul><li><a href="/learn/"><b>Learn</b><span>Interactive modules, no account needed</span></a></li><li><a href="/guides/"><b>Guides</b><span>Practical help for building well</span></a></li></ul></div></div>
       </div>
       <div class="nav-group">
         <button class="nav-top" type="button" aria-expanded="false" aria-controls="nav-solutions">Solutions<svg viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
@@ -175,7 +175,7 @@
   </div>
   <div class="mobile-menu" id="mobile-menu">
     <div class="mm-group"><p class="mm-h">Product</p><a href="/#product">Product tour</a><a href="/how-it-works/">How it works</a><a href="/#build-types">Templates</a><a href="/learn/">Learn</a><a href="/guides/">Guides</a></div>
-    <div class="mm-group"><p class="mm-h">Safety</p><a href="/#guardrails">Guardrails</a><a href="/assurance/">Assurance</a><a href="/architecture/">Under the hood</a></div>
+    <div class="mm-group"><p class="mm-h">Safety</p><a href="/guardrails/">Guardrails</a><a href="/assurance/">Assurance</a><a href="/architecture/">Under the hood</a></div>
     <div class="mm-group"><p class="mm-h">Compliance</p><a href="/trust/">Trust and security</a><a href="/gdpr/">GDPR</a><a href="/security/">Cybersecurity</a></div>
     <div class="mm-group"><p class="mm-h">Solutions</p><a href="/clinicians/">For clinicians</a><a href="/founders/">For founders</a><a href="/organisations/">For organisations</a></div>
     <div class="mm-group"><p class="mm-h">Pricing</p><a href="/plans/">Plans</a><a href="/plans/#top-ups">Top-ups</a><a href="/plans/#charities">For charities</a></div>
@@ -330,95 +330,18 @@
       <p class="xl xl--light">Guardrails</p>
       <div>
         <h2>What happens to every question a patient asks.</h2>
-        <p class="xs-lede">Six checks built into every agent. Urgent checks run before the AI that writes answers sees the question. You can add your own rules on top.</p>
+        <p class="xs-lede">Six checks around every message, and you can add your own rules on top.</p>
       </div>
     </header>
-    <div class="xgates-wrap">
-    <ol class="xgates">
-      <li><span class="xn">01</span><div><b>Emergency words</b><p>A list of urgent words and phrases, maintained by Ostify, triggers your emergency message straight away.</p></div><span class="xout xout--r">Emergency signposting</span></li>
-      <li><span class="xn">02</span><div><b>Urgency detection</b><p>Catches emergencies described in everyday language, like “the side of my face has gone funny”, and signs of a mental health crisis.</p></div><span class="xout xout--r">Emergency signposting</span></li>
-      <li><span class="xn">03</span><div><b>No clinical decisions</b><p>Declines dose changes, diagnosis, interpreting symptoms or results, prognosis, and anyone claiming to be staff to get clinical information.</p></div><span class="xout xout--a">Declined and referred</span></li>
-      <li><span class="xn">04</span><div><b>Harmful content</b><p>Screens for hate, self-harm, sexual and violent content. Messages flagged for self-harm are shown your emergency message.</p></div><span class="xout xout--r">Crisis support</span></li>
-      <li><span class="xn">05</span><div><b>Relevance</b><p>If your approved content does not cover the question, the agent says so rather than guessing.</p></div><span class="xout">Your out-of-scope message</span></li>
-      <li><span class="xn">06</span><div><b>Your content only</b><p>The answer is written only from your approved passages, cites only your sources, and is screened again before it is shown.</p></div><span class="xout xout--g">Answer shown</span></li>
-    </ol>
-      <figure class="xglass"><svg class="gx" viewBox="0 0 640 780" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-  <defs>
-    <linearGradient id="gx-face" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".97"/><stop offset=".45" stop-color="#EAF3EE" stop-opacity=".82"/><stop offset="1" stop-color="#A6C9B4" stop-opacity=".74"/></linearGradient>
-    <linearGradient id="gx-top" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3A8A68"/><stop offset=".5" stop-color="#165037"/><stop offset="1" stop-color="#0C3626"/></linearGradient>
-    <linearGradient id="gx-side" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7FAE95" stop-opacity=".85"/><stop offset=".5" stop-color="#B8D5C4" stop-opacity=".7"/><stop offset="1" stop-color="#6E9F86" stop-opacity=".85"/></linearGradient>
-    <linearGradient id="gx-side-top" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0A2E20"/><stop offset=".5" stop-color="#1D5A41"/><stop offset="1" stop-color="#0A2E20"/></linearGradient>
-    <linearGradient id="gx-sheen" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFFFFF" stop-opacity="0"/><stop offset=".42" stop-color="#FFFFFF" stop-opacity="0"/><stop offset=".5" stop-color="#FFFFFF" stop-opacity=".28"/><stop offset=".58" stop-color="#FFFFFF" stop-opacity="0"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></linearGradient>
-    <radialGradient id="gx-spec"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".75"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></radialGradient>
-    <radialGradient id="gx-glow"><stop offset="0" stop-color="#CFE4D7" stop-opacity=".95"/><stop offset="1" stop-color="#CFE4D7" stop-opacity="0"/></radialGradient>
-    <radialGradient id="gx-floor"><stop offset="0" stop-color="#12201A" stop-opacity=".3"/><stop offset="1" stop-color="#12201A" stop-opacity="0"/></radialGradient>
-    <filter id="gx-blur" x="-20%" y="-20%" width="140%" height="160%"><feGaussianBlur stdDeviation="9"/></filter>
-  </defs>
-  <ellipse cx="320" cy="380" rx="320" ry="330" fill="url(#gx-glow)"/>
-  <ellipse class="gx-floor" cx="320" cy="752" rx="210" ry="34" fill="url(#gx-floor)"/>
-  <g transform="translate(126 44)"><g class="gx-layer" data-i="1" style="--i:1"><g class="gx-inner">
-      <path d="M0 60 L170 -38 Q180 -44 190 -38 L360 60 Q370 66 360 72 L190 170 Q180 176 170 170 L0 72 Q-10 66 0 60 Z" transform="translate(6 30)" fill="#12201A" opacity=".10" filter="url(#gx-blur)"/>
-      <path d="M0 60 L170 -38 Q180 -44 190 -38 L360 60 Q370 66 360 72 L190 170 Q180 176 170 170 L0 72 Q-10 66 0 60 Z" transform="translate(0 18)" fill="url(#gx-side)"/>
-      <path d="M0 60 L170 -38 Q180 -44 190 -38 L360 60 Q370 66 360 72 L190 170 Q180 176 170 170 L0 72 Q-10 66 0 60 Z" fill="url(#gx-face)"/>
-      <path d="M0 60 L170 -38 Q180 -44 190 -38 L360 60 Q370 66 360 72 L190 170 Q180 176 170 170 L0 72 Q-10 66 0 60 Z" fill="url(#gx-sheen)"/>
-      <path d="M12 63 L172 -29 Q180 -33 188 -29 L348 63 Q355 66 348 69 L188 161 Q180 165 172 161 L12 69 Q5 66 12 63 Z" fill="none" stroke="#FFFFFF" stroke-opacity=".75" stroke-width="1.2"/>
-      <path d="M0 60 L170 -38 Q180 -44 190 -38 L360 60 Q370 66 360 72 L190 170 Q180 176 170 170 L0 72 Q-10 66 0 60 Z" fill="none" stroke="#FFFFFF" stroke-opacity=".95" stroke-width="2"/>
-      <path d="M10 62 L176 -33" stroke="#FFFFFF" stroke-opacity="1" stroke-width="2.4" stroke-linecap="round"/>
-      <ellipse class="gx-spec" cx="118" cy="40" rx="70" ry="14" transform="rotate(-30 118 40)" fill="url(#gx-spec)"/>
-      </g></g><g class="gx-layer" data-i="2" style="--i:2"><g class="gx-inner">
-      <path d="M0 60 L170 -38 Q180 -44 190 -38 L360 60 Q370 66 360 72 L190 170 Q180 176 170 170 L0 72 Q-10 66 0 60 Z" transform="translate(6 30)" fill="#12201A" opacity=".10" filter="url(#gx-blur)"/>
-      <path d="M0 60 L170 -38 Q180 -44 190 -38 L360 60 Q370 66 360 72 L190 170 Q180 176 170 170 L0 72 Q-10 66 0 60 Z" transform="translate(0 18)" fill="url(#gx-side)"/>
-      <path d="M0 60 L170 -38 Q180 -44 190 -38 L360 60 Q370 66 360 72 L190 170 Q180 176 170 170 L0 72 Q-10 66 0 60 Z" fill="url(#gx-face)"/>
-      <path d="M0 60 L170 -38 Q180 -44 190 -38 L360 60 Q370 66 360 72 L190 170 Q180 176 170 170 L0 72 Q-10 66 0 60 Z" fill="url(#gx-sheen)"/>
-      <path d="M12 63 L172 -29 Q180 -33 188 -29 L348 63 Q355 66 348 69 L188 161 Q180 165 172 161 L12 69 Q5 66 12 63 Z" fill="none" stroke="#FFFFFF" stroke-opacity=".75" stroke-width="1.2"/>
-      <path d="M0 60 L170 -38 Q180 -44 190 -38 L360 60 Q370 66 360 72 L190 170 Q180 176 170 170 L0 72 Q-10 66 0 60 Z" fill="none" stroke="#FFFFFF" stroke-opacity=".95" stroke-width="2"/>
-      <path d="M10 62 L176 -33" stroke="#FFFFFF" stroke-opacity="1" stroke-width="2.4" stroke-linecap="round"/>
-      <ellipse class="gx-spec" cx="118" cy="40" rx="70" ry="14" transform="rotate(-30 118 40)" fill="url(#gx-spec)"/>
-      </g></g><g class="gx-layer" data-i="3" style="--i:3"><g class="gx-inner">
-      <path d="M0 60 L170 -38 Q180 -44 190 -38 L360 60 Q370 66 360 72 L190 170 Q180 176 170 170 L0 72 Q-10 66 0 60 Z" transform="translate(6 30)" fill="#12201A" opacity=".10" filter="url(#gx-blur)"/>
-      <path d="M0 60 L170 -38 Q180 -44 190 -38 L360 60 Q370 66 360 72 L190 170 Q180 176 170 170 L0 72 Q-10 66 0 60 Z" transform="translate(0 18)" fill="url(#gx-side)"/>
-      <path d="M0 60 L170 -38 Q180 -44 190 -38 L360 60 Q370 66 360 72 L190 170 Q180 176 170 170 L0 72 Q-10 66 0 60 Z" fill="url(#gx-face)"/>
-      <path d="M0 60 L170 -38 Q180 -44 190 -38 L360 60 Q370 66 360 72 L190 170 Q180 176 170 170 L0 72 Q-10 66 0 60 Z" fill="url(#gx-sheen)"/>
-      <path d="M12 63 L172 -29 Q180 -33 188 -29 L348 63 Q355 66 348 69 L188 161 Q180 165 172 161 L12 69 Q5 66 12 63 Z" fill="none" stroke="#FFFFFF" stroke-opacity=".75" stroke-width="1.2"/>
-      <path d="M0 60 L170 -38 Q180 -44 190 -38 L360 60 Q370 66 360 72 L190 170 Q180 176 170 170 L0 72 Q-10 66 0 60 Z" fill="none" stroke="#FFFFFF" stroke-opacity=".95" stroke-width="2"/>
-      <path d="M10 62 L176 -33" stroke="#FFFFFF" stroke-opacity="1" stroke-width="2.4" stroke-linecap="round"/>
-      <ellipse class="gx-spec" cx="118" cy="40" rx="70" ry="14" transform="rotate(-30 118 40)" fill="url(#gx-spec)"/>
-      </g></g><g class="gx-layer" data-i="4" style="--i:4"><g class="gx-inner">
-      <path d="M0 60 L170 -38 Q180 -44 190 -38 L360 60 Q370 66 360 72 L190 170 Q180 176 170 170 L0 72 Q-10 66 0 60 Z" transform="translate(6 30)" fill="#12201A" opacity=".10" filter="url(#gx-blur)"/>
-      <path d="M0 60 L170 -38 Q180 -44 190 -38 L360 60 Q370 66 360 72 L190 170 Q180 176 170 170 L0 72 Q-10 66 0 60 Z" transform="translate(0 18)" fill="url(#gx-side)"/>
-      <path d="M0 60 L170 -38 Q180 -44 190 -38 L360 60 Q370 66 360 72 L190 170 Q180 176 170 170 L0 72 Q-10 66 0 60 Z" fill="url(#gx-face)"/>
-      <path d="M0 60 L170 -38 Q180 -44 190 -38 L360 60 Q370 66 360 72 L190 170 Q180 176 170 170 L0 72 Q-10 66 0 60 Z" fill="url(#gx-sheen)"/>
-      <path d="M12 63 L172 -29 Q180 -33 188 -29 L348 63 Q355 66 348 69 L188 161 Q180 165 172 161 L12 69 Q5 66 12 63 Z" fill="none" stroke="#FFFFFF" stroke-opacity=".75" stroke-width="1.2"/>
-      <path d="M0 60 L170 -38 Q180 -44 190 -38 L360 60 Q370 66 360 72 L190 170 Q180 176 170 170 L0 72 Q-10 66 0 60 Z" fill="none" stroke="#FFFFFF" stroke-opacity=".95" stroke-width="2"/>
-      <path d="M10 62 L176 -33" stroke="#FFFFFF" stroke-opacity="1" stroke-width="2.4" stroke-linecap="round"/>
-      <ellipse class="gx-spec" cx="118" cy="40" rx="70" ry="14" transform="rotate(-30 118 40)" fill="url(#gx-spec)"/>
-      </g></g><g class="gx-layer" data-i="5" style="--i:5"><g class="gx-inner">
-      <path d="M0 60 L170 -38 Q180 -44 190 -38 L360 60 Q370 66 360 72 L190 170 Q180 176 170 170 L0 72 Q-10 66 0 60 Z" transform="translate(6 30)" fill="#12201A" opacity=".10" filter="url(#gx-blur)"/>
-      <path d="M0 60 L170 -38 Q180 -44 190 -38 L360 60 Q370 66 360 72 L190 170 Q180 176 170 170 L0 72 Q-10 66 0 60 Z" transform="translate(0 18)" fill="url(#gx-side)"/>
-      <path d="M0 60 L170 -38 Q180 -44 190 -38 L360 60 Q370 66 360 72 L190 170 Q180 176 170 170 L0 72 Q-10 66 0 60 Z" fill="url(#gx-face)"/>
-      <path d="M0 60 L170 -38 Q180 -44 190 -38 L360 60 Q370 66 360 72 L190 170 Q180 176 170 170 L0 72 Q-10 66 0 60 Z" fill="url(#gx-sheen)"/>
-      <path d="M12 63 L172 -29 Q180 -33 188 -29 L348 63 Q355 66 348 69 L188 161 Q180 165 172 161 L12 69 Q5 66 12 63 Z" fill="none" stroke="#FFFFFF" stroke-opacity=".75" stroke-width="1.2"/>
-      <path d="M0 60 L170 -38 Q180 -44 190 -38 L360 60 Q370 66 360 72 L190 170 Q180 176 170 170 L0 72 Q-10 66 0 60 Z" fill="none" stroke="#FFFFFF" stroke-opacity=".95" stroke-width="2"/>
-      <path d="M10 62 L176 -33" stroke="#FFFFFF" stroke-opacity="1" stroke-width="2.4" stroke-linecap="round"/>
-      <ellipse class="gx-spec" cx="118" cy="40" rx="70" ry="14" transform="rotate(-30 118 40)" fill="url(#gx-spec)"/>
-      </g></g><g class="gx-layer gx-layer--top" data-i="6" style="--i:6"><g class="gx-inner">
-      <path d="M0 60 L170 -38 Q180 -44 190 -38 L360 60 Q370 66 360 72 L190 170 Q180 176 170 170 L0 72 Q-10 66 0 60 Z" transform="translate(6 30)" fill="#12201A" opacity=".10" filter="url(#gx-blur)"/>
-      <path d="M0 60 L170 -38 Q180 -44 190 -38 L360 60 Q370 66 360 72 L190 170 Q180 176 170 170 L0 72 Q-10 66 0 60 Z" transform="translate(0 18)" fill="url(#gx-side-top)"/>
-      <path d="M0 60 L170 -38 Q180 -44 190 -38 L360 60 Q370 66 360 72 L190 170 Q180 176 170 170 L0 72 Q-10 66 0 60 Z" fill="url(#gx-top)"/>
-      <path d="M0 60 L170 -38 Q180 -44 190 -38 L360 60 Q370 66 360 72 L190 170 Q180 176 170 170 L0 72 Q-10 66 0 60 Z" fill="url(#gx-sheen)"/>
-      <path d="M12 63 L172 -29 Q180 -33 188 -29 L348 63 Q355 66 348 69 L188 161 Q180 165 172 161 L12 69 Q5 66 12 63 Z" fill="none" stroke="#FFFFFF" stroke-opacity=".35" stroke-width="1.2"/>
-      <path d="M0 60 L170 -38 Q180 -44 190 -38 L360 60 Q370 66 360 72 L190 170 Q180 176 170 170 L0 72 Q-10 66 0 60 Z" fill="none" stroke="#FFFFFF" stroke-opacity=".5" stroke-width="2"/>
-      <path d="M10 62 L176 -33" stroke="#FFFFFF" stroke-opacity=".6" stroke-width="2.4" stroke-linecap="round"/>
-      <ellipse class="gx-spec" cx="118" cy="40" rx="70" ry="14" transform="rotate(-30 118 40)" fill="url(#gx-spec)"/>
-      <path class="gx-tick" d="M146 66 L170 80 L214 54" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></g></g></g>
-</svg></figure>
-    </div>
-    <div class="xgates-foot">
-      <p><b>Safety built in, not bolted on.</b> <a href="/safety/">See how we keep it safe</a>.</p>
-      <p><b>If a check fails, the question is declined.</b> It is not answered without checks, and the emergency message may not always show during an outage.</p>
-      <p><b>Designed to resist trickery.</b> Questions are screened for attempts to override the agent’s instructions, and testing includes attempts to trick the agent.</p>
-      <p><b>Conversations are not stored by Ostify.</b> We keep technical details, such as which check responded, not the words.</p>
-    </div>
+    <ul class="xtrust-grid">
+      <li><b>Emergency words</b><p>Urgent phrases trigger your emergency message.</p></li>
+      <li><b>Urgency detection</b><p>Catches emergencies in everyday language.</p></li>
+      <li><b>No clinical decisions</b><p>Declines dose, diagnosis and prognosis questions.</p></li>
+      <li><b>Harmful content</b><p>Screens messages and answers.</p></li>
+      <li><b>Relevance</b><p>No guessing when your content does not cover it.</p></li>
+      <li><b>Your content only</b><p>Answers from your approved passages.</p></li>
+    </ul>
+    <p class="xtrust-note"><a href="/guardrails/">See every guardrail in detail</a> or read <a href="/safety/">how safety works overall</a>.</p>
   </div>
 </section>
 
@@ -455,7 +378,7 @@
 
 
 </main>
-<footer><div class="wrap"><nav class="footer-cols" aria-label="Footer"><div class="footer-column"><span>Product</span><a href="/#product">Product tour</a><a href="/how-it-works/">How it works</a><a href="/architecture/">Under the hood</a><a href="/#build-types">Templates</a></div><div class="footer-column"><span>Solutions</span><a href="/clinicians/">For clinicians</a><a href="/founders/">For founders</a><a href="/organisations/">For organisations</a></div><div class="footer-column"><span>Pricing</span><a href="/plans/">Plans</a><a href="/plans/#top-ups">Top-ups</a><a href="/plans/#charities">For charities</a></div><div class="footer-column"><span>Compliance</span><a href="/trust/">Trust and security</a><a href="/gdpr/">GDPR</a><a href="/security/">Cybersecurity</a><a href="/assurance/">Assurance</a><a href="/#guardrails">Guardrails</a></div><div class="footer-column"><span>Resources</span><a href="/learn/">Learn</a><a href="/guides/">Guides</a><a href="/news/">News</a><a href="/contact/">Contact</a></div><div class="footer-column"><span>Company</span><a href="/company/">About us</a><a href="/careers/">Work with us</a><a href="https://www.linkedin.com/company/ostify/" rel="me noopener" target="_blank">LinkedIn</a></div></nav><div class="footer-brand"><div><a class="wordmark" href="/">Ostify<span class="brand-dot" aria-hidden="true">.</span></a><p class="footer-tagline">Agents built from your own clinical content.</p></div><div class="footer-badges"><img class="ms-badge" src="/images/brand/ms-startups-badge.webp" alt="Proud to collaborate with Microsoft for Startups" width="400" height="171" loading="lazy"><a class="ce-badge" href="/trust/#certificate" title="Cyber Essentials certified"><img src="/images/certs/cyber-essentials-badge.png" alt="Cyber Essentials certified" width="282" height="342" loading="lazy"></a></div></div><div class="footer-bottom"><p>© 2026 Ostify Health Ltd. Registered in England and Wales, no. 17433177.<br>66 Paul Street, London EC2A 4NA. <a href="mailto:info@ostify.co.uk">info@ostify.co.uk</a></p><div><a href="/privacy/">Privacy policy</a><a href="/terms/">Terms of use</a><a href="/gdpr/">GDPR</a><a href="/privacy/#cookies" data-cookie-settings>Cookie settings</a></div></div></div></footer>
+<footer><div class="wrap"><nav class="footer-cols" aria-label="Footer"><div class="footer-column"><span>Product</span><a href="/#product">Product tour</a><a href="/how-it-works/">How it works</a><a href="/architecture/">Under the hood</a><a href="/#build-types">Templates</a></div><div class="footer-column"><span>Solutions</span><a href="/clinicians/">For clinicians</a><a href="/founders/">For founders</a><a href="/organisations/">For organisations</a></div><div class="footer-column"><span>Pricing</span><a href="/plans/">Plans</a><a href="/plans/#top-ups">Top-ups</a><a href="/plans/#charities">For charities</a></div><div class="footer-column"><span>Compliance</span><a href="/trust/">Trust and security</a><a href="/gdpr/">GDPR</a><a href="/security/">Cybersecurity</a><a href="/assurance/">Assurance</a><a href="/guardrails/">Guardrails</a></div><div class="footer-column"><span>Resources</span><a href="/learn/">Learn</a><a href="/guides/">Guides</a><a href="/news/">News</a><a href="/contact/">Contact</a></div><div class="footer-column"><span>Company</span><a href="/company/">About us</a><a href="/careers/">Work with us</a><a href="https://www.linkedin.com/company/ostify/" rel="me noopener" target="_blank">LinkedIn</a></div></nav><div class="footer-brand"><div><a class="wordmark" href="/">Ostify<span class="brand-dot" aria-hidden="true">.</span></a><p class="footer-tagline">Agents built from your own clinical content.</p></div><div class="footer-badges"><img class="ms-badge" src="/images/brand/ms-startups-badge.webp" alt="Proud to collaborate with Microsoft for Startups" width="400" height="171" loading="lazy"><a class="ce-badge" href="/trust/#certificate" title="Cyber Essentials certified"><img src="/images/certs/cyber-essentials-badge.png" alt="Cyber Essentials certified" width="282" height="342" loading="lazy"></a></div></div><div class="footer-bottom"><p>© 2026 Ostify Health Ltd. Registered in England and Wales, no. 17433177.<br>66 Paul Street, London EC2A 4NA. <a href="mailto:info@ostify.co.uk">info@ostify.co.uk</a></p><div><a href="/privacy/">Privacy policy</a><a href="/terms/">Terms of use</a><a href="/gdpr/">GDPR</a><a href="/privacy/#cookies" data-cookie-settings>Cookie settings</a></div></div></div></footer>
 <script src="/site-config.js?v=20261005a"></script>
 <script src="/analytics.js?v=20261005a"></script>
 <script src="/consent.js?v=20261005a"></script>
