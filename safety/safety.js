@@ -105,17 +105,29 @@
     update();
   }
 
-  // Release: a clickable timeline built from the numbered steps.
-  var ol = document.querySelector('#release .xtrust-steps');
+  // The method: four large stages.
+  var ol = document.querySelector('#method .xtrust-steps');
   if (ol) {
-    var line = el('div', 'sx sx-line-wrap'), steps = el('div', 'sx-steps'), sd = detail();
+    var line = el('div', 'sx'), steps = el('div', 'sx-stages'), sd = detail();
     line.appendChild(steps); line.appendChild(sd);
     ol.parentNode.insertBefore(line, ol);
-    picker(steps, [].map.call(ol.children, function (li, i) {
-      return { label: String(i + 1), title: li.querySelector('b').textContent, html: li.querySelector('p').innerHTML };
-    }), sd.show, 'sx-step');
+    picker(steps, [].map.call(ol.children, function (li) {
+      var name = li.querySelector('b').textContent;
+      return { label: name, title: name, html: li.querySelector('p').innerHTML };
+    }), sd.show, 'sx-stage');
     ol.hidden = true;
   }
+
+  // Trace an answer: pick a sentence, see its passage and check.
+  var trace = document.querySelectorAll('#tracer button');
+  [].forEach.call(trace, function (b) {
+    b.addEventListener('click', function () {
+      [].forEach.call(trace, function (o) { o.setAttribute('aria-pressed', String(o === b)); });
+      document.getElementById('st-p').textContent = b.dataset.p;
+      document.getElementById('st-v').innerHTML = '';
+      document.getElementById('st-v').appendChild(el('b', '', b.dataset.v));
+    });
+  });
 
   pills('#responsibility');
   pills('#data');

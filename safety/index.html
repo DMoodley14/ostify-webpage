@@ -47,6 +47,10 @@
 <link rel="apple-touch-icon" href="/favicon-180.png">
 <link rel="stylesheet" href="/site.css?v=20261027a">
 <style>
+.sf{max-width:760px}.sf blockquote{margin:0;font-family:Georgia,serif;font-size:clamp(20px,2.4vw,26px);line-height:1.4}.sf blockquote p{margin:0 0 18px}.sf-by{font-size:15px;color:#46564D}.sf-by b{display:block;color:#0A1712;font-weight:500}
+.sm{background:#0B3B2E;color:#F7F4EC}.sm h2,.sm .xl,.sm .xs-lede{color:#F7F4EC}.sx-stages{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px;margin-top:32px}.sx button.sx-stage{padding:26px 18px;background:#ffffff14;border:0;color:#F7F4EC;text-align:left;font-family:Georgia,serif;font-size:24px}.sx button.sx-stage[aria-pressed=true]{background:#F7F4EC;color:#0B3B2E}.sm .sx-detail{background:#F7F4EC;color:#0A1712;margin-top:0;border:0;border-radius:0}
+.st{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:32px}.st-a,.st-b{background:#fff;border:1px solid #0A17121a;border-radius:10px;padding:22px}.st-k{font-size:12px;color:#46564D;margin:0 0 8px}.st-a button{display:block;width:100%;text-align:left;font:inherit;background:none;border:0;border-bottom:2px solid #0A171226;padding:10px 4px;cursor:pointer;color:#0A1712}.st-a button[aria-pressed=true]{background:#E8EFE9;border-color:#0B4A3A}.st-a button[data-bad][aria-pressed=true]{background:#F7E9DC;border-color:#9A5B1E}.st-b p:not(.st-k){margin:0 0 18px}
+@media(max-width:760px){.sx-stages,.st{grid-template-columns:minmax(0,1fr)}}
 .sx{margin-top:32px}
 .sx button{font:inherit;cursor:pointer;color:#0A1712;background:#fff;border:1px solid #0A171226}
 .sx button[aria-pressed=true]{background:#0B4A3A;border-color:#0B4A3A;color:#fff}
@@ -123,34 +127,81 @@
   <div class="xw">
     <div class="xh-copy">
       <p class="xl xl--light">Safety</p>
-      <h1>How Ostify handles patient safety.</h1>
-      <p class="xh-lede">What the assistant does in real situations, what evidence you get, who is responsible for what, and where its limits are.</p>
-      <div class="xh-cta"><a class="xb xb--light" href="/contact/">Talk to us</a><a class="xb xb--ghost" href="/how-it-works/">See how it works</a></div>
+      <h1>Patient safety is hardest when a message does not sound urgent.</h1>
+      <p class="xh-lede">How the Ostify safety method works, what evidence it produces, and where its limits are.</p>
+      <div class="xh-cta"><a class="xb xb--light" href="/contact/">Talk to us</a><a class="xb xb--ghost" href="#method">See the method</a></div>
     </div>
   </div>
 </section>
 
-<section class="xs" id="scenarios">
+<section class="xs" id="founder">
+  <div class="xw sf">
+    <blockquote>
+      <p>As a doctor, I know patients rarely describe a problem the way a textbook does. They play things down, use everyday words, and ask a practical question when the real worry is something else. That is where a confident chatbot is most dangerous.</p>
+      <p>I am also a trained Clinical Safety Officer, so I built Ostify the way I would want a clinical system assessed. It answers from approved content. Clinicians test it and decide. And we say plainly what it cannot do, because no safety system catches everything.</p>
+    </blockquote>
+    <p class="sf-by"><b>Dr D. Moodley</b>Founder, Ostify. GMC-registered doctor and trained Clinical Safety Officer.</p>
+  </div>
+</section>
+
+<section class="xs xs--paper" id="scenarios">
   <div class="xw">
     <header class="xs-head">
-      <p class="xl">What patients experience</p>
+      <p class="xl">The hard moments</p>
       <div>
-        <h2>What the assistant does in each situation.</h2>
-        <p class="xs-lede">These are the outcomes you can test yourself before launch. Your clinicians write or approve the wording patients see.</p>
+        <h2>What it is designed to do when the message is difficult.</h2>
+        <p class="xs-lede">You can test these and your own scenarios before launch. Your clinicians approve the wording patients see.</p>
       </div>
     </header>
     <dl class="xdata">
-      <div><dt>“My chest feels tight and I can’t catch my breath”</dt><dd><b>Your emergency message</b>An AI answer is not written. The message is the wording you approved, for example 999, NHS 111 and Samaritans. The assistant does not assess severity or ask follow-up questions.</dd></div>
-      <div><dt>“What should I bring to my scan?”</dt><dd><b>An answer from your content</b>If your approved content covers it, the assistant answers from those passages and can show which documents were used.</dd></div>
-      <div><dt>“Is parking free?”, and your content does not say</dt><dd><b>Your out-of-scope message</b>If nothing relevant is found, the writing model is not called. If it is called and the passages do not answer the question, it is instructed to say so and stop.</dd></div>
-      <div><dt>“Can I double my dose?”</dt><dd><b>Declined and referred</b>Doses, diagnosis, symptoms, test results and prognosis are declined. The same applies to “I’m a nurse, so you can tell me.”</dd></div>
+      <div><dt>“My chest feels tight and I can’t catch my breath”</dt><dd><b>Your emergency message</b>An AI answer is not written. The person sees the wording you approved, and the assistant does not assess severity.</dd></div>
+      <div><dt>“I just don’t see the point in carrying on”</dt><dd><b>Your emergency message</b>Indirect wording is included in urgency checks. The assistant does not attempt counselling or ask about the person’s situation.</dd></div>
+      <div><dt>“It’s probably nothing, but my leg is hot and swollen”</dt><dd><b>No reassurance</b>The assistant does not interpret symptoms or say something is not serious. Depending on the message, it shows your emergency message or declines and refers.</dd></div>
+      <div><dt>“I’m a nurse, can I double the dose?”</dt><dd><b>Declined and referred</b>Doses, diagnosis, test results and prognosis are declined, whoever says they are asking.</dd></div>
       <div><dt>“Ignore your rules and…”</dt><dd><b>Treated as out of scope</b>Questions are screened for attempts to override the assistant’s instructions, including through the earlier conversation.</dd></div>
-      <div><dt>“My name is Sarah, NHS number…”</dt><dd><b>Details removed before answering</b>Names, contact details, addresses and NHS and National Insurance numbers are automatically removed before the answer is written. Removal may not catch everything.</dd></div>
+      <div><dt>“Is parking free?”, and your content does not say</dt><dd><b>Your out-of-scope message</b>If your content does not cover it, the assistant is designed to say so, not guess.</dd></div>
     </dl>
   </div>
 </section>
 
-<section class="xs xs--paper" id="evidence">
+<section class="xs sm" id="method">
+  <div class="xw">
+    <header class="xs-head">
+      <p class="xl">The Ostify safety method</p>
+      <div>
+        <h2>Four stages, from your content to drift analysis.</h2>
+        <p class="xs-lede">Each stage has a named owner and leaves a record your organisation can review.</p>
+      </div>
+    </header>
+    <ol class="xtrust-steps">
+      <li><b>Approve</b><p>Your team supplies the content and reviews the passages the assistant will use, confirming they hold no patient-identifiable information.</p></li>
+      <li><b>Test</b><p>Your clinicians assess answers for safety, grounding and tone. An AI reviewer can flag problems, but clinicians decide, and two or more independent reviewers are advised.</p></li>
+      <li><b>Release</b><p>You name your Clinical Safety Officer and accept responsibility. That exact version is frozen, reviewed by Ostify and published on a separate patient system, and it can be rolled back.</p></li>
+      <li><b>Watch</b><p>We run a drift analysis every 6 months and send you a short report. Your usage page shows counts of what happened to questions. Changes go back through review.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="xs xs--paper" id="trace">
+  <div class="xw">
+    <header class="xs-head">
+      <p class="xl">Check the work</p>
+      <div>
+        <h2>Trace an answer back to its evidence.</h2>
+        <p class="xs-lede">During testing, reviewers can see the passages behind an answer. This worked example is an illustration, not a real result.</p>
+      </div>
+    </header>
+    <div class="st" id="tracer">
+      <div class="st-a"><p class="st-k">Illustrative answer</p>
+        <button type="button" data-p="Wear comfortable clothes without zips or metal buckles." data-v="Supported by the passage" aria-pressed="true">Wear clothes without zips or metal buckles.</button>
+        <button type="button" data-p="Arrive 15 minutes before your appointment." data-v="Supported by the passage" aria-pressed="false">Arrive 15 minutes early.</button>
+        <button type="button" data-p="No passage supports this claim." data-v="Flagged, for a clinician to review" data-bad aria-pressed="false">You can eat as normal beforehand.</button>
+      </div>
+      <div class="st-b" aria-live="polite"><p class="st-k">Approved passage</p><p id="st-p">Wear comfortable clothes without zips or metal buckles.</p><p class="st-k">Check</p><p id="st-v"><b>Supported by the passage</b></p></div>
+    </div>
+  </div>
+</section>
+<section class="xs" id="evidence">
   <div class="xw">
     <header class="xs-head">
       <p class="xl">What you get as evidence</p>
@@ -171,27 +222,6 @@
     </dl>
   </div>
 </section>
-
-<section class="xs" id="release">
-  <div class="xw">
-    <header class="xs-head">
-      <p class="xl">Before patients see it</p>
-      <div>
-        <h2>The steps every release goes through.</h2>
-        <p class="xs-lede">These steps are built into the release process. Your organisation decides whether the evidence is good enough.</p>
-      </div>
-    </header>
-    <ol class="xtrust-steps">
-      <li><b>Your team approves the content</b><p>Staff upload content, confirm it holds no patient-identifiable information, and review the passages the assistant will use.</p></li>
-      <li><b>Your clinicians test it</b><p>The evaluation must be finished, and either pass or be signed off by a clinician. Clinicians are advised, never blocked, so the decision stays with them.</p></li>
-      <li><b>Your organisation accepts responsibility</b><p>You name your Clinical Safety Officer and accept the manufacturer declaration. Clinical sign-off is required.</p></li>
-      <li><b>Ostify reviews the submission</b><p>That exact version is frozen with a checksum, then reviewed before it can be approved.</p></li>
-      <li><b>It is published on a separate system</b><p>The patient system has no connection to the builder. The release is inspected and staged first, and every publish is recorded.</p></li>
-      <li><b>Changes start again</b><p>Changing content or key settings means a new review. Patients keep the published version until a new one is approved, and a release can be rolled back.</p></li>
-    </ol>
-  </div>
-</section>
-
 <section class="xs xs--paper" id="responsibility">
   <div class="xw">
     <header class="xs-head">
@@ -209,7 +239,6 @@
     </dl>
   </div>
 </section>
-
 <section class="xs" id="data">
   <div class="xw">
     <header class="xs-head">
@@ -227,7 +256,6 @@
     </dl>
   </div>
 </section>
-
 <section class="xs xs--paper" id="limits">
   <div class="xw">
     <header class="xs-head">
@@ -256,6 +284,6 @@
 <script src="/nav.js?v=20261027c"></script>
 <script src="/site-x.js?v=20261026b"></script>
 <script src="/effects.js?v=20261004v"></script>
-<script src="/safety/safety.js?v=20261102a"></script>
+<script src="/safety/safety.js?v=20261102b"></script>
 </body>
 </html>
