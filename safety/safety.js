@@ -55,29 +55,59 @@
     dl.hidden = true;
   }
 
-  // Situations: pick one, see the patient's screen.
+  // Run a message through the safeguards and watch where it stops.
+  var LAYERS = ['Urgent phrases', 'Urgency detection', 'Clinical decisions', 'Harmful content',
+    'Override attempts', 'Personal details', 'Your content only', 'Final answer screen'];
+  var STOPS = [1, 1, 2, 2, 4, 8, 6]; // 8: clears every layer
   var dl = document.querySelector('#scenarios .xdata');
   if (dl) {
-    var wrap = el('div', 'sx sx-phone-grid'), tabs = el('div', 'sx-tabs');
-    var phone = el('div', 'sx-phone'), screen = el('div', 'sx-screen');
-    var side = detail();
+    var wrap = el('div', 'sx sr'), tabs = el('div', 'sr-m'), list = el('ol', 'sr-l');
+    var side = el('div'), phone = el('div', 'sr-p'), screen = el('div', 'sr-s'), info = detail();
+    LAYERS.forEach(function (name) {
+      var li = el('li', '', name);
+      li.appendChild(el('em'));
+      list.appendChild(li);
+    });
     phone.appendChild(screen);
-    var right = el('div');
-    right.appendChild(tabs);
-    right.appendChild(side);
-    wrap.appendChild(right);
-    wrap.appendChild(phone);
+    side.appendChild(phone);
+    var left = el('div');
+    left.appendChild(tabs);
+    left.appendChild(info);
+    wrap.appendChild(left); wrap.appendChild(list); wrap.appendChild(side);
     dl.parentNode.insertBefore(wrap, dl);
-    picker(tabs, fromDl(dl).map(function (item) {
+    var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches, timer;
+    picker(tabs, fromDl(dl).map(function (item, i) {
       item.message = item.label.replace(/,.*$/, '').replace(/[“”]/g, '');
+      item.stop = STOPS[i];
       return item;
     }), function (item) {
+      clearInterval(timer);
+      info.show(item);
       screen.innerHTML = '';
       screen.appendChild(el('p', 'sx-me', item.message));
-      screen.appendChild(el('p', 'sx-reply' + (/emergency/i.test(item.title) ? ' sx-reply--urgent' : ''), item.title));
-      screen.appendChild(el('p', 'sx-note', 'Illustration'));
-      side.show(item);
-    }, 'sx-tab');
+      var rows = [].slice.call(list.children), at = 0;
+      rows.forEach(function (r) { r.className = ''; r.querySelector('em').textContent = ''; });
+      var finish = function () {
+        screen.appendChild(el('p', 'sx-reply' + (/emergency/i.test(item.title) ? ' sx-reply--urgent' : ''), item.title));
+        screen.appendChild(el('p', 'sx-note', 'Illustration'));
+      };
+      var step = function () {
+        var r = rows[at];
+        if (!r) { finish(); return false; }
+        if (at === item.stop) {
+          r.className = 'stop';
+          r.querySelector('em').textContent = 'Stopped here';
+          finish();
+          return false;
+        }
+        r.className = 'pass';
+        r.querySelector('em').textContent = 'Clear';
+        at++;
+        return true;
+      };
+      if (calm) { while (step()); return; }
+      timer = setInterval(function () { if (!step()) clearInterval(timer); }, 240);
+    }, 'sr-b');
     dl.hidden = true;
   }
 

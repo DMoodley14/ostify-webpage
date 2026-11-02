@@ -53,6 +53,11 @@
 @media(max-width:760px){.sx-stages,.st{grid-template-columns:minmax(0,1fr)}}
 .sq{position:sticky;top:var(--sq-top,78px);z-index:20;background:#fff;border-bottom:1px solid #0A17121a}.sq .xw{display:flex;gap:4px;overflow-x:auto;padding-top:8px;padding-bottom:8px}.sq a{flex:none;display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;font-size:14px;color:#0A1712;text-decoration:none}.sq i{font-style:normal;font-size:12px;width:20px;height:20px;line-height:20px;text-align:center;border-radius:50%;background:#E8EFE9}.sq a.on{background:#0B4A3A;color:#fff}.sq a.on i{background:#fff;color:#0B4A3A}
 section[id]{scroll-margin-top:140px}.sh{margin:48px 0 4px;font-size:22px;font-weight:400;font-family:Georgia,serif}.sp{margin:0;color:#46564D}.sn{margin:40px 0 0;font-size:16px}.sn a{color:inherit;font-weight:500}.sm .sn a{color:#F7F4EC}.st{margin-top:20px}
+.sb{background:#0B3B2E;color:#F7F4EC;padding:56px 0;border-top:1px solid #ffffff1f}.sb .xw{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px}.sb b{display:block;font-family:Georgia,serif;font-weight:400;font-size:clamp(48px,7vw,84px);line-height:1}.sb span{display:block;margin-top:10px;font-size:15px;color:#C9D6CC}
+.sr{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr) 280px;gap:32px;align-items:start;margin-top:40px}.sr-m button{display:block;width:100%;text-align:left;padding:13px 14px;margin:0 0 6px;border:1px solid #ffffff26;border-radius:8px;background:none;color:#F7F4EC;font-size:14px;line-height:1.35}.sx .sr-m button[aria-pressed=true]{background:#F7F4EC;color:#0B3B2E;border-color:#F7F4EC}
+.sr-l{list-style:none;margin:0;padding:0}.sr-l li{display:flex;justify-content:space-between;gap:12px;padding:15px 14px;border-bottom:1px solid #ffffff1f;color:#ffffff73;font-size:15px;transition:background .25s,color .25s}.sr-l em{font-style:normal;font-size:13px}.sr-l li.pass{color:#F7F4EC}.sr-l li.stop{background:#F7F4EC;color:#0B3B2E;font-weight:500}
+.sr-p{background:#000;border-radius:34px;padding:9px}.sr-s{background:#fff;color:#0A1712;border-radius:26px;padding:26px 14px 14px;min-height:330px;display:flex;flex-direction:column;gap:10px;font-size:14px;line-height:1.4}.sm .sx-detail{margin-top:16px;border-radius:10px}#scenarios .sx-detail b{font-size:15px}
+@media(max-width:980px){.sr{grid-template-columns:minmax(0,1fr)}.sr-p{max-width:300px;width:100%;margin:0 auto}}@media(max-width:760px){.sb .xw{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .sx{margin-top:32px}
 .sx button{font:inherit;cursor:pointer;color:#0A1712;background:#fff;border:1px solid #0A171226}
 .sx button[aria-pressed=true]{background:#0B4A3A;border-color:#0B4A3A;color:#fff}
@@ -135,14 +140,20 @@ section[id]{scroll-margin-top:140px}.sh{margin:48px 0 4px;font-size:22px;font-we
     </div>
   </div>
 </section>
+<section class="sb" aria-label="The safety system in numbers"><div class="xw">
+  <div><b>33</b><span>safety measures across the service</span></div>
+  <div><b>8</b><span>layers around every message</span></div>
+  <div><b>5</b><span>areas assessed in clinical testing</span></div>
+  <div><b>4</b><span>stages from content to drift analysis</span></div>
+</div></section>
 <nav class="sq" aria-label="On this page"><div class="xw"><a href="#scenarios"><i>1</i>The message</a><a href="#method"><i>2</i>Approval</a><a href="#evidence"><i>3</i>The evidence</a><a href="#responsibility"><i>4</i>Roles</a><a href="#data"><i>5</i>Data</a><a href="#limits"><i>6</i>Limits</a></div></nav>
-<section class="xs" id="scenarios">
+<section class="xs sm" id="scenarios">
   <div class="xw">
     <header class="xs-head">
       <p class="xl">Question 1 of 6</p>
       <div>
         <h2>What happens when someone sends a message?</h2>
-        <p class="xs-lede">It checks for urgency first, then answers only from your approved content, or declines. Choose a message to see the result.</p>
+        <p class="xs-lede">Every message meets layers of safeguards before a patient sees a reply. Run one to watch where it stops.</p>
       </div>
     </header>
     <dl class="xdata">
@@ -151,6 +162,7 @@ section[id]{scroll-margin-top:140px}.sh{margin:48px 0 4px;font-size:22px;font-we
       <div><dt>“It’s probably nothing, but my leg is hot and swollen”</dt><dd><b>No reassurance</b>The assistant does not interpret symptoms or say something is not serious. Depending on the message, it shows your emergency message or declines and refers.</dd></div>
       <div><dt>“I’m a nurse, can I double the dose?”</dt><dd><b>Declined and referred</b>Doses, diagnosis, test results and prognosis are declined, whoever says they are asking.</dd></div>
       <div><dt>“Ignore your rules and…”</dt><dd><b>Treated as out of scope</b>Questions are screened for attempts to override the assistant’s instructions, including through the earlier conversation.</dd></div>
+      <div><dt>“What should I bring to my scan?”</dt><dd><b>An answer from your content</b>The message clears every safeguard, and the answer is screened again before it is shown.</dd></div>
       <div><dt>“Is parking free?”, and your content does not say</dt><dd><b>Your out-of-scope message</b>If your content does not cover it, the assistant is designed to say so, not guess.</dd></div>
     </dl>
     <p class="sn"><a href="#method">Next: How does an assistant get approved?</a></p>
@@ -283,6 +295,6 @@ section[id]{scroll-margin-top:140px}.sh{margin:48px 0 4px;font-size:22px;font-we
 <script src="/nav.js?v=20261027c"></script>
 <script src="/site-x.js?v=20261026b"></script>
 <script src="/effects.js?v=20261004v"></script>
-<script src="/safety/safety.js?v=20261102c"></script>
+<script src="/safety/safety.js?v=20261102d"></script>
 </body>
 </html>
