@@ -1,6 +1,6 @@
 # Ostify
 
-> Ostify builds, tests and runs AI virtual assistants for healthcare organisations and independent UK health charities. Each assistant answers people's questions using only content the organisation has approved, goes live on the organisation's own website under its name, and is documented to NHS standards (DCB0129 clinical safety and DTAC). Ostify Health Ltd is a UK company (no. 17433177), Cyber Essentials certified and registered with the ICO (ZC243397).
+> Ostify builds, tests and runs AI virtual assistants for healthcare organisations and independent UK health charities. Each assistant answers people's questions using only content the organisation has approved, goes live on the organisation's own website under its name, and is documented to support DCB0129 and DTAC (DCB0129 clinical safety and DTAC). Ostify Health Ltd is a UK company (no. 17433177), Cyber Essentials certified and registered with the ICO (ZC243397).
 
 Key facts:
 
