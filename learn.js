@@ -2,12 +2,7 @@
 //
 // Public page: no sign-in, no API calls, no model. Everything here is a
 // worked example running in the browser. The figures are illustrative and
-// each widget says so. Where a widget mirrors real behaviour it names what
-// it mirrors, so it can be kept in step:
-// (in the ostify-functions repo):
-//   - the composed prompt    -> tenant_store.compose_system_prompt()
-//   - the order of the checks -> functions-patient/function_app.py
-//   - the default gate (0.72) -> DEFAULT_RELEVANCE_THRESHOLD, same file
+// each widget says so.
 
 (function () {
   "use strict";
