@@ -1757,3 +1757,11 @@ body{background:var(--cp-white);color:var(--cp-ink)}
 }
 @media(max-width:600px){.home .xtypes--cards .xt-chat{margin-top:4px}}
 @media(max-width:820px){.mm-login{display:none}}
+
+/* Forest hero, every page */
+.xh{background:#072A21!important}.xh::before,.xh::after{opacity:.35}.xh .xlattice{opacity:.5;filter:brightness(3) saturate(.75) drop-shadow(0 0 1px #A9E0C4)}.xh h1,.xh .xl,.xh .xh-lede{color:#F7F4EC!important}.xh .xb--light{background:#F7F4EC;color:#072A21}.xh .xb--ghost{color:#F7F4EC;border-color:#F7F4EC66}
+.xh-copy p,.xh-copy li,.xh-copy a:not(.xb),.xh-copy span{color:#F7F4EC}
+.xh .xb--light:hover{background:#fff}
+.xh .xh-copy a:not(.xb),.xh .xh-free,.xh .xh-free *{color:#F7F4EC!important}
+.xh .xcred-ms{filter:brightness(0) invert(1);opacity:.8}
+.xh .xh-art>p,.xh .xh-art small{color:#C9D6CC}
