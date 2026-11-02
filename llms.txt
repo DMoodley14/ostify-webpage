@@ -9,7 +9,7 @@ Key facts:
 - The assistant does not diagnose, assess symptoms or advise on an individual's treatment, and is designed to fall outside medical device regulation.
 - Before launch, every answer is assessed by Ostify's model, Ostify's review team and two of the organisation's own clinicians. A 2 to 4 week supervised pilot follows, and drift analysis is repeated every 6 months.
 - People do not sign in and Ostify does not store what they type. Public messages are processed in the UK. The organisation is the data controller; Ostify is its data processor.
-- Charities and other services not commissioned by the NHS or a local authority do not need to appoint a Clinical Safety Officer. NHS or local-authority commissioned services do.
+- Charities and other services not commissioned by the NHS or a local authority may not need a Clinical Safety Officer. NHS or local-authority commissioned services do. Ostify does not act as a Clinical Safety Officer.
 - Pricing: Always free (build and preview), Clinician £100 a month, Small organisation £500 a month (about 1,000 conversations a month, a named account manager), Large organisation custom. Top-ups are bought in bundles of about 1,000 or 10,000 conversations. Eligible independent UK health charities may have the monthly fee waived for the first year.
 
 ## For organisations and charities
