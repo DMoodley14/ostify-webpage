@@ -17,6 +17,7 @@ Key facts:
 - [For organisations](https://ostify.co.uk/organisations/): what Ostify builds, the five-meeting process, who does what, and whether you need a Clinical Safety Officer
 - [Pricing](https://ostify.co.uk/plans/): plans, top-ups and the offer for independent UK health charities
 - [Trust and security](https://ostify.co.uk/trust/): where data goes, standards and certifications, clinical safety
+- [Safety](https://ostify.co.uk/safety/): how agents respond to urgent messages, stay within approved content and keep clinicians in control
 - [Contact](https://ostify.co.uk/contact/): book a discovery call
 
 ## How it works
