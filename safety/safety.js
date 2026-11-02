@@ -94,7 +94,7 @@
     var out = el('p');
     out.setAttribute('aria-live', 'polite');
     box.appendChild(input); box.appendChild(bar); box.appendChild(out);
-    ev.parentNode.insertBefore(box, ev);
+    document.getElementById('range-here').appendChild(box);
     var update = function () {
       var n = +input.value, low = n / (n + 3.84) * 100;
       box.querySelector('.sx-count').textContent = n + ' out of ' + n + ' handled correctly';
@@ -128,6 +128,18 @@
       document.getElementById('st-v').appendChild(el('b', '', b.dataset.v));
     });
   });
+
+  // Keep the question bar on the section being read.
+  var links = [].slice.call(document.querySelectorAll('.sq a'));
+  if ('IntersectionObserver' in window) {
+    var seen = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        links.forEach(function (a) { a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id); });
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    links.forEach(function (a) { seen.observe(document.querySelector(a.getAttribute('href'))); });
+  }
 
   pills('#responsibility');
   pills('#data');

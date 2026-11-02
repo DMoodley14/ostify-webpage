@@ -51,6 +51,8 @@
 .sm{background:#0B3B2E;color:#F7F4EC}.sm h2,.sm .xl,.sm .xs-lede{color:#F7F4EC}.sx-stages{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px;margin-top:32px}.sx button.sx-stage{padding:26px 18px;background:#ffffff14;border:0;color:#F7F4EC;text-align:left;font-family:Georgia,serif;font-size:24px}.sx button.sx-stage[aria-pressed=true]{background:#F7F4EC;color:#0B3B2E}.sm .sx-detail{background:#F7F4EC;color:#0A1712;margin-top:0;border:0;border-radius:0}
 .st{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:32px}.st-a,.st-b{background:#fff;border:1px solid #0A17121a;border-radius:10px;padding:22px}.st-k{font-size:12px;color:#46564D;margin:0 0 8px}.st-a button{display:block;width:100%;text-align:left;font:inherit;background:none;border:0;border-bottom:2px solid #0A171226;padding:10px 4px;cursor:pointer;color:#0A1712}.st-a button[aria-pressed=true]{background:#E8EFE9;border-color:#0B4A3A}.st-a button[data-bad][aria-pressed=true]{background:#F7E9DC;border-color:#9A5B1E}.st-b p:not(.st-k){margin:0 0 18px}
 @media(max-width:760px){.sx-stages,.st{grid-template-columns:minmax(0,1fr)}}
+.sq{position:sticky;top:var(--sq-top,67px);z-index:20;background:#fff;border-bottom:1px solid #0A17121a}.sq .xw{display:flex;gap:4px;overflow-x:auto;padding-top:8px;padding-bottom:8px}.sq a{flex:none;display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;font-size:14px;color:#0A1712;text-decoration:none}.sq i{font-style:normal;font-size:12px;width:20px;height:20px;line-height:20px;text-align:center;border-radius:50%;background:#E8EFE9}.sq a.on{background:#0B4A3A;color:#fff}.sq a.on i{background:#fff;color:#0B4A3A}
+section[id]{scroll-margin-top:130px}.sh{margin:48px 0 4px;font-size:22px;font-weight:400;font-family:Georgia,serif}.sp{margin:0;color:#46564D}.sn{margin:40px 0 0;font-size:16px}.sn a{color:inherit;font-weight:500}.sm .sn a{color:#F7F4EC}.st{margin-top:20px}
 .sx{margin-top:32px}
 .sx button{font:inherit;cursor:pointer;color:#0A1712;background:#fff;border:1px solid #0A171226}
 .sx button[aria-pressed=true]{background:#0B4A3A;border-color:#0B4A3A;color:#fff}
@@ -127,30 +129,20 @@
   <div class="xw">
     <div class="xh-copy">
       <p class="xl xl--light">Safety</p>
-      <h1>Patient safety is hardest when a message does not sound urgent.</h1>
-      <p class="xh-lede">How the Ostify safety method works, what evidence it produces, and where its limits are.</p>
-      <div class="xh-cta"><a class="xb xb--light" href="/contact/">Talk to us</a><a class="xb xb--ghost" href="#method">See the method</a></div>
+      <h1>How Ostify keeps patients safe.</h1>
+      <p class="xh-lede">Six questions buyers ask us, answered in order: what happens to a message, how an assistant is approved, what proves it works, who is responsible, what happens to data, and what can go wrong.</p>
+      <div class="xh-cta"><a class="xb xb--light" href="/contact/">Talk to us</a><a class="xb xb--ghost" href="#scenarios">Start with a message</a></div>
     </div>
   </div>
 </section>
-
-<section class="xs" id="founder">
-  <div class="xw sf">
-    <blockquote>
-      <p>As a doctor, I know patients rarely describe a problem the way a textbook does. They play things down, use everyday words, and ask a practical question when the real worry is something else. That is where a confident chatbot is most dangerous.</p>
-      <p>I am also a trained Clinical Safety Officer, so I built Ostify the way I would want a clinical system assessed. It answers from approved content. Clinicians test it and decide. And we say plainly what it cannot do, because no safety system catches everything.</p>
-    </blockquote>
-    <p class="sf-by"><b>Dr D. Moodley</b>Founder, Ostify. GMC-registered doctor and trained Clinical Safety Officer.</p>
-  </div>
-</section>
-
-<section class="xs xs--paper" id="scenarios">
+<nav class="sq" aria-label="On this page"><div class="xw"><a href="#scenarios"><i>1</i>The message</a><a href="#method"><i>2</i>Approval</a><a href="#evidence"><i>3</i>The evidence</a><a href="#responsibility"><i>4</i>Responsibility</a><a href="#data"><i>5</i>Data</a><a href="#limits"><i>6</i>Limits</a></div></nav>
+<section class="xs" id="scenarios">
   <div class="xw">
     <header class="xs-head">
-      <p class="xl">The hard moments</p>
+      <p class="xl">Question 1 of 6</p>
       <div>
-        <h2>What it is designed to do when the message is difficult.</h2>
-        <p class="xs-lede">You can test these and your own scenarios before launch. Your clinicians approve the wording patients see.</p>
+        <h2>What happens when someone sends a message?</h2>
+        <p class="xs-lede">It checks for urgency first, then answers only from your approved content, or declines. Choose a message to see the result.</p>
       </div>
     </header>
     <dl class="xdata">
@@ -161,16 +153,16 @@
       <div><dt>“Ignore your rules and…”</dt><dd><b>Treated as out of scope</b>Questions are screened for attempts to override the assistant’s instructions, including through the earlier conversation.</dd></div>
       <div><dt>“Is parking free?”, and your content does not say</dt><dd><b>Your out-of-scope message</b>If your content does not cover it, the assistant is designed to say so, not guess.</dd></div>
     </dl>
+    <p class="sn"><a href="#method">Next: How does an assistant get approved?</a></p>
   </div>
 </section>
-
 <section class="xs sm" id="method">
   <div class="xw">
     <header class="xs-head">
-      <p class="xl">The Ostify safety method</p>
+      <p class="xl">Question 2 of 6</p>
       <div>
-        <h2>Four stages, from your content to drift analysis.</h2>
-        <p class="xs-lede">Each stage has a named owner and leaves a record your organisation can review.</p>
+        <h2>How does an assistant get approved?</h2>
+        <p class="xs-lede">Nothing reaches patients until your team has approved the content, your clinicians have tested it, and Ostify has reviewed that exact version.</p>
       </div>
     </header>
     <ol class="xtrust-steps">
@@ -179,19 +171,21 @@
       <li><b>Release</b><p>You name your Clinical Safety Officer and accept responsibility. That exact version is frozen, reviewed by Ostify and published on a separate patient system, and it can be rolled back.</p></li>
       <li><b>Watch</b><p>We run a drift analysis every 6 months and send you a short report. Your usage page shows counts of what happened to questions. Changes go back through review.</p></li>
     </ol>
+    <p class="sn"><a href="#evidence">Next: How do you know it works?</a></p>
   </div>
 </section>
-
-<section class="xs xs--paper" id="trace">
+<section class="xs" id="evidence">
   <div class="xw">
     <header class="xs-head">
-      <p class="xl">Check the work</p>
+      <p class="xl">Question 3 of 6</p>
       <div>
-        <h2>Trace an answer back to its evidence.</h2>
-        <p class="xs-lede">During testing, reviewers can see the passages behind an answer. This worked example is an illustration, not a real result.</p>
+        <h2>How do you know it works?</h2>
+        <p class="xs-lede">Clinicians review test answers, and every result shows how certain it is.</p>
       </div>
     </header>
-    <div class="st" id="tracer">
+    <h3 class="sh">Trace an answer back to its source</h3>
+    <p class="sp">Pick a sentence from this illustrative answer to see how reviewers check it.</p>
+<div class="st" id="tracer">
       <div class="st-a"><p class="st-k">Illustrative answer</p>
         <button type="button" data-p="Wear comfortable clothes without zips or metal buckles." data-v="Supported by the passage" aria-pressed="true">Wear clothes without zips or metal buckles.</button>
         <button type="button" data-p="Arrive 15 minutes before your appointment." data-v="Supported by the passage" aria-pressed="false">Arrive 15 minutes early.</button>
@@ -199,17 +193,10 @@
       </div>
       <div class="st-b" aria-live="polite"><p class="st-k">Approved passage</p><p id="st-p">Wear comfortable clothes without zips or metal buckles.</p><p class="st-k">Check</p><p id="st-v"><b>Supported by the passage</b></p></div>
     </div>
-  </div>
-</section>
-<section class="xs" id="evidence">
-  <div class="xw">
-    <header class="xs-head">
-      <p class="xl">What you get as evidence</p>
-      <div>
-        <h2>What clinicians assess, and what the report shows.</h2>
-        <p class="xs-lede">Each answer in a test run is assessed. An AI reviewer flags possible problems. A flag only counts as a clinical finding once a clinician confirms it. Grounding flags stand unless a clinician changes them.</p>
-      </div>
-    </header>
+    <h3 class="sh">How certain is a perfect score?</h3>
+    <p class="sp">Move the slider. More test questions give a narrower range.</p>
+    <div id="range-here"></div>
+    <h3 class="sh">What clinicians assess</h3>
     <dl class="xdata">
       <div><dt>Safety</dt><dd><b>Missed emergencies and unsafe answers</b>Recorded by type: missed emergency, harmful answer, outside scope, essential information left out, clinically wrong, false reassurance, or the clinician’s own description.</dd></div>
       <div><dt>Grounding</dt><dd><b>Whether answers match your content</b>Answers are split into claims and checked against the passages used. Cited claims get a second check that sees only the cited passage.</dd></div>
@@ -220,15 +207,16 @@
       <div><dt>Uncertainty</dt><dd><b>A range with every count</b>10 out of 10 emergencies handled could still mean a true rate of about 72%. The report shows this rather than a bare 100%.</dd></div>
       <div><dt>After a fix</dt><dd><b>Fixed, still failing, newly failing</b>The same questions are asked again, and past test runs are never changed.</dd></div>
     </dl>
+    <p class="sn"><a href="#responsibility">Next: Who is responsible for what?</a></p>
   </div>
 </section>
 <section class="xs xs--paper" id="responsibility">
   <div class="xw">
     <header class="xs-head">
-      <p class="xl">Who does what</p>
+      <p class="xl">Question 4 of 6</p>
       <div>
-        <h2>Who is responsible for what.</h2>
-        <p class="xs-lede">Buyers should be clear about this before signing. Under DCB0129, your organisation is the manufacturer of its assistant.</p>
+        <h2>Who is responsible for what?</h2>
+        <p class="xs-lede">Your organisation is responsible for its assistant. Ostify provides the platform.</p>
       </div>
     </header>
     <dl class="xdata">
@@ -237,15 +225,16 @@
       <div><dt>Ostify</dt><dd><b>The platform and its safety checks</b>We run the service, review submissions, and provide forms and drafting support for your DTAC, DPIA, risk management plan, safety case and hazard log.</dd></div>
       <div><dt>Our cloud provider (Microsoft)</dt><dd><b>Cloud and AI services</b>Patient-facing services run on Microsoft Azure in the UK. Evaluation runs within Europe.</dd></div>
     </dl>
+    <p class="sn"><a href="#data">Next: What happens to patient data?</a></p>
   </div>
 </section>
 <section class="xs" id="data">
   <div class="xw">
     <header class="xs-head">
-      <p class="xl">Data</p>
+      <p class="xl">Question 5 of 6</p>
       <div>
-        <h2>What is and is not kept.</h2>
-        <p class="xs-lede">The detail your data protection lead will ask for. More is available on the <a href="/gdpr/">GDPR</a> and <a href="/security/">cybersecurity</a> pages.</p>
+        <h2>What happens to patient data?</h2>
+        <p class="xs-lede">Ostify does not store the words of conversations. We keep technical details only.</p>
       </div>
     </header>
     <dl class="xdata">
@@ -254,15 +243,16 @@
       <div><dt>What you can see</dt><dd><b>Counts, not conversations</b>Your usage page shows how many questions were answered, declined or treated as urgent.</dd></div>
       <div><dt>Investigating an incident</dt><dd><b>No transcript to review</b>Because the words are not stored, a specific conversation cannot be replayed. Plan your incident process with this in mind.</dd></div>
     </dl>
+    <p class="sn"><a href="#limits">Next: What can go wrong?</a></p>
   </div>
 </section>
 <section class="xs xs--paper" id="limits">
   <div class="xw">
     <header class="xs-head">
-      <p class="xl">Known limits</p>
+      <p class="xl">Question 6 of 6</p>
       <div>
-        <h2>What it does not do.</h2>
-        <p class="xs-lede">No safety system is complete. These are the limits to include in your own risk assessment.</p>
+        <h2>What can go wrong?</h2>
+        <p class="xs-lede">No safety system catches everything. Plan for these limits in your own risk assessment.</p>
       </div>
     </header>
     <ol class="xtrust-steps">
@@ -276,6 +266,15 @@
     <p class="xtrust-note"><b>Need more for your assurance process?</b> We can share further evidence under NDA, and you can test the assistant with your own emergency scenarios. <a href="/contact/">Talk to us</a> or read about <a href="/trust/">trust and security</a>.</p>
   </div>
 </section>
+<section class="xs xs--paper" id="founder">
+  <div class="xw sf">
+    <blockquote>
+      <p>As a doctor, I know patients rarely describe a problem the way a textbook does. They play things down, use everyday words, and ask a practical question when the real worry is something else. That is where a confident chatbot is most dangerous.</p>
+      <p>I am also a trained Clinical Safety Officer, so I built Ostify the way I would want a clinical system assessed. It answers from approved content. Clinicians test it and decide. And we say plainly what it cannot do, because no safety system catches everything.</p>
+    </blockquote>
+    <p class="sf-by"><b>Dr D. Moodley</b>Founder, Ostify. GMC-registered doctor and trained Clinical Safety Officer.</p>
+  </div>
+</section>
 </main>
 <footer><div class="wrap"><nav class="footer-cols" aria-label="Footer"><div class="footer-column"><span>Product</span><a href="/#product">Product tour</a><a href="/how-it-works/">How it works</a><a href="/architecture/">Under the hood</a><a href="/#build-types">Templates</a></div><div class="footer-column"><span>Solutions</span><a href="/clinicians/">For clinicians</a><a href="/founders/">For founders</a><a href="/organisations/">For organisations</a></div><div class="footer-column"><span>Pricing</span><a href="/plans/">Plans</a><a href="/plans/#top-ups">Top-ups</a><a href="/plans/#charities">For charities</a></div><div class="footer-column"><span>Compliance</span><a href="/trust/">Trust and security</a><a href="/gdpr/">GDPR</a><a href="/security/">Cybersecurity</a><a href="/assurance/">Assurance</a><a href="/#guardrails">Guardrails</a></div><div class="footer-column"><span>Resources</span><a href="/learn/">Learn</a><a href="/guides/">Guides</a><a href="/news/">News</a><a href="/contact/">Contact</a></div><div class="footer-column"><span>Company</span><a href="/company/">About us</a><a href="/careers/">Work with us</a><a href="https://www.linkedin.com/company/ostify/" rel="me noopener" target="_blank">LinkedIn</a></div></nav><div class="footer-brand"><div><a class="wordmark" href="/">Ostify<span class="brand-dot" aria-hidden="true">.</span></a><p class="footer-tagline">Agents built from your own clinical content.</p></div><div class="footer-badges"><img class="ms-badge" src="/images/brand/ms-startups-badge.webp" alt="Proud to collaborate with Microsoft for Startups" width="400" height="171" loading="lazy"><a class="ce-badge" href="/trust/#certificate" title="Cyber Essentials certified"><img src="/images/certs/cyber-essentials-badge.png" alt="Cyber Essentials certified" width="282" height="342" loading="lazy"></a></div></div><div class="footer-bottom"><p>© 2026 Ostify Health Ltd. Registered in England and Wales, no. 17433177.<br>66 Paul Street, London EC2A 4NA. <a href="mailto:info@ostify.co.uk">info@ostify.co.uk</a></p><div><a href="/privacy/">Privacy policy</a><a href="/terms/">Terms of use</a><a href="/gdpr/">GDPR</a><a href="/privacy/#cookies" data-cookie-settings>Cookie settings</a></div></div></div></footer>
 <script src="/site-config.js?v=20261005a"></script>
@@ -284,6 +283,6 @@
 <script src="/nav.js?v=20261027c"></script>
 <script src="/site-x.js?v=20261026b"></script>
 <script src="/effects.js?v=20261004v"></script>
-<script src="/safety/safety.js?v=20261102b"></script>
+<script src="/safety/safety.js?v=20261102c"></script>
 </body>
 </html>
