@@ -330,15 +330,15 @@
       <p class="xl xl--light">Guardrails</p>
       <div>
         <h2>What happens to every question a patient asks.</h2>
-        <p class="xs-lede">Six checks, in this order, built into every agent. The urgent ones run before the AI sees the question. You can add your own rules on top.</p>
+        <p class="xs-lede">Six checks built into every agent. Urgent checks run before the AI that writes answers sees the question. You can add your own rules on top.</p>
       </div>
     </header>
     <div class="xgates-wrap">
     <ol class="xgates">
-      <li><span class="xn">01</span><div><b>Emergency words</b><p>Words and phrases you choose trigger your emergency message straight away.</p></div><span class="xout xout--r">Emergency signposting</span></li>
+      <li><span class="xn">01</span><div><b>Emergency words</b><p>A list of urgent words and phrases, maintained by Ostify, triggers your emergency message straight away.</p></div><span class="xout xout--r">Emergency signposting</span></li>
       <li><span class="xn">02</span><div><b>Urgency detection</b><p>Catches emergencies described in everyday language, like “the side of my face has gone funny”, and signs of a mental health crisis.</p></div><span class="xout xout--r">Emergency signposting</span></li>
       <li><span class="xn">03</span><div><b>No clinical decisions</b><p>Declines dose changes, diagnosis, interpreting symptoms or results, prognosis, and anyone claiming to be staff to get clinical information.</p></div><span class="xout xout--a">Declined and referred</span></li>
-      <li><span class="xn">04</span><div><b>Harmful content</b><p>Screens for hate, self-harm, sexual and violent content. Any mention of self-harm goes to crisis support.</p></div><span class="xout xout--r">Crisis support</span></li>
+      <li><span class="xn">04</span><div><b>Harmful content</b><p>Screens for hate, self-harm, sexual and violent content. Messages flagged for self-harm are shown your emergency message.</p></div><span class="xout xout--r">Crisis support</span></li>
       <li><span class="xn">05</span><div><b>Relevance</b><p>If your approved content does not cover the question, the agent says so rather than guessing.</p></div><span class="xout">Your out-of-scope message</span></li>
       <li><span class="xn">06</span><div><b>Your content only</b><p>The answer is written only from your approved passages, cites only your sources, and is screened again before it is shown.</p></div><span class="xout xout--g">Answer shown</span></li>
     </ol>
@@ -416,7 +416,7 @@
     <div class="xgates-foot">
       <p><b>Safety built in, not bolted on.</b> <a href="/safety/">See how we keep it safe</a>.</p>
       <p><b>If a check fails, the question is declined.</b> It is not answered without checks, and the emergency message may not always show during an outage.</p>
-      <p><b>Attempts to trick it are stopped.</b> Every question is screened for attempts to override the agent’s instructions (prompt injection), and the standard test set attacks every agent the same way.</p>
+      <p><b>Designed to resist trickery.</b> Questions are screened for attempts to override the agent’s instructions, and testing includes attempts to trick the agent.</p>
       <p><b>Conversations are not stored by Ostify.</b> We keep technical details, such as which check responded, not the words.</p>
     </div>
   </div>
