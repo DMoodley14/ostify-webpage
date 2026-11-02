@@ -5,7 +5,7 @@
 Key facts:
 
 - Answers come only from the organisation's approved content (leaflets, web pages, guidance), never the wider internet. Each answer shows its source.
-- Urgent questions never reach the AI. Six checks run on every question; anything that sounds urgent shows the organisation's own urgent-help message (999, 111, GP or helpline).
+- Urgent questions never reach the AI. 33 safety measures cover the service, and checks run on every question; anything that sounds urgent shows the organisation's own urgent-help message (999, 111, GP or helpline).
 - The assistant does not diagnose, assess symptoms or advise on an individual's treatment, and is designed to fall outside medical device regulation.
 - Before launch, every answer is assessed by Ostify's model, Ostify's review team and two of the organisation's own clinicians. A 2 to 4 week supervised pilot follows, and drift analysis is repeated every 6 months.
 - People do not sign in and Ostify does not store what they type. Public messages are processed in the UK. The organisation is the data controller; Ostify is its data processor.
@@ -22,7 +22,8 @@ Key facts:
 
 ## How it works
 
-- [Guardrails](https://ostify.co.uk/#guardrails): the six checks every question passes
+- [Guardrails](https://ostify.co.uk/guardrails/): the 33 safety measures
+- [Product](https://ostify.co.uk/product/): product tour, templates and guardrails
 - [How it works](https://ostify.co.uk/how-it-works/): build, evaluate, assure, review, pilot and production
 - [Assurance](https://ostify.co.uk/assurance/): the nine safety documents and who signs them
 - [Under the hood](https://ostify.co.uk/architecture/): retrieval, gating and where the AI runs, in plain terms
