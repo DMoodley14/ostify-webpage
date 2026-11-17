@@ -29,7 +29,7 @@ MODULES = [
      'lede': 'Review, release and keeping an agent current once it is in use.'},
 ]
 
-HERO = '''<section class="xh xh--page xp">
+HERO = '''<section class="xh xh--page xp" data-pulses="2">
   <div class="xh-orbs" aria-hidden="true"><i></i><i></i><i></i></div>
   <div class="xw">
     <div class="xh-copy">

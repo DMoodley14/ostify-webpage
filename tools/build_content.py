@@ -17,7 +17,7 @@ def minutes(html):
 def nice(d):
     return datetime.date.fromisoformat(d).strftime('%-d %B %Y')
 
-HERO = '''<section class="xh xh--page xp">
+HERO = '''<section class="xh xh--page xp" data-pulses="2">
   <div class="xh-orbs" aria-hidden="true"><i></i><i></i><i></i></div>
   <div class="xw">
     <div class="xh-copy">

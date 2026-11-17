@@ -34,7 +34,7 @@ roles = [read(p) for p in sorted(glob.glob('roles/*.md')) if not os.path.basenam
 open_roles = sorted([r for r in roles if r.get('status', 'open').lower() == 'open'],
                     key=lambda r: (int(r.get('order', 100)), r.get('title', '')))
 
-HERO = '''<section class="xh xh--page xp">
+HERO = '''<section class="xh xh--page xp" data-pulses="2">
   <div class="xh-orbs" aria-hidden="true"><i></i><i></i><i></i></div>
   <div class="xw">
     <div class="xh-copy">
