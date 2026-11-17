@@ -108,13 +108,13 @@ if open_roles:
       <li><a href="/careers/{r["slug"]}/"><span class="xnews-row">{"".join(f'<span class="xnews-tag">{html.escape(r[k])}</span>' for k in ("type",) if r.get(k))}{OPEN_BADGE}<span class="xrole-meta">{" · ".join(html.escape(r[k]) for k in ("commitment", "location") if r.get(k))}</span>{posted(r)}</span><b>{html.escape(r["title"])}</b><p>{html.escape(r.get("summary", ""))}</p><span class="xnews-more">See the role <span aria-hidden="true">→</span></span></a></li>''' for r in open_roles)
     listing = f'<ol class="xroles-list">{cards}\n    </ol>'
 else:
-    listing = '<p class="xroles-none"><span class="xrole-closed">We unfortunately do not have any openings at present</span></p>'
+    listing = '<p class="xroles-none"><span class="xrole-closed">Roles are posted here as they open</span></p>'
 
 # A listing can cover several positions ("positions: 3" in its front matter)
 n = sum(int(r.get('positions', 1)) for r in open_roles)
 idx = '<main id="main" class="xp">\n' + HERO.format(
     eyebrow='Work with us', title='Help clinicians build what their patients need.',
-    lede='Ostify is early-stage and growing.' + (f' We have {n} open role{"s" if n != 1 else ""}.' if n else ''),
+    lede='We are growing, and always glad to hear from clinicians and engineers who share the mission.' + (f' We have {n} open role{"s" if n != 1 else ""}.' if n else ''),
     cta=('<a class="xb xb--light" href="#roles">See open roles</a>' if n else '') + '<a class="xb xb--ghost" href="/company/">Read the story</a>') + f'''
 <section class="xs" id="roles" aria-labelledby="roles-title">
   <div class="xw">
@@ -135,7 +135,7 @@ idx = '<main id="main" class="xp">\n' + HERO.format(
     </header>
     <div class="xstory">
       <p>Ostify lets clinicians build safe, tested AI agents from their own approved content, without writing code. The platform is built and working, and it is led by a doctor who is also a software engineer.</p>
-      <p>We are part of Microsoft for Startups, and we are now bringing Ostify to the first clinicians and services ready to build. It is a good moment to join: the product is in place, and the people who join now will shape how the company grows.</p>
+      <p>We build on Microsoft Azure and work with clinicians and health organisations ready to build. It is a good moment to join: the product is in place, and the people who join now will shape how the company grows.</p>
       <p>We are based in the UK and work mostly remotely, with regular time together in London.</p>
       <p>To find out more, read <a href="/company/">why we built Ostify</a> and <a href="/how-it-works/">how it works</a>.</p>
     </div>

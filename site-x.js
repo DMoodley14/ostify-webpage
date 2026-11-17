@@ -307,7 +307,7 @@ document.querySelectorAll('[data-video]').forEach(function (fig) {
         });
       });
       pulses = [];
-      var count = Math.round(W / 90);
+      var count = hero.dataset.pulses ? +hero.dataset.pulses : Math.round(W / 90);
       for (var p = 0; p < count; p++) pulses.push(newPulse());
     }
     function newPulse() {
