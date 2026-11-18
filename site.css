@@ -2468,3 +2468,10 @@ footer{background:#F7F4EC}
 .xh--calm .xh-lede{font-size:clamp(17px,1.35vw,19.5px)!important}
 .xh--calm .xh-copy h1{font-size:clamp(2.6rem,5vw,4.6rem)!important;max-width:20ch!important}
 .xh--calm .xh-lede{max-width:50ch!important}
+/* Hero: video aligned to top of headline; chat bubbles */
+.xh--calm .xh-grid{align-items:start!important}
+.xh--calm .xh-art{align-self:start!important;margin-top:14px!important}
+.xh-stage .xhcard{display:flex;flex-direction:column;gap:8px;padding:14px!important;background:rgba(255,255,255,.96)}
+.xh-stage .xhcard .xhcard-q{align-self:flex-end;max-width:85%!important;background:#1F5A43!important;color:#fff!important;padding:9px 13px!important;border-radius:16px 16px 4px 16px!important;font-size:14px!important;margin:0!important}
+.xh-stage .xhcard .xhcard-a{align-self:flex-start;max-width:90%!important;background:#EEF3EF!important;color:#12352A!important;padding:10px 13px!important;border-radius:16px 16px 16px 4px!important}
+.xh-stage .xhcard .xhcard-src{border-top:0!important;padding:0 0 0 4px!important;margin:0!important}
