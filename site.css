@@ -2417,3 +2417,8 @@ footer{background:#F7F4EC}
 .xh-stage .xhshot-bar span em{margin-left:-5px;font-style:normal;color:#8A958E;font-weight:400}
 .xh-stage .xhshot-bar svg{width:10px!important;height:10px!important;color:#0E5A3F;stroke-width:1.6!important}
 @media(max-width:600px){.xh-stage .xhshot-bar span{min-width:0}}
+/* flat, clean screenshot; robust address pill */
+.xh-stage .xhshot{transform:none!important}
+.xh-stage .xhshot-bar span{gap:0!important;display:inline-flex!important}
+.xh-stage .xhshot-bar span svg{margin-right:6px}
+.xh-stage .xhshot-bar span em{font-style:normal!important;margin-left:0!important;color:#8A958E!important;font-weight:400!important}
