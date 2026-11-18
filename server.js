@@ -27,6 +27,7 @@ const TYPES = {
   '.ico': 'image/x-icon',
   '.woff': 'font/woff',
   '.woff2': 'font/woff2',
+  '.mp4': 'video/mp4',
 };
 
 const HEADERS = {
@@ -94,10 +95,35 @@ http.createServer((req, res) => {
 function serveFile(file, res, req) {
   const type = TYPES[path.extname(file).toLowerCase()];
   if (!type) return notFound(res);
+  if (type.startsWith('video/')) return serveVideo(file, type, res, req);
   fs.readFile(file, (err, data) => {
     if (err) return notFound(res);
     const cache = type.startsWith('text/html') ? 'no-cache' : 'public, max-age=3600';
     res.writeHead(200, { ...HEADERS, 'Content-Type': type, 'Cache-Control': cache });
     res.end(req.method === 'HEAD' ? undefined : data);
+  });
+}
+
+// Video is streamed, and supports byte ranges (a single "bytes=start-end"), which Safari needs to play it.
+function serveVideo(file, type, res, req) {
+  fs.stat(file, (err, stat) => {
+    if (err || !stat.isFile()) return notFound(res);
+    const size = stat.size;
+    const base = { ...HEADERS, 'Content-Type': type, 'Accept-Ranges': 'bytes', 'Cache-Control': 'public, max-age=86400' };
+    const m = /^bytes=(\d*)-(\d*)$/.exec(req.headers.range || '');
+    if (!m) {
+      res.writeHead(200, { ...base, 'Content-Length': size });
+      if (req.method === 'HEAD') return res.end();
+      return fs.createReadStream(file).on('error', () => res.destroy()).pipe(res);
+    }
+    let start = m[1] === '' ? size - Number(m[2]) : Number(m[1]);
+    let end = m[1] === '' || m[2] === '' ? size - 1 : Math.min(Number(m[2]), size - 1);
+    if (!(start >= 0) || start > end || start >= size) {
+      res.writeHead(416, { ...HEADERS, 'Content-Range': 'bytes */' + size });
+      return res.end();
+    }
+    res.writeHead(206, { ...base, 'Content-Range': 'bytes ' + start + '-' + end + '/' + size, 'Content-Length': end - start + 1 });
+    if (req.method === 'HEAD') return res.end();
+    fs.createReadStream(file, { start, end }).on('error', () => res.destroy()).pipe(res);
   });
 }
