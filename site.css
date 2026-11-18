@@ -2411,3 +2411,9 @@ footer{background:#F7F4EC}
 .home .xs h2,.home .xs-head h2{font-size:clamp(28px,3vw,42px)!important;line-height:1.12!important;max-width:22ch}
 .home .xclose h2{font-size:clamp(32px,3.6vw,50px)!important;max-width:16ch}
 @media(max-width:600px){.home .xs h2,.home .xs-head h2{font-size:28px!important}.home .xclose h2{font-size:32px!important}}
+/* refined address bar */
+.xh-stage .xhshot-bar{height:38px!important;position:relative}
+.xh-stage .xhshot-bar span{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)!important;min-width:46%;justify-content:center;height:24px;padding:0 14px!important;border-radius:999px;background:rgba(255,255,255,.72)!important;box-shadow:0 0 0 1px rgba(19,36,28,.08),inset 0 1px 0 #fff;font:500 11.5px/1 var(--sans,system-ui)!important;color:#2B3A32!important;letter-spacing:0!important}
+.xh-stage .xhshot-bar span em{margin-left:-5px;font-style:normal;color:#8A958E;font-weight:400}
+.xh-stage .xhshot-bar svg{width:10px!important;height:10px!important;color:#0E5A3F;stroke-width:1.6!important}
+@media(max-width:600px){.xh-stage .xhshot-bar span{min-width:0}}
