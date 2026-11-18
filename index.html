@@ -142,7 +142,7 @@
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon-512.png" type="image/png" sizes="512x512">
 <link rel="apple-touch-icon" href="/favicon-180.png">
-<link rel="stylesheet" href="/site.css?v=20261118zd">
+<link rel="stylesheet" href="/site.css?v=20261118zg">
 </head>
 <body class="home">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -196,10 +196,9 @@
         <a class="xh-link" href="#route">How it works <span aria-hidden="true">→</span></a>
       </div>
     </div>
-    <div class="xh-art xh-stage">
-      <figure class="xhshot">
-        <div class="xhshot-bar" aria-hidden="true"><i></i><i></i><i></i><span><svg viewBox="0 0 16 16"><rect x="3.5" y="7" width="9" height="6.5" rx="1.5"/><path d="M5.5 7V5.5a2.5 2.5 0 0 1 5 0V7"/></svg>app.ostify.co.uk<em>/go-live</em></span></div>
-        <img src="/images/app/golive-1200.webp?v=2" srcset="/images/app/golive-1200.webp?v=2 1200w, /images/app/golive-2000.webp?v=2 2000w" sizes="(max-width:1100px) 100vw, 640px" alt="The Ostify release screen, showing build sign-off, evaluation results and the safety case before an assistant goes live" width="1200" height="814" fetchpriority="high" decoding="async">
+    <div class="xh-art xh-stage xh-stage--video">
+      <figure class="xhvid">
+        <video autoplay muted loop playsinline preload="metadata" poster="/images/video/hero-poster.jpg" aria-label="A patient at home, smiling as she reads an answer on her phone"><source src="/images/video/hero.mp4" type="video/mp4"></video>
       </figure>
     </div>
   </div>
@@ -436,6 +435,7 @@
 <script src="/nav.js?v=20261102h"></script>
 <script src="/site-x.js?v=20261117a"></script>
 <script src="/effects.js?v=20261004v"></script>
+<script>(function(){var v=document.querySelector(".xhvid video");if(v&&window.matchMedia("(prefers-reduced-motion: reduce)").matches){v.removeAttribute("autoplay");v.pause();}})();</script>
 <script src="/journey.js?v=20261117h"></script>
 </body>
 </html>
