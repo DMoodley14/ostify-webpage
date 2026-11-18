@@ -2443,3 +2443,28 @@ footer{background:#F7F4EC}
 @media(max-width:1100px){.xh-stage--video:after{inset:14px -10px -14px 14px;border-radius:24px}}
 /* mobile hero text: justified lede */
 @media(max-width:600px){.xh--calm .xh-lede{text-align:justify;hyphens:auto;-webkit-hyphens:auto;text-justify:inter-word}}
+/* Industry-standard hero rebuild */
+.xh--calm .xh-copy h1{max-width:16ch}
+.xh--calm .xh-lede{max-width:44ch}
+.xh-stage--video:after{display:none!important}
+.xh-stage--video{position:relative;overflow:visible!important;border-radius:18px!important;box-shadow:0 1px 2px rgba(18,53,42,.08),0 24px 48px -24px rgba(18,53,42,.28)!important}
+.xh-stage--video .xhvid,.xh-stage--video .xhvid video{border-radius:18px!important}
+.xhcard{position:absolute;left:-28px;bottom:32px;width:min(300px,70%);background:#fff;border:1px solid rgba(18,53,42,.1);border-radius:14px;padding:16px 18px;box-shadow:0 18px 40px -18px rgba(18,53,42,.35);font-size:14px;line-height:1.45;z-index:2}
+.xhcard p{margin:0}
+.xhcard-q{color:#5b6b63;font-size:13px;margin-bottom:8px!important}
+.xhcard-a{color:#12352A}
+.xhcard-src{display:flex;align-items:center;gap:6px;margin-top:10px!important;padding-top:10px;border-top:1px solid rgba(18,53,42,.08);font-size:12px;color:#1F5A43;font-weight:500}
+.xhcard-src svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2}
+.xh--calm .xhstd{margin-top:48px}
+@media(max-width:700px){.xhcard{left:12px;bottom:12px;width:calc(100% - 24px);padding:12px 14px}.xh--calm .xh-lede{text-align:left}}
+.xh-stage .xhcard p{background:none!important;padding:0!important;border-radius:0!important;box-shadow:none!important;max-width:none!important;font-size:14px!important;color:#12352A!important}
+.xh-stage .xhcard .xhcard-q{color:#5b6b63!important;font-size:13px!important}
+.xh-stage .xhcard .xhcard-src{color:#1F5A43!important;font-size:12px!important;padding-top:10px!important;border-top:1px solid rgba(18,53,42,.08)!important}
+@media(max-width:1100px){.xhcard{left:16px}}
+.xh-stage .xhcard p{opacity:1!important;animation:none!important;transform:none!important}
+.xh--calm .xh-copy h1{max-width:20ch!important}
+.xh-stage .xhcard .xhcard-a{border:0!important;outline:0!important}
+.xh--calm .xh-copy h1{font-size:clamp(2.4rem,4.4vw,3.9rem)!important;max-width:18ch!important}
+.xh--calm .xh-lede{font-size:clamp(17px,1.35vw,19.5px)!important}
+.xh--calm .xh-copy h1{font-size:clamp(2.6rem,5vw,4.6rem)!important;max-width:20ch!important}
+.xh--calm .xh-lede{max-width:50ch!important}
