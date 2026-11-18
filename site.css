@@ -2475,3 +2475,16 @@ footer{background:#F7F4EC}
 .xh-stage .xhcard .xhcard-q{align-self:flex-end;max-width:85%!important;background:#1F5A43!important;color:#fff!important;padding:9px 13px!important;border-radius:16px 16px 4px 16px!important;font-size:14px!important;margin:0!important}
 .xh-stage .xhcard .xhcard-a{align-self:flex-start;max-width:90%!important;background:#EEF3EF!important;color:#12352A!important;padding:10px 13px!important;border-radius:16px 16px 16px 4px!important}
 .xh-stage .xhcard .xhcard-src{border-top:0!important;padding:0 0 0 4px!important;margin:0!important}
+/* Hero: video spans copy height; polished bubbles */
+@media(min-width:1101px){
+.xh--calm .xh-grid{align-items:stretch!important}
+.xh--calm .xh-art.xh-stage--video{align-self:stretch!important;margin-top:0!important;aspect-ratio:auto!important;height:auto!important;min-height:0!important;display:flex}
+.xh--calm .xh-stage--video .xhvid{flex:1;height:100%!important;margin:0}
+.xh--calm .xh-stage--video .xhvid video{height:100%!important;width:100%}
+}
+.xh-stage .xhcard{gap:10px!important;padding:16px!important;border-radius:20px!important;background:rgba(255,255,255,.82)!important;-webkit-backdrop-filter:blur(14px) saturate(1.3);backdrop-filter:blur(14px) saturate(1.3);border:1px solid rgba(255,255,255,.7)!important;box-shadow:0 1px 2px rgba(18,53,42,.06),0 22px 44px -20px rgba(18,53,42,.4)!important}
+.xh-stage .xhcard p{line-height:1.45!important;letter-spacing:-.005em}
+.xh-stage .xhcard .xhcard-q{background:linear-gradient(180deg,#24654B,#1A4E3A)!important;padding:10px 14px!important;border-radius:18px 18px 6px 18px!important;box-shadow:0 6px 14px -8px rgba(18,53,42,.6)!important;font-size:14px!important}
+.xh-stage .xhcard .xhcard-a{background:#fff!important;border:1px solid rgba(18,53,42,.08)!important;padding:11px 14px!important;border-radius:18px 18px 18px 6px!important;box-shadow:0 4px 12px -8px rgba(18,53,42,.3)!important}
+.xh-stage .xhcard .xhcard-src{align-self:flex-start;background:#E6EFE8!important;border-radius:999px!important;padding:4px 10px 4px 8px!important;font-size:11.5px!important;font-weight:500}
+@media(min-width:1101px){.xh--calm .xh-art.xh-stage--video{margin-top:34px!important;margin-bottom:24px!important}}
