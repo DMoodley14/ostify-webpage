@@ -129,6 +129,17 @@
   }
 
   tabs.forEach(function(t, i){ t.addEventListener('click', function(){ auto = false; play(i); }); });
+  // compact picker for small screens: previous / next around the selected example
+  var strip = tabs[0].parentNode;
+  var prev = document.createElement('button'), nxt = document.createElement('button'), count = document.createElement('span');
+  prev.type = nxt.type = 'button'; prev.className = 'xj-nav xj-nav--prev'; nxt.className = 'xj-nav xj-nav--next';
+  prev.setAttribute('aria-label', 'Previous example'); nxt.setAttribute('aria-label', 'Next example');
+  prev.innerHTML = '<svg viewBox="0 0 24 24"><path d="m14.5 6-6 6 6 6"/></svg>'; nxt.innerHTML = '<svg viewBox="0 0 24 24"><path d="m9.5 6 6 6-6 6"/></svg>';
+  count.className = 'xj-count'; count.setAttribute('aria-hidden', 'true');
+  strip.insertBefore(prev, strip.firstChild); strip.appendChild(count); strip.appendChild(nxt);
+  prev.addEventListener('click', function(){ auto = false; play((current + scenarios.length - 1) % scenarios.length); });
+  nxt.addEventListener('click', function(){ auto = false; play((current + 1) % scenarios.length); });
+  var origPlay = play; play = function(i){ count.textContent = (i + 1) + ' of ' + scenarios.length; origPlay(i); };
   replay.addEventListener('click', function(){ auto = false; play(current); });
 
   if ('IntersectionObserver' in window){

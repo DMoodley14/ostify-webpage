@@ -2488,3 +2488,58 @@ footer{background:#F7F4EC}
 .xh-stage .xhcard .xhcard-a{background:#fff!important;border:1px solid rgba(18,53,42,.08)!important;padding:11px 14px!important;border-radius:18px 18px 18px 6px!important;box-shadow:0 4px 12px -8px rgba(18,53,42,.3)!important}
 .xh-stage .xhcard .xhcard-src{align-self:flex-start;background:#E6EFE8!important;border-radius:999px!important;padding:4px 10px 4px 8px!important;font-size:11.5px!important;font-weight:500}
 @media(min-width:1101px){.xh--calm .xh-art.xh-stage--video{margin-top:34px!important;margin-bottom:24px!important}}
+/* Mobile hero tidy */
+@media(max-width:700px){
+.xh--calm .xh-copy,.xh--calm .xh-copy h1{text-align:left!important;margin-left:0!important;margin-right:0!important}
+.xh--calm .xh-lede{text-align:left!important;hyphens:manual!important;-webkit-hyphens:manual!important;font-size:17px!important}
+.xh--calm .xh-cta{justify-content:flex-start!important}
+.xh--calm .xh-art.xh-stage--video{aspect-ratio:auto!important;display:flex;flex-direction:column;background:none!important;box-shadow:none!important;overflow:visible!important}
+.xh--calm .xh-stage--video .xhvid{aspect-ratio:4/3;border-radius:18px!important;overflow:hidden;box-shadow:0 18px 36px -20px rgba(18,53,42,.35)}
+.xh-stage .xhcard{position:relative!important;left:auto!important;bottom:auto!important;width:auto!important;margin:-56px 14px 0!important}
+}
+@media(max-width:700px){.xh--calm .xh-stage--video .xhvid{position:relative!important;inset:auto!important;width:100%!important;height:auto!important}.xh--calm .xh-art.xh-stage--video{height:auto!important;min-height:0!important;padding:0!important}}
+/* Comparison on mobile: Ostify first, others compact side by side */
+@media(max-width:700px){
+.xcmp tr{display:grid!important;grid-template-columns:1fr 1fr;gap:0;padding:0!important;margin-bottom:12px!important;box-shadow:0 8px 20px -16px rgba(18,53,42,.4)}
+.xcmp tbody th{grid-column:1/-1;padding:16px 16px 10px!important;font-family:var(--x-display);font-size:18px!important;font-weight:500!important}
+.xcmp td{display:block!important;padding:10px 16px 14px!important;font-size:13px!important;color:#55655B!important;line-height:1.4!important}
+.xcmp td:before{display:block;font-size:11.5px!important;font-weight:600!important;color:#2E3F36!important;margin-bottom:4px;line-height:1.3}
+.xcmp td .xcmp-i{display:inline-grid!important;width:15px;height:15px;font-size:9px;margin-right:6px;vertical-align:-2px}
+.xcmp td[data-col="General (Commercial) AI chatbots"]{order:2;border-top:1px solid rgba(18,36,29,.08)!important;border-right:1px solid rgba(18,36,29,.08)!important}
+.xcmp td[data-col="General (Commercial) AI chatbots"]:before{content:"General AI chatbots"}
+.xcmp td[data-col="Standard (Bespoke) chatbots"]{order:3;border-top:1px solid rgba(18,36,29,.08)!important}
+.xcmp td[data-col="Standard (Bespoke) chatbots"]:before{content:"Standard chatbots"}
+.xcmp td[data-col="Ostify Agents"]{order:1;grid-column:1/-1;margin:0 12px 12px!important;border-radius:12px;padding:12px 14px!important;font-size:14.5px!important;color:#13241C!important;font-weight:500!important}
+.xcmp td[data-col="Ostify Agents"]:before{content:"Ostify";color:#0E5A3F!important;font-size:12px!important}
+}
+@media(max-width:700px){.xcmp tr,.xcmp tbody th,.xcmp td{width:auto!important;min-width:0!important}.xcmp tbody{display:block!important;width:100%!important}}
+/* Journey demo on mobile */
+@media(max-width:700px){
+.xj{padding:16px!important;border-radius:20px!important}
+.xj-tabs{-webkit-mask-image:linear-gradient(90deg,#000 82%,transparent);mask-image:linear-gradient(90deg,#000 82%,transparent);padding-right:40px!important;scrollbar-width:none}
+.xj-tabs::-webkit-scrollbar{display:none}
+.xj-chat{min-height:330px!important;display:flex;flex-direction:column}
+.xj-status{margin-top:auto!important}
+.xj-gates{display:flex!important;gap:4px!important;padding:0!important;margin:18px 0 0!important;counter-reset:none!important}
+.xj-gates li[data-gate]{flex:1;height:5px!important;min-width:0!important;width:auto!important;padding:0!important;border:0!important;border-radius:3px!important;background:rgba(255,255,255,.16)!important;font-size:0!important;color:transparent!important;box-shadow:none!important}
+.xj-gates li[data-gate]:before,.xj-gates li[data-gate]:after{display:none!important}
+.xj-gates li[data-gate] b,.xj-gates li[data-gate] span{display:none!important}
+.xj-gates li.is-pass{background:#8FD3AE!important}
+.xj-gates li.is-active{background:#fff!important}
+.xj-gates li.is-stop{background:#F2A65A!important}
+.xj-gates li.is-skip{background:rgba(255,255,255,.07)!important}
+.xj-gates .xj-group,.xj-rail{display:none!important}
+.xj-now{margin:10px 0 0!important;font-size:14px!important;font-weight:500;color:#fff!important;min-height:20px}
+}
+@media(max-width:700px){.xj-tabs{display:flex!important;flex-wrap:wrap!important;gap:6px!important;overflow:visible!important;-webkit-mask-image:none!important;mask-image:none!important;padding:0!important;white-space:normal!important}.xj-tab{flex:0 0 auto!important;font-size:13px!important;padding:7px 12px!important;white-space:nowrap!important}}
+.xj-nav,.xj-count{display:none}
+@media(max-width:700px){
+.xj-tabs{display:grid!important;grid-template-columns:36px 1fr 36px;grid-template-areas:"prev tab next" ". count .";align-items:center;gap:4px 8px!important;flex-wrap:nowrap!important}
+.xj-tab{display:none!important}
+.xj-tab[aria-selected="true"]{display:block!important;grid-area:tab;justify-self:center;background:none!important;border:0!important;color:#fff!important;font-size:15px!important;font-weight:600!important;padding:6px 0!important;box-shadow:none!important}
+.xj-nav{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06);color:#fff;padding:0;cursor:pointer}
+.xj-nav--prev{grid-area:prev}.xj-nav--next{grid-area:next}
+.xj-nav svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.xj-count{display:block;grid-area:count;text-align:center;font-size:12px;color:rgba(255,255,255,.6)}
+}
+@media(max-width:700px){.xj-tabs{margin:0 0 12px!important;width:auto!important}}
